@@ -162,18 +162,6 @@ public class Talk
         {
             temp = "I'm fine, thanks for asking.";
         }
-        else if(input.indexOf("computer") >= 0 &&
-                input.indexOf("are") >= 0 &&
-                input.indexOf("evil") >= 0)
-        {
-            temp = "Computers aren't evil! At least, I don't know of any computers that are evil . . .";
-        }
-        else if(input.indexOf("computer") >= 0 &&
-                input.indexOf("you") >= 0 &&
-                input.indexOf("evil") >= 0)
-        {
-            temp = "I hope that I'm not evil!";
-        }
         else if(input.indexOf("family") >= 0)
         {
             double r = Math.random();
@@ -264,14 +252,6 @@ public class Talk
         {
             temp = "What's your father's name?";
             ProjectGoldStarsX.fatherNameInputted = true;
-        }
-        else if(input.indexOf("program launcher") >= 0)
-        {
-            temp = "In Snow OS 8.0, the Program Launcher was replaced by the Dashboard.";
-        }
-        else if(input.indexOf("dashboard") >= 0)
-        {
-            temp = "The Dashboard replaced the Program Launcher in Snow OS 8.0.";
         }
         else if(input.indexOf("question") >= 0 &&
                 input.indexOf("?") <= 0 &&
@@ -373,6 +353,11 @@ public class Talk
             Browser b = new Browser();
             temp = "Anything else?";
         }
+        else if(input.indexOf("calendar") >= 0)
+        {
+            new CalendarHome();
+            temp = "Anything else?";
+        }
         else if(input.indexOf("+") >= 0 ||
                 input.indexOf("add") >= 0)
         {
@@ -455,6 +440,11 @@ public class Talk
             CalcRadiansToDegrees crtd = new CalcRadiansToDegrees();
             temp = "Anything else?";
         }
+        else if(input.indexOf("calculator") >= 0)
+        {
+            new Calculator();
+            temp = "Anything else?";
+        }
         else if(input.indexOf("create a note") >= 0 ||
                 input.indexOf("create note") >= 0 ||
                 input.indexOf("new note") >= 0)
@@ -482,10 +472,20 @@ public class Talk
             NotesRename rn = new NotesRename();
             temp = "Anything else?";
         }
+        else if(input.indexOf("notes") >= 0)
+        {
+            new Notes();
+            temp = "Anything else?";
+        }
         else if(input.indexOf("import photo") >= 0 ||
                 input.indexOf("import a photo") >= 0)
         {
             PhotosImport ip = new PhotosImport();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("photos") >= 0)
+        {
+            new Photos();
             temp = "Anything else?";
         }
         else if(input.indexOf("stories") >= 0 ||
@@ -499,9 +499,19 @@ public class Talk
             Files f = new Files();
             temp = "Anything else?";
         }
-        else if(input.indexOf("notifications") >= 0)
+        else if(input.indexOf("education") >= 0)
         {
-            Notifications n = new Notifications();
+            new Education();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("light") >= 0)
+        {
+            new Light();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("current settings") >= 0)
+        {
+            new CurrentSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("change language") >= 0)
@@ -554,6 +564,15 @@ public class Talk
                 input.indexOf("search settings") >= 0)
         {
             SearchSettings ss = new SearchSettings();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("settings") >= 0)
+        {
+            new Settings();
+        }
+        else if(input.indexOf("notifications") >= 0)
+        {
+            Notifications n = new Notifications();
             temp = "Anything else?";
         }
         else if(input.indexOf("commands") >= 0)
@@ -621,15 +640,19 @@ public class Talk
                 "hello!".equals(input))
         {
             double r3 = Math.random();
-    int randomResponse3 = (int)(r3 * 2);
-    if(randomResponse3 == 0)
-    {
-        temp = "So, what's new?";
-    }
-    else
-    {
-        temp = "Did anything interesting happen today?";
-    }
+            int randomResponse3 = (int)(r3 * 3);
+            if(randomResponse3 == 0)
+            {
+                temp = "So, what's new?";
+            }
+            else if(randomResponse3 == 1)
+            {
+                temp = "Did anything interesting happen today?";
+            }
+            else
+            {
+                temp = "What's up, " + ProjectGoldStarsX.nickname + "?";
+            }
         }
         else if(input.indexOf("where") >= 0 &&
                 input.indexOf("live") >= 0 &&
@@ -642,20 +665,6 @@ public class Talk
                 input.indexOf("I") >= 0)
         {
             temp = "That's a good question.";
-        }
-        else if(input.indexOf("queen") >= 0 &&
-                input.indexOf("?") <= 0)
-        {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "Did you know that the Queen of the United Kingdom is Queen Elizabeth II?";
-            }
-            else
-                {
-                temp = "Do you know of any queens?";
-            }
         }
         else if(input.indexOf("good") >= 0 &&
                 ProjectGoldStarsX.howAreYou == false)

@@ -46,10 +46,7 @@ public class Start
             {
                 updateOldVersionFile();
             }
-            else
-            {
-                applyTheme();
-            }
+            applyTheme();
             new Window();
         }
         catch(FileNotFoundException e)

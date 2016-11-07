@@ -30,6 +30,10 @@ public class Commands
                 {
                     Browser b = new Browser();
                 }
+                else if(input.indexOf("calendar") >= 0)
+                {
+                    new CalendarHome();
+                }
                 else if(input.indexOf("add") >= 0 ||
                         input.indexOf("+") >= 0)
                 {
@@ -97,6 +101,10 @@ public class Commands
                 {
                     CalcRadiansToDegrees crtd = new CalcRadiansToDegrees();
                 }
+                else if(input.indexOf("calculator") >= 0)
+                {
+                    new Calculator();
+                }
                 else if(input.indexOf("create a note") >= 0 ||
                         input.indexOf("create note") >= 0 ||
                         input.indexOf("new note") >= 0)
@@ -120,10 +128,18 @@ public class Commands
                 {
                     NotesRename rn = new NotesRename();
                 }
+                else if(input.indexOf("notes") >= 0)
+                {
+                    new Notes();
+                }
                 else if(input.indexOf("import photo") >= 0 ||
                         input.indexOf("import a photo") >= 0)
                 {
                     PhotosImport ip = new PhotosImport();
+                }
+                else if(input.indexOf("photos") >= 0)
+                {
+                    new Photos();
                 }
                 else if(input.indexOf("talk") >= 0)
                 {
@@ -145,6 +161,18 @@ public class Commands
                 else if(input.indexOf("files") >= 0)
                 {
                     Files f = new Files();
+                }
+                else if(input.indexOf("education") >= 0)
+                {
+                    new Education();
+                }
+                else if(input.indexOf("light") >= 0)
+                {
+                    new Light();
+                }
+                else if(input.indexOf("current settings") >= 0)
+                {
+                    new CurrentSettings();
                 }
                 else if(input.indexOf("change language") >= 0)
                 {
@@ -187,6 +215,10 @@ public class Commands
                         input.indexOf("search settings") >= 0)
                 {
                     SearchSettings ss = new SearchSettings();
+                }
+                else if(input.indexOf("settings") >= 0)
+                {
+                    new Settings();
                 }
                 else if(input.indexOf("notifications") >= 0)
                 {
