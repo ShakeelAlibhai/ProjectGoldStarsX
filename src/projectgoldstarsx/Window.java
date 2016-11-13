@@ -50,6 +50,10 @@ public class Window extends JFrame implements ActionListener, ItemListener
     private void background()
     {
         ProjectGoldStarsX.desktop.setBackground(ProjectGoldStarsX.color1);
+        if(ProjectGoldStarsX.theme.equals("Grass"))
+        {
+            applyWallpaper(getClass().getResource("/wallpaper/Grass.jpg"));
+        }
         if(ProjectGoldStarsX.theme.equals("Snow"))
         {
             //1280x800 wallpaper
@@ -87,20 +91,11 @@ public class Window extends JFrame implements ActionListener, ItemListener
             {
                 applyWallpaper(getClass().getResource("/wallpaper/Snow_3840x2160.PNG"));
             }
-            //4096x2304 wallpaper
-            else if(ProjectGoldStarsX.width <= 4096 && ProjectGoldStarsX.height <= 2304)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Snow_4096x2304.PNG"));
-            }
             //5120x2880 wallpaper
             else
             {
                 applyWallpaper(getClass().getResource("/wallpaper/Snow_5120x2880.PNG"));
             }
-        }
-        if(ProjectGoldStarsX.theme.equals("Grass"))
-        {
-            applyWallpaper(getClass().getResource("/wallpaper/Grass.jpg"));
         }
         if(ProjectGoldStarsX.theme.equals("Water"))
         {
