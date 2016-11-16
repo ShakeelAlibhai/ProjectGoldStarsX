@@ -16,8 +16,17 @@ public class EduSubtract
         {
             correct = generateProblem();
         }
-        String output = "Incorrect Answer!\n"
-                + "You got " + correctAnswers + " correct answer(s).";
+        String output;
+        if(correctAnswers == 1)
+        {
+            output = "Incorrect answer!\n"
+                    + "You got " + correctAnswers + " correct answer.";
+        }
+        else
+        {
+            output = "Incorrect answer!\n"
+                    + "You got " + correctAnswers + " correct answers.";
+        }
         JOptionPane.showMessageDialog(null, output, "Subtraction", JOptionPane.INFORMATION_MESSAGE);
     }
     
