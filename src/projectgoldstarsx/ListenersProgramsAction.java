@@ -152,7 +152,7 @@ public class ListenersProgramsAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new Stories();
+            new StoryWindow("Stories", "Stories", 0);
         }
     }
     

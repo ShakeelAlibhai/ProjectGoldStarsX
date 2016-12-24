@@ -92,7 +92,7 @@ public class StartSystem
         }
         catch(FileNotFoundException e)
         {
-            ProjectGoldStarsX.theme = "Snow";
+            ProjectGoldStarsX.theme = "Project GoldStars X";
             PrintWriter out;
             try
             {

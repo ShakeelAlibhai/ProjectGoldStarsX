@@ -22,7 +22,7 @@ public class CalcMilesPerGallon
         mpgFrame = new JInternalFrame("Miles Per Gallon Calculator");
         mpgFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         mpgFrame.setLayout(new GridLayout(4, 2));
-        mpgFrame.setSize(750, 400);
+        mpgFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         ProjectGoldStarsX.desktop.add(mpgFrame);
         mpgFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         JMenuBar menuBar = new JMenuBar();

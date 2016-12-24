@@ -12,15 +12,11 @@ public class SetLocation
     
     private void setLocation()
     {
-        Object[] options = new Object[8];
-        options[0] = "North America";
-        options[1] = "South America";
-        options[2] = "Europe";
-        options[3] = "Africa";
-        options[4] = "The Middle East";
-        options[5] = "Asia";
-        options[6] = "Oceania";
-        options[7] = "Other/I don't want to say";
+        Object[] options = new Object[]
+        {
+            "North America", "South America", "Europe", "Africa",
+            "The Middle East", "Asia", "Oceania", "Other/I don't want to say"
+        };
         String output = "Which of the following best describes your location?";
         String tempLocation = (String)JOptionPane.showInputDialog(null, output, "Set Location", JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if(tempLocation == null)

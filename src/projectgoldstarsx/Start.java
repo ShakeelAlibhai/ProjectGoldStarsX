@@ -206,9 +206,11 @@ public class Start
     
     public static void applyTheme()
     {
-        if("Solid Color".equals(ProjectGoldStarsX.theme))
+        if("Dark".equals(ProjectGoldStarsX.theme))
         {
-            applyColor();
+            ProjectGoldStarsX.color1 = Color.black;
+            ProjectGoldStarsX.color2 = Color.lightGray;
+            ProjectGoldStarsX.standardColors = false;
         }
         if("Fire".equals(ProjectGoldStarsX.theme))
         {
@@ -248,33 +250,25 @@ public class Start
         }
         if("Snow".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.cyan;
-            ProjectGoldStarsX.color2 = Color.blue;
-            ProjectGoldStarsX.standardColors = true;
-        }
-        if("Snow 2".equals(ProjectGoldStarsX.theme))
-        {
             ProjectGoldStarsX.color1 = Color.white;
             ProjectGoldStarsX.color2 = Color.gray;
             ProjectGoldStarsX.standardColors = true;
-        }
-        if("Snow (Dark)".equals(ProjectGoldStarsX.theme))
-        {
-            ProjectGoldStarsX.color1 = Color.black;
-            ProjectGoldStarsX.color2 = Color.cyan;
-            ProjectGoldStarsX.standardColors = false;
-        }
-        if("Snow 2 (Dark)".equals(ProjectGoldStarsX.theme))
-        {
-            ProjectGoldStarsX.color1 = Color.black;
-            ProjectGoldStarsX.color2 = Color.lightGray;
-            ProjectGoldStarsX.standardColors = false;
         }
         if("Water".equals(ProjectGoldStarsX.theme))
         {
             ProjectGoldStarsX.color1 = new Color(0x00, 0x00, 0xC0);
             ProjectGoldStarsX.color2 = Color.green;
             ProjectGoldStarsX.standardColors = false;
+        }
+        if("Project GoldStars X".equals(ProjectGoldStarsX.theme))
+        {
+            ProjectGoldStarsX.color1 = Color.cyan;
+            ProjectGoldStarsX.color2 = Color.blue;
+            ProjectGoldStarsX.standardColors = true;
+        }
+        if("Solid Color".equals(ProjectGoldStarsX.theme))
+        {
+            applyColor();
         }
     }
     

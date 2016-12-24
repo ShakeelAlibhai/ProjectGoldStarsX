@@ -1,21 +1,30 @@
 package projectgoldstarsx;
-import javax.swing.JOptionPane;
-public class Stories
+public class Story
 {
-    public Stories()
+    private int sentences;
+    private String story;
+    
+    /*
+    Constructor
+    Parameter: int "sentences," which is 0 for a story with a random length, 3 for a 3-sentence story, or 4 for a 4-sentence story.
+    */
+    public Story(int sentences)
     {
-        Double sentences = Math.random();
-        int sentencesInt = (int)(sentences * 2);
-        sentencesInt += 3;
-        stories(sentencesInt);
+        if(sentences == 0)
+        {
+            Double d = Math.random();
+            int i = (int)(d * 2);
+            i += 3;
+            this.sentences = i;
+        }
+        else
+        {
+            this.sentences = sentences;
+        }
+        generateStory();
     }
     
-    public Stories(int sentences)
-    {
-        stories(sentences);
-    }
-    
-    private void stories(int sentences)
+    private void generateStory()
     {
         String opening, output, setting;
         int openingType;
@@ -253,11 +262,13 @@ public class Stories
             String fourthSentence;
             if(gender == 'm')
             {
-                fourthSentence = "After he had learnt how " + infinitiveVerb + ", he told his " + subject2 + " that he had learnt how to " + infinitiveVerb + ".";
+                fourthSentence = "After he had learnt how " + infinitiveVerb + ",\n"
+                        + "he told his " + subject2 + " that he had learnt how to " + infinitiveVerb + ".";
             }
             else
             {
-                fourthSentence = "After she had learnt how " + infinitiveVerb + ", she told her " + subject2 + " that she had learnt how to " + infinitiveVerb + ".";
+                fourthSentence = "After she had learnt how " + infinitiveVerb + ",\n"
+                        + "she told her " + subject2 + " that she had learnt how to " + infinitiveVerb + ".";
             }
             output = firstSentence + "\n" + secondSentence + "\n" + thirdSentence + "\n" + fourthSentence;
         }
@@ -631,6 +642,95 @@ public class Stories
                     }
                     break;
                 }
+                case "The Middle East":
+                {
+                    int r4 = (int)(random4 * 17);
+                    if(r4 == 0)
+                    {
+                        place = "Canada";
+                        land = false;
+                    }
+                    else if(r4 == 1)
+                    {
+                        place = "New York";
+                        land = false;
+                    }
+                    else if(r4 == 2)
+                    {
+                        place = "England";
+                        land = false;
+                    }
+                    else if(r4 == 3)
+                    {
+                        place = "France";
+                        land = true;
+                    }
+                    else if(r4 == 4)
+                    {
+                        place = "Spain";
+                        land = true;
+                    }
+                    else if(r4 == 5)
+                    {
+                        place = "Lebanon";
+                        land = true;
+                    }
+                    else if(r4 == 6)
+                    {
+                        place = "Yemen";
+                        land = true;
+                    }
+                    else if(r4 == 7)
+                    {
+                        place = "Egypt";
+                        land = true;
+                    }
+                    else if(r4 == 8)
+                    {
+                        place = "Iran";
+                        land = true;
+                    }
+                    else if(r4 == 9)
+                    {
+                        place = "Cairo";
+                        land = true;
+                    }
+                    else if(r4 == 10)
+                    {
+                        place = "Tehran";
+                        land = true;
+                    }
+                    else if(r4 == 11)
+                    {
+                        place = "Iraq";
+                        land = true;
+                    }
+                    else if(r4 == 12)
+                    {
+                        place = "China";
+                        land = true;
+                    }
+                    else if(r4 == 13)
+                    {
+                        place = "Russia";
+                        land = true;
+                    }
+                    else if(r4 == 14)
+                    {
+                        place = "Dubai";
+                        land = true;
+                    }
+                    else if(r4 == 15)
+                    {
+                        place = "Jordan";
+                        land = true;
+                    }
+                    else
+                    {
+                        place = "Turkey";
+                        land = true;
+                    }
+                }
                 case "Other/I don't want to say": default:
                 {
                     int r4 = (int)(random4 * 19);
@@ -770,6 +870,11 @@ public class Stories
             String thirdSentence = "So that " + subject + " took " + meansOfTravel + " to " + place + ".";
             output = firstSentence + "\n" + secondSentence + "\n" + thirdSentence;
         }
-        JOptionPane.showMessageDialog(null, output, "Stories", JOptionPane.INFORMATION_MESSAGE);
+        story = output;
+    }
+    
+    public String getStory()
+    {
+        return story;
     }
 }

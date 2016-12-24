@@ -7,11 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.net.URL;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
@@ -50,6 +45,135 @@ public class Window extends JFrame implements ActionListener, ItemListener
     private void background()
     {
         ProjectGoldStarsX.desktop.setBackground(ProjectGoldStarsX.color1);
+        if(ProjectGoldStarsX.theme.equals("Fire"))
+        {
+            //1280x800 wallpaper
+            if(ProjectGoldStarsX.width <= 1280 && ProjectGoldStarsX.height <= 800)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_1280x800.PNG"));
+            }
+            //1366x768 wallpaper
+            else if(ProjectGoldStarsX.width <= 1366 && ProjectGoldStarsX.height <= 768)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_1366x768.PNG"));
+            }
+            //1440x900 wallpaper
+            else if(ProjectGoldStarsX.width <= 1440 && ProjectGoldStarsX.height <= 900)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_1440x900.PNG"));
+            }
+            //1920x1080 wallpaper
+            else if(ProjectGoldStarsX.width <= 1920 && ProjectGoldStarsX.height <= 1080)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_1920x1080.PNG"));
+            }
+            //2560x1440 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1440)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_2560x1440.PNG"));
+            }
+            //2560x1600 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1600)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_2560x1600.PNG"));
+            }
+            //3840x2160 wallpaper
+            else if(ProjectGoldStarsX.width <= 3840 && ProjectGoldStarsX.height <= 2160)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_3840x2160.PNG"));
+            }
+            //5120x2880 wallpaper
+            else
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Fire_5120x2880.PNG"));
+            }
+        }
+        if(ProjectGoldStarsX.theme.equals("Forest"))
+        {
+            //1280x800 wallpaper
+            if(ProjectGoldStarsX.width <= 1280 && ProjectGoldStarsX.height <= 800)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_1280x800.PNG"));
+            }
+            //1366x768 wallpaper
+            else if(ProjectGoldStarsX.width <= 1366 && ProjectGoldStarsX.height <= 768)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_1366x768.PNG"));
+            }
+            //1440x900 wallpaper
+            else if(ProjectGoldStarsX.width <= 1440 && ProjectGoldStarsX.height <= 900)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_1440x900.PNG"));
+            }
+            //1920x1080 wallpaper
+            else if(ProjectGoldStarsX.width <= 1920 && ProjectGoldStarsX.height <= 1080)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_1920x1080.PNG"));
+            }
+            //2560x1440 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1440)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_2560x1440.PNG"));
+            }
+            //2560x1600 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1600)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_2560x1600.PNG"));
+            }
+            //3840x2160 wallpaper
+            else if(ProjectGoldStarsX.width <= 3840 && ProjectGoldStarsX.height <= 2160)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_3840x2160.PNG"));
+            }
+            //5120x2880 wallpaper
+            else
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Forest_5120x2880.PNG"));
+            }
+        }
+        if(ProjectGoldStarsX.theme.equals("Mountain"))
+        {
+            //1280x800 wallpaper
+            if(ProjectGoldStarsX.width <= 1280 && ProjectGoldStarsX.height <= 800)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_1280x800.PNG"));
+            }
+            //1366x768 wallpaper
+            else if(ProjectGoldStarsX.width <= 1366 && ProjectGoldStarsX.height <= 768)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_1366x768.PNG"));
+            }
+            //1440x900 wallpaper
+            else if(ProjectGoldStarsX.width <= 1440 && ProjectGoldStarsX.height <= 900)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_1440x900.PNG"));
+            }
+            //1920x1080 wallpaper
+            else if(ProjectGoldStarsX.width <= 1920 && ProjectGoldStarsX.height <= 1080)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_1920x1080.PNG"));
+            }
+            //2560x1440 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1440)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_2560x1440.PNG"));
+            }
+            //2560x1600 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1600)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_2560x1600.PNG"));
+            }
+            //3840x2160 wallpaper
+            else if(ProjectGoldStarsX.width <= 3840 && ProjectGoldStarsX.height <= 2160)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_3840x2160.PNG"));
+            }
+            //5120x2880 wallpaper
+            else
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/Mountain_5120x2880.PNG"));
+            }
+        }
         if(ProjectGoldStarsX.theme.equals("Grass"))
         {
             applyWallpaper(getClass().getResource("/wallpaper/Grass.jpg"));
@@ -101,6 +225,49 @@ public class Window extends JFrame implements ActionListener, ItemListener
         {
             applyWallpaper(getClass().getResource("/wallpaper/Water.jpg"));
         }
+        if(ProjectGoldStarsX.theme.equals("Project GoldStars X"))
+        {
+            //1280x800 wallpaper
+            if(ProjectGoldStarsX.width <= 1280 && ProjectGoldStarsX.height <= 800)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_1280x800.PNG"));
+            }
+            //1366x768 wallpaper
+            else if(ProjectGoldStarsX.width <= 1366 && ProjectGoldStarsX.height <= 768)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_1366x768.PNG"));
+            }
+            //1440x900 wallpaper
+            else if(ProjectGoldStarsX.width <= 1440 && ProjectGoldStarsX.height <= 900)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_1440x900.PNG"));
+            }
+            //1920x1080 wallpaper
+            else if(ProjectGoldStarsX.width <= 1920 && ProjectGoldStarsX.height <= 1080)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_1920x1080.PNG"));
+            }
+            //2560x1440 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1440)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_2560x1440.PNG"));
+            }
+            //2560x1600 wallpaper
+            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1600)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_2560x1600.PNG"));
+            }
+            //3840x2160 wallpaper
+            else if(ProjectGoldStarsX.width <= 3840 && ProjectGoldStarsX.height <= 2160)
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_3840x2160.PNG"));
+            }
+            //5120x2880 wallpaper
+            else
+            {
+                applyWallpaper(getClass().getResource("/wallpaper/ProjectGoldStarsX_5120x2880.PNG"));
+            }
+        }
     }
     
     private void applyWallpaper(URL url)
@@ -129,8 +296,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         setupSearchField();
         menuBar.add(searchTextField);
         menuBar.add(Components.standardButton("Search", new SearchListener()));
-        setupTimeLabel();
-        menuBar.add(timeLabel);
+        menuBar.add(ClockMenu.clockMenu());
         return menuBar;
     }
     
@@ -148,24 +314,6 @@ public class Window extends JFrame implements ActionListener, ItemListener
             searchTextField.setForeground(ProjectGoldStarsX.color1);
         }
         searchTextField.addActionListener(new SearchListener());
-    }
-    
-    private void setupTimeLabel()
-    {
-        timeLabel = new JLabel();
-        timeLabel.setForeground(ProjectGoldStarsX.color2);
-        timeLabel.setFont(ProjectGoldStarsX.mediumText1);
-        ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
-        ses.scheduleAtFixedRate(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                Date time = new Date();
-                timeLabel.setText(" " + DateFormat.getTimeInstance(DateFormat.SHORT).format(time) + " ");
-            }
-        }, 0, 1, TimeUnit.SECONDS);
-        timeLabel.addMouseListener(new ListenersProgramsMouse.CalendarListener());
     }
     
     public static class SearchListener implements ActionListener

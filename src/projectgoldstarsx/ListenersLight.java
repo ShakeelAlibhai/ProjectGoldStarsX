@@ -9,7 +9,7 @@ public class ListenersLight
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Light l = new Light(Color.blue);
+            new Light(Color.blue);
         }
     }
     
@@ -18,7 +18,16 @@ public class ListenersLight
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Light l = new Light(Color.cyan);
+            new Light(Color.cyan);
+        }
+    }
+    
+    public static class DarkGreenListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Light(new Color(0x00, 0xC0, 0x00));
         }
     }
     
@@ -27,7 +36,16 @@ public class ListenersLight
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Light l = new Light(Color.green);
+            new Light(Color.green);
+        }
+    }
+    
+    public static class OrangeListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Light(Color.orange);
         }
     }
     
@@ -36,7 +54,7 @@ public class ListenersLight
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Light l = new Light(Color.red);
+            new Light(Color.red);
         }
     }
     
@@ -45,7 +63,7 @@ public class ListenersLight
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Light l = new Light(Color.yellow);
+            new Light(Color.yellow);
         }
     }
     
@@ -54,7 +72,7 @@ public class ListenersLight
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Light l = new Light(Color.white);
+            new Light(Color.white);
         }
     }
 }

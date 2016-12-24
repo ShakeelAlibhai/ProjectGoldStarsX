@@ -7,28 +7,21 @@ import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 public class ListenersThemes
 {
+    public static class DarkThemeListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            processThemeChoice("Dark");
+        }
+    }
+    
     public static class FireThemeListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Fire";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Fire");
         }
     }
     
@@ -37,23 +30,7 @@ public class ListenersThemes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Forest";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Forest");
         }
     }
     
@@ -62,23 +39,7 @@ public class ListenersThemes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Grass";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Grass");
         }
     }
 
@@ -87,23 +48,7 @@ public class ListenersThemes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Mountain";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Mountain");
         }
     }
     
@@ -112,23 +57,7 @@ public class ListenersThemes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Sky";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Sky");
         }
     }
     
@@ -137,98 +66,7 @@ public class ListenersThemes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Snow";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
-    
-    public static class Snow2ThemeListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.theme = "Snow 2";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
-    
-    public static class SnowDarkThemeListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.theme = "Snow (Dark)";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
-    
-    public static class Snow2DarkThemeListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.theme = "Snow 2 (Dark)";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Snow");
         }
     }
     
@@ -237,23 +75,16 @@ public class ListenersThemes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.theme = "Water";
-            //Save the theme to the user's Snow OS folder.
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.theme);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
-            String output = "Choice saved.\n"
-                    + "You can restart Snow OS to apply the theme now or later.";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+            processThemeChoice("Water");
+        }
+    }
+    
+    public static class ProjectGoldStarsXThemeListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            processThemeChoice("Project GoldStars X");
         }
     }
     
@@ -264,48 +95,39 @@ public class ListenersThemes
         {
             if(changeBackgroundColor())
             {
-                ProjectGoldStarsX.theme = "Solid Color";
-                //Save the theme to the user's Snow OS folder.
-                PrintWriter out;
-                try
-                {
-                    File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
-                    out = new PrintWriter(file);
-                    out.append(ProjectGoldStarsX.theme);
-                    out.close();
-                }
-                catch(FileNotFoundException e2)
-                {
-
-                }
-                String output = "Choice saved.\n"
-                        + "You can restart Snow OS to apply the theme now or later.";
-                JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+                processThemeChoice("Solid Color");
             }
         }
     }
     
+    private static void processThemeChoice(String themeName)
+    {
+        ProjectGoldStarsX.theme = themeName;
+        //Save the theme to the user's Project GoldStars X folder.
+        PrintWriter out;
+        try
+        {
+            File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
+            out = new PrintWriter(file);
+            out.append(ProjectGoldStarsX.theme);
+            out.close();
+        }
+        catch(FileNotFoundException e2)
+        {
+
+        }
+        String output = "Choice saved.\n"
+                + "You can restart Project GoldStars X to apply the theme now or later.";
+        JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     public static boolean changeBackgroundColor()
     {
-        Object[] options = new Object[18];
-        options[0] = "Black";
-        options[1] = "Blue";
-        options[2] = "Cyan";
-        options[3] = "Dark Blue";
-        options[4] = "Dark Gray";
-        options[5] = "Dark Green";
-        options[6] = "Gray";
-        options[7] = "Green";
-        options[8] = "Light Gray";
-        options[9] = "Light Red";
-        options[10] = "Magenta";
-        options[11] = "Orange";
-        options[12] = "Pink";
-        options[13] = "Red";
-        options[14] = "Very Dark Green";
-        options[15] = "Very Dark Blue";
-        options[16] = "White";
-        options[17] = "Yellow";
+        Object[] options = new Object[]
+        {
+            "Black", "Blue", "Cyan", "Dark Blue", "Dark Gray", "Dark Green", "Gray", "Green", "Light Gray",
+            "Light Red", "Magenta", "Orange", "Pink", "Red", "Very Dark Green", "Very Dark Blue", "White", "Yellow"
+        };
         String output;
         if("1".equals(ProjectGoldStarsX.language))
         {
@@ -333,7 +155,7 @@ public class ListenersThemes
         {
             ProjectGoldStarsX.color = colorChoice;
         }
-        //Save the color to the user's Snow OS folder.
+        //Save the color to the user's Project GoldStars X folder.
         PrintWriter out;
         try
         {

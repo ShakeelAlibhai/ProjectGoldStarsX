@@ -52,21 +52,13 @@ public class Menu
         quickAccessActions.setFont(ProjectGoldStarsX.mediumText3);
         quickAccessActions.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
         quickAccessActions.add(Components.standardMenuItem("Create a Note", new ListenersNotes.CreateNoteListener()));
-        if("Snow (Dark)".equals(ProjectGoldStarsX.theme))
+        if("Dark".equals(ProjectGoldStarsX.theme))
         {
-            quickAccessActions.add(Components.standardMenuItem("Switch to Snow Theme", new ListenersThemes.SnowThemeListener()));
-        }
-        else if("Snow 2 (Dark)".equals(ProjectGoldStarsX.theme))
-        {
-            quickAccessActions.add(Components.standardMenuItem("Switch to Snow 2 Theme", new ListenersThemes.Snow2ThemeListener()));
-        }
-        else if("Snow 2".equals(ProjectGoldStarsX.theme))
-        {
-            quickAccessActions.add(Components.standardMenuItem("Switch to Snow 2 (Dark) Theme", new ListenersThemes.Snow2DarkThemeListener()));
+            quickAccessActions.add(Components.standardMenuItem("Switch to Project GoldStars X Theme", new ListenersThemes.ProjectGoldStarsXThemeListener()));
         }
         else
         {
-            quickAccessActions.add(Components.standardMenuItem("Switch to Snow (Dark) Theme", new ListenersThemes.SnowDarkThemeListener()));
+            quickAccessActions.add(Components.standardMenuItem("Switch to Dark Theme", new ListenersThemes.DarkThemeListener()));
         }
         return quickAccessActions;
     }

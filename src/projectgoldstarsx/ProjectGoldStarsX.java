@@ -8,8 +8,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String name = "Project GoldStars X 1.0 Update 3";
-    public static final String version = "Version 1.0.3";
+    public static final String name = "Project GoldStars X 1.1";
+    public static final String version = "Version 1.1";
     public static final File projectGoldStarsXFolder = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static Color color1;
     public static Color color2;
@@ -32,15 +32,6 @@ public class ProjectGoldStarsX
     public static final File photosFolder = new File(projectGoldStarsXFolder, "Photos");
     public static final File searchFolder = new File(projectGoldStarsXFolder, "Search");
     public static final File errorLogFolder = new File(projectGoldStarsXFolder, "Error Log");
-
-    //Font Sizes
-    public static final int largeHeaderSize = 22;
-    public static final int mediumHeaderSize = 20;
-    public static final int mediumText1Size = 16;
-    public static final int mediumText2Size = 16;
-    public static final int mediumText3Size = 12;
-    public static final int bodyText1Size = 14;
-    public static final int bodyText2Size = 14;
     
     //Fonts
     public static Font largeHeader;
@@ -50,6 +41,15 @@ public class ProjectGoldStarsX
     public static Font mediumText3;
     public static Font bodyText1;
     public static Font bodyText2;
+
+    //Font Sizes
+    public static final int largeHeaderSize = 22;
+    public static final int mediumHeaderSize = 20;
+    public static final int mediumText1Size = 16;
+    public static final int mediumText2Size = 16;
+    public static final int mediumText3Size = 12;
+    public static final int bodyText1Size = 14;
+    public static final int bodyText2Size = 14;
         
     //Calendar Variables
     public static String calendarFormat;
@@ -74,8 +74,6 @@ public class ProjectGoldStarsX
     public static int divisionMax = 10;
     
     //Talk Variables
-    public static boolean motherNameInputted = false;
-    public static boolean fatherNameInputted = false;
     public static boolean homework = false;
     public static boolean homework2 = false;
     public static boolean howAreYou = false;

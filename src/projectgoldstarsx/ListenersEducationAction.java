@@ -44,7 +44,7 @@ public class ListenersEducationAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Stories s = new Stories(3);
+            new StoryWindow("3-Sentence Story", "Education", 3);
         }
     }
     
@@ -53,7 +53,7 @@ public class ListenersEducationAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Stories s = new Stories(4);
+            new StoryWindow("4-Sentence Story", "Education", 4);
         }
     }
 }

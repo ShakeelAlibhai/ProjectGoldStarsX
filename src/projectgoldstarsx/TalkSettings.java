@@ -20,7 +20,7 @@ public class TalkSettings
         else
         {
             ProjectGoldStarsX.nickname = tempNickname;
-            //Save the nickname to the user's Snow OS folder.
+            //Save the nickname to the user's Project GoldStars X folder.
             PrintWriter out;
             try
             {

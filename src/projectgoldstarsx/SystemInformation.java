@@ -43,7 +43,8 @@ public class SystemInformation
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(Components.standardButton("Current Settings", new CurrentSettingsListener()));
-        menuBar.add(Components.standardButton("View Reported Errors", new ListenersProgramsAction.ErrorLogListener()));
+        menuBar.add(Components.standardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
+        menuBar.add(Components.standardButton("Error Log", new ListenersProgramsAction.ErrorLogListener()));
         return menuBar;
     }
     

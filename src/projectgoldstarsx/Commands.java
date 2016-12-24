@@ -156,7 +156,7 @@ public class Commands
                 }
                 else if(input.indexOf("stories") >= 0)
                 {
-                    Stories s = new Stories();
+                    new StoryWindow("Stories", "Stories", 0);
                 }
                 else if(input.indexOf("files") >= 0)
                 {

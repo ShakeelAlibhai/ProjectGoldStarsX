@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 public class Talk
 {
     public static ArrayList<String> messages = new ArrayList<String>();
+    public static boolean maximized = false;
     public static JInternalFrame talkFrame;
     public static JTextField talkInput;
     public static String temp;
@@ -87,6 +88,10 @@ public class Talk
         ProjectGoldStarsX.desktop.add(talkFrame);
         talkFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         talkFrame.setSize(750 * ProjectGoldStarsX.multiplier, 425 * ProjectGoldStarsX.multiplier);
+        if(maximized)
+        {
+            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(talkFrame);
+        }
         talkFrame.setJMenuBar(menuBar());
     }
     
@@ -107,8 +112,9 @@ public class Talk
         {
             temp = "Why don't you say something?";
         }
-        else if(input.indexOf("hello") >= 0 ||
-                input.indexOf("hi, gold stars talk") >= 0)
+        else if((input.indexOf("hello") >= 0 ||
+                input.indexOf("hi, talk") >= 0) &&
+                input.indexOf("how are you") <= 0)
         {
             temp = "How are you?";
         }
@@ -137,7 +143,7 @@ public class Talk
         }
         else if(input.indexOf("weather") >= 0)
         {
-            temp = "I'm a computer! How am I supposed to know the weather?";
+            temp = "Hmm . . . I'm not sure what the weather will be like.";
         }
         else if((input.indexOf("date") >= 0 ||
                 input.indexOf("time") >= 0) &&
@@ -155,103 +161,12 @@ public class Talk
                 input.indexOf("your") >= 0 &&
                 input.indexOf("name") >= 0)
         {
-            temp = "You can just call me Snow OS.";
+            temp = "You can just call me Talk.";
         }
         else if(input.indexOf("good") >= 0 &&
                 input.indexOf("you") >= 0)
         {
             temp = "I'm fine, thanks for asking.";
-        }
-        else if(input.indexOf("family") >= 0)
-        {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "Tell me more about your family.";
-            }
-            else
-            {
-                temp = "Your family seems very nice.";
-            }
-        }
-        else if((input.indexOf("mother") >= 0 ||
-                input.indexOf("mom") >= 0) &&
-                ProjectGoldStarsX.motherNameInputted == true)
-        {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "Tell me more about your mother.";
-            }
-            else
-            {
-                temp = "Your mother seems very nice.";
-            }
-        }
-        else if((input.indexOf("mother") >= 0 ||
-                input.indexOf("mom") >= 0) &&
-                input.indexOf("name") >= 0)
-        {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "Tell me more about your mother.";
-                ProjectGoldStarsX.motherNameInputted = true;
-            }
-            else
-            {
-                temp = "Your mother seems very nice.";
-                ProjectGoldStarsX.motherNameInputted = true;
-            }
-        }
-        else if((input.indexOf("mother") >= 0 ||
-                input.indexOf("mom") >= 0) &&
-                ProjectGoldStarsX.motherNameInputted == false)
-        {
-            temp = "What's your mother's name?";
-            ProjectGoldStarsX.motherNameInputted = true;
-        }
-        else if((input.indexOf("father") >= 0 ||
-                input.indexOf("dad") >= 0) &&
-                ProjectGoldStarsX.fatherNameInputted == true)
-        {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "Tell me more about your father.";
-            }
-            else
-            {
-                temp = "Your father seems very nice.";
-            }
-        }
-        else if((input.indexOf("father") >= 0 ||
-                input.indexOf("dad") >= 0) &&
-                input.indexOf("name") >= 0)
-        {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "Tell me more about your father.";
-                ProjectGoldStarsX.fatherNameInputted = true;
-            }
-            else
-            {
-                temp = "Your father seems very nice.";
-                ProjectGoldStarsX.fatherNameInputted = true;
-            }
-        }
-        else if((input.indexOf("father") >= 0 ||
-                input.indexOf("dad") >= 0) &&
-                ProjectGoldStarsX.fatherNameInputted == false)
-        {
-            temp = "What's your father's name?";
-            ProjectGoldStarsX.fatherNameInputted = true;
         }
         else if(input.indexOf("question") >= 0 &&
                 input.indexOf("?") <= 0 &&
@@ -491,7 +406,7 @@ public class Talk
         else if(input.indexOf("stories") >= 0 ||
                 input.indexOf("story") >= 0)
         {
-            Stories s = new Stories();
+            new StoryWindow("Stories", "Stories", 0);
             temp = "Anything else?";
         }
         else if(input.indexOf("files") >= 0)
@@ -661,6 +576,7 @@ public class Talk
             temp = "Why do you want to know where I live?";
         }
         else if(input.indexOf("where") >= 0 &&
+                input.indexOf("do") > 0 &&
                 input.indexOf("live") >= 0 &&
                 input.indexOf("I") >= 0)
         {
@@ -678,84 +594,55 @@ public class Talk
             temp = "You're fine? That's good.";
             ProjectGoldStarsX.howAreYou = true;
         }
-        else if(input.indexOf("you") >= 0 &&
-                input.indexOf("sick") >= 0)
-        {
-            temp = JOptionPane.showInputDialog(null, "I'm a computer! How can a computer get sick?");
-        }
-        else if(input.indexOf("not") >= 0 &&
-                input.indexOf("sick") >= 0 &&
+        else if((input.indexOf("i am") >= 0 ||
+                input.indexOf("i'm") >= 0) &&
+                (input.indexOf("sick") >= 0 ||
+                input.indexOf("not feeling well") >= 0) &&
                 input.indexOf("but") <= 0)
         {
-            temp = "You're not sick? That's good.";
-        }
-        else if(input.indexOf("sick") >= 0)
-        {
-            temp = "You're not feeling well? That's not good.";
+            temp = "I hope you feel better soon!";
         }
         else if(input.indexOf("thanks") >= 0 ||
                 input.indexOf("thank you") >= 0)
         {
-            temp = "You're welcome.";
-        }
-        else if(input.indexOf("what") >= 0 &&
-                input.indexOf("my") >= 0 &&
-                input.indexOf("favorite") >= 0 &&
-                input.indexOf("color") >= 0)
-        {
-            temp = "Is your favorite color " + ProjectGoldStarsX.color.toLowerCase() + "?";
-        }
-        else if(input.indexOf("red") >= 0)
-        {
-            temp = "Red is a color of the rainbow.";
-        }
-        else if(input.indexOf("yellow") >= 0)
-        {
-            temp = "Yellow is a color of the rainbow.";
-        }
-        else if(input.indexOf("green") >= 0)
-        {
-            temp = "Green is a color of the rainbow.";
-        }
-        else if(input.indexOf("blue") >= 0)
-        {
-            temp = "Blue is a color of the rainbow.";
-        }
-        else if(input.indexOf("indigo") >= 0)
-        {
-            temp = "Indigo is a color of the rainbow.";
-        }
-        else if(input.indexOf("violet") >= 0)
-        {
-            temp = "Violet is a color the the rainbow.";
+            double r3 = Math.random();
+            int randomResponse3 = (int)(r3 * 2);
+            if(randomResponse3 == 0)
+            {
+                temp = "You're welcome.";
+            }
+            else
+            {
+                temp = "No problem!";
+            }
         }
         else if(input.indexOf("color") >= 0 &&
                 input.indexOf("you") >= 0 &&
                 input.indexOf("favorite") >= 0 &&
                 "1".equals(ProjectGoldStarsX.language))
         {
-            temp = "I like the color green.";
+            temp = "I like the colors green and blue.";
         }
         else if(input.indexOf("colour") >= 0 &&
                 input.indexOf("you") >= 0 &&
                 input.indexOf("favourite") >= 0 &&
                 "2".equals(ProjectGoldStarsX.language))
         {
-            temp = "I like the colours green and cyan.";
+            temp = "I like the colours green and blue.";
         }
         else if(input.indexOf("color") >= 0 &&
                 input.indexOf("my") >= 0 &&
                 input.indexOf("least") >= 0 &&
                 "1".equals(ProjectGoldStarsX.language))
         {
-            temp = "I like the colors green and cyan.";
+            temp = "I like the colors green and blue.";
         }
         else if(input.indexOf("colour") >= 0 &&
                 input.indexOf("my") >= 0 &&
                 input.indexOf("least") >= 0 &&
                 "2".equals(ProjectGoldStarsX.language))
         {
-            temp = "I like the colours green and cyan.";
+            temp = "I like the colours green and blue.";
         }
         else if(input.indexOf("colors") >= 0 &&
                 input.indexOf("my") >= 0 &&
@@ -784,25 +671,16 @@ public class Talk
         else if(input.indexOf("color") >= 0 &&
                 "1".equals(ProjectGoldStarsX.language))
         {
-            temp = "My favorite colors are probably green and cyan.";
+            temp = "My favorite colors are probably green and blue.";
         }
         else if(input.indexOf("colour") >= 0 &&
                 "2".equals(ProjectGoldStarsX.language))
         {
-            temp = "My favourite colours are probably green and cyan.";
+            temp = "My favourite colours are probably green and blue.";
         }
         else if(input.indexOf("orange") >= 0)
         {
-            double r = Math.random();
-            int randomResponse = (int)(r * 2);
-            if(randomResponse == 0)
-            {
-                temp = "By orange, do you mean the color or the fruit?";
-            }
-            else
-            {
-                temp = "I like oranges. Both the fruit and the color.";
-            }
+            temp = "By orange, do you mean the color or the fruit?";
         }
         else if(input.indexOf("ice cream") >= 0 &&
                 input.indexOf("like") >= 0 &&
@@ -1108,6 +986,7 @@ public class Talk
     {
         public void actionPerformed(ActionEvent e)
         {
+            maximized = false;
             talkFrame.dispose();
         }
     }
@@ -1116,6 +995,7 @@ public class Talk
     {
         public void actionPerformed(ActionEvent e)
         {
+            maximized = true;
             ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(talkFrame);
         }
     }
