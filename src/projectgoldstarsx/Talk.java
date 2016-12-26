@@ -355,6 +355,26 @@ public class Talk
             CalcRadiansToDegrees crtd = new CalcRadiansToDegrees();
             temp = "Anything else?";
         }
+        else if(input.indexOf("average calculator") >= 0)
+        {
+            new CalcAverage();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("miles per gallon") >= 0)
+        {
+            new CalcMilesPerGallon();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("pythagorean triple") >= 0)
+        {
+            new CalcPythagoreanTripleFinder();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("rectangle information") >= 0)
+        {
+            new CalcRectangleInformation();
+            temp = "Anything else?";
+        }
         else if(input.indexOf("calculator") >= 0)
         {
             new Calculator();
@@ -364,7 +384,7 @@ public class Talk
                 input.indexOf("create note") >= 0 ||
                 input.indexOf("new note") >= 0)
         {
-            NotesCreate cn = new NotesCreate();
+            new NotesCreate();
             temp = "Anything else?";
         }
         else if(input.indexOf("edit a note") >= 0 ||
@@ -372,19 +392,19 @@ public class Talk
                 input.indexOf("modify a note") >= 0 ||
                 input.indexOf("modify note") >= 0)
         {
-            NotesEdit en = new NotesEdit();
+            new NotesEdit();
             temp = "Anything else?";
         }
         else if(input.indexOf("import a note") >= 0 ||
                 input.indexOf("import note") >= 0)
         {
-            NotesImport in = new NotesImport();
+            new NotesImport();
             temp = "Anything else?";
         }
         else if(input.indexOf("rename a note") >= 0 ||
                 input.indexOf("rename note") >= 0)
         {
-            NotesRename rn = new NotesRename();
+            new NotesRename();
             temp = "Anything else?";
         }
         else if(input.indexOf("notes") >= 0)
@@ -395,7 +415,7 @@ public class Talk
         else if(input.indexOf("import photo") >= 0 ||
                 input.indexOf("import a photo") >= 0)
         {
-            PhotosImport ip = new PhotosImport();
+            new PhotosImport();
             temp = "Anything else?";
         }
         else if(input.indexOf("photos") >= 0)
@@ -411,7 +431,7 @@ public class Talk
         }
         else if(input.indexOf("files") >= 0)
         {
-            Files f = new Files();
+            new Files();
             temp = "Anything else?";
         }
         else if(input.indexOf("education") >= 0)

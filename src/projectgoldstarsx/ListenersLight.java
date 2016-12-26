@@ -40,6 +40,15 @@ public class ListenersLight
         }
     }
     
+    public static class LightRedListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Light(new Color(0xFF, 0x40, 0x40));
+        }
+    }
+    
     public static class OrangeListener implements ActionListener
     {
         @Override

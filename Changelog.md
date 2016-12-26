@@ -2,6 +2,10 @@
 ### Changelog
 
 ## Version 1.1.x
+### Version 1.1.1
+* Updated Talk.
+* Added the color light red as an option in Light.
+
 ### Version 1.1
 * Added a Clock Menu (accessable by clicking the time in the main menu bar).
 * Updated Stories (the main app and the "Reading" section of Education).
