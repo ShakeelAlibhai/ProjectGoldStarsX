@@ -16,7 +16,6 @@ import javax.swing.JTextField;
 public class Window extends JFrame implements ActionListener, ItemListener
 {
     private static JTextField searchTextField;
-    private static JLabel timeLabel;
     
     public Window()
     {
@@ -285,14 +284,17 @@ public class Window extends JFrame implements ActionListener, ItemListener
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Menu.menu());
         menuBar.add(Components.standardButton("Browser", new ListenersProgramsAction.BrowserListener()));
-        menuBar.add(Components.standardButton("Calendar", new ListenersProgramsAction.CalendarListener()));
         menuBar.add(Components.standardButton("Calculator", new ListenersProgramsAction.CalculatorListener()));
+        menuBar.add(Components.standardButton("Calendar", new ListenersProgramsAction.CalendarListener()));
+        menuBar.add(Components.standardButton("Files", new ListenersProgramsAction.FilesListener()));
         menuBar.add(Components.standardButton("Notes", new ListenersProgramsAction.NotesListener()));
         menuBar.add(Components.standardButton("Photos", new ListenersProgramsAction.PhotosListener()));
-        menuBar.add(Components.standardButton("Talk", new ListenersProgramsAction.TalkListener()));
         menuBar.add(Components.standardButton("Stories", new ListenersProgramsAction.StoriesListener()));
-        menuBar.add(Components.standardButton("Files", new ListenersProgramsAction.FilesListener()));
-        menuBar.add(Components.standardButton("About", new ListenersProgramsAction.AboutListener()));
+        menuBar.add(Components.standardButton("Talk", new ListenersProgramsAction.TalkListener()));
+        if(ProjectGoldStarsX.settingsButtonMainMenuBar)
+        {
+            menuBar.add(Components.settingsButton("Settings", new ListenersProgramsAction.SettingsListener()));
+        }
         setupSearchField();
         menuBar.add(searchTextField);
         menuBar.add(Components.standardButton("Search", new SearchListener()));

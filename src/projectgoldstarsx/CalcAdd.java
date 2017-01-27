@@ -25,11 +25,7 @@ public class CalcAdd implements ActionListener
         additionFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         ProjectGoldStarsX.desktop.add(additionFrame);
         additionFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        additionFrame.setJMenuBar(menuBar);
+        additionFrame.setJMenuBar(menuBar());
         JLabel number1 = new JLabel("Number #1:");
         number1.setForeground(ProjectGoldStarsX.color2);
         number1.setFont(ProjectGoldStarsX.bodyText1);
@@ -104,6 +100,15 @@ public class CalcAdd implements ActionListener
         additionFrame.add(emptySpace);
         additionFrame.add(Components.button2("Add", new AddListener()));
         additionFrame.setVisible(true);
+    }
+    
+    private JMenuBar menuBar()
+    {
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.add(Components.closeButton(new CloseListener()));
+        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        return menuBar;
     }
     
     public static class CloseListener implements ActionListener

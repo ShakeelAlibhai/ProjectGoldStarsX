@@ -32,7 +32,7 @@ public class CalendarCreateEvent
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        JLabel instructions1 = new JLabel("Please enter the following information about the calendar event:");
+        JLabel instructions1 = new JLabel("Please enter the following information about the event:");
         instructions1.setForeground(ProjectGoldStarsX.color2);
         instructions1.setFont(ProjectGoldStarsX.mediumText1);
         menuBar.add(instructions1);

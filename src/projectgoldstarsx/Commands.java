@@ -101,6 +101,22 @@ public class Commands
                 {
                     CalcRadiansToDegrees crtd = new CalcRadiansToDegrees();
                 }
+                else if(input.indexOf("average calculator") >= 0)
+                {
+                    new CalcAverage();
+                }
+                else if(input.indexOf("miles per gallon") >= 0)
+                {
+                    new CalcMilesPerGallon();
+                }
+                else if(input.indexOf("pythagorean triple") >= 0)
+                {
+                    new CalcPythagoreanTripleFinder();
+                }
+                else if(input.indexOf("rectangle information") >= 0)
+                {
+                    new CalcRectangleInformation();
+                }
                 else if(input.indexOf("calculator") >= 0)
                 {
                     new Calculator();
@@ -109,24 +125,24 @@ public class Commands
                         input.indexOf("create note") >= 0 ||
                         input.indexOf("new note") >= 0)
                 {
-                    NotesCreate cn = new NotesCreate();
+                    new NotesCreate();
                 }
                 else if(input.indexOf("edit a note") >= 0 ||
                         input.indexOf("edit note") >= 0 ||
                         input.indexOf("modify a note") >= 0 ||
                         input.indexOf("modify note") >= 0)
                 {
-                    NotesEdit en = new NotesEdit();
+                    new NotesEdit();
                 }
                 else if(input.indexOf("import note") >= 0 ||
                         input.indexOf("import a note") >= 0)
                 {
-                    NotesImport in = new NotesImport();
+                    new NotesImport();
                 }
                 else if(input.indexOf("rename note") >= 0 ||
                         input.indexOf("rename a note") >= 0)
                 {
-                    NotesRename rn = new NotesRename();
+                    new NotesRename();
                 }
                 else if(input.indexOf("notes") >= 0)
                 {
@@ -135,7 +151,7 @@ public class Commands
                 else if(input.indexOf("import photo") >= 0 ||
                         input.indexOf("import a photo") >= 0)
                 {
-                    PhotosImport ip = new PhotosImport();
+                    new PhotosImport();
                 }
                 else if(input.indexOf("photos") >= 0)
                 {
@@ -147,11 +163,11 @@ public class Commands
                     int randomResponse = (int)(r * 2);
                     if(randomResponse == 0)
                     {
-                        Talk t = new Talk("Hello, how are you?");
+                        new Talk("Hello, how are you?");
                     }
                     else
                     {
-                        Talk t = new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+                        new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
                     }
                 }
                 else if(input.indexOf("stories") >= 0)
@@ -160,7 +176,7 @@ public class Commands
                 }
                 else if(input.indexOf("files") >= 0)
                 {
-                    Files f = new Files();
+                    new Files();
                 }
                 else if(input.indexOf("education") >= 0)
                 {

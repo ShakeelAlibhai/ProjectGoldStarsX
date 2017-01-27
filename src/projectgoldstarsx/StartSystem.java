@@ -7,6 +7,7 @@ public class StartSystem
 {
     public StartSystem()
     {
+        new StartMenuBar();
         getLanguage();
         getLocation();
         getTheme();

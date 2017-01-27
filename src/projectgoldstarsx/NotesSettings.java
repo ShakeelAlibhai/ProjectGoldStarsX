@@ -29,32 +29,57 @@ public class NotesSettings
         settingsFrame.setSize(850 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(3, 2));
         settingsFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        settingsFrame.setJMenuBar(menuBar());
+        settingsFrame.add(Components.headerLabel("Notes Search Case Sensitivity"));
+        settingsFrame.add(Components.headerLabel("Password-Protected Notes"));
+        settingsFrame.add(caseSensitivityQuestion());
+        settingsFrame.add(passwordProtectedQuestion());
+        settingsFrame.add(caseSensitivityChoices());
+        settingsFrame.add(passwordProtectedChoices());
+        settingsFrame.setVisible(true);
+    }
+    
+    private JMenuBar menuBar()
+    {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        settingsFrame.setJMenuBar(menuBar);
-        settingsFrame.add(Components.headerLabel("Notes Search Case Sensitivity"));
-        settingsFrame.add(Components.headerLabel("Password-Protected Notes"));
+        return menuBar;
+    }
+    
+    private JLabel caseSensitivityQuestion()
+    {
         JLabel caseSensitivityQuestion = new JLabel("Do you want Notes Search to be case sensitive?", SwingConstants.CENTER);
         caseSensitivityQuestion.setForeground(ProjectGoldStarsX.color2);
         caseSensitivityQuestion.setFont(ProjectGoldStarsX.mediumText1);
-        settingsFrame.add(caseSensitivityQuestion);
+        return caseSensitivityQuestion;
+    }
+    
+    private JLabel passwordProtectedQuestion()
+    {
         JLabel passwordProtectedQuestion = new JLabel("Do you want notes to be password-protected?", SwingConstants.CENTER);
         passwordProtectedQuestion.setForeground(ProjectGoldStarsX.color2);
         passwordProtectedQuestion.setFont(ProjectGoldStarsX.mediumText1);
-        settingsFrame.add(passwordProtectedQuestion);
+        return passwordProtectedQuestion;
+    }
+    
+    private JPanel caseSensitivityChoices()
+    {
         JPanel caseSensitivityChoices = new JPanel();
         caseSensitivityChoices.setLayout(new GridLayout(1, 2));
         caseSensitivityChoices.add(Components.standardButton("Yes", new CaseSensitivityYesListener()));
         caseSensitivityChoices.add(Components.standardButton("No", new CaseSensitivityNoListener()));
-        settingsFrame.add(caseSensitivityChoices);
+        return caseSensitivityChoices;
+    }
+    
+    private JPanel passwordProtectedChoices()
+    {
         JPanel passwordProtectedChoices = new JPanel();
         passwordProtectedChoices.setLayout(new GridLayout(1, 2));
         passwordProtectedChoices.add(Components.standardButton("Yes", new PasswordProtectedYesListener()));
         passwordProtectedChoices.add(Components.standardButton("No", new PasswordProtectedNoListener()));
-        settingsFrame.add(passwordProtectedChoices);
-        settingsFrame.setVisible(true);
+        return passwordProtectedChoices;
     }
     
     public static class CloseListener implements ActionListener

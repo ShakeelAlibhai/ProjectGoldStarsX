@@ -8,7 +8,7 @@ public class ListenersAbout
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            AboutPrograms ap = new AboutPrograms();
+            new AboutPrograms();
         }
     }
     
@@ -17,7 +17,7 @@ public class ListenersAbout
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Disclaimer d = new Disclaimer();
+            new Disclaimer();
         }
     }
 }

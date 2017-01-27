@@ -512,7 +512,7 @@ public class Talk
         }
         else if(input.indexOf("commands") >= 0)
         {
-            Commands c = new Commands();
+            new Commands();
             temp = "Anything else?";
         }
         else if(input.indexOf("search error") >= 0 ||

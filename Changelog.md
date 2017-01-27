@@ -1,6 +1,21 @@
 # Project GoldStars Calculator X
 ### Changelog
 
+## Version 1.2.x
+### Version 1.2
+* Added the option to add/remove the Settings button from the main menu bar.
+* Added a Settings button in Notifications.
+* Updated the interface of the Change Language area in Settings.
+* Updated the interface of the Set Location area in Settings.
+* Added a Troubleshoot Problems button in System Information.
+* Replaced the About button in the main menu bar with a link to About in the Menu.
+* Reorganized the main menu bar.
+* Reorganized the menu bars in Notes and Photos.
+* Reorganized About Programs.
+* Updated Commands.
+* Updated the Disclaimer.
+* Other minor changes.
+
 ## Version 1.1.x
 ### Version 1.1.1
 * Updated Talk.

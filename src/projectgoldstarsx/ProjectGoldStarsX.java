@@ -8,12 +8,13 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String name = "Project GoldStars X 1.1 Update 1";
-    public static final String version = "Version 1.1.1";
+    public static final String name = "Project GoldStars X 1.2";
+    public static final String version = "Version 1.2";
     public static final File projectGoldStarsXFolder = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static Color color1;
     public static Color color2;
     public static boolean standardColors;
+    public static boolean settingsButtonMainMenuBar;
     public static Date startDate;
     public static int height;
     public static int width;
@@ -27,6 +28,7 @@ public class ProjectGoldStarsX
     
     //Folders
     public static final File systemFolder = new File(projectGoldStarsXFolder, "System");
+    public static final File menuBarFolder = new File(systemFolder, "Menu Bar");
     public static final File calendarFolder = new File(projectGoldStarsXFolder, "Calendar");
     public static final File notesFolder = new File(projectGoldStarsXFolder, "Notes");
     public static final File photosFolder = new File(projectGoldStarsXFolder, "Photos");

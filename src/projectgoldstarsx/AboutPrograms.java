@@ -31,19 +31,19 @@ public class AboutPrograms
         aboutProgramsFrame.add(addProgram("Browser", new AboutBrowser()));
         aboutProgramsFrame.add(addProgram("Calendar", new AboutCalendar()));
         aboutProgramsFrame.add(addProgram("Calculator", new AboutCalculator()));
+        aboutProgramsFrame.add(addProgram("Commands", new AboutCommands()));
+        aboutProgramsFrame.add(addProgram("Education", new AboutEducation()));
+        aboutProgramsFrame.add(addProgram("Error Log", new AboutErrorLog()));
+        aboutProgramsFrame.add(addProgram("Files", new AboutFiles()));
+        aboutProgramsFrame.add(addProgram("Help", new AboutHelp()));
+        aboutProgramsFrame.add(addProgram("Light", new AboutLight()));
         aboutProgramsFrame.add(addProgram("Notes", new AboutNotes()));
         aboutProgramsFrame.add(addProgram("Photos", new AboutPhotos()));
-        aboutProgramsFrame.add(addProgram("Education", new AboutEducation()));
-        aboutProgramsFrame.add(addProgram("Light", new AboutLight()));
-        aboutProgramsFrame.add(addProgram("Talk", new AboutTalk()));
-        aboutProgramsFrame.add(addProgram("Stories", new AboutStories()));
-        aboutProgramsFrame.add(addProgram("Files", new AboutFiles()));
         aboutProgramsFrame.add(addProgram("Search", new AboutSearch()));
         aboutProgramsFrame.add(addProgram("Settings", new AboutSettings()));
-        aboutProgramsFrame.add(addProgram("Error Log", new AboutErrorLog()));
-        aboutProgramsFrame.add(addProgram("Commands", new AboutCommands()));
-        aboutProgramsFrame.add(addProgram("Help", new AboutHelp()));
+        aboutProgramsFrame.add(addProgram("Stories", new AboutStories()));
         aboutProgramsFrame.add(addProgram("System Information", new AboutSystemInformation()));
+        aboutProgramsFrame.add(addProgram("Talk", new AboutTalk()));
         aboutProgramsFrame.setVisible(true);
     }
     
@@ -277,10 +277,12 @@ public class AboutPrograms
         public void mousePressed(MouseEvent e)
         {
             output = "In Settings, you can:\n"
+                    + "--View your current settings.\n"
                     + "--Change the language between American English and British English.\n"
                     + "--Change the theme.\n"
                     + "--Change your username.\n"
                     + "--Set the location.\n"
+                    + "--Change whether a Settings button is shown on the main menu bar.\n"
                     + "--Change the format of the calendar.\n"
                     + "--Change whether the Notes Search is case sensitive.\n"
                     + "--Change whether the Photos Search is case sensitive.\n"

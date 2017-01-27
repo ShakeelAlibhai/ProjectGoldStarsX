@@ -66,11 +66,11 @@ public class Notes
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(Components.settingsButton("Notes Settings", new ListenersNotes.NotesSettingsListener()));
         menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));
         menuBar.add(Components.standardButton("Edit Notes", new ListenersNotes.EditNotesListener()));
         menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));
         menuBar.add(Components.standardButton("Rename Notes", new ListenersNotes.RenameNotesListener()));
+        menuBar.add(Components.settingsButton("Notes Settings", new ListenersNotes.NotesSettingsListener()));
         setupSearchField();
         menuBar.add(notesSearchTextField);
         menuBar.add(Components.standardButton("Search", new SearchNotesListener()));

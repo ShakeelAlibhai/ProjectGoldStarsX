@@ -146,6 +146,11 @@ public class Start
         {
             ProjectGoldStarsX.systemFolder.mkdir();
         }
+        //Make a Menu Bar folder if it does not exist yet.
+        if(!ProjectGoldStarsX.menuBarFolder.exists())
+        {
+            ProjectGoldStarsX.menuBarFolder.mkdir();
+        }
         //Make a Calendar folder if it does not exist yet.
         if(!ProjectGoldStarsX.calendarFolder.exists())
         {

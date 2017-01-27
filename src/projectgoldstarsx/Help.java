@@ -89,7 +89,7 @@ public class Help
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            TroubleshootProblems tp = new TroubleshootProblems();
+            new TroubleshootProblems();
         }
     }
 }

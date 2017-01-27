@@ -45,6 +45,7 @@ public class SystemInformation
         menuBar.add(Components.standardButton("Current Settings", new CurrentSettingsListener()));
         menuBar.add(Components.standardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
         menuBar.add(Components.standardButton("Error Log", new ListenersProgramsAction.ErrorLogListener()));
+        menuBar.add(Components.standardButton("Troubleshoot Problems", new TroubleshootProblemsListener()));
         return menuBar;
     }
     
@@ -138,6 +139,15 @@ public class SystemInformation
         public void actionPerformed(ActionEvent e)
         {
             CurrentSettings cs = new CurrentSettings();
+        }
+    }
+    
+    public static class TroubleshootProblemsListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new TroubleshootProblems();
         }
     }
 }

@@ -29,38 +29,37 @@ public class ErrorLogSettings
         settingsFrame.setSize(850 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(3, 1));
         settingsFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        settingsFrame.setJMenuBar(menuBar());
+        settingsFrame.add(Components.headerLabel("Error Log Search Case Sensitivity"));
+        settingsFrame.add(caseSensitivityQuestion());
+        settingsFrame.add(caseSensitivityChoices());
+        settingsFrame.setVisible(true);
+    }
+    
+    private JMenuBar menuBar()
+    {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        settingsFrame.setJMenuBar(menuBar);
-        settingsFrame.add(Components.headerLabel("Error Log Search Case Sensitivity"));
+        return menuBar;
+    }
+    
+    private JLabel caseSensitivityQuestion()
+    {
         JLabel caseSensitivityQuestion = new JLabel("Do you want Error Log Search to be case sensitive?", SwingConstants.CENTER);
         caseSensitivityQuestion.setForeground(ProjectGoldStarsX.color2);
         caseSensitivityQuestion.setFont(ProjectGoldStarsX.mediumText1);
-        settingsFrame.add(caseSensitivityQuestion);
+        return caseSensitivityQuestion;
+    }
+    
+    private JPanel caseSensitivityChoices()
+    {
         JPanel caseSensitivityChoices = new JPanel();
         caseSensitivityChoices.setLayout(new GridLayout(1, 2));
         caseSensitivityChoices.add(Components.standardButton("Yes", new CaseSensitivityYesListener()));
         caseSensitivityChoices.add(Components.standardButton("No", new CaseSensitivityNoListener()));
-        settingsFrame.add(caseSensitivityChoices);
-        settingsFrame.setVisible(true);
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            settingsFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(settingsFrame);
-        }
+        return caseSensitivityChoices;
     }
     
     public static class CaseSensitivityYesListener implements ActionListener
@@ -68,7 +67,7 @@ public class ErrorLogSettings
         public void actionPerformed(ActionEvent e)
         {
             ProjectGoldStarsX.errorLogSearchCaseSensitive = true;
-            //Save the ErrorLog Search case sensitivity choice to the user's Project GoldStars X folder.
+            //Save the Error Log Search case sensitivity choice to the user's Project GoldStars X folder.
             PrintWriter out;
             try
             {
@@ -90,7 +89,7 @@ public class ErrorLogSettings
         public void actionPerformed(ActionEvent e)
         {
             ProjectGoldStarsX.errorLogSearchCaseSensitive = false;
-            //Save the ErrorLog Search case sensitivity choice to the user's Project GoldStars X folder.
+            //Save the Error Log Search case sensitivity choice to the user's Project GoldStars X folder.
             PrintWriter out;
             try
             {
@@ -104,6 +103,22 @@ public class ErrorLogSettings
 
             }
             JOptionPane.showMessageDialog(null, "Choice Saved", "Settings", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    public static class CloseListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            settingsFrame.dispose();
+        }
+    }
+    
+    public static class MaximizeListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(settingsFrame);
         }
     }
 }

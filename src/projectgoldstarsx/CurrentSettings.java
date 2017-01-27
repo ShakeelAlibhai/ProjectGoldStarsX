@@ -37,6 +37,14 @@ public class CurrentSettings
         output += "Theme: " + ProjectGoldStarsX.theme + "\n";
         output += "Username: " + ProjectGoldStarsX.username + "\n";
         output += "Location: " + ProjectGoldStarsX.location + "\n";
+        if("1".equals(ProjectGoldStarsX.settingsButtonMainMenuBar))
+        {
+            output += "Settings Button on the Main Menu Bar: On\n";
+        }
+        else
+        {
+            output += "Settings Button on the Main Menu Bar: Off\n";
+        }
         generalSettingsTextArea.setText(output);
         currentSettingsFrame.add(generalSettingsTextArea);
         JTextArea appSettingsTextArea = new JTextArea();

@@ -66,8 +66,8 @@ public class Photos
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(Components.settingsButton("Photos Settings", new ListenersPhotos.PhotosSettingsListener()));
         menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
+        menuBar.add(Components.settingsButton("Photos Settings", new ListenersPhotos.PhotosSettingsListener()));
         setupSearchField();
         menuBar.add(photosSearchTextField);
         menuBar.add(Components.standardButton("Search", new SearchPhotosListener()));

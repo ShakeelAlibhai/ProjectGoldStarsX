@@ -20,6 +20,7 @@ public class Menu
         menu.add(Components.standardMenuItem("Notifications", new ListenersProgramsAction.NotificationsListener()));
         menu.add(Components.standardMenuItem("Settings", new ListenersProgramsAction.SettingsListener()));
         menu.add(new JSeparator());
+        menu.add(Components.standardMenuItem("About", new ListenersProgramsAction.AboutListener()));
         menu.add(Components.standardMenuItem("Exit Project GoldStars X", new ExitListener()));
         return menu;
     }

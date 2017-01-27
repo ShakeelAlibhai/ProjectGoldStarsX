@@ -25,11 +25,7 @@ public class CalcDivide implements ActionListener
         divisionFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         ProjectGoldStarsX.desktop.add(divisionFrame);
         divisionFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        divisionFrame.setJMenuBar(menuBar);
+        divisionFrame.setJMenuBar(menuBar());
         JLabel number1 = new JLabel("Number #1:");
         number1.setForeground(ProjectGoldStarsX.color2);
         number1.setFont(ProjectGoldStarsX.bodyText1);
@@ -104,6 +100,15 @@ public class CalcDivide implements ActionListener
         divisionFrame.add(emptySpace);
         divisionFrame.add(Components.button2("Divide", new DivideListener()));
         divisionFrame.setVisible(true);
+    }
+    
+    private JMenuBar menuBar()
+    {
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.add(Components.closeButton(new CloseListener()));
+        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        return menuBar;
     }
     
     public static class CloseListener implements ActionListener

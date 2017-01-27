@@ -32,7 +32,7 @@ public class Settings
         settingsFrame.add(action("Change Username", new ChangeUsernameListener()));
         settingsFrame.add(new JLabel());
         settingsFrame.add(action("Set Location", new SetLocationListener()));
-        settingsFrame.add(new JLabel());
+        settingsFrame.add(action("Menu Bar Settings", new MenuBarSettingsListener()));
         settingsFrame.add(new JLabel());
         settingsFrame.add(Components.headerLabel("App Settings:"));
         settingsFrame.add(action("Calendar Settings", new CalendarSettingsListener()));
@@ -189,6 +189,38 @@ public class Settings
         public void mousePressed(MouseEvent e)
         {
             SetLocation sl = new SetLocation();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
+    }
+    
+    public static class MenuBarSettingsListener implements MouseListener
+    {
+        public void mousePressed(MouseEvent e)
+        {
+            new MenuBarSettings();
         }
 
         @Override

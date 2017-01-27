@@ -25,39 +25,79 @@ public class CalcMilesPerGallon
         mpgFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         ProjectGoldStarsX.desktop.add(mpgFrame);
         mpgFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        JLabel instructionsLabel = new JLabel("Please enter the following information:");
-        instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
-        instructionsLabel.setForeground(ProjectGoldStarsX.color2);
-        menuBar.add(instructionsLabel);
-        mpgFrame.setJMenuBar(menuBar);
-        JLabel aLabel = new JLabel("Beginning Odometer Reading:");
-        aLabel.setForeground(ProjectGoldStarsX.color2);
-        aLabel.setFont(ProjectGoldStarsX.bodyText1);
-        JLabel bLabel = new JLabel("Ending Odometer Reading");
-        bLabel.setForeground(ProjectGoldStarsX.color2);
-        bLabel.setFont(ProjectGoldStarsX.bodyText1);
-        JLabel cLabel = new JLabel("Gallons of Gas Used:");
-        cLabel.setForeground(ProjectGoldStarsX.color2);
-        cLabel.setFont(ProjectGoldStarsX.bodyText1);
-        mpg1 = new JTextField("0");
-        mpg1.setFont(ProjectGoldStarsX.bodyText2);
-        mpg2 = new JTextField("0");
-        mpg2.setFont(ProjectGoldStarsX.bodyText2);
-        mpg3 = new JTextField("0");
-        mpg3.setFont(ProjectGoldStarsX.bodyText2);
-        mpgFrame.add(aLabel);
+        mpgFrame.setJMenuBar(menuBar());
+        mpgFrame.add(aLabel());
+        setupMPG1();
         mpgFrame.add(mpg1);
-        mpgFrame.add(bLabel);
+        mpgFrame.add(bLabel());
+        setupMPG2();
         mpgFrame.add(mpg2);
-        mpgFrame.add(cLabel);
+        mpgFrame.add(cLabel());
+        setupMPG3();
         mpgFrame.add(mpg3);
         mpgFrame.add(new JLabel());
         mpgFrame.add(Components.button2("Calculate", new CalculateMilesPerGallonListener()));
         mpgFrame.setVisible(true);
+    }
+    
+    private JMenuBar menuBar()
+    {
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.add(Components.closeButton(new CloseListener()));
+        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(instructionsLabel());
+        return menuBar;
+    }
+    
+    private JLabel instructionsLabel()
+    {
+        JLabel instructionsLabel = new JLabel("Please enter the following information:");
+        instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
+        instructionsLabel.setForeground(ProjectGoldStarsX.color2);
+        return instructionsLabel;
+    }
+    
+    private JLabel aLabel()
+    {
+        JLabel aLabel = new JLabel("Beginning Odometer Reading:");
+        aLabel.setForeground(ProjectGoldStarsX.color2);
+        aLabel.setFont(ProjectGoldStarsX.bodyText1);
+        return aLabel;
+    }
+    
+    private void setupMPG1()
+    {
+        mpg1 = new JTextField("0");
+        mpg1.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
+    private JLabel bLabel()
+    {
+        JLabel bLabel = new JLabel("Ending Odometer Reading");
+        bLabel.setForeground(ProjectGoldStarsX.color2);
+        bLabel.setFont(ProjectGoldStarsX.bodyText1);
+        return bLabel;
+    }
+    
+    private void setupMPG2()
+    {
+        mpg2 = new JTextField("0");
+        mpg2.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
+    private JLabel cLabel()
+    {
+        JLabel cLabel = new JLabel("Gallons of Gas Used:");
+        cLabel.setForeground(ProjectGoldStarsX.color2);
+        cLabel.setFont(ProjectGoldStarsX.bodyText1);
+        return cLabel;
+    }
+    
+    private void setupMPG3()
+    {
+        mpg3 = new JTextField("0");
+        mpg3.setFont(ProjectGoldStarsX.bodyText2);
     }
     
     public static class CloseListener implements ActionListener

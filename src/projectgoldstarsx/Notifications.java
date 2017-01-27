@@ -28,7 +28,7 @@ public class Notifications
         Toolkit t = Toolkit.getDefaultToolkit();
         Dimension screenResolution = t.getScreenSize();
         notificationsFrame.setSize(300 * ProjectGoldStarsX.multiplier, screenResolution.height);
-        notificationsFrame.setLayout(new GridLayout(6, 1));
+        notificationsFrame.setLayout(new GridLayout(7, 1));
         notificationsFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         notificationsFrame.setUndecorated(true);
         URL url = getClass().getResource("/images/ProjectGoldStarsXIcon.png");
@@ -41,6 +41,7 @@ public class Notifications
         notificationsFrame.add(photosNotification());
         notificationsFrame.add(errorsNotification());
         notificationsFrame.add(Components.standardButton("System Information", new ListenersProgramsAction.SystemInformationListener()));
+        notificationsFrame.add(Components.settingsButton("Settings", new ListenersProgramsAction.SettingsListener()));
         notificationsFrame.setVisible(true);
     }
     
