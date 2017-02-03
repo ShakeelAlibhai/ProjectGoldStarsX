@@ -507,9 +507,14 @@ public class AboutPrograms
     {
         public void mousePressed(MouseEvent e)
         {
-            output = "Entering a search term into Search will search your saved calendar events,\n"
-                    + "notes, photos, and the Error Log for your search term.\n"
-                    + "You can adjust the case sensitivity of Search in Search Settings.";
+            output = "You can enter a search term into the search box to search for programs and actions,\n"
+                    + "saved calendar events, notes, photos, and the Error Log.\n"
+                    + "If a program or action is found for your search term, then a window or dialog box will be opened\n"
+                    + "that corresponds to that program or action.\n"
+                    + "If no program or action is found, then saved calendar events, notes, photos, and the Error Log will be searched.\n"
+                    + "You can adjust the case sensitivity of Search in Search Settings.\n"
+                    + "Note 1: Not all programs and actions are necessarily accessible by Search.\n"
+                    + "Note 2: Search case sensitivity does not affect Search when searching for programs and/or actions.";
             JOptionPane.showMessageDialog(null, output, "About Search", JOptionPane.INFORMATION_MESSAGE);
         }
 

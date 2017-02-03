@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 1.2.x
+### Version 1.2.1
+* Added the option to search for some programs and actions from the search box. (Note: not all programs and actions are supported yet.)
+
 ### Version 1.2
 * Added the option to add/remove the Settings button from the main menu bar.
 * Added a Settings button in Notifications.

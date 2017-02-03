@@ -21,6 +21,123 @@ public class Search
         {
             lowerCaseSearchTerm = searchTerm.toLowerCase();
         }
+        /*
+        Search programs and actions of Project GoldStars X to see if any match or come close to the search term.
+        If they do, open the window or dialog box for the user to carry out the task.
+        Otherwise, search the Calendar, Notes, Photos, and the Error Log.
+        */
+        String searchTermLowerCase = searchTerm.toLowerCase();  //Is lowercase whether or not the user has Search Case Sensitivity turned on or off;
+                                                                //only used when searching for programs and actions.
+        if(searchTermLowerCase.contains("browser") || searchTermLowerCase.contains("internet"))
+        {
+            new Browser();
+            return;
+        }
+        if(searchTermLowerCase.contains("calendar"))
+        {
+            new CalendarHome();
+            return;
+        }
+        if(searchTermLowerCase.contains("add"))
+        {
+            new CalcAdd();
+            return;
+        }
+        if(searchTermLowerCase.contains("subtract"))
+        {
+            new CalcSubtract();
+            return;
+        }
+        if(searchTermLowerCase.contains("multiply") || searchTermLowerCase.contains("multiplication"))
+        {
+            new CalcMultiply();
+            return;
+        }
+        if(searchTermLowerCase.contains("divide") || searchTermLowerCase.contains("division"))
+        {
+            new CalcDivide();
+            return;
+        }
+        if(searchTermLowerCase.contains("square root"))
+        {
+            new CalcSquareRoot();
+            return;
+        }
+        if(searchTermLowerCase.contains("cube root"))
+        {
+            new CalcCubeRoot();
+            return;
+        }
+        if(searchTermLowerCase.contains("raise a number to a power") || searchTermLowerCase.contains("exponent"))
+        {
+            new CalcExponents();
+            return;
+        }
+        if(searchTermLowerCase.contains("quadratic equation"))
+        {
+            new CalcQuadraticEquation();
+            return;
+        }
+        if(searchTermLowerCase.contains("log base 10") || searchTermLowerCase.contains("log base ten"))
+        {
+            new CalcLogBase10();
+            return;
+        }
+        if(searchTermLowerCase.contains("natural log") || searchTermLowerCase.contains("log base e"))
+        {
+            new CalcNaturalLog();
+            return;
+        }
+        if(searchTermLowerCase.contains("cosine"))
+        {
+            new CalcCosine();
+            return;
+        }
+        if(searchTermLowerCase.contains("sine"))
+        {
+            new CalcSine();
+            return;
+        }
+        if(searchTermLowerCase.contains("tangent"))
+        {
+            new CalcTangent();
+            return;
+        }
+        if(searchTermLowerCase.contains("degrees to radians"))
+        {
+            new CalcDegreesToRadians();
+            return;
+        }
+        if(searchTermLowerCase.contains("radians to degrees"))
+        {
+            new CalcRadiansToDegrees();
+            return;
+        }
+        if(searchTermLowerCase.contains("help"))
+        {
+            new Help();
+            return;
+        }
+        if(searchTermLowerCase.contains("troubleshoot problems"))
+        {
+            new TroubleshootProblems();
+            return;
+        }
+        if(searchTermLowerCase.contains("system information"))
+        {
+            new SystemInformation();
+            return;
+        }
+        if(searchTermLowerCase.contains("about programs"))
+        {
+            new AboutPrograms();
+            return;
+        }
+        if(searchTermLowerCase.contains("about"))
+        {
+            new About();
+            return;
+        }
         //Search Calendar
         for(int i = 0; i < ProjectGoldStarsX.calendarEvents.size(); i++)
         {
