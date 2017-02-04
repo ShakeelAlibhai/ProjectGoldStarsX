@@ -118,7 +118,7 @@ public class ListenersThemes
         }
         String output = "Choice saved.\n"
                 + "You can restart Project GoldStars X to apply the theme now or later.";
-        JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, output, "Change Theme", JOptionPane.INFORMATION_MESSAGE);
     }
     
     public static boolean changeBackgroundColor()
@@ -140,11 +140,11 @@ public class ListenersThemes
         String chooseColorTitle;
         if("1".equals(ProjectGoldStarsX.language))
         {
-            chooseColorTitle = "Choose a Background Color";
+            chooseColorTitle = "Solid Color";
         }
         else
         {
-            chooseColorTitle = "Choose a Background Colour";
+            chooseColorTitle = "Solid Colour";
         }
         String colorChoice = (String)JOptionPane.showInputDialog(null, output, chooseColorTitle, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if(colorChoice == null)

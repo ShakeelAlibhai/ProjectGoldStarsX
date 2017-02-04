@@ -2,6 +2,10 @@
 ### Changelog
 
 ## Version 1.2.x
+### Version 1.2.2
+* Improved the stability of Story windows.
+* Minor changes in the Change Theme window, Solid Color dialog box, and Change Username dialog box.
+
 ### Version 1.2.1
 * Added the option to search for some programs and actions from the search box. (Note: not all programs and actions are supported yet.)
 

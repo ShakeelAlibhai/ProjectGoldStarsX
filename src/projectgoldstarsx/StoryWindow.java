@@ -11,6 +11,8 @@ public class StoryWindow
 {
     public static boolean maximized = false;
     public static int storyType;
+    public static int xCoordinate = 0;
+    public static int yCoordinate = 0;
     public static JInternalFrame storyWindow;
     public static String title;
     public static String col1;
@@ -42,6 +44,7 @@ public class StoryWindow
         storyWindow.setLayout(new GridLayout(1, 2));
         storyWindow.getContentPane().setBackground(ProjectGoldStarsX.color1);
         storyWindow.setJMenuBar(menuBar());
+        storyWindow.setLocation(xCoordinate, yCoordinate);
         storyWindow.add(Components.titleLabel(col1));
         storyWindow.add(col2());
         storyWindow.setVisible(true);
@@ -85,6 +88,8 @@ public class StoryWindow
     {
         public void actionPerformed(ActionEvent e)
         {
+            xCoordinate = storyWindow.getX();
+            yCoordinate = storyWindow.getY();
             storyWindow.dispose();
             new StoryWindow(title, col1, storyType);
         }
@@ -94,6 +99,8 @@ public class StoryWindow
     {
         public void actionPerformed(ActionEvent e)
         {
+            xCoordinate = 0;
+            yCoordinate = 0;
             maximized = false;
             storyWindow.dispose();
         }

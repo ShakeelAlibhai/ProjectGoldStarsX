@@ -20,7 +20,7 @@ public class ChangeTheme
     
     private void changeTheme()
     {
-        themeFrame = new JInternalFrame("Settings");
+        themeFrame = new JInternalFrame("Change Theme");
         ProjectGoldStarsX.desktop.add(themeFrame);
         themeFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         themeFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);

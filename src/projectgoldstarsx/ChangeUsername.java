@@ -17,7 +17,7 @@ public class ChangeUsername
         try
         {
             ProjectGoldStarsX.username = JOptionPane.showInputDialog(null, "Your current username is: " + ProjectGoldStarsX.username + "\n"
-                    + "Please enter your new username:", "Settings", JOptionPane.QUESTION_MESSAGE);
+                    + "Please enter your new username:", "Change Username", JOptionPane.QUESTION_MESSAGE);
             if(ProjectGoldStarsX.username == null)
             {
                 ProjectGoldStarsX.username = oldUsername;
@@ -29,8 +29,8 @@ public class ChangeUsername
                         + "No Username Entered", "Settings", JOptionPane.QUESTION_MESSAGE);
             }
             output = "Congratulations! You have successfully changed your username from " + oldUsername + " to " + ProjectGoldStarsX.username + ".";
-            JOptionPane.showMessageDialog(null, output, "Settings", JOptionPane.INFORMATION_MESSAGE);
-            //Save the username to the user's Snow OS folder.
+            JOptionPane.showMessageDialog(null, output, "Change Username", JOptionPane.INFORMATION_MESSAGE);
+            //Save the username to the user's Project GoldStars X folder.
             PrintWriter out;
             try
             {
