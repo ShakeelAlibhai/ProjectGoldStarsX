@@ -1,6 +1,18 @@
 # Project GoldStars Calculator X
 ### Changelog
 
+## Version 1.3.x
+### Version 1.3
+* Added the ability to resize the Browser window.
+* Added the colors gray, light gray, and pink as options in Light.
+* Made more programs/actions accessible by searching in the search box.
+* Removed System Information and Settings buttons from Notifications.
+* Updated Commands.
+* Updated Stories.
+* Updated Talk.
+* Updated the Clock Menu.
+* Other minor changes.
+
 ## Version 1.2.x
 ### Version 1.2.2
 * Improved the stability of Story windows.

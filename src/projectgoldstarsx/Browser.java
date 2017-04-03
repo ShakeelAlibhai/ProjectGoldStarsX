@@ -43,6 +43,7 @@ public class Browser extends JInternalFrame
         ProjectGoldStarsX.desktop.add(Browser.this);
         setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         setPreferredSize(new Dimension(1100 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier));
+        setResizable(true);
         setTitle("Browser");
         pack();
         loadURL("http://google.com");

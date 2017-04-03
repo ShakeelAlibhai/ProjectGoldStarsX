@@ -105,7 +105,8 @@ public class Commands
                 {
                     new CalcAverage();
                 }
-                else if(input.indexOf("miles per gallon") >= 0)
+                else if(input.indexOf("miles per gallon") >= 0 ||
+                        input.indexOf("mpg calculator") >= 0)
                 {
                     new CalcMilesPerGallon();
                 }
@@ -170,7 +171,8 @@ public class Commands
                         new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
                     }
                 }
-                else if(input.indexOf("stories") >= 0)
+                else if(input.indexOf("stories") >= 0 ||
+                        input.indexOf("story") >= 0)
                 {
                     new StoryWindow("Stories", "Stories", 0);
                 }
@@ -192,19 +194,23 @@ public class Commands
                 }
                 else if(input.indexOf("change language") >= 0)
                 {
-                    ChangeLanguage cl = new ChangeLanguage();
+                    new ChangeLanguage();
                 }
                 else if(input.indexOf("change theme") >= 0)
                 {
-                    ChangeTheme ct = new ChangeTheme();
+                    new ChangeTheme();
                 }
                 else if(input.indexOf("change username") >= 0)
                 {
-                    ChangeUsername cu = new ChangeUsername();
+                    new ChangeUsername();
                 }
                 else if(input.indexOf("set location") >= 0)
                 {
-                    SetLocation sl = new SetLocation();
+                    new SetLocation();
+                }
+                else if(input.indexOf("menu bar settings") >= 0)
+                {
+                    new MenuBarSettings();
                 }
                 else if(input.indexOf("calendar settings") >= 0)
                 {

@@ -31,12 +31,30 @@ public class ListenersLight
         }
     }
     
+    public static class GrayListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Light(Color.gray);
+        }
+    }
+    
     public static class GreenListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
             new Light(Color.green);
+        }
+    }
+    
+    public static class LightGrayListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Light(Color.lightGray);
         }
     }
     
@@ -55,6 +73,15 @@ public class ListenersLight
         public void actionPerformed(ActionEvent e)
         {
             new Light(Color.orange);
+        }
+    }
+    
+    public static class PinkListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Light(Color.pink);
         }
     }
     

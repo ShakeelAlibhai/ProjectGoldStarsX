@@ -89,7 +89,7 @@ public class AboutPrograms
     {
         public void mousePressed(MouseEvent e)
         {
-            String output = "The Browser is a web browser!";
+            String output = "Browser is a web browser!";
             JOptionPane.showMessageDialog(null, output, "About Browser", JOptionPane.INFORMATION_MESSAGE);
         }
 
@@ -204,7 +204,7 @@ public class AboutPrograms
     {
         public void mousePressed(MouseEvent e)
         {
-            output = "This program can save notes that you type.\n"
+            output = "This program can save notes.\n"
                     + "You can create, import, edit, rename, search, and view notes.\n"
                     + "In Notes Settings, you can adjust whether the Notes Search is case sensitive or not.\n"
                     + "Note: The entirety of a saved note might not show in the viewing window.\n"
@@ -547,7 +547,7 @@ public class AboutPrograms
     {
         public void mousePressed(MouseEvent e)
         {
-            String output = "The Error Log is a list of some or all of the errors Snow OS may have encountered since it was last started.";
+            String output = "The Error Log is a list of some or all of the errors Project GoldStars X may have encountered since it was last started.";
             JOptionPane.showMessageDialog(null, output, "About the Error Log", JOptionPane.INFORMATION_MESSAGE);
         }
 

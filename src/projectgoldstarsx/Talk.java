@@ -360,7 +360,8 @@ public class Talk
             new CalcAverage();
             temp = "Anything else?";
         }
-        else if(input.indexOf("miles per gallon") >= 0)
+        else if(input.indexOf("miles per gallon") >= 0 ||
+                input.indexOf("mpg calculator") >= 0)
         {
             new CalcMilesPerGallon();
             temp = "Anything else?";
@@ -451,22 +452,27 @@ public class Talk
         }
         else if(input.indexOf("change language") >= 0)
         {
-            ChangeLanguage cl = new ChangeLanguage();
+            new ChangeLanguage();
             temp = "Anything else?";
         }
         else if(input.indexOf("change theme") >= 0)
         {
-            ChangeTheme ct = new ChangeTheme();
+            new ChangeTheme();
             temp = "Anything else?";
         }
         else if(input.indexOf("change username") >= 0)
         {
-            ChangeUsername cu = new ChangeUsername();
+            new ChangeUsername();
             temp = "Anything else?";
         }
         else if(input.indexOf("set location") >= 0)
         {
-            SetLocation sl = new SetLocation();
+            new SetLocation();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("menu bar settings") >= 0)
+        {
+            new MenuBarSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("calendar settings") >= 0)

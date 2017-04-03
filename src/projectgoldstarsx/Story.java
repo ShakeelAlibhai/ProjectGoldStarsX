@@ -117,10 +117,15 @@ public class Story
         if("forest".equals(setting))
         {
             Double random2 = Math.random();
-            int r2 = (int)(random2 * 2);
+            int r2 = (int)(random2 * 3);
             if(r2 == 0)
             {
                 subject = "owl";
+                gender = 'm';
+            }
+            else if(r2 == 1)
+            {
+                subject = "squirrel";
                 gender = 'm';
             }
             else

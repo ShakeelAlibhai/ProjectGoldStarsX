@@ -113,6 +113,96 @@ public class Search
             new CalcRadiansToDegrees();
             return;
         }
+        if(searchTermLowerCase.contains("average calculator"))
+        {
+            new CalcAverage();
+            return;
+        }
+        if(searchTermLowerCase.contains("miles per gallon") ||
+                searchTermLowerCase.contains("mpg calculator"))
+        {
+            new CalcMilesPerGallon();
+            return;
+        }
+        if(searchTermLowerCase.contains("pythagorean triple"))
+        {
+            new CalcPythagoreanTripleFinder();
+            return;
+        }
+        if(searchTermLowerCase.contains("rectangle information"))
+        {
+            new CalcRectangleInformation();
+            return;
+        }
+        if(searchTermLowerCase.contains("calculator"))
+        {
+            new Calculator();
+            return;
+        }
+        if(searchTermLowerCase.contains("create a note") ||
+                searchTermLowerCase.contains("create note") ||
+                searchTermLowerCase.contains("new note"))
+        {
+            new NotesCreate();
+            return;
+        }
+        if(searchTermLowerCase.contains("edit a note") ||
+                searchTermLowerCase.contains("edit note") ||
+                searchTermLowerCase.contains("modify a note") ||
+                searchTermLowerCase.contains("modify note"))
+        {
+            new NotesEdit();
+            return;
+        }
+        if(searchTermLowerCase.contains("import a note") ||
+                searchTermLowerCase.contains("import note"))
+        {
+            new NotesImport();
+            return;
+        }
+        if(searchTermLowerCase.contains("rename a note") ||
+                searchTermLowerCase.contains("rename note"))
+        {
+            new NotesRename();
+            return;
+        }
+        if(searchTermLowerCase.contains("notes"))
+        {
+            new Notes();
+            return;
+        }
+        if(searchTermLowerCase.contains("import a photo") ||
+                searchTermLowerCase.contains("import photo"))
+        {
+            new PhotosImport();
+            return;
+        }
+        if(searchTermLowerCase.contains("photos"))
+        {
+            new Photos();
+            return;
+        }
+        if(searchTermLowerCase.contains("stories") ||
+                searchTermLowerCase.contains("story"))
+        {
+            new StoryWindow("Stories", "Stories", 0);
+            return;
+        }
+        if(searchTermLowerCase.contains("files"))
+        {
+            new Files();
+            return;
+        }
+        if(searchTermLowerCase.contains("education"))
+        {
+            new Education();
+            return;
+        }
+        if(searchTermLowerCase.contains("light"))
+        {
+            new Light();
+            return;
+        }
         if(searchTermLowerCase.contains("help"))
         {
             new Help();

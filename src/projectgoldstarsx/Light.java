@@ -40,9 +40,12 @@ public class Light
         menuBar.add(Components.standardButton("Blue", new ListenersLight.BlueListener()));
         menuBar.add(Components.standardButton("Cyan", new ListenersLight.CyanListener()));
         menuBar.add(Components.standardButton("Dark Green", new ListenersLight.DarkGreenListener()));
+        menuBar.add(Components.standardButton("Gray", new ListenersLight.GrayListener()));
         menuBar.add(Components.standardButton("Green", new ListenersLight.GreenListener()));
+        menuBar.add(Components.standardButton("Light Gray", new ListenersLight.LightGrayListener()));
         menuBar.add(Components.standardButton("Light Red", new ListenersLight.LightRedListener()));
         menuBar.add(Components.standardButton("Orange", new ListenersLight.OrangeListener()));
+        menuBar.add(Components.standardButton("Pink", new ListenersLight.PinkListener()));
         menuBar.add(Components.standardButton("Red", new ListenersLight.RedListener()));
         menuBar.add(Components.standardButton("Yellow", new ListenersLight.YellowListener()));
         menuBar.add(Components.standardButton("White", new ListenersLight.WhiteListener()));

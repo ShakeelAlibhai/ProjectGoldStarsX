@@ -28,6 +28,8 @@ public class ClockMenu
         clockMenu.add(clockLabel());
         clockMenu.add(new JSeparator());
         clockMenu.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
+        clockMenu.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
+        clockMenu.add(new JSeparator());
         clockMenu.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
         return clockMenu;
     }
