@@ -217,6 +217,12 @@ public class Start
             ProjectGoldStarsX.color2 = Color.lightGray;
             ProjectGoldStarsX.standardColors = false;
         }
+        if("Desert".equals(ProjectGoldStarsX.theme))
+        {
+            ProjectGoldStarsX.color1 = new Color(255, 228, 181);
+            ProjectGoldStarsX.color2 = new Color(255, 69, 0);
+            ProjectGoldStarsX.standardColors = true;
+        }
         if("Fire".equals(ProjectGoldStarsX.theme))
         {
             ProjectGoldStarsX.color1 = Color.red;
@@ -261,8 +267,8 @@ public class Start
         }
         if("Water".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = new Color(0x00, 0x00, 0xC0);
-            ProjectGoldStarsX.color2 = Color.green;
+            ProjectGoldStarsX.color1 = new Color(64, 224, 208);
+            ProjectGoldStarsX.color2 = Color.blue;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Project GoldStars X".equals(ProjectGoldStarsX.theme))
@@ -334,6 +340,10 @@ public class Start
         if("Red".equals(ProjectGoldStarsX.color))
         {
             ProjectGoldStarsX.color1 = Color.red;
+        }
+        if("Turquoise".equals(ProjectGoldStarsX.color))
+        {
+            ProjectGoldStarsX.color1 = new Color(64, 224, 208);
         }
         if("Very Dark Green".equals(ProjectGoldStarsX.color))
         {

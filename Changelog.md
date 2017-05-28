@@ -1,6 +1,18 @@
 # Project GoldStars Calculator X
 ### Changelog
 
+## Version 1.4.x
+### Version 1.4
+* Added a Desert theme.
+* Added turquoise as a background color option.
+* Made more programs/actions accessible by searching in the search box.
+* Updated the interface of the "View Calendar Events Today" section.
+* Updated Commands.
+* Updated Talk.
+* Updated the Disclaimer.
+* Updated the Water theme.
+* Other minor changes.
+
 ## Version 1.3.x
 ### Version 1.3
 * Added the ability to resize the Browser window.

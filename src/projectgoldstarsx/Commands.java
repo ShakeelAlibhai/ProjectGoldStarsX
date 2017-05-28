@@ -30,6 +30,15 @@ public class Commands
                 {
                     Browser b = new Browser();
                 }
+                else if(input.indexOf("calendar events today") >= 0)
+                {
+                    new CalendarViewEventsToday();
+                }
+                else if(input.indexOf("create calendar event") >= 0 ||
+                        input.indexOf("create a calendar event") >= 0)
+                {
+                    new CalendarCreateEvent();
+                }
                 else if(input.indexOf("calendar") >= 0)
                 {
                     new CalendarHome();

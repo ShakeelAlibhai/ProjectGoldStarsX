@@ -268,6 +268,17 @@ public class Talk
             Browser b = new Browser();
             temp = "Anything else?";
         }
+        else if(input.indexOf("calendar events today") >= 0)
+        {
+            new CalendarViewEventsToday();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("create calendar event") >= 0 ||
+                input.indexOf("create a calendar event") >= 0)
+        {
+            new CalendarCreateEvent();
+            temp = "Anything else?";
+        }
         else if(input.indexOf("calendar") >= 0)
         {
             new CalendarHome();

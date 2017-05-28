@@ -16,6 +16,15 @@ public class ListenersThemes
         }
     }
     
+    public static class DesertThemeListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            processThemeChoice("Desert");
+        }
+    }
+    
     public static class FireThemeListener implements ActionListener
     {
         @Override
@@ -126,7 +135,7 @@ public class ListenersThemes
         Object[] options = new Object[]
         {
             "Black", "Blue", "Cyan", "Dark Blue", "Dark Gray", "Dark Green", "Gray", "Green", "Light Gray",
-            "Light Red", "Magenta", "Orange", "Pink", "Red", "Very Dark Green", "Very Dark Blue", "White", "Yellow"
+            "Light Red", "Magenta", "Orange", "Pink", "Red", "Turquoise", "Very Dark Green", "Very Dark Blue", "White", "Yellow"
         };
         String output;
         if("1".equals(ProjectGoldStarsX.language))

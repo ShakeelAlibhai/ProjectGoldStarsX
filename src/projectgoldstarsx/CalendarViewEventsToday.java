@@ -1,22 +1,29 @@
 package projectgoldstarsx;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Calendar;
-import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 public class CalendarViewEventsToday
 {
-    static String output;
-    
     public CalendarViewEventsToday()
     {
         viewCalendarEventsToday();
     }
     
+    static String output;
+    public static JInternalFrame calendarFrame;
+    
     private void viewCalendarEventsToday()
     {
-        JFrame calendarFrame = new JFrame("Calendar Events");
+        calendarFrame = new JInternalFrame("Calendar Events");
+        ProjectGoldStarsX.desktop.add(calendarFrame);
+        calendarFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        calendarFrame.setJMenuBar(menuBar());
         Calendar calendar = Calendar.getInstance();
         //Create an Array List of Strings to store today's calendar events in.
         ArrayList<String> eventsToday = new ArrayList<String>();
@@ -40,12 +47,11 @@ public class CalendarViewEventsToday
         //If there are no calendar events today
         if(eventsToday.isEmpty())
         {
-            output = "You don't have any calendar events today!";
-            JOptionPane.showMessageDialog(null, output, "Calendar Events", JOptionPane.INFORMATION_MESSAGE);
-            return;
+            eventsToday.add("You don't have any calendar events today!");
         }
         //Display today's calendar events.
         calendarFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        calendarFrame.setResizable(true);
         calendarFrame.setLayout(new GridLayout(eventsToday.size(), 1));
         for(int i = 0; i < eventsToday.size(); i++)
         {
@@ -54,5 +60,21 @@ public class CalendarViewEventsToday
             calendarFrame.getContentPane().add(event);
         }
         calendarFrame.setVisible(true);
+    }
+    
+    private JMenuBar menuBar()
+    {
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.add(Components.closeButton(new CloseListener()));
+        return menuBar;
+    }
+    
+    public static class CloseListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            calendarFrame.dispose();
+        }
     }
 }

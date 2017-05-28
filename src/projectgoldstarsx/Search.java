@@ -33,6 +33,17 @@ public class Search
             new Browser();
             return;
         }
+        if(searchTermLowerCase.contains("calendar events today"))
+        {
+            new CalendarViewEventsToday();
+            return;
+        }
+        if(searchTermLowerCase.contains("create calendar event") ||
+                searchTermLowerCase.contains("create a calendar event"))
+        {
+            new CalendarCreateEvent();
+            return;
+        }
         if(searchTermLowerCase.contains("calendar"))
         {
             new CalendarHome();
@@ -182,6 +193,20 @@ public class Search
             new Photos();
             return;
         }
+        if(searchTermLowerCase.contains("talk"))
+        {
+            double r = Math.random();
+            int randomResponse = (int)(r * 2);
+            if(randomResponse == 0)
+            {
+                new Talk("Hello, how are you?");
+            }
+            else
+            {
+                new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+            }
+            return;
+        }
         if(searchTermLowerCase.contains("stories") ||
                 searchTermLowerCase.contains("story"))
         {
@@ -201,6 +226,94 @@ public class Search
         if(searchTermLowerCase.contains("light"))
         {
             new Light();
+            return;
+        }
+        if(searchTermLowerCase.contains("current settings"))
+        {
+            new CurrentSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("change language"))
+        {
+            new ChangeLanguage();
+            return;
+        }
+        if(searchTermLowerCase.contains("change theme"))
+        {
+            new ChangeTheme();
+            return;
+        }
+        if(searchTermLowerCase.contains("change username"))
+        {
+            new ChangeUsername();
+            return;
+        }
+        if(searchTermLowerCase.contains("set location"))
+        {
+            new SetLocation();
+            return;
+        }
+        if(searchTermLowerCase.contains("menu bar settings"))
+        {
+            new MenuBarSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("calendar settings"))
+        {
+            new CalendarSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("notes settings"))
+        {
+            new NotesSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("photos settings"))
+        {
+            new PhotosSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("talk settings"))
+        {
+            new TalkSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("error log search case sensitive") ||
+                searchTermLowerCase.contains("error log settings"))
+        {
+            new ErrorLogSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("search case sensitivie") ||
+                searchTermLowerCase.contains("search settings"))
+        {
+            new SearchSettings();
+            return;
+        }
+        if(searchTermLowerCase.contains("settings"))
+        {
+            new Settings();
+            return;
+        }
+        if(searchTermLowerCase.contains("notifications"))
+        {
+            new Notifications();
+            return;
+        }
+        if(searchTermLowerCase.contains("commands"))
+        {
+            new Commands();
+            return;
+        }
+        if(searchTermLowerCase.contains("search error") ||
+                searchTermLowerCase.contains("search the error log"))
+        {
+            new ErrorLogSearch();
+            return;
+        }
+        if(searchTermLowerCase.contains("error"))
+        {
+            new ErrorLog();
             return;
         }
         if(searchTermLowerCase.contains("help"))

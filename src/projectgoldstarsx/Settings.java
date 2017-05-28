@@ -92,7 +92,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            ChangeLanguage cl = new ChangeLanguage();
+            new ChangeLanguage();
         }
 
         @Override
@@ -124,7 +124,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            ChangeTheme ct = new ChangeTheme();
+            new ChangeTheme();
         }
 
         @Override
@@ -156,7 +156,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            ChangeUsername cu = new ChangeUsername();
+            new ChangeUsername();
         }
 
         @Override
@@ -188,7 +188,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            SetLocation sl = new SetLocation();
+            new SetLocation();
         }
 
         @Override
@@ -252,7 +252,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            CalendarSettings cs = new CalendarSettings();
+            new CalendarSettings();
         }
 
         @Override
@@ -284,7 +284,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            NotesSettings ns = new NotesSettings();
+            new NotesSettings();
         }
 
         @Override
@@ -316,7 +316,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            PhotosSettings ps = new PhotosSettings();
+            new PhotosSettings();
         }
 
         @Override
@@ -348,7 +348,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            TalkSettings ts = new TalkSettings();
+            new TalkSettings();
         }
 
         @Override
@@ -380,7 +380,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            SearchSettings ss = new SearchSettings();
+            new SearchSettings();
         }
 
         @Override
@@ -412,7 +412,7 @@ public class Settings
     {
         public void mousePressed(MouseEvent e)
         {
-            ErrorLogSettings els = new ErrorLogSettings();
+            new ErrorLogSettings();
         }
 
         @Override

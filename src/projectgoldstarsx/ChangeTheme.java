@@ -24,9 +24,10 @@ public class ChangeTheme
         ProjectGoldStarsX.desktop.add(themeFrame);
         themeFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         themeFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
-        themeFrame.setLayout(new GridLayout(10, 1));
+        themeFrame.setLayout(new GridLayout(11, 1));
         themeFrame.setJMenuBar(menuBar());
         themeFrame.add(darkTheme());
+        themeFrame.add(desertTheme());
         themeFrame.add(fireTheme());
         themeFrame.add(forestTheme());
         themeFrame.add(grassTheme());
@@ -64,6 +65,16 @@ public class ChangeTheme
         darkTheme.setBackground(Color.black);
         darkTheme.setForeground(Color.lightGray);
         darkTheme.addActionListener(new ListenersThemes.DarkThemeListener());
+        return darkTheme;
+    }
+    
+    private JButton desertTheme()
+    {
+        JButton darkTheme = new JButton("Desert");
+        darkTheme.setFont(ProjectGoldStarsX.mediumText2);
+        darkTheme.setBackground(new Color(255, 228, 181));
+        darkTheme.setForeground(new Color(255, 69, 0));
+        darkTheme.addActionListener(new ListenersThemes.DesertThemeListener());
         return darkTheme;
     }
     
@@ -131,8 +142,8 @@ public class ChangeTheme
     {
         JButton waterTheme = new JButton("Water");
         waterTheme.setFont(ProjectGoldStarsX.mediumText2);
-        waterTheme.setBackground(new Color(0x00, 0x00, 0xC0));
-        waterTheme.setForeground(Color.green);
+        waterTheme.setBackground(new Color(64, 224, 208));
+        waterTheme.setForeground(Color.blue);
         waterTheme.addActionListener(new ListenersThemes.WaterThemeListener());
         return waterTheme;
     }
