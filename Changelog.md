@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 1.4.x
+### Version 1.4.1
+* Added the color turquoise as an option in Light.
+
 ### Version 1.4
 * Added a Desert theme.
 * Added turquoise as a background color option.
