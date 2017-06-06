@@ -23,8 +23,8 @@ public class ChangeTheme
         themeFrame = new JInternalFrame("Change Theme");
         ProjectGoldStarsX.desktop.add(themeFrame);
         themeFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        themeFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
-        themeFrame.setLayout(new GridLayout(11, 1));
+        themeFrame.setSize(900 * ProjectGoldStarsX.multiplier, 500 * ProjectGoldStarsX.multiplier);
+        themeFrame.setLayout(new GridLayout(12, 1));
         themeFrame.setJMenuBar(menuBar());
         themeFrame.add(darkTheme());
         themeFrame.add(desertTheme());
@@ -32,6 +32,7 @@ public class ChangeTheme
         themeFrame.add(forestTheme());
         themeFrame.add(grassTheme());
         themeFrame.add(mountainTheme());
+        themeFrame.add(silverTheme());
         themeFrame.add(skyTheme());
         themeFrame.add(snowTheme());
         themeFrame.add(waterTheme());
@@ -116,6 +117,16 @@ public class ChangeTheme
         mountainTheme.setForeground(Color.white);
         mountainTheme.addActionListener(new ListenersThemes.MountainThemeListener());
         return mountainTheme;
+    }
+    
+    private JButton silverTheme()
+    {
+        JButton skyTheme = new JButton("Silver");
+        skyTheme.setFont(ProjectGoldStarsX.mediumText2);
+        skyTheme.setBackground(Color.lightGray);
+        skyTheme.setForeground(Color.darkGray);
+        skyTheme.addActionListener(new ListenersThemes.SilverThemeListener());
+        return skyTheme;
     }
     
     private JButton skyTheme()

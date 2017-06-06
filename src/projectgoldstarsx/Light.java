@@ -48,8 +48,8 @@ public class Light
         menuBar.add(Components.standardButton("Pink", new ListenersLight.PinkListener()));
         menuBar.add(Components.standardButton("Red", new ListenersLight.RedListener()));
         menuBar.add(Components.standardButton("Turquoise", new ListenersLight.TurquoiseListener()));
-        menuBar.add(Components.standardButton("Yellow", new ListenersLight.YellowListener()));
         menuBar.add(Components.standardButton("White", new ListenersLight.WhiteListener()));
+        menuBar.add(Components.standardButton("Yellow", new ListenersLight.YellowListener()));
         return menuBar;
     }
     

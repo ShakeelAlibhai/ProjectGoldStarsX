@@ -1,5 +1,14 @@
-# Project GoldStars Calculator X
+# Project GoldStars X
 ### Changelog
+
+## Version 1.5.x
+### Version 1.5
+* Added a Silver theme.
+* Reorganized the Menu.
+* Switched the Yellow and White buttons on the menu bar in Light.
+* Updated Stories.
+* Updated the interface of the Disclaimer.
+* Other minor changes.
 
 ## Version 1.4.x
 ### Version 1.4.1

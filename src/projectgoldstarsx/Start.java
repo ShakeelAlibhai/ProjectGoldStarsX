@@ -253,6 +253,12 @@ public class Start
             ProjectGoldStarsX.color2 = Color.lightGray;
             ProjectGoldStarsX.standardColors = false;
         }
+        if("Silver".equals(ProjectGoldStarsX.theme))
+        {
+            ProjectGoldStarsX.color1 = Color.lightGray;
+            ProjectGoldStarsX.color2 = Color.darkGray;
+            ProjectGoldStarsX.standardColors = true;
+        }
         if("Sky".equals(ProjectGoldStarsX.theme))
         {
             ProjectGoldStarsX.color1 = Color.white;

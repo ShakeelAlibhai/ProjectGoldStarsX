@@ -1,14 +1,7 @@
 package projectgoldstarsx;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JTextArea;
 public class CurrentSettings
 {
-    public static JInternalFrame currentSettingsFrame;
-    
     public CurrentSettings()
     {
         currentSettings();
@@ -16,15 +9,9 @@ public class CurrentSettings
     
     private void currentSettings()
     {
-        currentSettingsFrame = new JInternalFrame("Current Settings");
-        ProjectGoldStarsX.desktop.add(currentSettingsFrame);
-        currentSettingsFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        InformationWindow currentSettingsFrame = new InformationWindow("Current Settings");
         currentSettingsFrame.setLayout(new GridLayout(1, 2));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        currentSettingsFrame.setJMenuBar(menuBar());
-        JTextArea generalSettingsTextArea = new JTextArea();
-        generalSettingsTextArea.setEditable(false);
-        generalSettingsTextArea.setFont(ProjectGoldStarsX.bodyText1);
         String output;
         if("1".equals(ProjectGoldStarsX.language))
         {
@@ -45,10 +32,7 @@ public class CurrentSettings
         {
             output += "Settings Button on the Main Menu Bar: Off\n";
         }
-        generalSettingsTextArea.setText(output);
-        currentSettingsFrame.add(generalSettingsTextArea);
-        JTextArea appSettingsTextArea = new JTextArea();
-        appSettingsTextArea.setFont(ProjectGoldStarsX.bodyText1);
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         output = "Calendar Format: " + ProjectGoldStarsX.calendarFormat + "\n";
         if(ProjectGoldStarsX.notesSearchCaseSensitive)
         {
@@ -99,33 +83,7 @@ public class CurrentSettings
         {
             output += "Error Log Search Case Sensitive: Off";
         }
-        appSettingsTextArea.setText(output);
-        currentSettingsFrame.add(appSettingsTextArea);
-        currentSettingsFrame.setVisible(true);
-    }
-    
-    private JMenuBar menuBar()
-    {
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        return menuBar;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            currentSettingsFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(currentSettingsFrame);
-        }
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
     }
 }

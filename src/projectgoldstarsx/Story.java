@@ -102,36 +102,51 @@ public class Story
                 "palace".equals(setting))
         {
             Double random2 = Math.random();
-            int r2 = (int)(random2 * 2);
+            int r2 = (int)(random2 * 4);
             if(r2 == 0)
             {
                 subject = "king";
                 gender = 'm';
             }
-            else
+            else if(r2 == 1)
             {
                 subject = "queen";
+                gender = 'f';
+            }
+            else if(r2 == 2)
+            {
+                subject = "prince";
+                gender = 'm';
+            }
+            else
+            {
+                subject = "princess";
                 gender = 'f';
             }
         }
         if("forest".equals(setting))
         {
             Double random2 = Math.random();
-            int r2 = (int)(random2 * 3);
+            int r2 = (int)(random2 * 4);
             if(r2 == 0)
             {
                 subject = "owl";
-                gender = 'm';
+                gender = randomGender();
             }
             else if(r2 == 1)
             {
                 subject = "squirrel";
-                gender = 'm';
+                gender = randomGender();
+            }
+            else if(r2 == 2)
+            {
+                subject = "bear";
+                gender = randomGender();
             }
             else
             {
-                subject = "bear";
-                gender = 'm';
+                subject = "fox";
+                gender = randomGender();
             }
         }
         String secondPhrase = new String();
@@ -881,5 +896,19 @@ public class Story
     public String getStory()
     {
         return story;
+    }
+    
+    private char randomGender()
+    {
+        Double random = Math.random();
+        int r = (int)(random * 2);
+        if(r == 0)
+        {
+            return 'm';
+        }
+        else
+        {
+            return 'f';
+        }
     }
 }

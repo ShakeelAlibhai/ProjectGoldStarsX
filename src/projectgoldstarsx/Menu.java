@@ -16,11 +16,12 @@ public class Menu
         menu.add(new JSeparator());
         menu.add(actionsMenu());
         menu.add(allProgramsMenu());
-        menu.add(Components.standardMenuItem("Files", new ListenersProgramsAction.FilesListener()));
+        menu.add(new JSeparator());
+        menu.add(Components.standardMenuItem("About", new ListenersProgramsAction.AboutListener()));
+        menu.add(Components.standardMenuItem("Help", new ListenersProgramsAction.HelpListener()));
         menu.add(Components.standardMenuItem("Notifications", new ListenersProgramsAction.NotificationsListener()));
         menu.add(Components.standardMenuItem("Settings", new ListenersProgramsAction.SettingsListener()));
         menu.add(new JSeparator());
-        menu.add(Components.standardMenuItem("About", new ListenersProgramsAction.AboutListener()));
         menu.add(Components.standardMenuItem("Exit Project GoldStars X", new ExitListener()));
         return menu;
     }

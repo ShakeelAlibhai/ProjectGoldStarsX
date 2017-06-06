@@ -61,6 +61,15 @@ public class ListenersThemes
         }
     }
     
+    public static class SilverThemeListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            processThemeChoice("Silver");
+        }
+    }
+    
     public static class SkyThemeListener implements ActionListener
     {
         @Override
