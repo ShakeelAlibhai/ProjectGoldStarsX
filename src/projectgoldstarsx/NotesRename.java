@@ -55,8 +55,8 @@ public class NotesRename
 
             }
             JOptionPane.showMessageDialog(null, "Note Saved", "Notes", JOptionPane.INFORMATION_MESSAGE);
-            Notes.viewNotesFrame.dispose();
-            Notes n = new Notes();
+            Notes.viewNotesFrame.close();
+            new Notes();
         }
     }
 }

@@ -1,14 +1,13 @@
 package projectgoldstarsx;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-public class ListenersCalculatorMouse
+public class ListenersSettings
 {
-    public static class AddListener implements MouseListener
+    public static class ChangeLanguageListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcAdd ca = new CalcAdd();
+            new ChangeLanguage();
         }
 
         @Override
@@ -36,12 +35,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class SubtractListener implements MouseListener
+    public static class ChangeThemeListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcSubtract cs = new CalcSubtract();
+            new ChangeTheme();
         }
 
         @Override
@@ -69,12 +67,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class MultiplyListener implements MouseListener
+    public static class ChangeUsernameListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcMultiply cm = new CalcMultiply();
+            new ChangeUsername();
         }
 
         @Override
@@ -102,12 +99,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class DivideListener implements MouseListener
+    public static class SetLocationListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcDivide cd = new CalcDivide();
+            new SetLocation();
         }
 
         @Override
@@ -135,12 +131,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class SquareRootListener implements MouseListener
+    public static class MenuBarSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcSquareRoot csr = new CalcSquareRoot();
+            new MenuBarSettings();
         }
 
         @Override
@@ -168,12 +163,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class CubeRootListener implements MouseListener
+    public static class CalendarSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcCubeRoot ccr = new CalcCubeRoot();
+            new CalendarSettings();
         }
 
         @Override
@@ -201,12 +195,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class ExponentsListener implements MouseListener
+    public static class NotesSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcExponents ce = new CalcExponents();
+            new NotesSettings();
         }
 
         @Override
@@ -234,12 +227,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class QuadraticEquationListener implements MouseListener
+    public static class PhotosSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcQuadraticEquation cqe = new CalcQuadraticEquation();
+            new PhotosSettings();
         }
 
         @Override
@@ -267,12 +259,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class LogBase10Listener implements MouseListener
+    public static class TalkSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcLogBase10 clb10 = new CalcLogBase10();
+            new TalkSettings();
         }
 
         @Override
@@ -300,12 +291,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class NaturalLogListener implements MouseListener
+    public static class SearchSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcNaturalLog cnl = new CalcNaturalLog();
+            new SearchSettings();
         }
 
         @Override
@@ -333,144 +323,11 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class CirclesListener implements MouseListener
+    public static class ErrorLogSettingsListener implements MouseListener
     {
-        @Override
         public void mousePressed(MouseEvent e)
         {
-            new CalcCircles();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class RectanglesListener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            new CalcRectangles();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class SineListener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            CalcSine cs = new CalcSine();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class CosineListener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            CalcCosine cc = new CalcCosine();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class TangentListener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            CalcTangent ct = new CalcTangent();
+            new ErrorLogSettings();
         }
 
         @Override

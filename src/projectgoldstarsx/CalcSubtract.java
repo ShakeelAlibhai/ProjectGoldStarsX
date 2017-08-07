@@ -2,14 +2,12 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class CalcSubtract implements ActionListener
 {
-    public static JInternalFrame subtractionFrame;
+    public static ProgramWindow subtractionFrame;
     public static JTextField tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10;
     
     public CalcSubtract()
@@ -19,13 +17,10 @@ public class CalcSubtract implements ActionListener
     
     private void subtract()
     {
-        subtractionFrame = new JInternalFrame("Subtraction");
-        subtractionFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        subtractionFrame = new ProgramWindow("Subtraction");
         subtractionFrame.setLayout(new GridLayout(11, 2));
         subtractionFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.desktop.add(subtractionFrame);
-        subtractionFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        subtractionFrame.setJMenuBar(menuBar());
+        subtractionFrame.setStandardMenuBar();
         JLabel number1 = new JLabel("Number #1:");
         number1.setForeground(ProjectGoldStarsX.color2);
         number1.setFont(ProjectGoldStarsX.bodyText1);
@@ -56,7 +51,6 @@ public class CalcSubtract implements ActionListener
         JLabel number10 = new JLabel("Number #10:");
         number10.setForeground(ProjectGoldStarsX.color2);
         number10.setFont(ProjectGoldStarsX.bodyText1);
-        JLabel emptySpace = new JLabel("");
         tf1 = new JTextField("0");
         tf1.setFont(ProjectGoldStarsX.bodyText2);
         tf2 = new JTextField("0");
@@ -97,34 +91,9 @@ public class CalcSubtract implements ActionListener
         subtractionFrame.add(tf9);
         subtractionFrame.add(number10);
         subtractionFrame.add(tf10);
-        subtractionFrame.add(emptySpace);
+        subtractionFrame.add(new JLabel());
         subtractionFrame.add(Components.button2("Subtract", new SubtractListener()));
-        subtractionFrame.setVisible(true);
-    }
-    
-    private JMenuBar menuBar()
-    {
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        return menuBar;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            subtractionFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(subtractionFrame);
-        }
+        subtractionFrame.makeVisible();
     }
     
     private class SubtractListener implements ActionListener

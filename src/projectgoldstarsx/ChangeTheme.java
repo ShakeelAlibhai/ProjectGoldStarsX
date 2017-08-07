@@ -1,17 +1,11 @@
 package projectgoldstarsx;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 public class ChangeTheme
 {
     public static boolean continueColorChange = true;
-    public static String output;
-    public static JInternalFrame themeFrame;
+    public static ProgramWindow themeFrame;
     
     public ChangeTheme()
     {
@@ -20,12 +14,10 @@ public class ChangeTheme
     
     private void changeTheme()
     {
-        themeFrame = new JInternalFrame("Change Theme");
-        ProjectGoldStarsX.desktop.add(themeFrame);
-        themeFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        themeFrame = new ProgramWindow("Change Theme");
         themeFrame.setSize(900 * ProjectGoldStarsX.multiplier, 500 * ProjectGoldStarsX.multiplier);
         themeFrame.setLayout(new GridLayout(12, 1));
-        themeFrame.setJMenuBar(menuBar());
+        themeFrame.setInstructionsMenuBar("Please choose a theme:");
         themeFrame.add(darkTheme());
         themeFrame.add(desertTheme());
         themeFrame.add(fireTheme());
@@ -38,25 +30,7 @@ public class ChangeTheme
         themeFrame.add(waterTheme());
         themeFrame.add(projectGoldStarsXTheme());
         themeFrame.add(solidColor());
-        themeFrame.setVisible(true);
-    }
-    
-    private JMenuBar menuBar()
-    {
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(instructionsLabel());
-        return menuBar;
-    }
-    
-    private JLabel instructionsLabel()
-    {
-        JLabel instructionsLabel = new JLabel("Please choose a theme:");
-        instructionsLabel.setForeground(ProjectGoldStarsX.color2);
-        instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
-        return instructionsLabel;
+        themeFrame.makeVisible();
     }
     
     private JButton darkTheme()
@@ -185,21 +159,5 @@ public class ChangeTheme
         solidColor.setForeground(Color.black);
         solidColor.addActionListener(new ListenersThemes.SolidColorListener());
         return solidColor;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            themeFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(themeFrame);
-        }
     }
 }

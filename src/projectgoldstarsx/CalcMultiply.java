@@ -2,14 +2,13 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class CalcMultiply implements ActionListener
 {
-    public static JInternalFrame multiplicationFrame;
+    public static ProgramWindow multiplicationFrame;
     public static JTextField tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10;
     
     public CalcMultiply()
@@ -19,12 +18,9 @@ public class CalcMultiply implements ActionListener
     
     private void multiply()
     {
-        multiplicationFrame = new JInternalFrame("Multiplication");
-        multiplicationFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        multiplicationFrame = new ProgramWindow("Multiplication");
         multiplicationFrame.setLayout(new GridLayout(11, 2));
         multiplicationFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.desktop.add(multiplicationFrame);
-        multiplicationFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         multiplicationFrame.setJMenuBar(menuBar());
         JLabel number1 = new JLabel("Number #1:");
         number1.setForeground(ProjectGoldStarsX.color2);
@@ -56,7 +52,6 @@ public class CalcMultiply implements ActionListener
         JLabel number10 = new JLabel("Number #10:");
         number10.setForeground(ProjectGoldStarsX.color2);
         number10.setFont(ProjectGoldStarsX.bodyText1);
-        JLabel emptySpace = new JLabel("");
         tf1 = new JTextField("1");
         tf1.setFont(ProjectGoldStarsX.bodyText2);
         tf2 = new JTextField("1");
@@ -97,34 +92,20 @@ public class CalcMultiply implements ActionListener
         multiplicationFrame.add(tf9);
         multiplicationFrame.add(number10);
         multiplicationFrame.add(tf10);
-        multiplicationFrame.add(emptySpace);
+        multiplicationFrame.add(new JLabel());
         multiplicationFrame.add(Components.button2("Multiply", new MultiplyListener()));
-        multiplicationFrame.setVisible(true);
+        multiplicationFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(multiplicationFrame.getCloseButton());
+        menuBar.add(multiplicationFrame.getMaximizeButton());
+        menuBar.add(multiplicationFrame.getWindowMenu());
+        menuBar.add(Components.standardButton("Multiply More Than 10 Numbers", new MultiplyMoreThan10NumbersListener()));
         return menuBar;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            multiplicationFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(multiplicationFrame);
-        }
     }
     
     private class MultiplyListener implements ActionListener
@@ -161,6 +142,51 @@ public class CalcMultiply implements ActionListener
                 sum *= nums[i];
             }
             JOptionPane.showMessageDialog(null, sum, "Multiplication", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    private class MultiplyMoreThan10NumbersListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String output;
+            boolean continuePrompt = true;
+            boolean firstPrompt = true;
+            double product = 1.0;
+            double previousNumber = 0.0;
+            double previousProduct = 1.0;
+            while(continuePrompt)
+            {
+                String displayText;
+                if(firstPrompt)
+                {
+                    displayText = "Please enter the first number:";
+                }
+                else
+                {
+                    displayText = previousProduct + " * " + previousNumber + " = " + product + "\n"
+                            + "Please enter the number to multiply to " + product + ".";
+                }
+                firstPrompt = false;
+                output = JOptionPane.showInputDialog(null, displayText, "Multiplication", JOptionPane.QUESTION_MESSAGE);
+                if(output == null || output.equals("x") || output.equals("X"))
+                {
+                    return;
+                }
+                double input;
+                try
+                {
+                    input = Double.parseDouble(output);
+                }
+                catch(Exception error)
+                {
+                    JOptionPane.showMessageDialog(null, "ERROR", "Multiplication", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                previousProduct = product;
+                previousNumber = input;
+                product *= input;
+            }
         }
     }
     

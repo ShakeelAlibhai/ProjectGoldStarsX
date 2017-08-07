@@ -125,7 +125,7 @@ public class Commands
                 }
                 else if(input.indexOf("rectangle information") >= 0)
                 {
-                    new CalcRectangleInformation();
+                    new CalcRectangles();
                 }
                 else if(input.indexOf("calculator") >= 0)
                 {
@@ -253,36 +253,32 @@ public class Commands
                 }
                 else if(input.indexOf("notifications") >= 0)
                 {
-                    Notifications n = new Notifications();
+                    new Notifications();
                 }
                 else if(input.indexOf("search error") >= 0 ||
                         input.indexOf("search the error log") >= 0)
                 {
-                    ErrorLogSearch els = new ErrorLogSearch();
+                    new ErrorLogSearch();
                 }
                 else if(input.indexOf("error") >= 0)
                 {
-                    ErrorLog el = new ErrorLog();
+                    new ErrorLog();
                 }
                 else if(input.indexOf("help") >= 0)
                 {
-                    Help h = new Help();
+                    new Help();
                 }
                 else if(input.indexOf("troubleshoot problems") >= 0)
                 {
-                    TroubleshootProblems tp = new TroubleshootProblems();
-                }
-                else if(input.indexOf("system information") >= 0)
-                {
-                    SystemInformation si = new SystemInformation();
+                    new TroubleshootProblems();
                 }
                 else if(input.indexOf("about programs") >= 0)
                 {
-                    AboutPrograms ap = new AboutPrograms();
+                    new AboutPrograms();
                 }
                 else if(input.indexOf("about") >= 0)
                 {
-                    About a = new About();
+                    new About();
                 }
                 else
                 {

@@ -8,7 +8,7 @@ public class ListenersNotes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            NotesCreate cn = new NotesCreate();
+            new NotesCreate();
         }
     }
     
@@ -17,7 +17,7 @@ public class ListenersNotes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            NotesEdit en = new NotesEdit();
+            new NotesEdit();
         }
     }
     
@@ -26,7 +26,7 @@ public class ListenersNotes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            NotesImport in = new NotesImport();
+            new NotesImport();
         }
     }
     
@@ -35,7 +35,7 @@ public class ListenersNotes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            NotesRename rn = new NotesRename();
+            new NotesRename();
         }
     }
     
@@ -44,7 +44,16 @@ public class ListenersNotes
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            NotesSettings ns = new NotesSettings();
+            new NotesSettings();
+        }
+    }
+    
+    public static class AboutNotesListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutNotes();
         }
     }
 }

@@ -8,14 +8,11 @@ public class Menu
 {
     public static JMenu menu()
     {
-        JMenu menu = new JMenu("Menu");
-        menu.setBackground(ProjectGoldStarsX.color1);
-        menu.setForeground(ProjectGoldStarsX.color2);
-        menu.setFont(ProjectGoldStarsX.mediumText1);
+        StandardMenu menu = new StandardMenu("Menu");
         menu.add(menuWelcome());
         menu.add(new JSeparator());
         menu.add(actionsMenu());
-        menu.add(allProgramsMenu());
+        menu.add(programsMenu());
         menu.add(new JSeparator());
         menu.add(Components.standardMenuItem("About", new ListenersProgramsAction.AboutListener()));
         menu.add(Components.standardMenuItem("Help", new ListenersProgramsAction.HelpListener()));
@@ -23,7 +20,7 @@ public class Menu
         menu.add(Components.standardMenuItem("Settings", new ListenersProgramsAction.SettingsListener()));
         menu.add(new JSeparator());
         menu.add(Components.standardMenuItem("Exit Project GoldStars X", new ExitListener()));
-        return menu;
+        return menu.getMenu();
     }
     
     private static JLabel menuWelcome()
@@ -82,6 +79,7 @@ public class Menu
         calculatorActions.setFont(ProjectGoldStarsX.mediumText3);
         calculatorActions.add(calculatorActionsBasicCalculations());
         calculatorActions.add(calculatorActionsComplexCalculations());
+        calculatorActions.add(calculatorActionsGeometry());
         calculatorActions.add(calculatorActionsTrigonometry());
         calculatorActions.add(calculatorActionsConversions());
         calculatorActions.add(calculatorActionsOtherCalculators());
@@ -112,6 +110,15 @@ public class Menu
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Log Base 10", new ListenersCalculatorAction.LogBase10Listener()));
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Natural Log", new ListenersCalculatorAction.NaturalLogListener()));
         return calculatorActionsComplexCalculations;
+    }
+    
+    private static JMenu calculatorActionsGeometry()
+    {
+        JMenu calculatorActionsGeometry = new JMenu("Geometry");
+        calculatorActionsGeometry.setFont(ProjectGoldStarsX.mediumText3);
+        calculatorActionsGeometry.add(Components.standardMenuItem("Circles", new ListenersCalculatorAction.CirclesListener()));
+        calculatorActionsGeometry.add(Components.standardMenuItem("Rectangles", new ListenersCalculatorAction.RectanglesListener()));
+        return calculatorActionsGeometry;
     }
     
     private static JMenu calculatorActionsTrigonometry()
@@ -226,7 +233,6 @@ public class Menu
         calculatorActionsOtherCalculators.add(Components.standardMenuItem("Average Calculator", new ListenersCalculatorAction.AverageCalculatorListener()));
         calculatorActionsOtherCalculators.add(Components.standardMenuItem("Miles Per Gallon Calculator", new ListenersCalculatorAction.MilesPerGallonCalculatorListener()));
         calculatorActionsOtherCalculators.add(Components.standardMenuItem("Pythagorean Triple Finder", new ListenersCalculatorAction.PythagoreanTripleFinderListener()));
-        calculatorActionsOtherCalculators.add(Components.standardMenuItem("Rectangle Information Calculator", new ListenersCalculatorAction.RectangleInformationCalculatorListener()));
         return calculatorActionsOtherCalculators;
     }
     
@@ -296,11 +302,10 @@ public class Menu
         return educationActionsMath;
     }
     
-    private static JMenu allProgramsMenu()
+    private static JMenu programsMenu()
     {
-        JMenu allProgramsMenu = new JMenu("All Programs");
+        JMenu allProgramsMenu = new JMenu("Programs");
         allProgramsMenu.setFont(ProjectGoldStarsX.mediumText3);
-        allProgramsMenu.add(Components.standardMenuItem("About", new ListenersProgramsAction.AboutListener()));
         allProgramsMenu.add(Components.standardMenuItem("Browser", new ListenersProgramsAction.BrowserListener()));
         allProgramsMenu.add(Components.standardMenuItem("Calculator", new ListenersProgramsAction.CalculatorListener()));
         allProgramsMenu.add(Components.standardMenuItem("Calendar", new ListenersProgramsAction.CalendarListener()));
@@ -309,13 +314,10 @@ public class Menu
         allProgramsMenu.add(Components.standardMenuItem("Error Log", new ListenersProgramsAction.ErrorLogListener()));
         allProgramsMenu.add(Components.standardMenuItem("Error Log Search", new ListenersProgramsAction.ErrorLogSearchListener()));
         allProgramsMenu.add(Components.standardMenuItem("Files", new ListenersProgramsAction.FilesListener()));
-        allProgramsMenu.add(Components.standardMenuItem("Help", new ListenersProgramsAction.HelpListener()));
         allProgramsMenu.add(Components.standardMenuItem("Light", new ListenersProgramsAction.LightListener()));
         allProgramsMenu.add(Components.standardMenuItem("Notes", new ListenersProgramsAction.NotesListener()));
         allProgramsMenu.add(Components.standardMenuItem("Photos", new ListenersProgramsAction.PhotosListener()));
-        allProgramsMenu.add(Components.standardMenuItem("Settings", new ListenersProgramsAction.SettingsListener()));
         allProgramsMenu.add(Components.standardMenuItem("Stories", new ListenersProgramsAction.StoriesListener()));
-        allProgramsMenu.add(Components.standardMenuItem("System Information", new ListenersProgramsAction.SystemInformationListener()));
         allProgramsMenu.add(Components.standardMenuItem("Talk", new ListenersProgramsAction.TalkListener()));
         return allProgramsMenu;
     }

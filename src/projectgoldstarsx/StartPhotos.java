@@ -8,7 +8,6 @@ public class StartPhotos
     public StartPhotos()
     {
         getPhotos();
-        getPasswordProtectedPhotosSetting();
         getPhotosSearchCaseSensitivitySetting();
     }
     
@@ -26,45 +25,6 @@ public class StartPhotos
             catch(FileNotFoundException e)
             {
                 photoNum = -1;
-            }
-        }
-    }
-    
-    /*
-     * Attempt to import the saved choice of whether the password protection of photos is turned on or off from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will turn off password protected photos and save this to the Project GoldStars X folder.
-     */
-    private static void getPasswordProtectedPhotosSetting()
-    {
-        File pppTemp = new File(ProjectGoldStarsX.photosFolder, "passwordProtectedPhotos.txt");
-        try
-        {
-            Scanner s7 = new Scanner(pppTemp).useDelimiter("\\Z");
-            String temp = s7.next();
-            s7.close();
-            if("1".equals(temp))
-            {
-                ProjectGoldStarsX.passwordProtectedPhotos = true;
-            }
-            else
-            {
-                ProjectGoldStarsX.passwordProtectedPhotos = false;
-            }
-        }
-        catch(FileNotFoundException e)
-        {
-            File file = new File(ProjectGoldStarsX.photosFolder, "passwordProtectedPhotos.txt");
-            ProjectGoldStarsX.passwordProtectedPhotos = false;
-            PrintWriter out;
-            try
-            {
-                out = new PrintWriter(file);
-                out.println("0");
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
             }
         }
     }

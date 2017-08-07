@@ -69,8 +69,8 @@ public class NotesImport
             {
                 
             }
-            Notes.viewNotesFrame.dispose();
-            Notes n = new Notes();
+            Notes.viewNotesFrame.close();
+            new Notes();
         }
     }
 }

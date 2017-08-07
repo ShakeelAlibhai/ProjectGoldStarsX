@@ -2,14 +2,13 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class CalcAdd implements ActionListener
 {
-    public static JInternalFrame additionFrame;
+    public static ProgramWindow additionFrame;
     public static JTextField tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10;
     
     public CalcAdd()
@@ -19,12 +18,9 @@ public class CalcAdd implements ActionListener
     
     private void add()
     {
-        additionFrame = new JInternalFrame("Addition");
-        additionFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        additionFrame = new ProgramWindow("Addition");
         additionFrame.setLayout(new GridLayout(11, 2));
         additionFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.desktop.add(additionFrame);
-        additionFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         additionFrame.setJMenuBar(menuBar());
         JLabel number1 = new JLabel("Number #1:");
         number1.setForeground(ProjectGoldStarsX.color2);
@@ -56,7 +52,6 @@ public class CalcAdd implements ActionListener
         JLabel number10 = new JLabel("Number #10:");
         number10.setForeground(ProjectGoldStarsX.color2);
         number10.setFont(ProjectGoldStarsX.bodyText1);
-        JLabel emptySpace = new JLabel("");
         tf1 = new JTextField("0");
         tf1.setFont(ProjectGoldStarsX.bodyText2);
         tf2 = new JTextField("0");
@@ -97,34 +92,20 @@ public class CalcAdd implements ActionListener
         additionFrame.add(tf9);
         additionFrame.add(number10);
         additionFrame.add(tf10);
-        additionFrame.add(emptySpace);
+        additionFrame.add(new JLabel());
         additionFrame.add(Components.button2("Add", new AddListener()));
-        additionFrame.setVisible(true);
+        additionFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(additionFrame.getCloseButton());
+        menuBar.add(additionFrame.getMaximizeButton());
+        menuBar.add(additionFrame.getWindowMenu());
+        menuBar.add(Components.standardButton("Add More Than 10 Numbers", new AddMoreThan10NumbersListener()));
         return menuBar;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            additionFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(additionFrame);
-        }
     }
     
     private class AddListener implements ActionListener
@@ -161,6 +142,52 @@ public class CalcAdd implements ActionListener
                 sum += nums[i];
             }
             JOptionPane.showMessageDialog(null, sum, "Addition", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    private class AddMoreThan10NumbersListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String output;
+            boolean continuePrompt = true;
+            boolean firstPrompt = true;
+            double sum = 0.0;
+            double previousNumber = 0.0;
+            double previousSum = 0.0;
+            while(continuePrompt)
+            {
+                String displayText;
+                if(firstPrompt)
+                {
+                    displayText = "Please enter the first number:";
+                }
+                else
+                {
+                    displayText = previousSum + " + " + previousNumber + " = " + sum + "\n"
+                            + "Please enter the number to add to " + sum + ".";
+                }
+                firstPrompt = false;
+                output = JOptionPane.showInputDialog(null, displayText, "Addition", JOptionPane.QUESTION_MESSAGE);
+                if(output == null)
+                {
+                    return;
+                }
+                double input;
+                try
+                {
+                    input = Double.parseDouble(output);
+                }
+                catch(Exception error)
+                {
+                    ProjectGoldStarsX.errors.add("Error: Calculator");
+                    JOptionPane.showMessageDialog(null, "ERROR", "Addition", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                previousSum = sum;
+                previousNumber = input;
+                sum += input;
+            }
         }
     }
     

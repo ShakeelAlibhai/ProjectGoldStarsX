@@ -2,14 +2,13 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 public class About
 {
-    public static JInternalFrame aboutFrame;
+    public static ProgramWindow aboutFrame;
     
     public About()
     {
@@ -18,28 +17,25 @@ public class About
     
     private void about()
     {
-        aboutFrame = new JInternalFrame("About");
-        ProjectGoldStarsX.desktop.add(aboutFrame);
-        aboutFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        aboutFrame = new ProgramWindow("About");
         aboutFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        aboutFrame.setLayout(new GridLayout(2, 1));
-        aboutFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        aboutFrame.setLayout(new GridLayout(3, 1));
         aboutFrame.setJMenuBar(menuBar());
         aboutFrame.add(Components.titleLabel(ProjectGoldStarsX.name));
         aboutFrame.add(row2());
-        aboutFrame.setVisible(true);
+        aboutFrame.add(row3());
+        aboutFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(aboutFrame.getCloseButton());
+        menuBar.add(aboutFrame.getMaximizeButton());
+        menuBar.add(aboutFrame.getWindowMenu());
         menuBar.add(Components.standardButton("About Programs", new ListenersAbout.AboutProgramsListener()));
-        menuBar.add(Components.standardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
         menuBar.add(Components.standardButton("Help", new ListenersProgramsAction.HelpListener()));
-        menuBar.add(Components.standardButton("System Information", new ListenersProgramsAction.SystemInformationListener()));
         return menuBar;
     }
     
@@ -51,6 +47,16 @@ public class About
         row2.add(username());
         row2.add(version());
         return row2;
+    }
+    
+    private JPanel row3()
+    {
+        JPanel row3 = new JPanel();
+        row3.setBackground(ProjectGoldStarsX.color1);
+        row3.setLayout(new GridLayout(1, 2));
+        row3.add(Components.standardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
+        row3.add(Components.standardButton("More Information", new MoreInformationListener()));
+        return row3;
     }
     
     private JLabel version()
@@ -69,19 +75,12 @@ public class About
         return userLabel;
     }
     
-    public static class CloseListener implements ActionListener
+    public static class MoreInformationListener implements ActionListener
     {
+        @Override
         public void actionPerformed(ActionEvent e)
         {
-            aboutFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(aboutFrame);
+            new MoreInformation();
         }
     }
 }

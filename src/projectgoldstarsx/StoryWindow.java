@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -45,6 +46,7 @@ public class StoryWindow
         storyWindow.getContentPane().setBackground(ProjectGoldStarsX.color1);
         storyWindow.setJMenuBar(menuBar());
         storyWindow.setLocation(xCoordinate, yCoordinate);
+        storyWindow.setResizable(true);
         storyWindow.add(Components.titleLabel(col1));
         storyWindow.add(col2());
         storyWindow.setVisible(true);
@@ -56,7 +58,15 @@ public class StoryWindow
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(moreMenu());
         return menuBar;
+    }
+    
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Stories", new AboutStoriesListener()));
+        return menu.getMenu();
     }
     
     private JPanel col2()
@@ -112,6 +122,15 @@ public class StoryWindow
         {
             maximized = true;
             ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(storyWindow);
+        }
+    }
+    
+    public static class AboutStoriesListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutStories();
         }
     }
 }

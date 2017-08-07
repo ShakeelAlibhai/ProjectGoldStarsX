@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class Talk
 {
@@ -53,6 +53,7 @@ public class Talk
         }
         messages.add(message);
         talkFrame.setLayout(new GridLayout(11, 1));
+        talkFrame.setResizable(true);
         JLabel[] messagesLabels = new JLabel[messages.size()];
         for(int i = 0; i < messages.size(); i++)
         {
@@ -102,7 +103,26 @@ public class Talk
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(Components.settingsButton("Talk Settings", new TalkSettingsListener()));
+        menuBar.add(moreMenu());
         return menuBar;
+    }
+    
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Talk", new AboutTalkListener()));
+        menu.add(helpMenu());
+        return menu.getMenu();
+    }
+    
+    private JMenu helpMenu()
+    {
+        JMenu menu = new JMenu("Talk Help");
+        menu.setFont(ProjectGoldStarsX.mediumText3);
+        menu.add(Components.standardMenuItem("What is Talk?", new ListenersHelpAction.TalkIntroListener()));
+        menu.add(Components.standardMenuItem("What can I say to Talk?", new ListenersHelpAction.TalkSuggestionsListener()));
+        menu.add(Components.standardMenuItem("Set a Nickname", new ListenersHelpAction.NicknameListener()));
+        return menu;
     }
     
     private void processInput(String input)
@@ -384,7 +404,7 @@ public class Talk
         }
         else if(input.indexOf("rectangle information") >= 0)
         {
-            new CalcRectangleInformation();
+            new CalcRectangles();
             temp = "Anything else?";
         }
         else if(input.indexOf("calculator") >= 0)
@@ -550,11 +570,6 @@ public class Talk
         else if(input.indexOf("troubleshoot problems") >= 0)
         {
             TroubleshootProblems tp = new TroubleshootProblems();
-            temp = "Anything else?";
-        }
-        else if(input.indexOf("system information") >= 0)
-        {
-            SystemInformation si = new SystemInformation();
             temp = "Anything else?";
         }
         else if(input.indexOf("about programs") >= 0)
@@ -1041,7 +1056,16 @@ public class Talk
     {
         public void actionPerformed(ActionEvent e)
         {
-            TalkSettings ts = new TalkSettings();
+            new TalkSettings();
+        }
+    }
+    
+    public static class AboutTalkListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutTalk();
         }
     }
 }

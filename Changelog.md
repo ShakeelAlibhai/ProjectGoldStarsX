@@ -1,6 +1,36 @@
 # Project GoldStars X
 ### Changelog
 
+## Version 2.0.x
+### Version 2.0
+* Added a "Geometry" section to the Calculator.
+* Added a "More Information" section in About.
+* Added the ability to add more than 10 numbers.
+* Added the ability to find the area and circumference of a circle.
+* Added the ability to many windows to move the window to the left or right side of the screen.
+* Added the ability to multiply more than 10 numbers.
+* Added the ability to resize many, if not all, windows.
+* Added the time to the calendar.
+* Removed About, Help, and Settings from the "Programs" section of the main menu.
+* Removed Settings and Help from About Programs.
+* Removed System Information.
+* Removed the "About Programs" button from the menu bar in Help.
+* Renamed the "All Programs" section of the main menu to "Programs."
+* Renamed the Rectangle Information Calculator to Rectangles and moved it from Other Calculators menu to the Geometry section of the Calculator.
+* Switched the positions of "Calculator" and "Calendar" in About Programs.
+* Switched the positions of "Menu Bar Settings" and "Set Location" in Settings.
+* Updated About.
+* Updated About Programs.
+* Updated Current Settings.
+* Updated Notes Settings.
+* Updated Photos Settings.
+* Updated the Disclaimer.
+* Updated the interface of the Pythagorean Triple Finder.
+* Updated the interface of the Rectangle Information Calculator.
+* Updated the interface of Troubleshoot Problems.
+* Updated the menu bars of many windows.
+* Other minor changes.
+
 ## Version 1.5.x
 ### Version 1.5
 * Added a Silver theme.
@@ -46,38 +76,37 @@
 * Added the option to search for some programs and actions from the search box. (Note: not all programs and actions are supported yet.)
 
 ### Version 1.2
-* Added the option to add/remove the Settings button from the main menu bar.
 * Added a Settings button in Notifications.
-* Updated the interface of the Change Language area in Settings.
-* Updated the interface of the Set Location area in Settings.
 * Added a Troubleshoot Problems button in System Information.
-* Replaced the About button in the main menu bar with a link to About in the Menu.
+* Added the option to add/remove the Settings button from the main menu bar.
+* Reorganized About Programs.
 * Reorganized the main menu bar.
 * Reorganized the menu bars in Notes and Photos.
-* Reorganized About Programs.
+* Replaced the About button in the main menu bar with a link to About in the Menu.
 * Updated Commands.
 * Updated the Disclaimer.
+* Updated the interface of the Change Language area in Settings.
+* Updated the interface of the Set Location area in Settings.
 * Other minor changes.
 
 ## Version 1.1.x
 ### Version 1.1.1
-* Updated Talk.
 * Added the color light red as an option in Light.
+* Updated Talk.
 
 ### Version 1.1
 * Added a Clock Menu (accessable by clicking the time in the main menu bar).
-* Updated Stories (the main app and the "Reading" section of Education).
-* Updated System Information.
-* Updated Talk.
 * Added the colors dark green and orange as options in Light.
-* Renamed the "Snow" theme to "Project GoldStars X" (shows as "Project GoldStars X (Default Theme)" in the Change Themes window).
-* Renamed the "Snow 2" theme to "Snow."
-* Renamed the "Night" and "Snow 2 (Dark)" themes (they were the same) to "Dark."
-* Removed the "Snow (Dark)" theme.
 * Added wallpaper for the Fire theme.
 * Added wallpaper for the Forest theme.
 * Added wallpaper for the Mountain theme.
 * Added wallpaper for the Snow theme.
+* Removed the "Snow (Dark)" theme.
+* Renamed the "Snow" theme to "Project GoldStars X" (shows as "Project GoldStars X (Default Theme)" in the Change Themes window) and the "Snow 2" theme to "Snow."
+* Renamed the "Night" and "Snow 2 (Dark)" themes (they were the same) to "Dark."
+* Updated Stories (the main app and the "Reading" section of Education).
+* Updated System Information.
+* Updated Talk.
 * Updated the Disclaimer.
 * Other minor changes.
 

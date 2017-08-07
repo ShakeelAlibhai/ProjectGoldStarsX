@@ -111,15 +111,6 @@ public class ListenersProgramsAction
         }
     }
     
-    public static class SystemInformationListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            new SystemInformation();
-        }
-    }
-    
     public static class AboutListener implements ActionListener
     {
         @Override

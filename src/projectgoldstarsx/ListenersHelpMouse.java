@@ -1,7 +1,7 @@
 package projectgoldstarsx;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-public class ListenersHelp
+public class ListenersHelpMouse
 {
     public static class LanguageListener implements MouseListener
     {

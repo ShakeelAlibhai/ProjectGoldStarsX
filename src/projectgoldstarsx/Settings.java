@@ -2,12 +2,8 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
-import javax.swing.SwingConstants;
 public class Settings
 {
     public Settings()
@@ -15,428 +11,49 @@ public class Settings
         settings();
     }
     
-    public static JInternalFrame settingsFrame;
+    public static ProgramWindow settingsFrame;
     
     private void settings()
     {
-        settingsFrame = new JInternalFrame("Settings");
-        ProjectGoldStarsX.desktop.add(settingsFrame);
-        settingsFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        settingsFrame = new ProgramWindow("Settings");
         settingsFrame.setSize(900 * ProjectGoldStarsX.multiplier, 475 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(4, 4));
-        settingsFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         settingsFrame.setJMenuBar(menuBar());
         settingsFrame.add(Components.headerLabel("General Settings:"));
-        settingsFrame.add(action("Change Language", new ChangeLanguageListener()));
-        settingsFrame.add(action("Change Theme", new ChangeThemeListener()));
-        settingsFrame.add(action("Change Username", new ChangeUsernameListener()));
+        settingsFrame.add(Components.actionLabel("Change Language", new ListenersSettings.ChangeLanguageListener()));
+        settingsFrame.add(Components.actionLabel("Change Theme", new ListenersSettings.ChangeThemeListener()));
+        settingsFrame.add(Components.actionLabel("Change Username", new ListenersSettings.ChangeUsernameListener()));
         settingsFrame.add(new JLabel());
-        settingsFrame.add(action("Set Location", new SetLocationListener()));
-        settingsFrame.add(action("Menu Bar Settings", new MenuBarSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Menu Bar Settings", new ListenersSettings.MenuBarSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Set Location", new ListenersSettings.SetLocationListener()));
         settingsFrame.add(new JLabel());
         settingsFrame.add(Components.headerLabel("App Settings:"));
-        settingsFrame.add(action("Calendar Settings", new CalendarSettingsListener()));
-        settingsFrame.add(action("Notes Settings", new NotesSettingsListener()));
-        settingsFrame.add(action("Photos Settings", new PhotosSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Calendar Settings", new ListenersSettings.CalendarSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Notes Settings", new ListenersSettings.NotesSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Photos Settings", new ListenersSettings.PhotosSettingsListener()));
         settingsFrame.add(new JLabel());
-        settingsFrame.add(action("Talk Settings", new TalkSettingsListener()));
-        settingsFrame.add(action("Search Settings", new SearchSettingsListener()));
-        settingsFrame.add(action("Error Log Settings", new ErrorLogSettingsListener()));
-        settingsFrame.setVisible(true);
+        settingsFrame.add(Components.actionLabel("Talk Settings", new ListenersSettings.TalkSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Search Settings", new ListenersSettings.SearchSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Error Log Settings", new ListenersSettings.ErrorLogSettingsListener()));
+        settingsFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(settingsFrame.getCloseButton());
+        menuBar.add(settingsFrame.getMaximizeButton());
+        menuBar.add(settingsFrame.getWindowMenu());
         menuBar.add(Components.standardButton("Current Settings", new CurrentSettingsListener()));
         return menuBar;
-    }
-    
-    private JLabel action(String actionName, MouseListener mouseListener)
-    {
-        JLabel action = new JLabel(actionName, SwingConstants.CENTER);
-        action.setForeground(ProjectGoldStarsX.color2);
-        action.setFont(ProjectGoldStarsX.mediumText2);
-        action.addMouseListener(mouseListener);
-        return action;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            settingsFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(settingsFrame);
-        }
     }
     
     public static class CurrentSettingsListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            CurrentSettings cs = new CurrentSettings();
-        }
-    }
-    
-    public static class ChangeLanguageListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new ChangeLanguage();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class ChangeThemeListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new ChangeTheme();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class ChangeUsernameListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new ChangeUsername();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class SetLocationListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new SetLocation();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class MenuBarSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new MenuBarSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class CalendarSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new CalendarSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class NotesSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new NotesSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class PhotosSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new PhotosSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class TalkSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new TalkSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class SearchSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new SearchSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class ErrorLogSettingsListener implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            new ErrorLogSettings();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
+            new CurrentSettings();
         }
     }
 }

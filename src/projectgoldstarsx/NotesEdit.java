@@ -90,8 +90,8 @@ public class NotesEdit
                 
             }
             createNoteFrame.dispatchEvent(new WindowEvent(createNoteFrame, WindowEvent.WINDOW_CLOSING));
-            Notes.viewNotesFrame.dispose();
-            Notes n = new Notes();
+            Notes.viewNotesFrame.close();
+            new Notes();
         }
     }
 }

@@ -104,8 +104,8 @@ public class NotesCreate extends JInternalFrame
                 
             }
         }
-        Notes.viewNotesFrame.dispose();
-        Notes n = new Notes();
+        Notes.viewNotesFrame.close();
+        new Notes();
         NotesCreate.this.setVisible(false);
     }
     

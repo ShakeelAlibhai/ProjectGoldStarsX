@@ -2,14 +2,12 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class CalcDivide implements ActionListener
 {
-    public static JInternalFrame divisionFrame;
+    public static ProgramWindow divisionFrame;
     public static JTextField tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10;
     
     public CalcDivide()
@@ -19,13 +17,10 @@ public class CalcDivide implements ActionListener
     
     private void divide()
     {
-        divisionFrame = new JInternalFrame("Division");
-        divisionFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        divisionFrame = new ProgramWindow("Division");
         divisionFrame.setLayout(new GridLayout(11, 2));
         divisionFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.desktop.add(divisionFrame);
-        divisionFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        divisionFrame.setJMenuBar(menuBar());
+        divisionFrame.setStandardMenuBar();
         JLabel number1 = new JLabel("Number #1:");
         number1.setForeground(ProjectGoldStarsX.color2);
         number1.setFont(ProjectGoldStarsX.bodyText1);
@@ -56,7 +51,6 @@ public class CalcDivide implements ActionListener
         JLabel number10 = new JLabel("Number #10:");
         number10.setForeground(ProjectGoldStarsX.color2);
         number10.setFont(ProjectGoldStarsX.bodyText1);
-        JLabel emptySpace = new JLabel("");
         tf1 = new JTextField("1");
         tf1.setFont(ProjectGoldStarsX.bodyText2);
         tf2 = new JTextField("1");
@@ -97,34 +91,9 @@ public class CalcDivide implements ActionListener
         divisionFrame.add(tf9);
         divisionFrame.add(number10);
         divisionFrame.add(tf10);
-        divisionFrame.add(emptySpace);
+        divisionFrame.add(new JLabel());
         divisionFrame.add(Components.button2("Divide", new DivideListener()));
-        divisionFrame.setVisible(true);
-    }
-    
-    private JMenuBar menuBar()
-    {
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        return menuBar;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            divisionFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(divisionFrame);
-        }
+        divisionFrame.makeVisible();
     }
     
     private class DivideListener implements ActionListener

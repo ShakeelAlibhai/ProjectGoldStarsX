@@ -5,14 +5,10 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 public class ChangeLanguage
 {
-    public static JInternalFrame settingsFrame;
+    public static ProgramWindow settingsFrame;
     
     public ChangeLanguage()
     {
@@ -21,26 +17,14 @@ public class ChangeLanguage
     
     private void changeLanguage()
     {
-        settingsFrame = new JInternalFrame("Change Language");
-        ProjectGoldStarsX.desktop.add(settingsFrame);
-        settingsFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        settingsFrame = new ProgramWindow("Change Language");
         settingsFrame.setSize(850 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(3, 1));
-        settingsFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
-        settingsFrame.setJMenuBar(menuBar());
+        settingsFrame.setStandardMenuBar();
         settingsFrame.add(Components.headerLabel("Please choose a language:"));
         settingsFrame.add(Components.standardButton("American English", new AmericanEnglishListener()));
         settingsFrame.add(Components.standardButton("British English", new BritishEnglishListener()));
-        settingsFrame.setVisible(true);
-    }
-    
-    private JMenuBar menuBar()
-    {
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        return menuBar;
+        settingsFrame.makeVisible();
     }
     
     public static class AmericanEnglishListener implements ActionListener
@@ -84,22 +68,6 @@ public class ChangeLanguage
 
             }
             JOptionPane.showMessageDialog(null, "Choice Saved", "Settings", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            settingsFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(settingsFrame);
         }
     }
 }

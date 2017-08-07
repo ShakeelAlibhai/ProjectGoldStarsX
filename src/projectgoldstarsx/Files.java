@@ -7,8 +7,8 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -19,16 +19,13 @@ public class Files
         files();
     }
     
-    public static JInternalFrame filesFrame;
+    public static ProgramWindow filesFrame;
     public static JTextField filesSearchTextField;
     
     private void files()
     {
-        filesFrame = new JInternalFrame("Files");
-        ProjectGoldStarsX.desktop.add(filesFrame);
-        filesFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        filesFrame = new ProgramWindow("Files");
         filesFrame.setSize(1100 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier);
-        filesFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         filesFrame.setJMenuBar(menuBar());
         ArrayList<String> files = new ArrayList<String>();
         for(int i = 0; i < ProjectGoldStarsX.noteNames.size(); i++)
@@ -64,22 +61,31 @@ public class Files
                 filesFrame.add(fileLabels[i]);
             }
         }
-        filesFrame.setVisible(true);
+        filesFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(filesFrame.getCloseButton());
+        menuBar.add(filesFrame.getMaximizeButton());
+        menuBar.add(filesFrame.getWindowMenu());
         menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));
         menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));
         menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
         setupSearchField();
         menuBar.add(filesSearchTextField);
         menuBar.add(Components.standardButton("Search", new SearchFilesListener()));
+        menuBar.add(moreMenu());
         return menuBar;
+    }
+    
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Files", new AboutFilesListener()));
+        return menu.getMenu();
     }
     
     private void setupSearchField()
@@ -96,22 +102,6 @@ public class Files
             filesSearchTextField.setForeground(ProjectGoldStarsX.color1);
         }
         filesSearchTextField.addActionListener(new SearchFilesListener());
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            filesFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(filesFrame);
-        }
     }
     
     public static class SearchFilesListener implements ActionListener
@@ -175,6 +165,15 @@ public class Files
         public void mouseExited(MouseEvent e)
         {
             
+        }
+    }
+    
+    public static class AboutFilesListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutFiles();
         }
     }
 }

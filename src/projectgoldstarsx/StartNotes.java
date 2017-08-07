@@ -9,7 +9,6 @@ public class StartNotes
     {
         getNotes();
         getNoteNames();
-        getPasswordProtectedNotesSetting();
         getNotesSearchCaseSensitivitySetting();
     }
     
@@ -45,45 +44,6 @@ public class StartNotes
             catch(FileNotFoundException e)
             {
                 notesNum = -1;
-            }
-        }
-    }
-    
-    /*
-     * Attempt to import the saved choice of whether the password protection of notes is turned on or off from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will turn off password protected notes and save this to the Project GoldStars X folder.
-     */
-    private static void getPasswordProtectedNotesSetting()
-    {
-        File ppnTemp = new File(ProjectGoldStarsX.notesFolder, "passwordProtectedNotes.txt");
-        try
-        {
-            Scanner s5 = new Scanner(ppnTemp).useDelimiter("\\Z");
-            String temp = s5.next();
-            s5.close();
-            if("1".equals(temp))
-            {
-                ProjectGoldStarsX.passwordProtectedNotes = true;
-            }
-            else
-            {
-                ProjectGoldStarsX.passwordProtectedNotes = false;
-            }
-        }
-        catch(FileNotFoundException e)
-        {
-            File file = new File(ProjectGoldStarsX.notesFolder, "passwordProtectedNotes.txt");
-            ProjectGoldStarsX.passwordProtectedNotes = false;
-            PrintWriter out;
-            try
-            {
-                out = new PrintWriter(file);
-                out.println("0");
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
             }
         }
     }

@@ -8,7 +8,7 @@ public class ListenersPhotos
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            PhotosImport ip = new PhotosImport();
+            new PhotosImport();
         }
     }
     
@@ -17,7 +17,16 @@ public class ListenersPhotos
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            PhotosSettings ps = new PhotosSettings();
+            new PhotosSettings();
+        }
+    }
+    
+    public static class AboutPhotosListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutPhotos();
         }
     }
 }

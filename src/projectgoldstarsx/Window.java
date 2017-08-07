@@ -30,15 +30,20 @@ public class Window extends JFrame implements ActionListener, ItemListener
         frame.setExtendedState(frame.MAXIMIZED_BOTH);
         frame.setLayout(new BorderLayout());
         frame.setUndecorated(true);
-        URL url = getClass().getResource("/images/ProjectGoldStarsXIcon.png");
-        Image im = Toolkit.getDefaultToolkit().getImage(url);
-        frame.setIconImage(im);
+        frame.setIconImage(getImage());
         frame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         frame.setJMenuBar(menuBar());
         ProjectGoldStarsX.desktop = new JDesktopPane();
         background();
         frame.add(ProjectGoldStarsX.desktop);
         frame.setVisible(true);
+    }
+    
+    private Image getImage()
+    {
+        URL url = getClass().getResource("/images/ProjectGoldStarsXIcon.png");
+        Image im = Toolkit.getDefaultToolkit().getImage(url);
+        return im;
     }
     
     private void background()
@@ -299,6 +304,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         menuBar.add(searchTextField);
         menuBar.add(Components.standardButton("Search", new SearchListener()));
         menuBar.add(ClockMenu.clockMenu());
+        ProjectGoldStarsX.menuBarHeight = menuBar.getHeight();
         return menuBar;
     }
     
@@ -323,7 +329,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            Search s = new Search(searchTextField.getText());
+            new Search(searchTextField.getText());
             searchTextField.setText("");
         }
     }

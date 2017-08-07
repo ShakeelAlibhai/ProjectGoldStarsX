@@ -105,8 +105,8 @@ public class NotesView extends JInternalFrame
                 
             }
         }
-        Notes.viewNotesFrame.dispose();
-        Notes n = new Notes();
+        Notes.viewNotesFrame.close();
+        new Notes();
         NotesView.this.setVisible(false);
     }
     

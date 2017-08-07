@@ -2,14 +2,12 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class CalcQuadraticEquation implements ActionListener
 {
-    public static JInternalFrame qeFrame;
+    public static ProgramWindow qeFrame;
     public static JTextField af, bf, cf;
     
     public CalcQuadraticEquation()
@@ -19,21 +17,10 @@ public class CalcQuadraticEquation implements ActionListener
     
     private void quadraticEquation()
     {
-        qeFrame = new JInternalFrame("Quadratic Equation Solver");
-        ProjectGoldStarsX.desktop.add(qeFrame);
-        qeFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        qeFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        qeFrame = new ProgramWindow("Quadratic Equation Solver");
         qeFrame.setLayout(new GridLayout(4, 2));
-        qeFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        JLabel instructionsLabel = new JLabel("Please enter the quadratic equation in the following form: ax^2 + bx + c");
-        instructionsLabel.setForeground(ProjectGoldStarsX.color2);
-        instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
-        menuBar.add(instructionsLabel);
-        qeFrame.setJMenuBar(menuBar);
+        qeFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
+        qeFrame.setInstructionsMenuBar("Please enter the quadratic equation in the following form: ax^2 + bx + c");
         JLabel aLabel = new JLabel("a:");
         aLabel.setFont(ProjectGoldStarsX.bodyText1);
         aLabel.setForeground(ProjectGoldStarsX.color2);
@@ -43,7 +30,6 @@ public class CalcQuadraticEquation implements ActionListener
         JLabel cLabel = new JLabel("c:");
         cLabel.setFont(ProjectGoldStarsX.bodyText1);
         cLabel.setForeground(ProjectGoldStarsX.color2);
-        JLabel emptySpace = new JLabel("");
         af = new JTextField("0");
         af.setFont(ProjectGoldStarsX.bodyText2);
         bf = new JTextField("0");
@@ -56,25 +42,9 @@ public class CalcQuadraticEquation implements ActionListener
         qeFrame.add(bf);
         qeFrame.add(cLabel);
         qeFrame.add(cf);
-        qeFrame.add(emptySpace);
+        qeFrame.add(new JLabel());
         qeFrame.add(Components.button2("Solve", new SolveQuadraticEquationListener()));
-        qeFrame.setVisible(true);
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            qeFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(qeFrame);
-        }
+        qeFrame.makeVisible();
     }
     
     public static class SolveQuadraticEquationListener implements ActionListener

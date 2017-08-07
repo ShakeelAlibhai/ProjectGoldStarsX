@@ -36,7 +36,7 @@ public class PhotosImport
         {
 
         }
-        Photos.viewPhotosFrame.dispose();
-        Photos p = new Photos();
+        Photos.viewPhotosFrame.close();
+        new Photos();
     }
 }

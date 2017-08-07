@@ -11,10 +11,7 @@ public class ClockMenu
 {
     public static JMenu clockMenu()
     {
-        JMenu clockMenu = new JMenu();
-        clockMenu.setBackground(ProjectGoldStarsX.color1);
-        clockMenu.setForeground(ProjectGoldStarsX.color2);
-        clockMenu.setFont(ProjectGoldStarsX.mediumText1);
+        StandardMenu clockMenu = new StandardMenu();
         ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
         ses.scheduleAtFixedRate(new Runnable()
         {
@@ -31,7 +28,7 @@ public class ClockMenu
         clockMenu.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
         clockMenu.add(new JSeparator());
         clockMenu.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
-        return clockMenu;
+        return clockMenu.getMenu();
     }
     
     private static JLabel clockLabel()

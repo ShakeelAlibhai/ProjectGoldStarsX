@@ -8,8 +8,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String name = "Project GoldStars X 1.5";
-    public static final String version = "Version 1.5";
+    public static final String name = "Project GoldStars X 2.0";
+    public static final String version = "Version 2.0";
     public static final File projectGoldStarsXFolder = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static Color color1;
     public static Color color2;
@@ -18,6 +18,7 @@ public class ProjectGoldStarsX
     public static Date startDate;
     public static int height;
     public static int width;
+    public static int menuBarHeight;
     public static int multiplier;
     public static JDesktopPane desktop;
     public static String color;
@@ -62,11 +63,9 @@ public class ProjectGoldStarsX
     public static ArrayList<String> noteNames = new ArrayList<String>();
     public static boolean notesSearchCaseSensitive;
     public static int notesTemp;
-    public static boolean passwordProtectedNotes = false;
     
     //Photos Variables
     public static boolean photosSearchCaseSensitive;
-    public static boolean passwordProtectedPhotos = false;
     public static ArrayList<String> photoNames = new ArrayList<String>();
     
     //Education Variables

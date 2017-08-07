@@ -7,7 +7,6 @@ import java.util.Calendar;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
 public class CalendarViewEventsToday
 {
     public CalendarViewEventsToday()

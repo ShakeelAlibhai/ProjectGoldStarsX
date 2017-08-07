@@ -2,14 +2,12 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class CalcMilesPerGallon
 {
-    public static JInternalFrame mpgFrame;
+    public static ProgramWindow mpgFrame;
     public static JTextField mpg1, mpg2, mpg3;
     
     public CalcMilesPerGallon()
@@ -19,13 +17,10 @@ public class CalcMilesPerGallon
     
     private void calcMilesPerGallon()
     {
-        mpgFrame = new JInternalFrame("Miles Per Gallon Calculator");
-        mpgFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        mpgFrame = new ProgramWindow("Miles Per Gallon Calculator");
         mpgFrame.setLayout(new GridLayout(4, 2));
         mpgFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.desktop.add(mpgFrame);
-        mpgFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        mpgFrame.setJMenuBar(menuBar());
+        mpgFrame.setInstructionsMenuBar("Please enter the following information:");
         mpgFrame.add(aLabel());
         setupMPG1();
         mpgFrame.add(mpg1);
@@ -37,25 +32,7 @@ public class CalcMilesPerGallon
         mpgFrame.add(mpg3);
         mpgFrame.add(new JLabel());
         mpgFrame.add(Components.button2("Calculate", new CalculateMilesPerGallonListener()));
-        mpgFrame.setVisible(true);
-    }
-    
-    private JMenuBar menuBar()
-    {
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(instructionsLabel());
-        return menuBar;
-    }
-    
-    private JLabel instructionsLabel()
-    {
-        JLabel instructionsLabel = new JLabel("Please enter the following information:");
-        instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
-        instructionsLabel.setForeground(ProjectGoldStarsX.color2);
-        return instructionsLabel;
+        mpgFrame.makeVisible();
     }
     
     private JLabel aLabel()
@@ -98,22 +75,6 @@ public class CalcMilesPerGallon
     {
         mpg3 = new JTextField("0");
         mpg3.setFont(ProjectGoldStarsX.bodyText2);
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            mpgFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(mpgFrame);
-        }
     }
     
     private static class CalculateMilesPerGallonListener implements ActionListener

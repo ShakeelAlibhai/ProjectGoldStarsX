@@ -8,7 +8,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcAdd ca = new CalcAdd();
+            new CalcAdd();
         }
     }
     
@@ -17,7 +17,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcSubtract cs = new CalcSubtract();
+            new CalcSubtract();
         }
     }
     
@@ -26,7 +26,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcMultiply cm = new CalcMultiply();
+            new CalcMultiply();
         }
     }
     
@@ -35,7 +35,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcDivide cd = new CalcDivide();
+            new CalcDivide();
         }
     }
     
@@ -90,6 +90,24 @@ public class ListenersCalculatorAction
         public void actionPerformed(ActionEvent e)
         {
             CalcNaturalLog cnl = new CalcNaturalLog();
+        }
+    }
+    
+    public static class CirclesListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CalcCircles();
+        }
+    }
+    
+    public static class RectanglesListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CalcRectangles();
         }
     }
     
@@ -435,12 +453,12 @@ public class ListenersCalculatorAction
         }
     }
     
-    public static class RectangleInformationCalculatorListener implements ActionListener
+    public static class AboutCalculatorListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new CalcRectangleInformation();
+            AboutPrograms.aboutCalculator();
         }
     }
 }

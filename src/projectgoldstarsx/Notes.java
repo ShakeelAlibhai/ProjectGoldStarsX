@@ -7,8 +7,8 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -19,16 +19,13 @@ public class Notes
         notes();
     }
     
-    public static JInternalFrame viewNotesFrame;
+    public static ProgramWindow viewNotesFrame;
     public static JTextField notesSearchTextField;
     
     private void notes()
     {
-        viewNotesFrame = new JInternalFrame("Notes");
-        ProjectGoldStarsX.desktop.add(viewNotesFrame);
-        viewNotesFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        viewNotesFrame = new ProgramWindow("Notes");
         viewNotesFrame.setSize(1100 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier);
-        viewNotesFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         
         viewNotesFrame.setJMenuBar(menuBar());
         ArrayList<String> files = new ArrayList<String>();
@@ -57,15 +54,16 @@ public class Notes
                 viewNotesFrame.add(fileLabels[i]);
             }
         }
-        viewNotesFrame.setVisible(true);
+        viewNotesFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(viewNotesFrame.getCloseButton());
+        menuBar.add(viewNotesFrame.getMaximizeButton());
+        menuBar.add(viewNotesFrame.getWindowMenu());
         menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));
         menuBar.add(Components.standardButton("Edit Notes", new ListenersNotes.EditNotesListener()));
         menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));
@@ -74,7 +72,15 @@ public class Notes
         setupSearchField();
         menuBar.add(notesSearchTextField);
         menuBar.add(Components.standardButton("Search", new SearchNotesListener()));
+        menuBar.add(moreMenu());
         return menuBar;
+    }
+    
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Notes", new ListenersNotes.AboutNotesListener()));
+        return menu.getMenu();
     }
     
     private void setupSearchField()
@@ -148,27 +154,11 @@ public class Notes
         }
     }
     
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            viewNotesFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(viewNotesFrame);
-        }
-    }
-    
     public static class SearchNotesListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            NotesSearch sn = new NotesSearch(notesSearchTextField.getText());
+            new NotesSearch(notesSearchTextField.getText());
             notesSearchTextField.setText("");
         }
     }

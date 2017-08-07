@@ -7,8 +7,8 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -20,16 +20,13 @@ public class Photos
         photos();
     }
     
-    public static JInternalFrame viewPhotosFrame;
+    public static ProgramWindow viewPhotosFrame;
     public static JTextField photosSearchTextField;
     
     private void photos()
     {
-        viewPhotosFrame = new JInternalFrame("Photos");
-        ProjectGoldStarsX.desktop.add(viewPhotosFrame);
-        viewPhotosFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        viewPhotosFrame = new ProgramWindow("Photos");
         viewPhotosFrame.setSize(1100 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier);
-        viewPhotosFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
         viewPhotosFrame.setJMenuBar(menuBar());
         ArrayList<String> files = new ArrayList<String>();
         for(int i = 0; i < ProjectGoldStarsX.photoNames.size(); i++)
@@ -57,21 +54,30 @@ public class Photos
                 viewPhotosFrame.add(fileLabels[i]);
             }
         }
-        viewPhotosFrame.setVisible(true);
+        viewPhotosFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(viewPhotosFrame.getCloseButton());
+        menuBar.add(viewPhotosFrame.getMaximizeButton());
+        menuBar.add(viewPhotosFrame.getWindowMenu());
         menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
         menuBar.add(Components.settingsButton("Photos Settings", new ListenersPhotos.PhotosSettingsListener()));
         setupSearchField();
         menuBar.add(photosSearchTextField);
         menuBar.add(Components.standardButton("Search", new SearchPhotosListener()));
+        menuBar.add(moreMenu());
         return menuBar;
+    }
+    
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Photos", new ListenersPhotos.AboutPhotosListener()));
+        return menu.getMenu();
     }
     
     private void setupSearchField()
@@ -151,27 +157,11 @@ public class Photos
         }
     }
     
-    public static class CloseListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            viewPhotosFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(viewPhotosFrame);
-        }
-    }
-    
     public static class SearchPhotosListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            PhotosSearch sp = new PhotosSearch(photosSearchTextField.getText());
+            new PhotosSearch(photosSearchTextField.getText());
             photosSearchTextField.setText("");
         }
     }

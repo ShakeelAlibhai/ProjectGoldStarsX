@@ -12,8 +12,8 @@ import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javax.swing.JButton;
 import javax.swing.JInternalFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -21,22 +21,21 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 public class Browser extends JInternalFrame
 {
-    private final JButton goButton = new JButton("Go");
     private final JFXPanel jfxPanel = new JFXPanel();
     private final JPanel panel = new JPanel(new BorderLayout());
-    private static final JTextField urlField = new JTextField();
+    private static JTextField urlField = new JTextField();
     private static WebEngine engine;
     
     public Browser()
     {
         super();
-        createWindow();
+        browser();
     }
     
-    private void createWindow()
+    private void browser()
     {
-        createScene();
-        urlField.addActionListener(new GoListener());
+        setupWindow();
+        setupURLField();
         Browser.this.setJMenuBar(menuBar());
         panel.add(jfxPanel, BorderLayout.CENTER);
         getContentPane().add(panel);
@@ -50,22 +49,32 @@ public class Browser extends JInternalFrame
         setVisible(true);
     }
     
+    private void setupURLField()
+    {
+        urlField.addActionListener(new GoListener());
+        urlField.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        urlField.setFont(ProjectGoldStarsX.bodyText2);
         menuBar.add(urlField);
-        goButton.setBackground(ProjectGoldStarsX.color2);
-        goButton.setForeground(ProjectGoldStarsX.color1);
-        goButton.setFont(ProjectGoldStarsX.mediumText1);
-        goButton.addActionListener(new GoListener());
-        menuBar.add(goButton);
+        menuBar.add(Components.standardButton("Go", new GoListener()));
+        menuBar.add(moreMenu());
         return menuBar;
     }
     
-    private void createScene()
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Browser", new AboutBrowserListener()));
+        return menu.getMenu();
+    }
+    
+    private void setupWindow()
     {
         Platform.runLater(new Runnable()
         {
@@ -170,6 +179,15 @@ public class Browser extends JInternalFrame
         public void actionPerformed(ActionEvent e)
         {
             loadURL(urlField.getText());
+        }
+    }
+    
+    public static class AboutBrowserListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutBrowser();
         }
     }
 }

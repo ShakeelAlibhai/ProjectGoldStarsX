@@ -1,13 +1,8 @@
 package projectgoldstarsx;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.SwingConstants;
 public class Calculator
 {
     public Calculator()
@@ -15,60 +10,61 @@ public class Calculator
         calculator();
     }
     
-    public static JInternalFrame calculatorFrame;
+    public static ProgramWindow calculatorFrame;
     
     private void calculator()
     {
-        calculatorFrame = new JInternalFrame("Calculator");
-        ProjectGoldStarsX.desktop.add(calculatorFrame);
-        calculatorFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        calculatorFrame = new ProgramWindow("Calculator");
         calculatorFrame.setSize(1150 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier);
-        calculatorFrame.setLayout(new GridLayout(4, 5));
-        calculatorFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        calculatorFrame.setLayout(new GridLayout(5, 5));
         calculatorFrame.setJMenuBar(menuBar());
         calculatorFrame.add(Components.headerLabel("Basic Calculations:"));
-        calculatorFrame.add(action("Add", new ListenersCalculatorMouse.AddListener()));
-        calculatorFrame.add(action("Subtract", new ListenersCalculatorMouse.SubtractListener()));
-        calculatorFrame.add(action("Multiply", new ListenersCalculatorMouse.MultiplyListener()));
-        calculatorFrame.add(action("Divide", new ListenersCalculatorMouse.DivideListener()));
+        calculatorFrame.add(Components.actionLabel("Add", new ListenersCalculatorMouse.AddListener()));
+        calculatorFrame.add(Components.actionLabel("Subtract", new ListenersCalculatorMouse.SubtractListener()));
+        calculatorFrame.add(Components.actionLabel("Multiply", new ListenersCalculatorMouse.MultiplyListener()));
+        calculatorFrame.add(Components.actionLabel("Divide", new ListenersCalculatorMouse.DivideListener()));
         calculatorFrame.add(Components.headerLabel("Complex Calculations:"));
-        calculatorFrame.add(action("Square Root", new ListenersCalculatorMouse.SquareRootListener()));
-        calculatorFrame.add(action("Cube Root", new ListenersCalculatorMouse.CubeRootListener()));
-        calculatorFrame.add(action("Exponents", new ListenersCalculatorMouse.ExponentsListener()));
-        calculatorFrame.add(action("Quadratic Equation Solver", new ListenersCalculatorMouse.QuadraticEquationListener()));
+        calculatorFrame.add(Components.actionLabel("Square Root", new ListenersCalculatorMouse.SquareRootListener()));
+        calculatorFrame.add(Components.actionLabel("Cube Root", new ListenersCalculatorMouse.CubeRootListener()));
+        calculatorFrame.add(Components.actionLabel("Exponents", new ListenersCalculatorMouse.ExponentsListener()));
+        calculatorFrame.add(Components.actionLabel("Quadratic Equation Solver", new ListenersCalculatorMouse.QuadraticEquationListener()));
         calculatorFrame.add(new JLabel());
-        calculatorFrame.add(action("Log Base 10", new ListenersCalculatorMouse.LogBase10Listener()));
-        calculatorFrame.add(action("Natural Log", new ListenersCalculatorMouse.NaturalLogListener()));
+        calculatorFrame.add(Components.actionLabel("Log Base 10", new ListenersCalculatorMouse.LogBase10Listener()));
+        calculatorFrame.add(Components.actionLabel("Natural Log", new ListenersCalculatorMouse.NaturalLogListener()));
+        calculatorFrame.add(new JLabel());
+        calculatorFrame.add(new JLabel());
+        calculatorFrame.add(Components.headerLabel("Geometry:"));
+        calculatorFrame.add(Components.actionLabel("Circles", new ListenersCalculatorMouse.CirclesListener()));
+        calculatorFrame.add(Components.actionLabel("Rectangles", new ListenersCalculatorMouse.RectanglesListener()));
         calculatorFrame.add(new JLabel());
         calculatorFrame.add(new JLabel());
         calculatorFrame.add(Components.headerLabel("Trigonometry:"));
-        calculatorFrame.add(action("Sine", new ListenersCalculatorMouse.SineListener()));
-        calculatorFrame.add(action("Cosine", new ListenersCalculatorMouse.CosineListener()));
-        calculatorFrame.add(action("Tangent", new ListenersCalculatorMouse.TangentListener()));
-        calculatorFrame.setVisible(true);
+        calculatorFrame.add(Components.actionLabel("Sine", new ListenersCalculatorMouse.SineListener()));
+        calculatorFrame.add(Components.actionLabel("Cosine", new ListenersCalculatorMouse.CosineListener()));
+        calculatorFrame.add(Components.actionLabel("Tangent", new ListenersCalculatorMouse.TangentListener()));
+        calculatorFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(calculatorFrame.getCloseButton());
+        menuBar.add(calculatorFrame.getMaximizeButton());
+        menuBar.add(calculatorFrame.getWindowMenu());
         menuBar.add(conversionsMenu());
         menuBar.add(otherCalculatorsMenu());
+        menuBar.add(moreMenu());
         return menuBar;
     }
     
     private JMenu conversionsMenu()
     {
-        JMenu conversionsMenu = new JMenu("Conversions");
-        conversionsMenu.setBackground(ProjectGoldStarsX.color1);
-        conversionsMenu.setForeground(ProjectGoldStarsX.color2);
-        conversionsMenu.setFont(ProjectGoldStarsX.mediumText1);
+        StandardMenu conversionsMenu = new StandardMenu("Conversions");
         conversionsMenu.add(angleConversionsMenu());
         conversionsMenu.add(distanceConversionsMenu());
         conversionsMenu.add(temperatureConversionsMenu());
-        return conversionsMenu;
+        return conversionsMenu.getMenu();
     }
     
     private JMenu angleConversionsMenu()
@@ -158,41 +154,17 @@ public class Calculator
     
     private JMenu otherCalculatorsMenu()
     {
-        JMenu otherCalculatorsMenu = new JMenu("Other Calculators");
-        otherCalculatorsMenu.setBackground(ProjectGoldStarsX.color1);
-        otherCalculatorsMenu.setForeground(ProjectGoldStarsX.color2);
-        otherCalculatorsMenu.setFont(ProjectGoldStarsX.mediumText1);
+        StandardMenu otherCalculatorsMenu = new StandardMenu("Other Calculators");
         otherCalculatorsMenu.add(Components.standardMenuItem("Average Calculator", new ListenersCalculatorAction.AverageCalculatorListener()));
         otherCalculatorsMenu.add(Components.standardMenuItem("Miles Per Gallon Calculator", new ListenersCalculatorAction.MilesPerGallonCalculatorListener()));
         otherCalculatorsMenu.add(Components.standardMenuItem("Pythagorean Triple Finder", new ListenersCalculatorAction.PythagoreanTripleFinderListener()));
-        otherCalculatorsMenu.add(Components.standardMenuItem("Rectangle Information Calculator", new ListenersCalculatorAction.RectangleInformationCalculatorListener()));
-        return otherCalculatorsMenu;
+        return otherCalculatorsMenu.getMenu();
     }
     
-    private JLabel action(String actionName, MouseListener mouseListener)
+    private JMenu moreMenu()
     {
-        JLabel action = new JLabel(actionName, SwingConstants.CENTER);
-        action.setForeground(ProjectGoldStarsX.color2);
-        action.setFont(ProjectGoldStarsX.mediumText2);
-        action.addMouseListener(mouseListener);
-        return action;
-    }
-    
-    public static class CloseListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            calculatorFrame.dispose();
-        }
-    }
-    
-    public static class MaximizeListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(calculatorFrame);
-        }
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Calculator", new ListenersCalculatorAction.AboutCalculatorListener()));
+        return menu.getMenu();
     }
 }

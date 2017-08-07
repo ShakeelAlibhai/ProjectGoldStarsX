@@ -13,77 +13,91 @@ public class CurrentSettings
         currentSettingsFrame.setLayout(new GridLayout(1, 2));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         String output;
-        if("1".equals(ProjectGoldStarsX.language))
-        {
-            output = "Language: American English\n";
-        }
-        else
-        {
-            output = "Language: British English\n";
-        }
+        output = "Language: " + language() + "\n";
         output += "Theme: " + ProjectGoldStarsX.theme + "\n";
         output += "Username: " + ProjectGoldStarsX.username + "\n";
         output += "Location: " + ProjectGoldStarsX.location + "\n";
-        if("1".equals(ProjectGoldStarsX.settingsButtonMainMenuBar))
-        {
-            output += "Settings Button on the Main Menu Bar: On\n";
-        }
-        else
-        {
-            output += "Settings Button on the Main Menu Bar: Off\n";
-        }
+        output += "Settings Button on the Main Menu Bar: " + settingsButtonMainMenuBar();
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         output = "Calendar Format: " + ProjectGoldStarsX.calendarFormat + "\n";
-        if(ProjectGoldStarsX.notesSearchCaseSensitive)
-        {
-            output += "Notes Search Case Sensitive: On\n";
-        }
-        else
-        {
-            output += "Notes Search Case Sensitive: Off\n";
-        }
-        if(ProjectGoldStarsX.passwordProtectedNotes)
-        {
-            output += "Password-Protected Notes: On\n";
-        }
-        else
-        {
-            output += "Password-Protected Notes: Off\n";
-        }
-        if(ProjectGoldStarsX.photosSearchCaseSensitive)
-        {
-            output += "Photos Search Case Sensitive: On\n";
-        }
-        else
-        {
-            output += "Photos Search Case Sensitive: Off\n";
-        }
-        if(ProjectGoldStarsX.passwordProtectedPhotos)
-        {
-            output += "Password-Protected Photos: On\n";
-        }
-        else
-        {
-            output += "Password-Protected Photos: Off\n";
-        }
+        output += "Notes Search Case Sensitive: " + notesSearchCaseSensitive() + "\n";
+        output += "Photos Search Case Sensitive: " + photosSearchCaseSensitive() + "\n";
         output += "Talk Nickname: " + ProjectGoldStarsX.nickname + "\n";
-        if(ProjectGoldStarsX.searchCaseSensitive)
-        {
-            output += "Search Case Sensitive: On\n";
-        }
-        else
-        {
-            output += "Search Case Sensitive: Off\n";
-        }
-        if(ProjectGoldStarsX.errorLogSearchCaseSensitive)
-        {
-            output += "Error Log Search Case Sensitive: On";
-        }
-        else
-        {
-            output += "Error Log Search Case Sensitive: Off";
-        }
+        output += "Search Case Sensitive: " + searchCaseSensitive() + "\n";
+        output += "Error Log Search Case Sensitive: " + errorLogSearchCaseSensitive();
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
+    }
+    
+    private String language()
+    {
+        if("1".equals(ProjectGoldStarsX.language))
+        {
+            return "American English";
+        }
+        else
+        {
+            return "British English";
+        }
+    }
+    
+    private String settingsButtonMainMenuBar()
+    {
+        if("1".equals(ProjectGoldStarsX.settingsButtonMainMenuBar))
+        {
+            return "On";
+        }
+        else
+        {
+            return "Off";
+        }
+    }
+    
+    private String notesSearchCaseSensitive()
+    {
+        if(ProjectGoldStarsX.notesSearchCaseSensitive)
+        {
+            return "On";
+        }
+        else
+        {
+            return "Off";
+        }
+    }
+    
+    private String photosSearchCaseSensitive()
+    {
+        if(ProjectGoldStarsX.photosSearchCaseSensitive)
+        {
+            return "On";
+        }
+        else
+        {
+            return "Off";
+        }
+    }
+    
+    private String searchCaseSensitive()
+    {
+        if(ProjectGoldStarsX.searchCaseSensitive)
+        {
+            return "On";
+        }
+        else
+        {
+            return "Off";
+        }
+    }
+    
+    private String errorLogSearchCaseSensitive()
+    {
+        if(ProjectGoldStarsX.errorLogSearchCaseSensitive)
+        {
+            return "On";
+        }
+        else
+        {
+            return "Off";
+        }
     }
 }

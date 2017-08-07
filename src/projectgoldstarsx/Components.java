@@ -1,6 +1,7 @@
 package projectgoldstarsx;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
@@ -71,6 +72,23 @@ public class Components
         titleLabel.setForeground(ProjectGoldStarsX.color2);
         titleLabel.setFont(ProjectGoldStarsX.mediumHeader);
         return titleLabel;
+    }
+    
+    public static JLabel actionLabel(String actionName, MouseListener mouseListener)
+    {
+        JLabel action = new JLabel(actionName, SwingConstants.CENTER);
+        action.setForeground(ProjectGoldStarsX.color2);
+        action.setFont(ProjectGoldStarsX.mediumText2);
+        action.addMouseListener(mouseListener);
+        return action;
+    }
+    
+    public static JLabel questionHeaderLabel(String displayText)
+    {
+        JLabel questionHeaderLabel = new JLabel(displayText, SwingConstants.CENTER);
+        questionHeaderLabel.setForeground(ProjectGoldStarsX.color2);
+        questionHeaderLabel.setFont(ProjectGoldStarsX.mediumText1);
+        return questionHeaderLabel;
     }
     
     public static JMenuItem standardMenuItem(String displayText, ActionListener actionListener)

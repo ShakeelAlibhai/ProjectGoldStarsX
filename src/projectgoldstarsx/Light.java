@@ -29,6 +29,7 @@ public class Light
         ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(lightFrame);
         lightFrame.getContentPane().setBackground(color);
         lightFrame.setJMenuBar(menuBar());
+        lightFrame.setResizable(true);
         lightFrame.setVisible(true);
     }
     

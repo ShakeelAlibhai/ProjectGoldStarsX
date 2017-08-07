@@ -29,4 +29,13 @@ public class ListenersCalendar
             CalendarSettings cs = new CalendarSettings();
         }
     }
+    
+    public static class AboutCalendarListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            AboutPrograms.aboutCalendar();
+        }
+    }
 }

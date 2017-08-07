@@ -142,7 +142,7 @@ public class Search
         }
         if(searchTermLowerCase.contains("rectangle information"))
         {
-            new CalcRectangleInformation();
+            new CalcRectangles();
             return;
         }
         if(searchTermLowerCase.contains("calculator"))
@@ -324,11 +324,6 @@ public class Search
         if(searchTermLowerCase.contains("troubleshoot problems"))
         {
             new TroubleshootProblems();
-            return;
-        }
-        if(searchTermLowerCase.contains("system information"))
-        {
-            new SystemInformation();
             return;
         }
         if(searchTermLowerCase.contains("about programs"))
