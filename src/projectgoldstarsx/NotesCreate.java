@@ -35,6 +35,7 @@ public class NotesCreate extends JInternalFrame
         ProjectGoldStarsX.desktop.add(NotesCreate.this);
         setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         setPreferredSize(new Dimension(1100 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier));
+        setResizable(true);
         setTitle("Create a Note");
         pack();
         setVisible(true);
