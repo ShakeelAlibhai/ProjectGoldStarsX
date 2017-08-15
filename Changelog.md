@@ -2,6 +2,11 @@
 ### Changelog
 
 ## Version 2.0.x
+### Version 2.0.2
+* Updated Commands.
+* Updated Search.
+* Updated Talk.
+
 ### Version 2.0.1
 * Added the ability to resize the "Create a Note" window.
 

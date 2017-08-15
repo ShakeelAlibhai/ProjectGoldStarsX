@@ -123,9 +123,13 @@ public class Commands
                 {
                     new CalcPythagoreanTripleFinder();
                 }
-                else if(input.indexOf("rectangle information") >= 0)
+                else if(input.indexOf("rectangle") >= 0)
                 {
                     new CalcRectangles();
+                }
+                else if(input.indexOf("circle") >= 0)
+                {
+                    new CalcCircles();
                 }
                 else if(input.indexOf("calculator") >= 0)
                 {

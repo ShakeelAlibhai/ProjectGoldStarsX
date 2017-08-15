@@ -140,9 +140,14 @@ public class Search
             new CalcPythagoreanTripleFinder();
             return;
         }
-        if(searchTermLowerCase.contains("rectangle information"))
+        if(searchTermLowerCase.contains("rectangle"))
         {
             new CalcRectangles();
+            return;
+        }
+        if(searchTermLowerCase.contains("circle"))
+        {
+            new CalcCircles();
             return;
         }
         if(searchTermLowerCase.contains("calculator"))
