@@ -8,7 +8,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcAdd ca = new CalcAdd();
+            new CalcAdd();
         }
 
         @Override
@@ -41,7 +41,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcSubtract cs = new CalcSubtract();
+            new CalcSubtract();
         }
 
         @Override
@@ -74,7 +74,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcMultiply cm = new CalcMultiply();
+            new CalcMultiply();
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcDivide cd = new CalcDivide();
+            new CalcDivide();
         }
 
         @Override
@@ -140,7 +140,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcSquareRoot csr = new CalcSquareRoot();
+            new CalcSquareRoot();
         }
 
         @Override
@@ -173,7 +173,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcCubeRoot ccr = new CalcCubeRoot();
+            new CalcCubeRoot();
         }
 
         @Override
@@ -206,7 +206,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcExponents ce = new CalcExponents();
+            new CalcExponents();
         }
 
         @Override
@@ -239,7 +239,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcQuadraticEquation cqe = new CalcQuadraticEquation();
+            new CalcQuadraticEquation();
         }
 
         @Override
@@ -272,7 +272,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcLogBase10 clb10 = new CalcLogBase10();
+            new CalcLogBase10();
         }
 
         @Override
@@ -305,7 +305,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcNaturalLog cnl = new CalcNaturalLog();
+            new CalcNaturalLog();
         }
 
         @Override
@@ -399,12 +399,45 @@ public class ListenersCalculatorMouse
         }
     }
     
+    public static class TrianglesListener implements MouseListener
+    {
+        @Override
+        public void mousePressed(MouseEvent e)
+        {
+            new CalcTriangles();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
+    }
+    
     public static class SineListener implements MouseListener
     {
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcSine cs = new CalcSine();
+            new CalcSine();
         }
 
         @Override
@@ -437,7 +470,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcCosine cc = new CalcCosine();
+            new CalcCosine();
         }
 
         @Override
@@ -470,7 +503,7 @@ public class ListenersCalculatorMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            CalcTangent ct = new CalcTangent();
+            new CalcTangent();
         }
 
         @Override

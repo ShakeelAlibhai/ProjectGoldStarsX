@@ -11,6 +11,7 @@ import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.web.HTMLEditor;
 import javax.swing.JInternalFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -44,10 +45,20 @@ public class NotesCreate extends JInternalFrame
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(getWindowMenu());
         menuBar.add(Components.standardButton("Save", new CreateNoteListener()));
         return menuBar;
+    }
+    
+    public JMenu getWindowMenu()
+    {
+        StandardMenu menu = new StandardMenu("Window");
+        menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
+        menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
+        return menu.getMenu();
     }
     
     private void createScene()
@@ -123,6 +134,23 @@ public class NotesCreate extends JInternalFrame
         public void actionPerformed(ActionEvent e)
         {
             ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(NotesCreate.this);
+        }
+    }
+    
+    public class LeftListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            NotesCreate.this.setSize(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight);
+        }
+    }
+    
+    public class RightListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            NotesCreate.this.setLocation(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.menuBarHeight);
+            NotesCreate.this.setSize(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight);
         }
     }
 }

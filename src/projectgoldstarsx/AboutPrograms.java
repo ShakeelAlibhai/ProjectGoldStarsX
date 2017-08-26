@@ -474,6 +474,7 @@ public class AboutPrograms
                 + "--Compute using pi (~" + Math.PI + ").\n"
                 + "--Find the area and circumference of a circle.\n"
                 + "--Find the area and perimeter of a rectangle.\n"
+                + "--Find the area of a triangle.\n"
                 + "--Find the sine, cosine, and tangent of a number.\n"
                 + "The Calculator also includes an Average Calculator, a Miles Per Gallon Calculator,\n"
                 + "and a Pythagorean Triple Finder, as well as several conversion options.";
@@ -488,6 +489,7 @@ public class AboutPrograms
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         String output = "This program can display the current date in two formats.\n"
                 + "The format in which the date is displayed can be changed in Calendar Settings.\n"
+                + "Calendar also displays the time.\n"
                 + "You can also create calendar events.\n"
                 + "You can search the Calendar for your saved events,\n"
                 + "as well as view the events that you have today.\n"

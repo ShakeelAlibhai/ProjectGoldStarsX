@@ -131,6 +131,10 @@ public class Commands
                 {
                     new CalcCircles();
                 }
+                else if(input.indexOf("triangle") >= 0)
+                {
+                    new CalcTriangles();
+                }
                 else if(input.indexOf("calculator") >= 0)
                 {
                     new Calculator();

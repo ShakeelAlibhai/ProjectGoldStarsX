@@ -61,10 +61,19 @@ public class Browser extends JInternalFrame
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(getWindowMenu());
         menuBar.add(urlField);
         menuBar.add(Components.standardButton("Go", new GoListener()));
         menuBar.add(moreMenu());
         return menuBar;
+    }
+    
+    public JMenu getWindowMenu()
+    {
+        StandardMenu menu = new StandardMenu("Window");
+        menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
+        menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
+        return menu.getMenu();
     }
     
     private JMenu moreMenu()
@@ -171,6 +180,23 @@ public class Browser extends JInternalFrame
         public void actionPerformed(ActionEvent e)
         {
             ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(Browser.this);
+        }
+    }
+    
+    public class LeftListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            Browser.this.setSize(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight);
+        }
+    }
+    
+    public class RightListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            Browser.this.setLocation(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.menuBarHeight);
+            Browser.this.setSize(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight);
         }
     }
     

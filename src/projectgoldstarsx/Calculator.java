@@ -36,7 +36,7 @@ public class Calculator
         calculatorFrame.add(Components.headerLabel("Geometry:"));
         calculatorFrame.add(Components.actionLabel("Circles", new ListenersCalculatorMouse.CirclesListener()));
         calculatorFrame.add(Components.actionLabel("Rectangles", new ListenersCalculatorMouse.RectanglesListener()));
-        calculatorFrame.add(new JLabel());
+        calculatorFrame.add(Components.actionLabel("Triangles", new ListenersCalculatorMouse.TrianglesListener()));
         calculatorFrame.add(new JLabel());
         calculatorFrame.add(Components.headerLabel("Trigonometry:"));
         calculatorFrame.add(Components.actionLabel("Sine", new ListenersCalculatorMouse.SineListener()));

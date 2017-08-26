@@ -35,7 +35,6 @@ public class About
         menuBar.add(aboutFrame.getMaximizeButton());
         menuBar.add(aboutFrame.getWindowMenu());
         menuBar.add(Components.standardButton("About Programs", new ListenersAbout.AboutProgramsListener()));
-        menuBar.add(Components.standardButton("Help", new ListenersProgramsAction.HelpListener()));
         return menuBar;
     }
     

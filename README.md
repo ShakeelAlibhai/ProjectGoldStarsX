@@ -13,6 +13,7 @@ The Project GoldStars X calculator includes many features:
 * Log Base 10 and Natural Log
 * Area and Circumference of a Circle
 * Area and Perimeter of a Rectangle
+* Area of a Triangle
 * Sine, Cosine, and Tangent
 * Average Calculator
 * Miles Per Gallon Calculator

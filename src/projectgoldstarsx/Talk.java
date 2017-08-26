@@ -412,6 +412,11 @@ public class Talk
             new CalcCircles();
             temp = "Anything else?";
         }
+        else if(input.indexOf("triangle") >= 0)
+        {
+            new CalcTriangles();
+            temp = "Anything else?";
+        }
         else if(input.indexOf("calculator") >= 0)
         {
             new Calculator();

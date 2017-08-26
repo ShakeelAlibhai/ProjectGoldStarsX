@@ -1,6 +1,17 @@
 # Project GoldStars X
 ### Changelog
 
+## Version 2.1.x
+### Version 2.1
+* Added the ability to find the area of a triangle.
+* Added the ability to move the Browser window to the left or right side of the screen.
+* Added the ability to move the Create a Note window to the left or right side of the screen.
+* Removed the Help button from the About window.
+* Switched the positions of "Calculator Actions" and "Calendar Actions" in the Actions section of the main menu.
+* Updated the menu bar of Education.
+* Updated the menu bar of the Create a Note window.
+* Other minor changes.
+
 ## Version 2.0.x
 ### Version 2.0.2
 * Updated Commands.

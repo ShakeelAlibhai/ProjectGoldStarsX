@@ -36,8 +36,8 @@ public class Menu
         actionsMenu.setFont(ProjectGoldStarsX.mediumText3);
         actionsMenu.add(quickAccessActions());
         actionsMenu.add(new JSeparator());
-        actionsMenu.add(calendarActions());
         actionsMenu.add(calculatorActions());
+        actionsMenu.add(calendarActions());
         actionsMenu.add(notesActions());
         actionsMenu.add(photosActions());
         actionsMenu.add(filesActions());
@@ -60,17 +60,6 @@ public class Menu
             quickAccessActions.add(Components.standardMenuItem("Switch to Dark Theme", new ListenersThemes.DarkThemeListener()));
         }
         return quickAccessActions;
-    }
-    
-    private static JMenu calendarActions()
-    {
-        JMenu calendarActions = new JMenu("Calendar Actions");
-        calendarActions.setFont(ProjectGoldStarsX.mediumText3);
-        calendarActions.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
-        calendarActions.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
-        calendarActions.add(new JSeparator());
-        calendarActions.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
-        return calendarActions;
     }
     
     private static JMenu calculatorActions()
@@ -118,6 +107,7 @@ public class Menu
         calculatorActionsGeometry.setFont(ProjectGoldStarsX.mediumText3);
         calculatorActionsGeometry.add(Components.standardMenuItem("Circles", new ListenersCalculatorAction.CirclesListener()));
         calculatorActionsGeometry.add(Components.standardMenuItem("Rectangles", new ListenersCalculatorAction.RectanglesListener()));
+        calculatorActionsGeometry.add(Components.standardMenuItem("Triangles", new ListenersCalculatorAction.TrianglesListener()));
         return calculatorActionsGeometry;
     }
     
@@ -234,6 +224,17 @@ public class Menu
         calculatorActionsOtherCalculators.add(Components.standardMenuItem("Miles Per Gallon Calculator", new ListenersCalculatorAction.MilesPerGallonCalculatorListener()));
         calculatorActionsOtherCalculators.add(Components.standardMenuItem("Pythagorean Triple Finder", new ListenersCalculatorAction.PythagoreanTripleFinderListener()));
         return calculatorActionsOtherCalculators;
+    }
+    
+    private static JMenu calendarActions()
+    {
+        JMenu calendarActions = new JMenu("Calendar Actions");
+        calendarActions.setFont(ProjectGoldStarsX.mediumText3);
+        calendarActions.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
+        calendarActions.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
+        calendarActions.add(new JSeparator());
+        calendarActions.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
+        return calendarActions;
     }
     
     private static JMenu notesActions()

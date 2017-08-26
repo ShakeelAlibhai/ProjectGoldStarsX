@@ -150,6 +150,11 @@ public class Search
             new CalcCircles();
             return;
         }
+        if(searchTermLowerCase.contains("triangle"))
+        {
+            new CalcTriangles();
+            return;
+        }
         if(searchTermLowerCase.contains("calculator"))
         {
             new Calculator();

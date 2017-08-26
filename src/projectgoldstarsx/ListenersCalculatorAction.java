@@ -44,7 +44,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcSquareRoot csr = new CalcSquareRoot();
+            new CalcSquareRoot();
         }
     }
     
@@ -53,7 +53,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcCubeRoot ccr = new CalcCubeRoot();
+            new CalcCubeRoot();
         }
     }
     
@@ -62,7 +62,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcExponents ce = new CalcExponents();
+            new CalcExponents();
         }
     }
     
@@ -71,7 +71,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcQuadraticEquation cqe = new CalcQuadraticEquation();
+            new CalcQuadraticEquation();
         }
     }
     
@@ -80,7 +80,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcLogBase10 clb10 = new CalcLogBase10();
+            new CalcLogBase10();
         }
     }
     
@@ -89,7 +89,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcNaturalLog cnl = new CalcNaturalLog();
+            new CalcNaturalLog();
         }
     }
     
@@ -108,6 +108,15 @@ public class ListenersCalculatorAction
         public void actionPerformed(ActionEvent e)
         {
             new CalcRectangles();
+        }
+    }
+    
+    public static class TrianglesListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CalcTriangles();
         }
     }
     
