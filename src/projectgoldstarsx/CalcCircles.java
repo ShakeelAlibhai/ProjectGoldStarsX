@@ -56,11 +56,14 @@ public class CalcCircles
             }
             catch(Exception e2)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator");
                 JOptionPane.showMessageDialog(null, "ERROR", "Circles", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if(radiusD <= 0)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator\n"
+                        + "Error Description: The input for the radius of a circle was less than or equal to 0.");
                 output = "ERROR:\n"
                         + "The radius of the circle is less than or equal to 0.";
                 JOptionPane.showMessageDialog(null, output, "Circles", JOptionPane.ERROR_MESSAGE);

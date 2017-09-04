@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.1.x
+### Version 2.1.1
+* Updated error reporting.
+
 ### Version 2.1
 * Added the ability to find the area of a triangle.
 * Added the ability to move the Browser window to the left or right side of the screen.

@@ -74,6 +74,7 @@ public class CalcRectangles
             }
             catch(Exception e2)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator");
                 JOptionPane.showMessageDialog(null, "ERROR", "Rectangles", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -83,11 +84,14 @@ public class CalcRectangles
             }
             catch(Exception e2)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator");
                 JOptionPane.showMessageDialog(null, "ERROR", "Rectangles", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if(lengthD <= 0)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator\n"
+                        + "Error Description: The input for the length of a rectangle was less than or equal to 0.");
                 output = "ERROR:\n"
                         + "The length of the rectangle is less than or equal to 0.";
                 JOptionPane.showMessageDialog(null, output, "Rectangles", JOptionPane.ERROR_MESSAGE);
@@ -95,6 +99,8 @@ public class CalcRectangles
             }
             if(widthD <= 0)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator\n"
+                        + "Error Description: The input for the width of a rectangle was less than or equal to 0.");
                 output = "ERROR:\n"
                         + "The width of the rectangle is less than or equal to 0.";
                 JOptionPane.showMessageDialog(null, output, "Rectangles", JOptionPane.ERROR_MESSAGE);

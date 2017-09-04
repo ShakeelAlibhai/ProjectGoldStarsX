@@ -74,6 +74,7 @@ public class CalcTriangles
             }
             catch(Exception e2)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator");
                 JOptionPane.showMessageDialog(null, "ERROR", "Triangles", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -83,11 +84,14 @@ public class CalcTriangles
             }
             catch(Exception e2)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator");
                 JOptionPane.showMessageDialog(null, "ERROR", "Triangles", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if(baseD <= 0)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator\n"
+                        + "Error Description: The input for the base of a triangle was less than or equal to 0.");
                 output = "ERROR:\n"
                         + "The base of the triangle is less than or equal to 0.";
                 JOptionPane.showMessageDialog(null, output, "Triangles", JOptionPane.ERROR_MESSAGE);
@@ -95,6 +99,8 @@ public class CalcTriangles
             }
             if(heightD <= 0)
             {
+                ProjectGoldStarsX.errors.add("Error: Calculator\n"
+                        + "Error Description: The input for the height of a triangle was less than or equal to 0.");
                 output = "ERROR:\n"
                         + "The height of the triangle is less than or equal to 0.";
                 JOptionPane.showMessageDialog(null, output, "Triangles", JOptionPane.ERROR_MESSAGE);
