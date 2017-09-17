@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.1.x
+### Version 2.1.2
+* Updated the "About Calculator" and "About Calendar" windows.
+
 ### Version 2.1.1
 * Updated error reporting.
 

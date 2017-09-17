@@ -470,8 +470,6 @@ public class AboutPrograms
                 + "--Raise a number to a power.\n"
                 + "--Solve a quadratic equation.\n"
                 + "--Find the log base 10 of a number and the natural log (log base e) of a number.\n"
-                + "--Compute using e (~" + Math.E + ").\n"
-                + "--Compute using pi (~" + Math.PI + ").\n"
                 + "--Find the area and circumference of a circle.\n"
                 + "--Find the area and perimeter of a rectangle.\n"
                 + "--Find the area of a triangle.\n"
@@ -487,13 +485,11 @@ public class AboutPrograms
         InformationWindow currentSettingsFrame = new InformationWindow("About Calendar");
         currentSettingsFrame.setLayout(new GridLayout(1, 1));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "This program can display the current date in two formats.\n"
+        String output = "This program can display the current date in two formats. It also displays the time.\n"
                 + "The format in which the date is displayed can be changed in Calendar Settings.\n"
-                + "Calendar also displays the time.\n"
                 + "You can also create calendar events.\n"
-                + "You can search the Calendar for your saved events,\n"
-                + "as well as view the events that you have today.\n"
-                + "Note: Not all of today's calendar events may show in 'View Today's Events.'\n"
+                + "You can search the Calendar for your saved events, as well as view the events that you have today.\n"
+                + "Note: Not all of today's calendar events may show in \"View Today's Events.\"\n"
                 + "You may need to adjust the size of the window to view more events.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
