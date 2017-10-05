@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.1.x
+### Version 2.1.3
+* Added a "Refresh" button to the "Current Settings" window.
+
 ### Version 2.1.2
 * Updated the "About Calculator" and "About Calendar" windows.
 

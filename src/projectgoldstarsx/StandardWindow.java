@@ -38,6 +38,11 @@ public class StandardWindow
         return menu.getMenu();
     }
     
+    public void dispose()
+    {
+        frame.dispose();
+    }
+    
     public void makeVisible()
     {
         frame.setVisible(true);

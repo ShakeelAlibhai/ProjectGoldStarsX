@@ -2,6 +2,7 @@ package projectgoldstarsx;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 public class ProgramWindow extends StandardWindow
 {
@@ -24,6 +25,11 @@ public class ProgramWindow extends StandardWindow
     public void add(JPanel panel)
     {
         frame.add(panel);
+    }
+    
+    public void add(JTextArea textArea)
+    {
+        frame.add(textArea);
     }
     
     public void add(JTextField textField)
