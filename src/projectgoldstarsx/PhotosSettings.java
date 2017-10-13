@@ -19,7 +19,7 @@ public class PhotosSettings
     private void photosSettings()
     {
         settingsFrame = new ProgramWindow("Photos Settings");
-        settingsFrame.setSize(850 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
+        settingsFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(3, 1));
         settingsFrame.setStandardMenuBar();
         settingsFrame.add(Components.headerLabel("Photos Search Case Sensitivity"));

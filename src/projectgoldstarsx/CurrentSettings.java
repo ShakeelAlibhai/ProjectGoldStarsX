@@ -30,11 +30,11 @@ public class CurrentSettings
         textArea1.setFont(ProjectGoldStarsX.bodyText1);
         currentSettingsFrame.add(textArea1);
         output = "Calendar Format: " + ProjectGoldStarsX.calendarFormat + "\n";
-        output += "Notes Search Case Sensitive: " + notesSearchCaseSensitive() + "\n";
-        output += "Photos Search Case Sensitive: " + photosSearchCaseSensitive() + "\n";
+        output += "Notes Search Case Sensitive: " + (ProjectGoldStarsX.notesSearchCaseSensitive ? "On" : "Off") + "\n";
+        output += "Photos Search Case Sensitive: " + (ProjectGoldStarsX.photosSearchCaseSensitive ? "On" : "Off") + "\n";
         output += "Talk Nickname: " + ProjectGoldStarsX.nickname + "\n";
-        output += "Search Case Sensitive: " + searchCaseSensitive() + "\n";
-        output += "Error Log Search Case Sensitive: " + errorLogSearchCaseSensitive();
+        output += "Search Case Sensitive: " + (ProjectGoldStarsX.searchCaseSensitive ? "On" : "Off") + "\n";
+        output += "Error Log Search Case Sensitive: " + (ProjectGoldStarsX.errorLogSearchCaseSensitive ? "On" : "Off");
         JTextArea textArea2 = new JTextArea(output);
         textArea2.setEditable(false);
         textArea2.setFont(ProjectGoldStarsX.bodyText1);
@@ -69,54 +69,6 @@ public class CurrentSettings
     private String settingsButtonMainMenuBar()
     {
         if("1".equals(ProjectGoldStarsX.settingsButtonMainMenuBar))
-        {
-            return "On";
-        }
-        else
-        {
-            return "Off";
-        }
-    }
-    
-    private String notesSearchCaseSensitive()
-    {
-        if(ProjectGoldStarsX.notesSearchCaseSensitive)
-        {
-            return "On";
-        }
-        else
-        {
-            return "Off";
-        }
-    }
-    
-    private String photosSearchCaseSensitive()
-    {
-        if(ProjectGoldStarsX.photosSearchCaseSensitive)
-        {
-            return "On";
-        }
-        else
-        {
-            return "Off";
-        }
-    }
-    
-    private String searchCaseSensitive()
-    {
-        if(ProjectGoldStarsX.searchCaseSensitive)
-        {
-            return "On";
-        }
-        else
-        {
-            return "Off";
-        }
-    }
-    
-    private String errorLogSearchCaseSensitive()
-    {
-        if(ProjectGoldStarsX.errorLogSearchCaseSensitive)
         {
             return "On";
         }

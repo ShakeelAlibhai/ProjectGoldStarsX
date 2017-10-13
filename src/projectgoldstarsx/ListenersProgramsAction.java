@@ -129,11 +129,11 @@ public class ListenersProgramsAction
             int randomResponse = (int)(r * 2);
             if(randomResponse == 0)
             {
-                Talk t = new Talk("Hello, how are you?");
+                new Talk("Hello, how are you?");
             }
             else
             {
-                Talk t = new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+                new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
             }
         }
     }

@@ -19,7 +19,7 @@ public class NotesSettings
     private void notesSettings()
     {
         settingsFrame = new ProgramWindow("Notes Settings");
-        settingsFrame.setSize(850 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
+        settingsFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(3, 1));
         settingsFrame.setStandardMenuBar();
         settingsFrame.add(Components.headerLabel("Notes Search Case Sensitivity"));

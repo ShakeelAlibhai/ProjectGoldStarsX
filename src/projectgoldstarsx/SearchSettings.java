@@ -19,7 +19,7 @@ public class SearchSettings
     private void searchSettings()
     {
         settingsFrame = new ProgramWindow("Search Settings");
-        settingsFrame.setSize(850 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
+        settingsFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         settingsFrame.setLayout(new GridLayout(3, 1));
         settingsFrame.setStandardMenuBar();
         settingsFrame.add(Components.headerLabel("Search Case Sensitivity"));

@@ -103,6 +103,7 @@ public class Talk
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(Components.settingsButton("Talk Settings", new TalkSettingsListener()));
+        menuBar.add(Components.standardButton("Clear Chat History", new ClearChatHistoryListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }
@@ -1067,6 +1068,26 @@ public class Talk
         public void actionPerformed(ActionEvent e)
         {
             new TalkSettings();
+        }
+    }
+    
+    public static class ClearChatHistoryListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            messages = new ArrayList<String>();
+            talkFrame.dispose();
+            double r = Math.random();
+            int randomResponse = (int)(r * 2);
+            if(randomResponse == 0)
+            {
+                new Talk("Hello, how are you?");
+            }
+            else
+            {
+                new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+            }
         }
     }
     
