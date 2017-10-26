@@ -137,7 +137,23 @@ public class Talk
                 input.indexOf("hi, talk") >= 0) &&
                 input.indexOf("how are you") <= 0)
         {
-            temp = "How are you?";
+            if(!ProjectGoldStarsX.howAreYouDisplayed)
+            {
+                temp = "How are you?";
+            }
+            else
+            {
+                double r = Math.random();
+                int randomResponse = (int)(r * 2);
+                if(randomResponse == 0)
+                {
+                    temp = "What's up?";
+                }
+                else
+                {
+                    temp = "How's it going?";
+                }
+            }
         }
         else if(input.indexOf("hola") >= 0 ||
                 input.indexOf("spanish") >= 0)
@@ -275,12 +291,12 @@ public class Talk
             if(randomResponse == 1)
             {
                 temp = "I'm fine, thanks for asking.";
-                ProjectGoldStarsX.howAreYou = true;
+                ProjectGoldStarsX.howAreYouTyped = true;
             }
             else
             {
                 temp = "I'm doing well, thanks for asking.";
-                ProjectGoldStarsX.howAreYou = true;
+                ProjectGoldStarsX.howAreYouTyped = true;
             }
         }
         else if(input.indexOf("browser") >= 0 ||
@@ -646,16 +662,16 @@ public class Talk
             temp = "That's a good question.";
         }
         else if(input.indexOf("good") >= 0 &&
-                ProjectGoldStarsX.howAreYou == false)
+                ProjectGoldStarsX.howAreYouTyped == false)
         {
             temp = "You're good? That's nice.";
-            ProjectGoldStarsX.howAreYou = true;
+            ProjectGoldStarsX.howAreYouTyped = true;
         }
         else if(input.indexOf("fine") >= 0 &&
-                ProjectGoldStarsX.howAreYou == false)
+                ProjectGoldStarsX.howAreYouTyped == false)
         {
             temp = "You're fine? That's good.";
-            ProjectGoldStarsX.howAreYou = true;
+            ProjectGoldStarsX.howAreYouTyped = true;
         }
         else if((input.indexOf("i am") >= 0 ||
                 input.indexOf("i'm") >= 0) &&
@@ -1083,10 +1099,12 @@ public class Talk
             if(randomResponse == 0)
             {
                 new Talk("Hello, how are you?");
+                ProjectGoldStarsX.howAreYouDisplayed = true;
             }
             else
             {
                 new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+                ProjectGoldStarsX.howAreYouDisplayed = false;
             }
         }
     }

@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.1.x
+### Version 2.1.5
+* Updated Talk.
+
 ### Version 2.1.4
 * Added a "Clear Chat History" button to the "Talk" window.
 * Slightly adjusted the default size of the "Notes Settings," "Photos Settings," "Search Settings," and "Error Log Settings" windows.

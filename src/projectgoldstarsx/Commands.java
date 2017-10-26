@@ -182,10 +182,12 @@ public class Commands
                     if(randomResponse == 0)
                     {
                         new Talk("Hello, how are you?");
+                        ProjectGoldStarsX.howAreYouDisplayed = true;
                     }
                     else
                     {
                         new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+                        ProjectGoldStarsX.howAreYouDisplayed = false;
                     }
                 }
                 else if(input.indexOf("stories") >= 0 ||

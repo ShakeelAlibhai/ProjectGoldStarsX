@@ -130,10 +130,12 @@ public class ListenersProgramsAction
             if(randomResponse == 0)
             {
                 new Talk("Hello, how are you?");
+                ProjectGoldStarsX.howAreYouDisplayed = true;
             }
             else
             {
                 new Talk("Hi, " + ProjectGoldStarsX.nickname + "!");
+                ProjectGoldStarsX.howAreYouDisplayed = false;
             }
         }
     }

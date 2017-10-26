@@ -8,8 +8,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String name = "Project GoldStars X 2.1 Update 4";
-    public static final String version = "Version 2.1.4";
+    public static final String name = "Project GoldStars X 2.1 Update 5";
+    public static final String version = "Version 2.1.5";
     public static final File projectGoldStarsXFolder = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static Color color1;
     public static Color color2;
@@ -77,7 +77,8 @@ public class ProjectGoldStarsX
     //Talk Variables
     public static boolean homework = false;
     public static boolean homework2 = false;
-    public static boolean howAreYou = false;
+    public static boolean howAreYouDisplayed = false;
+    public static boolean howAreYouTyped = false;
     public static boolean likeIceCream = false;
     public static boolean iceCreamFlavor = false;
     public static boolean likeCookies = false;
