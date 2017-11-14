@@ -29,7 +29,7 @@ public class Story
         String opening, output, setting;
         int openingType;
         double random = Math.random();
-        int r = (int)(random * 6);
+        int r = (int)(random * 7);
         if(r == 0)
         {
             opening = "Once upon a time, ";
@@ -58,6 +58,12 @@ public class Story
         {
             opening = "In a palace far, far away, ";
             setting = "palace";
+            openingType = 2;
+        }
+        else if(r == 5)
+        {
+            opening = "In a desert far, far away, ";
+            setting = "desert";
             openingType = 2;
         }
         else
@@ -123,6 +129,11 @@ public class Story
                 subject = "princess";
                 gender = 'f';
             }
+        }
+        if("desert".equals(setting))
+        {
+            subject = "camel";
+            gender = 'm';
         }
         if("forest".equals(setting))
         {

@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.1.x
+### Version 2.1.6
+* Updated Stories.
+
 ### Version 2.1.5
 * Updated Talk.
 

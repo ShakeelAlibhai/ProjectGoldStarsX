@@ -8,7 +8,7 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String name = "Project GoldStars X 2.1 Update 5";
+    public static final String name = "Project GoldStars X 2.1 Update 6";
     public static final String version = "Version 2.1.5";
     public static final File projectGoldStarsXFolder = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static Color color1;
