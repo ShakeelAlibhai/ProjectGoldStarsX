@@ -28,48 +28,32 @@ public class Commands
                 else if(input.indexOf("browser") >= 0 ||
                         input.indexOf("internet") >= 0)
                 {
-                    Browser b = new Browser();
-                }
-                else if(input.indexOf("calendar events today") >= 0)
-                {
-                    new CalendarViewEventsToday();
-                }
-                else if(input.indexOf("create calendar event") >= 0 ||
-                        input.indexOf("create a calendar event") >= 0)
-                {
-                    new CalendarCreateEvent();
-                }
-                else if(input.indexOf("calendar") >= 0)
-                {
-                    new CalendarHome();
+                    new Browser();
                 }
                 else if(input.indexOf("add") >= 0 ||
                         input.indexOf("+") >= 0)
                 {
-                    CalcAdd ca = new CalcAdd();
+                    new CalcAdd();
                 }
                 else if(input.indexOf("subtract") >= 0)
                 {
-                    CalcSubtract cs = new CalcSubtract();
+                    new CalcSubtract();
                 }
                 else if(input.indexOf("multiply") >= 0 ||
                         input.indexOf("multiplication") >= 0 ||
                         input.indexOf("*") >= 0)
                 {
-                    CalcMultiply cm = new CalcMultiply();
+                    new CalcMultiply();
                 }
                 else if(input.indexOf("divide") >= 0 ||
                         input.indexOf("division") >= 0)
                 {
-                    CalcDivide cd = new CalcDivide();
+                    new CalcDivide();
                 }
-                else if(input.indexOf("square root") >= 0)
+                else if(input.indexOf("square root") >= 0 ||
+                        input.indexOf("cube root") >= 0)
                 {
-                    CalcSquareRoot csr = new CalcSquareRoot();
-                }
-                else if(input.indexOf("cube root") >= 0)
-                {
-                    CalcCubeRoot ccr = new CalcCubeRoot();
+                    new CalcSquareAndCubeRoots();
                 }
                 else if(input.indexOf("raise a number to a power") >= 0 ||
                         input.indexOf("exponent") >= 0)
@@ -138,6 +122,19 @@ public class Commands
                 else if(input.indexOf("calculator") >= 0)
                 {
                     new Calculator();
+                }
+                else if(input.indexOf("calendar events today") >= 0)
+                {
+                    new CalendarViewEventsToday();
+                }
+                else if(input.indexOf("create calendar event") >= 0 ||
+                        input.indexOf("create a calendar event") >= 0)
+                {
+                    new CalendarCreateEvent();
+                }
+                else if(input.indexOf("calendar") >= 0)
+                {
+                    new CalendarHome();
                 }
                 else if(input.indexOf("create a note") >= 0 ||
                         input.indexOf("create note") >= 0 ||

@@ -35,6 +35,7 @@ public class StandardWindow
         StandardMenu menu = new StandardMenu("Window");
         menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
         menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
+        menu.add(Components.standardMenuItem("Move to Top of Screen", new TopListener()));
         return menu.getMenu();
     }
     
@@ -130,6 +131,14 @@ public class StandardWindow
         {
             frame.setLocation(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.menuBarHeight);
             frame.setSize(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight);
+        }
+    }
+    
+    public class TopListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            frame.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
         }
     }
 }

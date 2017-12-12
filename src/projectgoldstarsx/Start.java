@@ -232,7 +232,7 @@ public class Start
         if("Forest".equals(ProjectGoldStarsX.theme))
         {
             ProjectGoldStarsX.color1 = new Color(0x00, 0x80, 0x00);
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.color2 = new Color(222, 184, 135);
             ProjectGoldStarsX.standardColors = false;
         }
         if("Grass".equals(ProjectGoldStarsX.theme))

@@ -68,7 +68,7 @@ public class ChangeTheme
         JButton forestTheme = new JButton("Forest");
         forestTheme.setFont(ProjectGoldStarsX.mediumText2);
         forestTheme.setBackground(new Color(0x00, 0x80, 0x00));
-        forestTheme.setForeground(Color.white);
+        forestTheme.setForeground(new Color(222, 184, 135));
         forestTheme.addActionListener(new ListenersThemes.ForestThemeListener());
         return forestTheme;
     }

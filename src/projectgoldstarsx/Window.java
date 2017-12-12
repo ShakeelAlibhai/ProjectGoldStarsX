@@ -94,46 +94,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         }
         if(ProjectGoldStarsX.theme.equals("Forest"))
         {
-            //1280x800 wallpaper
-            if(ProjectGoldStarsX.width <= 1280 && ProjectGoldStarsX.height <= 800)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_1280x800.PNG"));
-            }
-            //1366x768 wallpaper
-            else if(ProjectGoldStarsX.width <= 1366 && ProjectGoldStarsX.height <= 768)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_1366x768.PNG"));
-            }
-            //1440x900 wallpaper
-            else if(ProjectGoldStarsX.width <= 1440 && ProjectGoldStarsX.height <= 900)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_1440x900.PNG"));
-            }
-            //1920x1080 wallpaper
-            else if(ProjectGoldStarsX.width <= 1920 && ProjectGoldStarsX.height <= 1080)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_1920x1080.PNG"));
-            }
-            //2560x1440 wallpaper
-            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1440)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_2560x1440.PNG"));
-            }
-            //2560x1600 wallpaper
-            else if(ProjectGoldStarsX.width <= 2560 && ProjectGoldStarsX.height <= 1600)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_2560x1600.PNG"));
-            }
-            //3840x2160 wallpaper
-            else if(ProjectGoldStarsX.width <= 3840 && ProjectGoldStarsX.height <= 2160)
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_3840x2160.PNG"));
-            }
-            //5120x2880 wallpaper
-            else
-            {
-                applyWallpaper(getClass().getResource("/wallpaper/Forest_5120x2880.PNG"));
-            }
+            applyWallpaper(getClass().getResource("/wallpaper/Forest.jpg"));
         }
         if(ProjectGoldStarsX.theme.equals("Mountain"))
         {

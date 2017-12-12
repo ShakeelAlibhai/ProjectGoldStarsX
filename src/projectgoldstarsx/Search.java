@@ -33,22 +33,6 @@ public class Search
             new Browser();
             return;
         }
-        if(searchTermLowerCase.contains("calendar events today"))
-        {
-            new CalendarViewEventsToday();
-            return;
-        }
-        if(searchTermLowerCase.contains("create calendar event") ||
-                searchTermLowerCase.contains("create a calendar event"))
-        {
-            new CalendarCreateEvent();
-            return;
-        }
-        if(searchTermLowerCase.contains("calendar"))
-        {
-            new CalendarHome();
-            return;
-        }
         if(searchTermLowerCase.contains("add"))
         {
             new CalcAdd();
@@ -69,14 +53,9 @@ public class Search
             new CalcDivide();
             return;
         }
-        if(searchTermLowerCase.contains("square root"))
+        if(searchTermLowerCase.contains("square root") || searchTermLowerCase.contains("cube root"))
         {
-            new CalcSquareRoot();
-            return;
-        }
-        if(searchTermLowerCase.contains("cube root"))
-        {
-            new CalcCubeRoot();
+            new CalcSquareAndCubeRoots();
             return;
         }
         if(searchTermLowerCase.contains("raise a number to a power") || searchTermLowerCase.contains("exponent"))
@@ -158,6 +137,22 @@ public class Search
         if(searchTermLowerCase.contains("calculator"))
         {
             new Calculator();
+            return;
+        }
+        if(searchTermLowerCase.contains("calendar events today"))
+        {
+            new CalendarViewEventsToday();
+            return;
+        }
+        if(searchTermLowerCase.contains("create calendar event") ||
+                searchTermLowerCase.contains("create a calendar event"))
+        {
+            new CalendarCreateEvent();
+            return;
+        }
+        if(searchTermLowerCase.contains("calendar"))
+        {
+            new CalendarHome();
             return;
         }
         if(searchTermLowerCase.contains("create a note") ||

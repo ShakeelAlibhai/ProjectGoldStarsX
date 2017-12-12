@@ -1,6 +1,14 @@
 # Project GoldStars X
 ### Changelog
 
+## Version 2.2.x
+### Version 2.2
+* Added the ability to many windows to move the window to the top of the screen.
+* Replaced the "Square Root" and "Cube Root" windows with a new "Square & Cube Roots" window.
+* Updated Stories.
+* Updated the Forest theme.
+* Other minor changes.
+
 ## Version 2.1.x
 ### Version 2.1.6
 * Updated Stories.

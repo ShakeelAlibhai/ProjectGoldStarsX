@@ -92,8 +92,7 @@ public class Menu
     {
         JMenu calculatorActionsComplexCalculations = new JMenu("Complex Calculations");
         calculatorActionsComplexCalculations.setFont(ProjectGoldStarsX.mediumText3);
-        calculatorActionsComplexCalculations.add(Components.standardMenuItem("Square Root", new ListenersCalculatorAction.SquareRootListener()));
-        calculatorActionsComplexCalculations.add(Components.standardMenuItem("Cube Root", new ListenersCalculatorAction.CubeRootListener()));
+        calculatorActionsComplexCalculations.add(Components.standardMenuItem("Square & Cube Roots", new ListenersCalculatorAction.SquareAndCubeRootsListener()));
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Exponents", new ListenersCalculatorAction.ExponentsListener()));
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Quadratic Equation Solver", new ListenersCalculatorAction.QuadraticEquationListener()));
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Log Base 10", new ListenersCalculatorAction.LogBase10Listener()));

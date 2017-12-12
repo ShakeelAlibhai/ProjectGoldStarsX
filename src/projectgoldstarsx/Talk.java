@@ -302,57 +302,37 @@ public class Talk
         else if(input.indexOf("browser") >= 0 ||
                 input.indexOf("internet") >= 0)
         {
-            Browser b = new Browser();
-            temp = "Anything else?";
-        }
-        else if(input.indexOf("calendar events today") >= 0)
-        {
-            new CalendarViewEventsToday();
-            temp = "Anything else?";
-        }
-        else if(input.indexOf("create calendar event") >= 0 ||
-                input.indexOf("create a calendar event") >= 0)
-        {
-            new CalendarCreateEvent();
-            temp = "Anything else?";
-        }
-        else if(input.indexOf("calendar") >= 0)
-        {
-            new CalendarHome();
+            new Browser();
             temp = "Anything else?";
         }
         else if(input.indexOf("+") >= 0 ||
                 input.indexOf("add") >= 0)
         {
-            CalcAdd ca = new CalcAdd();
+            new CalcAdd();
             temp = "Anything else?";
         }
         else if(input.indexOf("subtract") >= 0)
         {
-            CalcSubtract cs = new CalcSubtract();
+            new CalcSubtract();
             temp = "Anything else?";
         }
         else if(input.indexOf("*") >= 0 ||
                 input.indexOf("multiply") >= 0 ||
                 input.indexOf("multiplication") >= 0)
         {
-            CalcMultiply cm = new CalcMultiply();
+            new CalcMultiply();
             temp = "Anything else?";
         }
         else if(input.indexOf("divide") >= 0 ||
                 input.indexOf("division") >= 0)
         {
-            CalcDivide cd = new CalcDivide();
+            new CalcDivide();
             temp = "Anything else?";
         }
-        else if(input.indexOf("square root") >= 0)
+        else if(input.indexOf("square root") >= 0 ||
+                input.indexOf("cube root") >= 0)
         {
-            CalcSquareRoot csq = new CalcSquareRoot();
-            temp = "Anything else?";
-        }
-        else if(input.indexOf("cube root") >= 0)
-        {
-            CalcCubeRoot ccr = new CalcCubeRoot();
+            new CalcSquareAndCubeRoots();
             temp = "Anything else?";
         }
         else if(input.indexOf("raise a number to a power") >= 0 ||
@@ -437,6 +417,22 @@ public class Talk
         else if(input.indexOf("calculator") >= 0)
         {
             new Calculator();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("calendar events today") >= 0)
+        {
+            new CalendarViewEventsToday();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("create calendar event") >= 0 ||
+                input.indexOf("create a calendar event") >= 0)
+        {
+            new CalendarCreateEvent();
+            temp = "Anything else?";
+        }
+        else if(input.indexOf("calendar") >= 0)
+        {
+            new CalendarHome();
             temp = "Anything else?";
         }
         else if(input.indexOf("create a note") >= 0 ||

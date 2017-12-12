@@ -135,45 +135,12 @@ public class ListenersCalculatorMouse
         }
     }
     
-    public static class SquareRootListener implements MouseListener
+    public static class SquareAndCubeRootsListener implements MouseListener
     {
         @Override
         public void mousePressed(MouseEvent e)
         {
-            new CalcSquareRoot();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class CubeRootListener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            new CalcCubeRoot();
+            new CalcSquareAndCubeRoots();
         }
 
         @Override

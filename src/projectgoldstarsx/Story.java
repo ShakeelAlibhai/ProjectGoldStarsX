@@ -335,7 +335,7 @@ public class Story
             {
                 case "North America":
                 {
-                    int r4 = (int)(random4 * 33);
+                    int r4 = (int)(random4 * 34);
                     if(r4 == 0)
                     {
                         place = "Florida";
@@ -494,6 +494,11 @@ public class Story
                     else if(r4 == 31)
                     {
                         place = "Brazil";
+                        land = true;
+                    }
+                    else if(r4 == 32)
+                    {
+                        place = "Ottawa";
                         land = true;
                     }
                     else
@@ -675,7 +680,7 @@ public class Story
                 }
                 case "The Middle East":
                 {
-                    int r4 = (int)(random4 * 17);
+                    int r4 = (int)(random4 * 18);
                     if(r4 == 0)
                     {
                         place = "Canada";
@@ -754,6 +759,11 @@ public class Story
                     else if(r4 == 15)
                     {
                         place = "Jordan";
+                        land = true;
+                    }
+                    else if(r4 == 16)
+                    {
+                        place = "Kerbala";
                         land = true;
                     }
                     else

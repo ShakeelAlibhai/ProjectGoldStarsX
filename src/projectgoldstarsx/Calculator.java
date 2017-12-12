@@ -24,13 +24,13 @@ public class Calculator
         calculatorFrame.add(Components.actionLabel("Multiply", new ListenersCalculatorMouse.MultiplyListener()));
         calculatorFrame.add(Components.actionLabel("Divide", new ListenersCalculatorMouse.DivideListener()));
         calculatorFrame.add(Components.headerLabel("Complex Calculations:"));
-        calculatorFrame.add(Components.actionLabel("Square Root", new ListenersCalculatorMouse.SquareRootListener()));
-        calculatorFrame.add(Components.actionLabel("Cube Root", new ListenersCalculatorMouse.CubeRootListener()));
+        calculatorFrame.add(Components.actionLabel("Square & Cube Roots", new ListenersCalculatorMouse.SquareAndCubeRootsListener()));
         calculatorFrame.add(Components.actionLabel("Exponents", new ListenersCalculatorMouse.ExponentsListener()));
         calculatorFrame.add(Components.actionLabel("Quadratic Equation Solver", new ListenersCalculatorMouse.QuadraticEquationListener()));
-        calculatorFrame.add(new JLabel());
         calculatorFrame.add(Components.actionLabel("Log Base 10", new ListenersCalculatorMouse.LogBase10Listener()));
+        calculatorFrame.add(new JLabel());
         calculatorFrame.add(Components.actionLabel("Natural Log", new ListenersCalculatorMouse.NaturalLogListener()));
+        calculatorFrame.add(new JLabel());
         calculatorFrame.add(new JLabel());
         calculatorFrame.add(new JLabel());
         calculatorFrame.add(Components.headerLabel("Geometry:"));

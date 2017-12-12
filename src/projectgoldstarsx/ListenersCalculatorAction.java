@@ -39,21 +39,12 @@ public class ListenersCalculatorAction
         }
     }
     
-    public static class SquareRootListener implements ActionListener
+    public static class SquareAndCubeRootsListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new CalcSquareRoot();
-        }
-    }
-    
-    public static class CubeRootListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            new CalcCubeRoot();
+            new CalcSquareAndCubeRoots();
         }
     }
     
