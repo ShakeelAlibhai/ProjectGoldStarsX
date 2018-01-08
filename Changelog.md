@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.2.x
+### Version 2.2.1
+* Updated Stories.
+
 ### Version 2.2
 * Added the ability to many windows to move the window to the top of the screen.
 * Replaced the "Square Root" and "Cube Root" windows with a new "Square & Cube Roots" window.

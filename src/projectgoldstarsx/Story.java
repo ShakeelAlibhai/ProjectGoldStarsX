@@ -77,31 +77,46 @@ public class Story
         if("land".equals(setting))
         {
             Double random2 = Math.random();
-            int r2 = (int)(random2 * 2);
+            int r2 = (int)(random2 * 4);
             if(r2 == 0)
             {
                 subject = "person";
-                gender = 'm';
+                gender = randomGender();
+            }
+            else if(r2 == 1)
+            {
+                subject = "cat";
+                gender = randomGender();
+            }
+            else if(r2 == 2)
+            {
+                subject = "dog";
+                gender = randomGender();
             }
             else
             {
                 subject = "bear";
-                gender = 'm';
+                gender = randomGender();
             }
         }
         if("ocean".equals(setting))
         {
             Double random2 = Math.random();
-            int r2 = (int)(random2 * 2);
+            int r2 = (int)(random2 * 3);
             if(r2 == 0)
             {
                 subject = "fish";
-                gender = 'm';
+                gender = randomGender();
+            }
+            else if(r2 == 1)
+            {
+                subject = "dolphin";
+                gender = randomGender();
             }
             else
             {
                 subject = "shark";
-                gender = 'm';
+                gender = randomGender();
             }
         }
         if("castle".equals(setting) ||
@@ -132,13 +147,23 @@ public class Story
         }
         if("desert".equals(setting))
         {
-            subject = "camel";
-            gender = 'm';
+            Double random2 = Math.random();
+            int r2 = (int)(random2 * 2);
+            if(r2 == 0)
+            {
+                subject = "camel";
+                gender = 'm';
+            }
+            else
+            {
+                subject = "horse";
+                gender = 'm';
+            }
         }
         if("forest".equals(setting))
         {
             Double random2 = Math.random();
-            int r2 = (int)(random2 * 4);
+            int r2 = (int)(random2 * 5);
             if(r2 == 0)
             {
                 subject = "owl";
@@ -152,6 +177,11 @@ public class Story
             else if(r2 == 2)
             {
                 subject = "bear";
+                gender = randomGender();
+            }
+            else if(r2 == 3)
+            {
+                subject = "deer";
                 gender = randomGender();
             }
             else
