@@ -8,7 +8,7 @@ public class ListenersCalendar
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalendarCreateEvent cce = new CalendarCreateEvent();
+            new CalendarCreateEvent();
         }
     }
     
@@ -17,7 +17,7 @@ public class ListenersCalendar
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalendarViewEventsToday vcet = new CalendarViewEventsToday();
+            new CalendarViewEventsToday();
         }
     }
     
@@ -26,7 +26,7 @@ public class ListenersCalendar
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalendarSettings cs = new CalendarSettings();
+            new CalendarSettings();
         }
     }
     

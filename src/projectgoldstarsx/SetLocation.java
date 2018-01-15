@@ -2,7 +2,7 @@ package projectgoldstarsx;
 import java.awt.GridLayout;
 public class SetLocation
 {
-    public static ProgramWindow themeFrame;
+    public static ProgramWindow locationFrame;
     
     public SetLocation()
     {
@@ -11,18 +11,18 @@ public class SetLocation
     
     private void setLocation()
     {
-        themeFrame = new ProgramWindow("Set Location");
-        themeFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
-        themeFrame.setLayout(new GridLayout(8, 1));
-        themeFrame.setInstructionsMenuBar("Which of the following best describes your location?");
-        themeFrame.add(Components.standardButton("North America", new ListenersLocations.NorthAmericaListener()));
-        themeFrame.add(Components.standardButton("South America", new ListenersLocations.SouthAmericaListener()));
-        themeFrame.add(Components.standardButton("Europe", new ListenersLocations.EuropeListener()));
-        themeFrame.add(Components.standardButton("Africa", new ListenersLocations.AfricaListener()));
-        themeFrame.add(Components.standardButton("The Middle East", new ListenersLocations.TheMiddleEastListener()));
-        themeFrame.add(Components.standardButton("Asia", new ListenersLocations.AsiaListener()));
-        themeFrame.add(Components.standardButton("Oceania", new ListenersLocations.OceaniaListener()));
-        themeFrame.add(Components.standardButton("Other/I don't want to say", new ListenersLocations.OtherListener()));
-        themeFrame.makeVisible();
+        locationFrame = new ProgramWindow("Set Location");
+        locationFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
+        locationFrame.setLayout(new GridLayout(8, 1));
+        locationFrame.setInstructionsMenuBar("Which of the following best describes your location?");
+        locationFrame.add(Components.standardButton("North America", new ListenersLocations.NorthAmericaListener()));
+        locationFrame.add(Components.standardButton("South America", new ListenersLocations.SouthAmericaListener()));
+        locationFrame.add(Components.standardButton("Europe", new ListenersLocations.EuropeListener()));
+        locationFrame.add(Components.standardButton("Africa", new ListenersLocations.AfricaListener()));
+        locationFrame.add(Components.standardButton("The Middle East", new ListenersLocations.TheMiddleEastListener()));
+        locationFrame.add(Components.standardButton("Asia", new ListenersLocations.AsiaListener()));
+        locationFrame.add(Components.standardButton("Oceania", new ListenersLocations.OceaniaListener()));
+        locationFrame.add(Components.standardButton("Other/I don't want to say", new ListenersLocations.OtherListener()));
+        locationFrame.makeVisible();
     }
 }

@@ -58,41 +58,41 @@ public class Commands
                 else if(input.indexOf("raise a number to a power") >= 0 ||
                         input.indexOf("exponent") >= 0)
                 {
-                    CalcExponents ce = new CalcExponents();
+                    new CalcExponents();
                 }
                 else if(input.indexOf("quadratic equation") >= 0)
                 {
-                    CalcQuadraticEquation cqe = new CalcQuadraticEquation();
+                    new CalcQuadraticEquation();
                 }
                 else if(input.indexOf("log base 10") >= 0 ||
                         input.indexOf("log base ten") >= 0)
                 {
-                    CalcLogBase10 clb10 = new CalcLogBase10();
+                    new CalcLogBase10();
                 }
                 else if(input.indexOf("natural log") >= 0 ||
                         input.indexOf("log base e") >= 0)
                 {
-                    CalcNaturalLog cnl = new CalcNaturalLog();
+                    new CalcNaturalLog();
                 }
                 else if(input.indexOf("cosine") >= 0)
                 {
-                    CalcCosine cc = new CalcCosine();
+                    new CalcCosine();
                 }
                 else if(input.indexOf("sine") >= 0)
                 {
-                    CalcSine cs = new CalcSine();
+                    new CalcSine();
                 }
                 else if(input.indexOf("tangent") >= 0)
                 {
-                    CalcTangent ct = new CalcTangent();
+                    new CalcTangent();
                 }
                 else if(input.indexOf("degrees to radians") >= 0)
                 {
-                    CalcDegreesToRadians cdtr = new CalcDegreesToRadians();
+                    new CalcDegreesToRadians();
                 }
                 else if(input.indexOf("radians to degrees") >= 0)
                 {
-                    CalcRadiansToDegrees crtd = new CalcRadiansToDegrees();
+                    new CalcRadiansToDegrees();
                 }
                 else if(input.indexOf("average calculator") >= 0)
                 {
@@ -230,29 +230,29 @@ public class Commands
                 }
                 else if(input.indexOf("calendar settings") >= 0)
                 {
-                    CalendarSettings cs = new CalendarSettings();
+                    new CalendarSettings();
                 }
                 else if(input.indexOf("notes settings") >= 0)
                 {
-                    NotesSettings ns = new NotesSettings();
+                    new NotesSettings();
                 }
                 else if(input.indexOf("photos settings") >= 0)
                 {
-                    PhotosSettings ps = new PhotosSettings();
+                    new PhotosSettings();
                 }
                 else if(input.indexOf("talk settings") >= 0)
                 {
-                    TalkSettings ts = new TalkSettings();
+                    new TalkSettings();
                 }
                 else if(input.indexOf("error log search case sensitive") >= 0 ||
                         input.indexOf("error log settings") >= 0)
                 {
-                    ErrorLogSettings sts = new ErrorLogSettings();
+                    new ErrorLogSettings();
                 }
                 else if(input.indexOf("search case sensitive") >= 0 ||
                         input.indexOf("search settings") >= 0)
                 {
-                    SearchSettings ss = new SearchSettings();
+                    new SearchSettings();
                 }
                 else if(input.indexOf("settings") >= 0)
                 {

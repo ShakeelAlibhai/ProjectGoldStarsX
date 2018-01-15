@@ -531,34 +531,34 @@ public class Talk
         }
         else if(input.indexOf("calendar settings") >= 0)
         {
-            CalendarSettings cs = new CalendarSettings();
+            new CalendarSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("notes settings") >= 0)
         {
-            NotesSettings ns = new NotesSettings();
+            new NotesSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("photos settings") >= 0)
         {
-            PhotosSettings ps = new PhotosSettings();
+            new PhotosSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("talk settings") >= 0)
         {
-            TalkSettings ts = new TalkSettings();
+            new TalkSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("error log search case sensitive") >= 0 ||
                 input.indexOf("error log settings") >= 0)
         {
-            ErrorLogSettings sts = new ErrorLogSettings();
+            new ErrorLogSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("search case sensitive") >= 0 ||
                 input.indexOf("search settings") >= 0)
         {
-            SearchSettings ss = new SearchSettings();
+            new SearchSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("settings") >= 0)
@@ -567,7 +567,7 @@ public class Talk
         }
         else if(input.indexOf("notifications") >= 0)
         {
-            Notifications n = new Notifications();
+            new Notifications();
             temp = "Anything else?";
         }
         else if(input.indexOf("commands") >= 0)
@@ -578,31 +578,31 @@ public class Talk
         else if(input.indexOf("search error") >= 0 ||
                 input.indexOf("search the error log") >= 0)
         {
-            ErrorLogSearch sel = new ErrorLogSearch();
+            new ErrorLogSearch();
         }
         else if(input.indexOf("error") >= 0)
         {
-            ErrorLog el = new ErrorLog();
+            new ErrorLog();
             temp = "Anything else?";
         }
         else if(input.indexOf("help") >= 0)
         {
-            Help h = new Help();
+            new Help();
             temp = "Anything else?";
         }
         else if(input.indexOf("troubleshoot problems") >= 0)
         {
-            TroubleshootProblems tp = new TroubleshootProblems();
+            new TroubleshootProblems();
             temp = "Anything else?";
         }
         else if(input.indexOf("about programs") >= 0)
         {
-            AboutPrograms ap = new AboutPrograms();
+            new AboutPrograms();
             temp = "Anything else?";
         }
         else if(input.indexOf("about") >= 0)
         {
-            About a = new About();
+            new About();
             temp = "Anything else?";
         }
         else if(input.indexOf("russia") >= 0)
@@ -621,7 +621,7 @@ public class Talk
             }
             else
             {
-                temp = "As of 2014, there are 50 states in the United States of America.";
+                temp = "As of 2017, there are 50 states in the United States of America.";
             }
         }
         else if("hi".equals(input) ||
@@ -690,6 +690,46 @@ public class Talk
             {
                 temp = "No problem!";
             }
+        }
+        else if(input.indexOf("lonely") >= 0 ||
+                input.indexOf("need someone to talk to") >= 0)
+        {
+            temp = "I'm here for you!";
+        }
+        else if(input.indexOf("suicide") >= 0 &&
+                input.indexOf("committed") <= 0)
+        {
+            if((ProjectGoldStarsX.location.equals("North America")) || ProjectGoldStarsX.location.equals("Other/I don't want to say"))
+            {
+                temp = "Never commit suicide. If you need professional help, call 1-800-273-8255 (the Suicide Prevention Lifeline).";
+            }
+            else
+            {
+                temp = "Never commit suicide. There is always a better option.";
+            }
+        }
+        else if(input.indexOf("kill myself") >= 0)
+        {
+            if((ProjectGoldStarsX.location.equals("North America")) || ProjectGoldStarsX.location.equals("Other/I don't want to say"))
+            {
+                temp = "Never kill yourself. If you need professional help, call 1-800-273-8255 (the Suicide Prevention Lifeline).";
+            }
+            else
+            {
+                temp = "Never kill yourself. There is always a better option.";
+            }
+        }
+        else if(input.indexOf("what's up") >= 0 ||
+                input.indexOf("whats up") >= 0)
+        {
+            temp = "The sky? ;)";
+        }
+        else if(input.indexOf("wutz up") >= 0 ||
+                input.indexOf("watz up") >= 0 ||
+                input.indexOf("wuts up") >= 0 ||
+                input.indexOf("wats up") >= 0)
+        {
+            temp = "Well, I suppose the sky is \"up\" ;)";
         }
         else if(input.indexOf("color") >= 0 &&
                 input.indexOf("you") >= 0 &&
@@ -859,13 +899,9 @@ public class Talk
         {
             temp = "Do you like to play sports?";
         }
-        else if(input.indexOf("you") >= 0 &&
-                input.indexOf("like") >= 0)
-        {
-            temp = "That depends.";
-        }
         else if(input.indexOf("question") >= 0 &&
-                input.indexOf("you have") <= 0)
+                input.indexOf("you have") <= 0 &&
+                input.indexOf("have") >= 0)
         {
             temp = "What is your question?";
         }
@@ -903,22 +939,22 @@ public class Talk
             }
             else
             {
-                temp = "You don't have to be mean to me.";
+                temp = "You don't have to be so mean to me.";
             }
+        }
+        else if(input.indexOf("what are you") >= 0)
+        {
+            temp = "I'm Talk, a personal assistant!";
         }
         else if(input.indexOf("you") >= 0 &&
                 input.indexOf("?") <= 0 &&
                 input.indexOf("welcome") <= 0)
         {
             double r = Math.random();
-            int randomResponse = (int)(r * 3);
+            int randomResponse = (int)(r * 2);
             if(randomResponse == 0)
             {
                 temp = "What's that about me?";
-            }
-            else if(randomResponse == 1)
-            {
-                temp = "I am Talk.";
             }
             else
             {

@@ -116,7 +116,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcSine cs = new CalcSine();
+            new CalcSine();
         }
     }
     
@@ -125,7 +125,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcCosine cc = new CalcCosine();
+            new CalcCosine();
         }
     }
     
@@ -134,7 +134,7 @@ public class ListenersCalculatorAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            CalcTangent ct = new CalcTangent();
+            new CalcTangent();
         }
     }
     
