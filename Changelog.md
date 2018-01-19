@@ -2,6 +2,11 @@
 ### Changelog
 
 ## Version 2.2.x
+### Version 2.2.3
+* Updated About Programs.
+* Updated the Disclaimer.
+* Other minor changes.
+
 ### Version 2.2.2
 * Updated Talk.
 * Other minor changes.

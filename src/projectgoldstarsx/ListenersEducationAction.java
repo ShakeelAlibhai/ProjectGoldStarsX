@@ -8,7 +8,7 @@ public class ListenersEducationAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            EduAdd ea = new EduAdd();
+            new EduAdd();
         }
     }
     
@@ -17,7 +17,7 @@ public class ListenersEducationAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            EduSubtract es = new EduSubtract();
+            new EduSubtract();
         }
     }
     
@@ -26,7 +26,7 @@ public class ListenersEducationAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            EduMultiply em = new EduMultiply();
+            new EduMultiply();
         }
     }
     
@@ -35,7 +35,7 @@ public class ListenersEducationAction
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            EduDivide ed = new EduDivide();
+            new EduDivide();
         }
     }
     

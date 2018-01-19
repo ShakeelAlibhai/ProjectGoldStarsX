@@ -464,18 +464,19 @@ public class AboutPrograms
         InformationWindow currentSettingsFrame = new InformationWindow("About Calculator");
         currentSettingsFrame.setLayout(new GridLayout(1, 1));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "This program can:\n"
-                + "--Add, subtract, multiply, and divide numbers.\n"
-                + "--Find the square root of a number and the cube root of a number.\n"
-                + "--Raise a number to a power.\n"
-                + "--Solve a quadratic equation.\n"
-                + "--Find the log base 10 of a number and the natural log (log base e) of a number.\n"
-                + "--Find the area and circumference of a circle.\n"
-                + "--Find the area and perimeter of a rectangle.\n"
-                + "--Find the area of a triangle.\n"
-                + "--Find the sine, cosine, and tangent of a number.\n"
-                + "The Calculator also includes an Average Calculator, a Miles Per Gallon Calculator,\n"
-                + "and a Pythagorean Triple Finder, as well as several conversion options.";
+        String output = "Calculator includes many features:\n"
+                + "--Basic Calculations (Add, Subtract, Multiply, and Divide)\n"
+                + "--Square Roots, Cube Roots, and Exponents\n"
+                + "--Quadratic Equation Solver\n"
+                + "--Log Base 10 and Natural Log\n"
+                + "--Area and Circumference of a Circle\n"
+                + "--Area and Perimeter of a Rectangle\n"
+                + "--Area of a Triangle\n"
+                + "--Sine, Cosine, and Tangent\n"
+                + "--Average Calculator\n"
+                + "--Miles Per Gallon Calculator\n"
+                + "--Pythagorean Triple Finder\n"
+                + "--Conversions";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }
@@ -491,6 +492,71 @@ public class AboutPrograms
                 + "You can search the Calendar for your saved events, as well as view the events that you have today.\n"
                 + "Note: Not all of today's calendar events may show in \"View Today's Events.\"\n"
                 + "You may need to adjust the size of the window to view more events.";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
+    public static void aboutCommands()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Commands");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "Commands is similar to Talk, except without the conversation part and with a different interface.";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
+    public static void aboutEducation()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Education");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "You can practice math and reading in Education!";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
+    public static void aboutErrorLog()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About the Error Log");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "The Error Log is a list of some or all of the errors Project GoldStars X\n"
+                + "may have encountered since it was last started.";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
+    public static void aboutFiles()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Education");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "In Files, you can view notes and photos that you have saved to Project GoldStars X.\n"
+                + "You can also search files (which will search the notes and photos that you have saved to Project GoldStars X).";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
+    public static void aboutLight()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Light");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output;
+        switch(ProjectGoldStarsX.language)
+        {
+            case "1": default:
+            {
+                output = "Light can be used as a flashlight than can have different colors.";
+                break;
+            }
+            case "2":
+            {
+                output = "Light can be used as a flashlight than can have different colours.";
+                break;
+            }
+        }
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }
@@ -521,6 +587,35 @@ public class AboutPrograms
         currentSettingsFrame.makeVisible();
     }
     
+    public static void aboutSearch()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Search");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "You can enter a search term into the search box to search for programs and actions,\n"
+                + "saved calendar events, notes, photos, and the Error Log.\n"
+                + "If a program or action is found for your search term, then a window or dialog box will be opened\n"
+                + "that corresponds to that program or action.\n"
+                + "If no program or action is found, then saved calendar events, notes, photos, and the Error Log\n"
+                + "will be searched.\n"
+                + "You can adjust the case sensitivity of Search in Search Settings.\n"
+                + "Note 1: Not all programs and actions are necessarily accessible by Search.\n"
+                + "Note 2: Search case sensitivity does not affect Search when searching for programs and/or actions.";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
+    public static void aboutStories()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Stories");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "You can read many short stories in Stories!\n"
+                + "Note: The stories shown are meant to be fiction.";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
     public static void aboutTalk()
     {
         InformationWindow currentSettingsFrame = new InformationWindow("About Talk");
@@ -546,99 +641,6 @@ public class AboutPrograms
                 break;
             }
         }
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutStories()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Stories");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "You can read many short stories in Stories!\n"
-                + "Note: The stories shown are meant to be fiction.";
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutLight()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Light");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output;
-        switch(ProjectGoldStarsX.language)
-        {
-            case "1": default:
-            {
-                output = "Light can be used as a flashlight than can have different colors.";
-                break;
-            }
-            case "2":
-            {
-                output = "Light can be used as a flashlight than can have different colours.";
-                break;
-            }
-        }
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutEducation()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Education");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "You can practice math and reading in Education!";
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutFiles()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Education");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "In Files, you can view notes and photos that you have saved to Project GoldStars X.\n"
-                + "You can also search files (which will search the notes and photos that you have saved to Project GoldStars X).";
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutSearch()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Search");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "You can enter a search term into the search box to search for programs and actions,\n"
-                + "saved calendar events, notes, photos, and the Error Log.\n"
-                + "If a program or action is found for your search term, then a window or dialog box will be opened\n"
-                + "that corresponds to that program or action.\n"
-                + "If no program or action is found, then saved calendar events, notes, photos, and the Error Log will be searched.\n"
-                + "You can adjust the case sensitivity of Search in Search Settings.\n"
-                + "Note 1: Not all programs and actions are necessarily accessible by Search.\n"
-                + "Note 2: Search case sensitivity does not affect Search when searching for programs and/or actions.";
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutErrorLog()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About the Error Log");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "The Error Log is a list of some or all of the errors Project GoldStars X\n"
-                + "may have encountered since it was last started.";
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutCommands()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Commands");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "Commands is similar to Talk, except without the conversation part.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }

@@ -8,7 +8,7 @@ public class ListenersEducationMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            EduAdd ea = new EduAdd();
+            new EduAdd();
         }
 
         @Override
@@ -41,7 +41,7 @@ public class ListenersEducationMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            EduSubtract es = new EduSubtract();
+            new EduSubtract();
         }
 
         @Override
@@ -74,7 +74,7 @@ public class ListenersEducationMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            EduMultiply em = new EduMultiply();
+            new EduMultiply();
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ListenersEducationMouse
         @Override
         public void mousePressed(MouseEvent e)
         {
-            EduDivide ed = new EduDivide();
+            new EduDivide();
         }
 
         @Override
