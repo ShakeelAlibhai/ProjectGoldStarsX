@@ -64,15 +64,13 @@ public class Commands
                 {
                     new CalcQuadraticEquation();
                 }
-                else if(input.indexOf("log base 10") >= 0 ||
-                        input.indexOf("log base ten") >= 0)
-                {
-                    new CalcLogBase10();
-                }
-                else if(input.indexOf("natural log") >= 0 ||
+                else if(input.indexOf("logarithms") >= 0 ||
+                        input.indexOf("log base 10") >= 0 ||
+                        input.indexOf("log base ten") >= 0 ||
+                        input.indexOf("natural log") >= 0 ||
                         input.indexOf("log base e") >= 0)
                 {
-                    new CalcNaturalLog();
+                    new CalcLogarithms();
                 }
                 else if(input.indexOf("cosine") >= 0)
                 {

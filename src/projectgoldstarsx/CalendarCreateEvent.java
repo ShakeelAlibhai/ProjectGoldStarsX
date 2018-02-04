@@ -156,7 +156,7 @@ public class CalendarCreateEvent
             PrintWriter out;
             try
                 {
-                    File file = new File(ProjectGoldStarsX.calendarFolder, "calendarEvent" + (ProjectGoldStarsX.calendarEvents.size() - 1) + ".txt");
+                    File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarEvent" + (ProjectGoldStarsX.calendarEvents.size() - 1) + ".txt");
                     out = new PrintWriter(file);
                     out.println(ProjectGoldStarsX.calendarEvents.get(ProjectGoldStarsX.calendarEvents.size() - 1));
                     out.close();

@@ -201,78 +201,45 @@ public class ListenersCalculatorMouse
         }
     }
     
+    public static class LogarithmsListener implements MouseListener
+    {
+        @Override
+        public void mousePressed(MouseEvent e)
+        {
+            new CalcLogarithms();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
+    }
+    
     public static class QuadraticEquationListener implements MouseListener
     {
         @Override
         public void mousePressed(MouseEvent e)
         {
             new CalcQuadraticEquation();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class LogBase10Listener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            new CalcLogBase10();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class NaturalLogListener implements MouseListener
-    {
-        @Override
-        public void mousePressed(MouseEvent e)
-        {
-            new CalcNaturalLog();
         }
 
         @Override

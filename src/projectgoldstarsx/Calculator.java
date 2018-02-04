@@ -16,7 +16,7 @@ public class Calculator
     {
         calculatorFrame = new ProgramWindow("Calculator");
         calculatorFrame.setSize(1150 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier);
-        calculatorFrame.setLayout(new GridLayout(5, 5));
+        calculatorFrame.setLayout(new GridLayout(4, 5));
         calculatorFrame.setJMenuBar(menuBar());
         calculatorFrame.add(Components.headerLabel("Basic Calculations:"));
         calculatorFrame.add(Components.actionLabel("Add", new ListenersCalculatorMouse.AddListener()));
@@ -26,13 +26,8 @@ public class Calculator
         calculatorFrame.add(Components.headerLabel("Complex Calculations:"));
         calculatorFrame.add(Components.actionLabel("Square & Cube Roots", new ListenersCalculatorMouse.SquareAndCubeRootsListener()));
         calculatorFrame.add(Components.actionLabel("Exponents", new ListenersCalculatorMouse.ExponentsListener()));
+        calculatorFrame.add(Components.actionLabel("Logarithms", new ListenersCalculatorMouse.LogarithmsListener()));
         calculatorFrame.add(Components.actionLabel("Quadratic Equation Solver", new ListenersCalculatorMouse.QuadraticEquationListener()));
-        calculatorFrame.add(Components.actionLabel("Log Base 10", new ListenersCalculatorMouse.LogBase10Listener()));
-        calculatorFrame.add(new JLabel());
-        calculatorFrame.add(Components.actionLabel("Natural Log", new ListenersCalculatorMouse.NaturalLogListener()));
-        calculatorFrame.add(new JLabel());
-        calculatorFrame.add(new JLabel());
-        calculatorFrame.add(new JLabel());
         calculatorFrame.add(Components.headerLabel("Geometry:"));
         calculatorFrame.add(Components.actionLabel("Circles", new ListenersCalculatorMouse.CirclesListener()));
         calculatorFrame.add(Components.actionLabel("Rectangles", new ListenersCalculatorMouse.RectanglesListener()));

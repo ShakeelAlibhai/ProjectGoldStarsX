@@ -18,7 +18,7 @@ public class StartCalendar
         {
             try
             {
-                File temp = new File(ProjectGoldStarsX.calendarFolder, "calendarEvent" + calendarEvent + ".txt");
+                File temp = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarEvent" + calendarEvent + ".txt");
                 ProjectGoldStarsX.calendarEvents.add(new Scanner(temp).useDelimiter("\\Z").next());
                 calendarEvent++;
             }
@@ -35,7 +35,7 @@ public class StartCalendar
      */
     private void getCalendarFormat()
     {
-        File calendarFormatTemp = new File(ProjectGoldStarsX.calendarFolder, "calendarFormat.txt");
+        File calendarFormatTemp = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarFormat.txt");
         try
         {
             Scanner s1 = new Scanner(calendarFormatTemp).useDelimiter("\\Z");
@@ -45,7 +45,7 @@ public class StartCalendar
         catch(FileNotFoundException e)
         {
             ProjectGoldStarsX.calendarFormat = "Format 1";
-            File file = new File(ProjectGoldStarsX.calendarFolder, "calendarFormat.txt");
+            File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarFormat.txt");
             PrintWriter out;
             try
             {

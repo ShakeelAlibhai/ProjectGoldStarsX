@@ -21,6 +21,15 @@ public class ListenersCalendar
         }
     }
     
+    public static class ViewCalendarEventsTomorrowListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CalendarViewEventsTomorrow();
+        }
+    }
+    
     public static class CalendarSettingsListener implements ActionListener
     {
         @Override

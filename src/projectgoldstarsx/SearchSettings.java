@@ -46,7 +46,7 @@ public class SearchSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.searchFolder, "searchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.SEARCH_FOLDER, "searchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("1");
                 out.close();
@@ -68,7 +68,7 @@ public class SearchSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.searchFolder, "searchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.SEARCH_FOLDER, "searchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("0");
                 out.close();

@@ -16,7 +16,7 @@ public class StartErrorLog
      */
     private static void getErrorLogSearchCaseSensitivitySetting()
     {
-        File elscsTemp = new File(ProjectGoldStarsX.errorLogFolder, "errorLogSearchCaseSensitive.txt");
+        File elscsTemp = new File(ProjectGoldStarsX.ERROR_LOG_FOLDER, "errorLogSearchCaseSensitive.txt");
         try
         {
             Scanner s10 = new Scanner(elscsTemp).useDelimiter("\\Z");
@@ -33,7 +33,7 @@ public class StartErrorLog
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.errorLogFolder, "errorLogSearchCaseSensitive.txt");
+            File file = new File(ProjectGoldStarsX.ERROR_LOG_FOLDER, "errorLogSearchCaseSensitive.txt");
             ProjectGoldStarsX.errorLogSearchCaseSensitive = false;
             PrintWriter out;
             try

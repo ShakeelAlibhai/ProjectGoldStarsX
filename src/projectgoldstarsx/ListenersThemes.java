@@ -125,7 +125,7 @@ public class ListenersThemes
         PrintWriter out;
         try
         {
-            File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
+            File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "theme.txt");
             out = new PrintWriter(file);
             out.append(ProjectGoldStarsX.theme);
             out.close();
@@ -177,7 +177,7 @@ public class ListenersThemes
         PrintWriter out;
         try
         {
-            File file = new File(ProjectGoldStarsX.systemFolder, "color.txt");
+            File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "color.txt");
             out = new PrintWriter(file);
             out.append(ProjectGoldStarsX.color);
             out.close();

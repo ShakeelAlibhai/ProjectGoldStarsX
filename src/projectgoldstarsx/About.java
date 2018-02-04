@@ -21,7 +21,7 @@ public class About
         aboutFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         aboutFrame.setLayout(new GridLayout(3, 1));
         aboutFrame.setJMenuBar(menuBar());
-        aboutFrame.add(Components.titleLabel(ProjectGoldStarsX.name));
+        aboutFrame.add(Components.titleLabel(ProjectGoldStarsX.NAME));
         aboutFrame.add(row2());
         aboutFrame.add(row3());
         aboutFrame.makeVisible();
@@ -60,7 +60,7 @@ public class About
     
     private JLabel version()
     {
-        JLabel versionLabel = new JLabel(ProjectGoldStarsX.version, SwingConstants.CENTER);
+        JLabel versionLabel = new JLabel(ProjectGoldStarsX.VERSION, SwingConstants.CENTER);
         versionLabel.setForeground(ProjectGoldStarsX.color2);
         versionLabel.setFont(ProjectGoldStarsX.mediumText1);
         return versionLabel;

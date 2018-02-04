@@ -45,7 +45,7 @@ public class NotesRename
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "noteName" + (noteToRename - 1) + ".txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "noteName" + (noteToRename - 1) + ".txt");
                 out = new PrintWriter(file);
                 out.append(ProjectGoldStarsX.noteNames.get(noteToRename - 1));
                 out.close();

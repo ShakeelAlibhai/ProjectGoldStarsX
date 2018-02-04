@@ -46,7 +46,7 @@ public class MenuBarSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.menuBarFolder, "settingsButtonMainMenuBar.txt");
+                File file = new File(ProjectGoldStarsX.MENU_BAR_FOLDER, "settingsButtonMainMenuBar.txt");
                 out = new PrintWriter(file);
                 out.append("1");
                 out.close();
@@ -70,7 +70,7 @@ public class MenuBarSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.menuBarFolder, "settingsButtonMainMenuBar.txt");
+                File file = new File(ProjectGoldStarsX.MENU_BAR_FOLDER, "settingsButtonMainMenuBar.txt");
                 out = new PrintWriter(file);
                 out.append("0");
                 out.close();

@@ -19,7 +19,7 @@ public class StartNotes
         {
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "note" + notesNum + ".txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "note" + notesNum + ".txt");
                 ProjectGoldStarsX.notes.add(new Scanner(file).useDelimiter("\\Z").next());
                 notesNum++;
             }
@@ -37,7 +37,7 @@ public class StartNotes
         {
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "noteName" + notesNum + ".txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "noteName" + notesNum + ".txt");
                 ProjectGoldStarsX.noteNames.add(new Scanner(file).useDelimiter("\\Z").next());
                 notesNum++;
             }
@@ -54,7 +54,7 @@ public class StartNotes
      */
     private static void getNotesSearchCaseSensitivitySetting()
     {
-        File nscsTemp = new File(ProjectGoldStarsX.notesFolder, "notesSearchCaseSensitive.txt");
+        File nscsTemp = new File(ProjectGoldStarsX.NOTES_FOLDER, "notesSearchCaseSensitive.txt");
         try
         {
             Scanner s6 = new Scanner(nscsTemp).useDelimiter("\\Z");
@@ -71,7 +71,7 @@ public class StartNotes
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.notesFolder, "notesSearchCaseSensitive.txt");
+            File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "notesSearchCaseSensitive.txt");
             ProjectGoldStarsX.notesSearchCaseSensitive = false;
             PrintWriter out;
             try

@@ -36,13 +36,13 @@ public class Start
          * If the "oldVersion.txt" file is not found, this is likely the user's first time running Project GoldStars X.
          * If this is the user's first time running Project GoldStars X, display a welcome message, then ask the user to enter a username and a password.
          */
-        File oldVersionTemp = new File(ProjectGoldStarsX.systemFolder, "oldVersion.txt");
+        File oldVersionTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "oldVersion.txt");
         try
         {
             Scanner s11 = new Scanner(oldVersionTemp).useDelimiter("\\Z");
             ProjectGoldStarsX.oldVersion = s11.next();
             s11.close();
-            if(!ProjectGoldStarsX.oldVersion.equals(ProjectGoldStarsX.version))
+            if(!ProjectGoldStarsX.oldVersion.equals(ProjectGoldStarsX.VERSION))
             {
                 updateOldVersionFile();
             }
@@ -59,7 +59,7 @@ public class Start
             frame.getContentPane().setBackground(Color.cyan);
             JMenuBar menuBar = new JMenuBar();
             menuBar.setBackground(Color.cyan);
-            JLabel welcomeLabel = new JLabel("Setting up " + ProjectGoldStarsX.name + "...");
+            JLabel welcomeLabel = new JLabel("Setting up " + ProjectGoldStarsX.NAME + "...");
             welcomeLabel.setForeground(Color.blue);
             welcomeLabel.setFont(ProjectGoldStarsX.mediumText1);
             menuBar.add(welcomeLabel);
@@ -87,7 +87,7 @@ public class Start
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "username.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "username.txt");
                 out = new PrintWriter(file);
                 out.println(ProjectGoldStarsX.username);
                 out.close();
@@ -100,9 +100,9 @@ public class Start
             PrintWriter out2;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "oldVersion.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "oldVersion.txt");
                 out2 = new PrintWriter(file);
-                out2.println(ProjectGoldStarsX.version);
+                out2.println(ProjectGoldStarsX.VERSION);
                 out2.close();
             }
             catch(FileNotFoundException e2)
@@ -119,9 +119,9 @@ public class Start
         PrintWriter out;
         try
         {
-            File file = new File(ProjectGoldStarsX.systemFolder, "oldVersion.txt");
+            File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "oldVersion.txt");
             out = new PrintWriter(file);
-            out.println(ProjectGoldStarsX.version);
+            out.println(ProjectGoldStarsX.VERSION);
             out.close();
         }
         catch(FileNotFoundException e2)
@@ -137,44 +137,44 @@ public class Start
     private static void createFolders()
     {
         //Make a Project GoldStars X folder if it does not exist yet.
-        if(!ProjectGoldStarsX.projectGoldStarsXFolder.exists())
+        if(!ProjectGoldStarsX.FOLDER.exists())
         {
-            ProjectGoldStarsX.projectGoldStarsXFolder.mkdir();
+            ProjectGoldStarsX.FOLDER.mkdir();
         }
         //Make a System folder if it does not exist yet.
-        if(!ProjectGoldStarsX.systemFolder.exists())
+        if(!ProjectGoldStarsX.SYSTEM_FOLDER.exists())
         {
-            ProjectGoldStarsX.systemFolder.mkdir();
+            ProjectGoldStarsX.SYSTEM_FOLDER.mkdir();
         }
         //Make a Menu Bar folder if it does not exist yet.
-        if(!ProjectGoldStarsX.menuBarFolder.exists())
+        if(!ProjectGoldStarsX.MENU_BAR_FOLDER.exists())
         {
-            ProjectGoldStarsX.menuBarFolder.mkdir();
+            ProjectGoldStarsX.MENU_BAR_FOLDER.mkdir();
         }
         //Make a Calendar folder if it does not exist yet.
-        if(!ProjectGoldStarsX.calendarFolder.exists())
+        if(!ProjectGoldStarsX.CALENDAR_FOLDER.exists())
         {
-            ProjectGoldStarsX.calendarFolder.mkdir();
+            ProjectGoldStarsX.CALENDAR_FOLDER.mkdir();
         }
         //Make a Notes folder if it does not exist yet.
-        if(!ProjectGoldStarsX.notesFolder.exists())
+        if(!ProjectGoldStarsX.NOTES_FOLDER.exists())
         {
-            ProjectGoldStarsX.notesFolder.mkdir();
+            ProjectGoldStarsX.NOTES_FOLDER.mkdir();
         }
         //Make a Photos folder if it does not exist yet.
-        if(!ProjectGoldStarsX.photosFolder.exists())
+        if(!ProjectGoldStarsX.PHOTOS_FOLDER.exists())
         {
-            ProjectGoldStarsX.photosFolder.mkdir();
+            ProjectGoldStarsX.PHOTOS_FOLDER.mkdir();
         }
         //Make a Search folder if it does not exist yet.
-        if(!ProjectGoldStarsX.searchFolder.exists())
+        if(!ProjectGoldStarsX.SEARCH_FOLDER.exists())
         {
-            ProjectGoldStarsX.searchFolder.mkdir();
+            ProjectGoldStarsX.SEARCH_FOLDER.mkdir();
         }
         //Make an Error Log folder if it does not exist yet.
-        if(!ProjectGoldStarsX.errorLogFolder.exists())
+        if(!ProjectGoldStarsX.ERROR_LOG_FOLDER.exists())
         {
-            ProjectGoldStarsX.errorLogFolder.mkdir();
+            ProjectGoldStarsX.ERROR_LOG_FOLDER.mkdir();
         }
     }
     
@@ -200,13 +200,13 @@ public class Start
 
     private void setFonts()
     {
-        ProjectGoldStarsX.largeHeader = new java.awt.Font("Open Sans Extrabold", Font.PLAIN, ProjectGoldStarsX.largeHeaderSize * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.mediumHeader = new java.awt.Font("Open Sans Extrabold", Font.PLAIN, ProjectGoldStarsX.mediumHeaderSize * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.mediumText1 = new java.awt.Font("Open Sans Bold", Font.PLAIN, ProjectGoldStarsX.mediumText1Size * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.mediumText2 = new java.awt.Font("Open Sans Semibold", Font.PLAIN, ProjectGoldStarsX.mediumText2Size * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.mediumText3 = new java.awt.Font("Open Sans Bold", Font.PLAIN, ProjectGoldStarsX.mediumText3Size * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.bodyText1 = new java.awt.Font("Open Sans Semibold", Font.PLAIN, ProjectGoldStarsX.bodyText1Size * ProjectGoldStarsX.multiplier);
-        ProjectGoldStarsX.bodyText2 = new java.awt.Font("Open Sans", Font.PLAIN, ProjectGoldStarsX.bodyText2Size * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.largeHeader = new java.awt.Font("Open Sans Extrabold", Font.PLAIN, ProjectGoldStarsX.LARGE_HEADER_SIZE * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.mediumHeader = new java.awt.Font("Open Sans Extrabold", Font.PLAIN, ProjectGoldStarsX.MEDIUM_HEADER_SIZE * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.mediumText1 = new java.awt.Font("Open Sans Bold", Font.PLAIN, ProjectGoldStarsX.MEDIUM_TEXT_SIZE1 * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.mediumText2 = new java.awt.Font("Open Sans Semibold", Font.PLAIN, ProjectGoldStarsX.MEDIUM_TEXT_SIZE2 * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.mediumText3 = new java.awt.Font("Open Sans Bold", Font.PLAIN, ProjectGoldStarsX.MEDIUM_TEXT_SIZE3 * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.bodyText1 = new java.awt.Font("Open Sans Semibold", Font.PLAIN, ProjectGoldStarsX.BODY_TEXT_SIZE1 * ProjectGoldStarsX.multiplier);
+        ProjectGoldStarsX.bodyText2 = new java.awt.Font("Open Sans", Font.PLAIN, ProjectGoldStarsX.BODY_TEXT_SIZE2 * ProjectGoldStarsX.multiplier);
     }
     
     public static void applyTheme()

@@ -1,5 +1,5 @@
 package projectgoldstarsx;
-import javax.swing.JOptionPane;
+import java.awt.GridLayout;
 public class HelpNickname
 {
     public HelpNickname()
@@ -9,8 +9,12 @@ public class HelpNickname
     
     private void helpNickname()
     {
+        InformationWindow currentSettingsFrame = new InformationWindow("Set a Nickname");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         String output = "From Talk Settings, you can choose a nickname for Talk to call you.\n"
                 + "By default, Talk will call you by your username.";
-        JOptionPane.showMessageDialog(null, output, "Set a Nickname", JOptionPane.INFORMATION_MESSAGE);
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
     }
 }

@@ -22,7 +22,7 @@ public class StartSystem
      */
     private static void getLanguage()
     {
-        File languageTemp = new File(ProjectGoldStarsX.systemFolder, "language.txt");
+        File languageTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "language.txt");
         try
         {
             Scanner s4 = new Scanner(languageTemp).useDelimiter("\\Z");
@@ -31,7 +31,7 @@ public class StartSystem
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.systemFolder, "language.txt");
+            File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "language.txt");
             ProjectGoldStarsX.language = "1";
             PrintWriter out;
             try
@@ -53,7 +53,7 @@ public class StartSystem
      */
     private static void getLocation()
     {
-        File locationTemp = new File(ProjectGoldStarsX.systemFolder, "location.txt");
+        File locationTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "location.txt");
         try
         {
             Scanner newS = new Scanner(locationTemp).useDelimiter("\\Z");
@@ -62,7 +62,7 @@ public class StartSystem
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.systemFolder, "location.txt");
+            File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "location.txt");
             ProjectGoldStarsX.location = "Other/I don't want to say";
             PrintWriter out;
             try
@@ -84,7 +84,7 @@ public class StartSystem
      */
     private static void getTheme()
     {
-        File themeTemp = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
+        File themeTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "theme.txt");
         try
         {
             Scanner s15 = new Scanner(themeTemp).useDelimiter("\\Z");
@@ -97,7 +97,7 @@ public class StartSystem
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "theme.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "theme.txt");
                 out = new PrintWriter(file);
                 out.println(ProjectGoldStarsX.theme);
                 out.close();
@@ -107,7 +107,7 @@ public class StartSystem
                 
             }
         }
-        File colorTemp = new File(ProjectGoldStarsX.systemFolder, "color.txt");
+        File colorTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "color.txt");
         try
         {
             Scanner s16 = new Scanner(colorTemp).useDelimiter("\\Z");
@@ -123,7 +123,7 @@ public class StartSystem
     //Attempt to import the saved username of the user from the Project GoldStars X folder.
     private static void getUsername()
     {
-        File usernameTemp = new File(ProjectGoldStarsX.systemFolder, "username.txt");
+        File usernameTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "username.txt");
         try
         {
             Scanner s12 = new Scanner(usernameTemp).useDelimiter("\\Z");
@@ -142,7 +142,7 @@ public class StartSystem
      */
     private static void getNickname()
     {
-        File nicknameTemp = new File(ProjectGoldStarsX.systemFolder, "nickname.txt");
+        File nicknameTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "nickname.txt");
         try
         {
             Scanner s13 = new Scanner(nicknameTemp).useDelimiter("\\Z");

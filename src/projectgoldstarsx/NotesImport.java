@@ -48,7 +48,7 @@ public class NotesImport
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "note" + (ProjectGoldStarsX.notes.size() - 1) + ".txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "note" + (ProjectGoldStarsX.notes.size() - 1) + ".txt");
                 out = new PrintWriter(file);
                 out.println(ProjectGoldStarsX.notes.get(ProjectGoldStarsX.notes.size() - 1));
                 out.close();
@@ -60,7 +60,7 @@ public class NotesImport
             PrintWriter out2;
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "noteName" + (ProjectGoldStarsX.noteNames.size() - 1) + ".txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "noteName" + (ProjectGoldStarsX.noteNames.size() - 1) + ".txt");
                 out2 = new PrintWriter(file);
                 out2.println(ProjectGoldStarsX.noteNames.get(ProjectGoldStarsX.noteNames.size() - 1));
                 out2.close();

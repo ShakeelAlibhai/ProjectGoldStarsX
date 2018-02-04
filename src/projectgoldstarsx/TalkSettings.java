@@ -24,7 +24,7 @@ public class TalkSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "nickname.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "nickname.txt");
                 out = new PrintWriter(file);
                 out.append(ProjectGoldStarsX.nickname);
                 out.close();

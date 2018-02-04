@@ -46,7 +46,7 @@ public class NotesSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "notesSearchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "notesSearchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("1");
                 out.close();
@@ -68,7 +68,7 @@ public class NotesSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "notesSearchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "notesSearchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("0");
                 out.close();

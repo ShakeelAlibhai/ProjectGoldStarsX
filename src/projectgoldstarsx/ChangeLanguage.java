@@ -36,7 +36,7 @@ public class ChangeLanguage
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "language.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "language.txt");
                 out = new PrintWriter(file);
                 out.append("1");
                 out.close();
@@ -58,7 +58,7 @@ public class ChangeLanguage
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "language.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "language.txt");
                 out = new PrintWriter(file);
                 out.append("2");
                 out.close();

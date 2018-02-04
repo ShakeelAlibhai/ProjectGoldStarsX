@@ -68,14 +68,11 @@ public class Search
             new CalcQuadraticEquation();
             return;
         }
-        if(searchTermLowerCase.contains("log base 10") || searchTermLowerCase.contains("log base ten"))
+        if(searchTermLowerCase.contains("logarithms") ||
+                searchTermLowerCase.contains("log base 10") || searchTermLowerCase.contains("log base ten") ||
+                searchTermLowerCase.contains("natural log") || searchTermLowerCase.contains("log base e"))
         {
-            new CalcLogBase10();
-            return;
-        }
-        if(searchTermLowerCase.contains("natural log") || searchTermLowerCase.contains("log base e"))
-        {
-            new CalcNaturalLog();
+            new CalcLogarithms();
             return;
         }
         if(searchTermLowerCase.contains("cosine"))

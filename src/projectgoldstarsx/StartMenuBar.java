@@ -16,7 +16,7 @@ public class StartMenuBar
      */
     private static void getSettingsButtonMainMenuBar()
     {
-        File languageTemp = new File(ProjectGoldStarsX.menuBarFolder, "settingsButtonMainMenuBar.txt");
+        File languageTemp = new File(ProjectGoldStarsX.MENU_BAR_FOLDER, "settingsButtonMainMenuBar.txt");
         try
         {
             Scanner s4 = new Scanner(languageTemp).useDelimiter("\\Z");
@@ -33,7 +33,7 @@ public class StartMenuBar
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.menuBarFolder, "settingsButtonMainMenuBar.txt");
+            File file = new File(ProjectGoldStarsX.MENU_BAR_FOLDER, "settingsButtonMainMenuBar.txt");
             ProjectGoldStarsX.settingsButtonMainMenuBar = false;
             PrintWriter out;
             try

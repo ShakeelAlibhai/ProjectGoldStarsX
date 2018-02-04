@@ -57,30 +57,21 @@ public class ListenersCalculatorAction
         }
     }
     
+    public static class LogarithmsListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CalcLogarithms();
+        }
+    }
+    
     public static class QuadraticEquationListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
             new CalcQuadraticEquation();
-        }
-    }
-    
-    public static class LogBase10Listener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            new CalcLogBase10();
-        }
-    }
-    
-    public static class NaturalLogListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            new CalcNaturalLog();
         }
     }
     

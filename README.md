@@ -9,8 +9,8 @@ It can serve as a useful tool for people, as well as for people who are trying t
 The Project GoldStars X calculator includes many features:
 * Basic Calculations (Add, Subtract, Multiply, and Divide)
 * Square Roots, Cube Roots, and Exponents
-* Quadratic Equation Solver
 * Log Base 10 and Natural Log
+* Quadratic Equation Solver
 * Area and Circumference of a Circle
 * Area and Perimeter of a Rectangle
 * Area of a Triangle
@@ -21,7 +21,7 @@ The Project GoldStars X calculator includes many features:
 * Conversions
 
 ### Calendar
-Project GoldStars X includes a calendar program, where users can view the date and time, create and search calendar events, and view calendar events today.
+Project GoldStars X includes a calendar program, where users can view the date and time, create and search calendar events, and view calendar events today and tomorrow.
 
 ### Education
 The Education program in Project GoldStars X is a program that can be used to practice math and reading. Users can:

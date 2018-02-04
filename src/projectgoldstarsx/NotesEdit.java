@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class NotesEdit
 {
+    public static int noteNum;
     public static JFrame createNoteFrame;
     public static JTextField editNotesTextField;
     
@@ -25,7 +26,7 @@ public class NotesEdit
     {
         String output;
         editNotesTextField = new JTextField();
-        //Display a message if no notes have been saved to Snow Vista yet.
+        //Display a message if no notes have been saved to Project GoldStars X yet.
         if(ProjectGoldStarsX.notes.isEmpty())
         {
             output = "You need to create a note before you can edit notes.";
@@ -34,7 +35,7 @@ public class NotesEdit
         else
         {
             output = JOptionPane.showInputDialog(null, "Please enter the number of a note to edit.\n"
-                    + "You currently have " + ProjectGoldStarsX.notes.size() + " note(s).");
+                    + "You currently have " + ProjectGoldStarsX.notes.size() + (ProjectGoldStarsX.notes.size() == 1 ? " note.": " notes."));
             if(output == null)
             {
                 return;
@@ -42,7 +43,7 @@ public class NotesEdit
             try
             {
                 int editNotesChoice = Integer.parseInt(output);
-                ProjectGoldStarsX.notesTemp = editNotesChoice;
+                noteNum = editNotesChoice;
                 createNoteFrame = new JFrame("Edit Notes");
                 createNoteFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
                 JMenuBar menuBar = new JMenuBar();
@@ -74,15 +75,15 @@ public class NotesEdit
     {
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.notes.set((ProjectGoldStarsX.notesTemp - 1), editNotesTextField.getText());
+            ProjectGoldStarsX.notes.set((noteNum - 1), editNotesTextField.getText());
             editNotesTextField.setText("");
             JOptionPane.showMessageDialog(null, "Note Saved", "Notes", JOptionPane.INFORMATION_MESSAGE);
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.notesFolder, "note" + (ProjectGoldStarsX.notesTemp - 1) + ".txt");
+                File file = new File(ProjectGoldStarsX.NOTES_FOLDER, "note" + (noteNum - 1) + ".txt");
                 out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.notes.get(ProjectGoldStarsX.notesTemp - 1));
+                out.append(ProjectGoldStarsX.notes.get(noteNum - 1));
                 out.close();
             }
             catch(FileNotFoundException e2)

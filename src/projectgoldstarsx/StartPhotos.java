@@ -18,7 +18,7 @@ public class StartPhotos
         {
             try
             {
-                File file = new File(ProjectGoldStarsX.photosFolder, "photo" + photoNum + ".txt");
+                File file = new File(ProjectGoldStarsX.PHOTOS_FOLDER, "photo" + photoNum + ".txt");
                 ProjectGoldStarsX.photoNames.add(new Scanner(file).useDelimiter("\\Z").next());
                 photoNum++;
             }
@@ -35,7 +35,7 @@ public class StartPhotos
      */
     private static void getPhotosSearchCaseSensitivitySetting()
     {
-        File pscsTemp = new File(ProjectGoldStarsX.photosFolder, "photosSearchCaseSensitive.txt");
+        File pscsTemp = new File(ProjectGoldStarsX.PHOTOS_FOLDER, "photosSearchCaseSensitive.txt");
         try
         {
             Scanner s8 = new Scanner(pscsTemp).useDelimiter("\\Z");
@@ -52,7 +52,7 @@ public class StartPhotos
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.photosFolder, "photosSearchCaseSensitive.txt");
+            File file = new File(ProjectGoldStarsX.PHOTOS_FOLDER, "photosSearchCaseSensitive.txt");
             ProjectGoldStarsX.photosSearchCaseSensitive = false;
             PrintWriter out;
             try

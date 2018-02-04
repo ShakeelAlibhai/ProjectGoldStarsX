@@ -86,7 +86,7 @@ public class ListenersLocations
         PrintWriter out;
         try
         {
-            File file = new File(ProjectGoldStarsX.systemFolder, "location.txt");
+            File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "location.txt");
             out = new PrintWriter(file);
             out.append(ProjectGoldStarsX.location);
             out.close();

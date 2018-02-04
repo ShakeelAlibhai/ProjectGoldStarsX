@@ -346,16 +346,13 @@ public class Talk
             CalcQuadraticEquation cqe = new CalcQuadraticEquation();
             temp = "Anything else?";
         }
-        else if(input.indexOf("log base 10") >= 0 ||
-                input.indexOf("log base ten") >= 0)
-        {
-            CalcLogBase10 clb10 = new CalcLogBase10();
-            temp = "Anything else?";
-        }
-        else if(input.indexOf("natural log") >= 0 ||
+        else if(input.indexOf("logarithms") >= 0 ||
+                input.indexOf("log base 10") >= 0 ||
+                input.indexOf("log base ten") >= 0 ||
+                input.indexOf("natural log") >= 0 ||
                 input.indexOf("log base e") >= 0)
         {
-            CalcNaturalLog cnl = new CalcNaturalLog();
+            new CalcLogarithms();
             temp = "Anything else?";
         }
         else if(input.indexOf("cosine") >= 0)

@@ -57,7 +57,7 @@ public class CalendarSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.calendarFolder, "calendarFormat.txt");
+                File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarFormat.txt");
                 out = new PrintWriter(file);
                 out.append(ProjectGoldStarsX.calendarFormat);
                 out.close();
@@ -79,7 +79,7 @@ public class CalendarSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.calendarFolder, "calendarFormat.txt");
+                File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarFormat.txt");
                 out = new PrintWriter(file);
                 out.append(ProjectGoldStarsX.calendarFormat);
                 out.close();

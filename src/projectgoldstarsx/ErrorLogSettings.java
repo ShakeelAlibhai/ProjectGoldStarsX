@@ -46,7 +46,7 @@ public class ErrorLogSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.errorLogFolder, "errorLogSearchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.ERROR_LOG_FOLDER, "errorLogSearchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("1");
                 out.close();
@@ -68,7 +68,7 @@ public class ErrorLogSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.errorLogFolder, "errorLogSearchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.ERROR_LOG_FOLDER, "errorLogSearchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("0");
                 out.close();

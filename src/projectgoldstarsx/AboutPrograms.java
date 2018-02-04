@@ -467,8 +467,8 @@ public class AboutPrograms
         String output = "Calculator includes many features:\n"
                 + "--Basic Calculations (Add, Subtract, Multiply, and Divide)\n"
                 + "--Square Roots, Cube Roots, and Exponents\n"
-                + "--Quadratic Equation Solver\n"
                 + "--Log Base 10 and Natural Log\n"
+                + "--Quadratic Equation Solver\n"
                 + "--Area and Circumference of a Circle\n"
                 + "--Area and Perimeter of a Rectangle\n"
                 + "--Area of a Triangle\n"
@@ -489,8 +489,10 @@ public class AboutPrograms
         String output = "This program can display the current date in two formats. It also displays the time.\n"
                 + "The format in which the date is displayed can be changed in Calendar Settings.\n"
                 + "You can also create calendar events.\n"
-                + "You can search the Calendar for your saved events, as well as view the events that you have today.\n"
-                + "Note: Not all of today's calendar events may show in \"View Today's Events.\"\n"
+                + "You can search the Calendar for your saved events, as well as view the events that you have\n"
+                + "today and tomorrow.\n"
+                + "Note: Not all of today's calendar events may show in \"View Today's Events;\" similarly,\n"
+                + "not all of tomorrow's calendar events may show in \"View Tomorrow's Events.\"\n"
                 + "You may need to adjust the size of the window to view more events.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();

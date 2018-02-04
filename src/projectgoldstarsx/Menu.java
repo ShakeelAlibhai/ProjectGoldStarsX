@@ -94,9 +94,8 @@ public class Menu
         calculatorActionsComplexCalculations.setFont(ProjectGoldStarsX.mediumText3);
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Square & Cube Roots", new ListenersCalculatorAction.SquareAndCubeRootsListener()));
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Exponents", new ListenersCalculatorAction.ExponentsListener()));
+        calculatorActionsComplexCalculations.add(Components.standardMenuItem("Logarithms", new ListenersCalculatorAction.LogarithmsListener()));
         calculatorActionsComplexCalculations.add(Components.standardMenuItem("Quadratic Equation Solver", new ListenersCalculatorAction.QuadraticEquationListener()));
-        calculatorActionsComplexCalculations.add(Components.standardMenuItem("Log Base 10", new ListenersCalculatorAction.LogBase10Listener()));
-        calculatorActionsComplexCalculations.add(Components.standardMenuItem("Natural Log", new ListenersCalculatorAction.NaturalLogListener()));
         return calculatorActionsComplexCalculations;
     }
     

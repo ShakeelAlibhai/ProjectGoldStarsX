@@ -27,7 +27,7 @@ public class PhotosImport
         PrintWriter out;
         try
         {
-            File file = new File(ProjectGoldStarsX.photosFolder, "photo" + (ProjectGoldStarsX.photoNames.size() - 1) + ".txt");
+            File file = new File(ProjectGoldStarsX.PHOTOS_FOLDER, "photo" + (ProjectGoldStarsX.photoNames.size() - 1) + ".txt");
             out = new PrintWriter(file);
             out.println(ProjectGoldStarsX.photoNames.get(ProjectGoldStarsX.photoNames.size() - 1));
             out.close();

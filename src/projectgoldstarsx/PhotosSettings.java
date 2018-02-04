@@ -46,7 +46,7 @@ public class PhotosSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.photosFolder, "photosSearchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.PHOTOS_FOLDER, "photosSearchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("1");
                 out.close();
@@ -68,7 +68,7 @@ public class PhotosSettings
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.photosFolder, "photosSearchCaseSensitive.txt");
+                File file = new File(ProjectGoldStarsX.PHOTOS_FOLDER, "photosSearchCaseSensitive.txt");
                 out = new PrintWriter(file);
                 out.append("0");
                 out.close();

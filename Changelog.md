@@ -1,6 +1,15 @@
 # Project GoldStars X
 ### Changelog
 
+## Version 2.3.x
+### Version 2.3
+* Added a button to view the next day's calendar events in the Calendar.
+* Changed the wallpaper for the Mountain theme.
+* Replaced the "Log Base 10" and "Natural Log" windows with a new "Logarithms" window.
+* Updated Help.
+* Updated Troubleshoot Problems.
+* Other minor changes.
+
 ## Version 2.2.x
 ### Version 2.2.3
 * Updated About Programs.

@@ -159,6 +159,7 @@ public class CalendarHome
         row3.setLayout(new GridLayout(1, 2));
         row3.add(Components.standardButton("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
         row3.add(Components.standardButton("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
+        row3.add(Components.standardButton("View Calendar Events Tomorrow", new ListenersCalendar.ViewCalendarEventsTomorrowListener()));
         return row3;
     }
     

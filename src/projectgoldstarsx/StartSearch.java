@@ -16,7 +16,7 @@ public class StartSearch
      */
     private static void getSearchCaseSensitivitySetting()
     {
-        File scsTemp = new File(ProjectGoldStarsX.searchFolder, "searchCaseSensitive.txt");
+        File scsTemp = new File(ProjectGoldStarsX.SEARCH_FOLDER, "searchCaseSensitive.txt");
         try
         {
             Scanner s9 = new Scanner(scsTemp).useDelimiter("\\Z");
@@ -33,7 +33,7 @@ public class StartSearch
         }
         catch(FileNotFoundException e)
         {
-            File file = new File(ProjectGoldStarsX.searchFolder, "searchCaseSensitive.txt");
+            File file = new File(ProjectGoldStarsX.SEARCH_FOLDER, "searchCaseSensitive.txt");
             ProjectGoldStarsX.searchCaseSensitive = false;
             PrintWriter out;
             try

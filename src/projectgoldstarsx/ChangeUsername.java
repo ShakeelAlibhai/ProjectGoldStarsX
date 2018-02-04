@@ -34,7 +34,7 @@ public class ChangeUsername
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.systemFolder, "username.txt");
+                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "username.txt");
                 out = new PrintWriter(file);
                 out.append(ProjectGoldStarsX.username);
                 out.close();
