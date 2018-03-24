@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.3.x
+### Version 2.3.1
+* Updated the instructions in the Quadratic Equation Solver.
+
 ### Version 2.3
 * Added a button to view the next day's calendar events in the Calendar.
 * Changed the wallpaper for the Mountain theme.
