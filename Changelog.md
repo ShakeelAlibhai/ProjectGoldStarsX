@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.3.x
+### Version 2.3.2
+* Updated Talk.
+
 ### Version 2.3.1
 * Updated the instructions in the Quadratic Equation Solver.
 

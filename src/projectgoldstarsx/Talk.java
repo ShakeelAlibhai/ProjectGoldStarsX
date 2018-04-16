@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 public class Talk
 {
     public static ArrayList<String> messages = new ArrayList<String>();
-    public static boolean maximized = false;
+    public static boolean maximized = false;    //Tracks whether the Talk window is set to maximized or not
     public static JInternalFrame talkFrame;
     public static JTextField talkInput;
     public static String temp;
@@ -60,6 +60,7 @@ public class Talk
             messagesLabels[i] = new JLabel(messages.get(i));
             messagesLabels[i].setFont(ProjectGoldStarsX.bodyText2);
             messagesLabels[i].setOpaque(true);
+            //Set every other message to have a theme-related color
             if(i % 2 == 0)
             {
                 messagesLabels[i].setBackground(Color.white);
@@ -73,6 +74,7 @@ public class Talk
                 }
             }
         }
+        //Add the messages from the array list to the talk frame
         for(int i = 0; i < messages.size(); i++)
         {
             talkFrame.add(messagesLabels[i]);
@@ -128,7 +130,7 @@ public class Talk
     
     private void processInput(String input)
     {
-        input = input.toLowerCase();
+        input = input.toLowerCase();    //Convert the user's input to lower case
         if("".equals(input))
         {
             temp = "Why don't you say something?";
@@ -357,27 +359,27 @@ public class Talk
         }
         else if(input.indexOf("cosine") >= 0)
         {
-            CalcCosine cc = new CalcCosine();
+            new CalcCosine();
             temp = "Anything else?";
         }
         else if(input.indexOf("sine") >= 0)
         {
-            CalcSine cs = new CalcSine();
+            new CalcSine();
             temp = "Anything else?";
         }
         else if(input.indexOf("tangent") >= 0)
         {
-            CalcTangent ct = new CalcTangent();
+            new CalcTangent();
             temp = "Anything else?";
         }
         else if(input.indexOf("degrees to radians") >= 0)
         {
-            CalcDegreesToRadians cdtr = new CalcDegreesToRadians();
+            new CalcDegreesToRadians();
             temp = "Anything else?";
         }
         else if(input.indexOf("radians to degrees") >= 0)
         {
-            CalcRadiansToDegrees crtd = new CalcRadiansToDegrees();
+            new CalcRadiansToDegrees();
             temp = "Anything else?";
         }
         else if(input.indexOf("average calculator") >= 0)
@@ -582,6 +584,12 @@ public class Talk
             new ErrorLog();
             temp = "Anything else?";
         }
+        else if(input.indexOf("can you help me") >= 0 ||
+                input.indexOf("can u help me") >= 0 ||
+                input.indexOf("i need help") >= 0)
+        {
+            temp = "What do you need help with?";
+        }
         else if(input.indexOf("help") >= 0)
         {
             new Help();
@@ -674,6 +682,12 @@ public class Talk
         {
             temp = "I hope you feel better soon!";
         }
+        else if((input.indexOf("uh-oh") >= 0 ||
+                input.indexOf("uh oh") >= 0) &&
+                input.indexOf(",") <= 0)
+        {
+            temp = "What's wrong?";
+        }
         else if(input.indexOf("thanks") >= 0 ||
                 input.indexOf("thank you") >= 0)
         {
@@ -689,7 +703,8 @@ public class Talk
             }
         }
         else if(input.indexOf("lonely") >= 0 ||
-                input.indexOf("need someone to talk to") >= 0)
+                input.indexOf("need someone to talk to") >= 0 ||
+                input.indexOf("depressed") >= 0)
         {
             temp = "I'm here for you!";
         }
@@ -996,8 +1011,9 @@ public class Talk
         {
             temp = "I like your use of the letter 'q'! You know, it's not very commonly used.";
         }
-        else
+        else    //If the user's input did not fall into any of the pre-defined categories above
         {
+            //Randomly choose one of 19 messages to display to the user
             double r = Math.random();
             int randomResponse = (int)(r * 19);
             if(randomResponse == 0)
@@ -1123,6 +1139,7 @@ public class Talk
         {
             messages = new ArrayList<String>();
             talkFrame.dispose();
+            //Randomly choose one of the two possible greeting messages
             double r = Math.random();
             int randomResponse = (int)(r * 2);
             if(randomResponse == 0)
