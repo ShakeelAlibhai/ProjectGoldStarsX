@@ -23,8 +23,8 @@ public class Browser extends JInternalFrame
 {
     private final JFXPanel jfxPanel = new JFXPanel();
     private final JPanel panel = new JPanel(new BorderLayout());
-    private static JTextField urlField = new JTextField();
-    private static WebEngine engine;
+    private JTextField urlField = new JTextField();
+    private WebEngine engine;
     
     public Browser()
     {
@@ -73,6 +73,7 @@ public class Browser extends JInternalFrame
         StandardMenu menu = new StandardMenu("Window");
         menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
         menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
+        menu.add(Components.standardMenuItem("Move to Top of Screen", new TopListener()));
         return menu.getMenu();
     }
     
@@ -139,7 +140,7 @@ public class Browser extends JInternalFrame
         });
     }
     
-    public static void loadURL(final String url)
+    public void loadURL(final String url)
     {
         Platform.runLater(new Runnable()
         {
@@ -155,7 +156,7 @@ public class Browser extends JInternalFrame
         });
     }
     
-    private static String toURL(String temp)
+    private String toURL(String temp)
     {
         try
         {
@@ -200,7 +201,15 @@ public class Browser extends JInternalFrame
         }
     }
     
-    public static class GoListener implements ActionListener
+    public class TopListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            Browser.this.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
+        }
+    }
+    
+    public class GoListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
@@ -208,7 +217,7 @@ public class Browser extends JInternalFrame
         }
     }
     
-    public static class AboutBrowserListener implements ActionListener
+    public class AboutBrowserListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)

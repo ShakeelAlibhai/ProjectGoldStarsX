@@ -986,6 +986,34 @@ public class Talk
         {
             temp = "Some computers use computer mice.";
         }
+        else if(input.indexOf("what is") == 0)  //If the user's input starts with "what is"
+        {
+            //Get the part of the input after the "what is " and store it in newString
+            String newString = input.substring(8);
+            //Convert the first character of newString to uppercase
+            char firstChar = newString.charAt(0);
+            firstChar = Character.toUpperCase(firstChar);
+            newString = firstChar + newString.substring(1);
+            //Add a question mark to the end of newString
+            newString = newString + "?";
+            //Add " That's a good question." to the end of the newString
+            newString = newString + " That's a good question.";
+            temp = newString;
+        }
+        else if(input.indexOf("what's") == 0)  //If the user's input starts with "what's"
+        {
+            //Get the part of the input after the "what is " and store it in newString
+            String newString = input.substring(7);
+            //Convert the first character of newString to uppercase
+            char firstChar = newString.charAt(0);
+            firstChar = Character.toUpperCase(firstChar);
+            newString = firstChar + newString.substring(1);
+            //Add a question mark to the end of newString
+            newString = newString + "?";
+            //Add " That's a good question." to the end of the newString
+            newString = newString + " That's a good question.";
+            temp = newString;
+        }
         else if(input.indexOf("?") >= 0)
         {
             double r = Math.random();

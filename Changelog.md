@@ -1,6 +1,14 @@
 # Project GoldStars X
 ### Changelog
 
+## Version 2.4.x
+### Version 2.4
+* Added the ability to move the Browser window to the top of the screen.
+* Changed the wallpaper for the Snow theme.
+* Fixed a bug in the Browser where the URL bar would disappear in an old window when a new window was opened.
+* Overhauled the interface of Commands.
+* Updated Talk.
+
 ## Version 2.3.x
 ### Version 2.3.2
 * Updated Talk.

@@ -1,29 +1,116 @@
 package projectgoldstarsx;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 public class Commands
 {
+    public static ArrayList<String> messages = new ArrayList<String>();
+    public static boolean maximized = false;    //Tracks whether the Commands window is set to maximized or not
+    public static JInternalFrame commandsFrame;
+    public static JTextField commandsInput;
+    public static String temp;
+    
     public Commands()
     {
-        commands();
+        commandsInput = new JTextField("");
+        commandsInput.setFont(ProjectGoldStarsX.bodyText2);
+        commandsInput.setBackground(Color.lightGray);
+        commandsInput.setForeground(Color.black);
+        setupFrame();
+        if(messages.isEmpty())
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                messages.add("");
+            }
+        }
+        if(messages.size() > 10)
+        {
+            int temp = messages.size() - 10;
+            for(int i = 0; i < temp; i++)
+            {
+                messages.remove(i);
+            }
+        }
+        commandsFrame.setLayout(new GridLayout(13, 1));
+        commandsFrame.setResizable(true);
+        JLabel[] messagesLabels = new JLabel[messages.size()];
+        for(int i = 0; i < messages.size(); i++)
+        {
+            messagesLabels[i] = new JLabel(messages.get(i));
+            messagesLabels[i].setFont(ProjectGoldStarsX.bodyText2);
+            messagesLabels[i].setOpaque(true);
+            messagesLabels[i].setBackground(Color.black);
+            messagesLabels[i].setForeground(Color.white);
+        }
+        JLabel historyHeaderLabel = new JLabel("Recent Commands:");
+        historyHeaderLabel.setFont(ProjectGoldStarsX.mediumHeader);
+        historyHeaderLabel.setOpaque(true);
+        historyHeaderLabel.setBackground(Color.black);
+        historyHeaderLabel.setForeground(Color.white);
+        commandsFrame.add(historyHeaderLabel);
+        //Add the messages from the array list to the commands frame
+        for(int i = 0; i < messages.size(); i++)
+        {
+            commandsFrame.add(messagesLabels[i]);
+        }
+        JLabel inputHeaderLabel = new JLabel("Your Input:");
+        inputHeaderLabel.setFont(ProjectGoldStarsX.mediumText2);
+        inputHeaderLabel.setOpaque(true);
+        inputHeaderLabel.setBackground(Color.black);
+        inputHeaderLabel.setForeground(Color.white);
+        commandsFrame.add(inputHeaderLabel);
+        commandsFrame.add(commandsInput);
+        commandsInput.setText("");
+        commandsInput.addActionListener(new CommandsInputListener());
+        commandsFrame.setVisible(true);
     }
     
-    private void commands()
+    private void setupFrame()
     {
-        boolean continueCommands = true;
-        String input = new String();
-        try
+        commandsFrame = new JInternalFrame("Commands");
+        ProjectGoldStarsX.desktop.add(commandsFrame);
+        commandsFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        commandsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 425 * ProjectGoldStarsX.multiplier);
+        if(maximized)
         {
-            while(continueCommands)
-            {
-                input = JOptionPane.showInputDialog(null, "Please enter your command: ", "Commands", JOptionPane.QUESTION_MESSAGE);
-                if(input == null)
-                {
-                    break;
-                }
+            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(commandsFrame);
+        }
+        commandsFrame.setJMenuBar(menuBar());
+    }
+    
+    private JMenuBar menuBar()
+    {
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.add(Components.closeButton(new CloseListener()));
+        menuBar.add(Components.maximizeButton(new MaximizeListener()));
+        menuBar.add(Components.standardButton("Clear Command History", new ClearCommandHistoryListener()));
+        menuBar.add(moreMenu());
+        return menuBar;
+    }
+    
+    private JMenu moreMenu()
+    {
+        StandardMenu menu = new StandardMenu("More");
+        menu.add(Components.standardMenuItem("About Commands", new AboutCommandsListener()));
+        return menu.getMenu();
+    }
+    
+    private void processInput(String input)
+    {
                 input = input.toLowerCase();
                 if(input.indexOf("close") >= 0)
                 {
-                    continueCommands = false;
+                    
                 }
                 else if(input.indexOf("browser") >= 0 ||
                         input.indexOf("internet") >= 0)
@@ -289,11 +376,53 @@ public class Commands
                 {
                     JOptionPane.showMessageDialog(null, "Command Not Recognized", "Commands", JOptionPane.INFORMATION_MESSAGE);
                 }
-            }
-        }
-        catch(Exception error)
+    }
+    
+    public static class AboutCommandsListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
         {
-            return;
+            AboutPrograms.aboutCommands();
+        }
+    }
+    
+    public class CommandsInputListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            messages.add(commandsInput.getText());
+            commandsFrame.dispose();
+            processInput(messages.get(messages.size() - 1));
+        }
+    }
+    
+    public static class ClearCommandHistoryListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            messages = new ArrayList<String>();
+            commandsFrame.dispose();
+            new Commands();
+        }
+    }
+    
+    public class CloseListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            maximized = false;
+            commandsFrame.dispose();
+        }
+    }
+    
+    public static class MaximizeListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            maximized = true;
+            ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(commandsFrame);
         }
     }
 }
