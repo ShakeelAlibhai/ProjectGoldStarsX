@@ -30,14 +30,15 @@ public class About
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(aboutFrame.getCloseButton());
-        menuBar.add(aboutFrame.getMaximizeButton());
-        menuBar.add(aboutFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("About Programs", new ListenersAbout.AboutProgramsListener()));
+        menuBar.setBackground(ProjectGoldStarsX.color1);    //Set the background color of the menu bar
+        menuBar.add(aboutFrame.getCloseButton());   //Add a Close button to the menu bar
+        menuBar.add(aboutFrame.getMaximizeButton());    //Add a Maximize button to the menu bar
+        menuBar.add(aboutFrame.getWindowMenu());    //Add the Window menu to the menu bar
+        menuBar.add(Components.standardButton("About Programs", new ListenersAbout.AboutProgramsListener()));   //Add an About Programs button to the menu bar
         return menuBar;
     }
     
+    //Returns a JPanel containing the user's username and the version of Project GoldStars X
     private JPanel row2()
     {
         JPanel row2 = new JPanel();
@@ -48,6 +49,7 @@ public class About
         return row2;
     }
     
+    //Returns a JPanel containing a Disclaimer button and a "More Information" button
     private JPanel row3()
     {
         JPanel row3 = new JPanel();
@@ -58,6 +60,7 @@ public class About
         return row3;
     }
     
+    //Returns a JLabel containing the version of Project GoldStars X
     private JLabel version()
     {
         JLabel versionLabel = new JLabel(ProjectGoldStarsX.VERSION, SwingConstants.CENTER);
@@ -66,6 +69,7 @@ public class About
         return versionLabel;
     }
     
+    //Returns a JLabel containing the user's username
     private JLabel username()
     {
         JLabel userLabel = new JLabel("User: " + ProjectGoldStarsX.username, SwingConstants.CENTER);

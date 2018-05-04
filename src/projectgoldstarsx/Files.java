@@ -67,17 +67,17 @@ public class Files
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(filesFrame.getCloseButton());
-        menuBar.add(filesFrame.getMaximizeButton());
-        menuBar.add(filesFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));
-        menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));
-        menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
+        menuBar.setBackground(ProjectGoldStarsX.color1);    //Set the background color of the menu bar
+        menuBar.add(filesFrame.getCloseButton());   //Add a Close button to the menu bar
+        menuBar.add(filesFrame.getMaximizeButton());    //Add a Maximize button to the menu bar
+        menuBar.add(filesFrame.getWindowMenu());    //Add the Window menu to the menu bar
+        menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));   //Add a "Create a Note" button to the menu bar
+        menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));   //Add an "Import Notes" button to the menu bar
+        menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));    //Add an "Import Photos" button to the menu bar
         setupSearchField();
-        menuBar.add(filesSearchTextField);
-        menuBar.add(Components.standardButton("Search", new SearchFilesListener()));
-        menuBar.add(moreMenu());
+        menuBar.add(filesSearchTextField);  //Add a search text field to the menu bar
+        menuBar.add(Components.standardButton("Search", new SearchFilesListener()));    //Add a Search button to the menu bar
+        menuBar.add(moreMenu());    //Add the More menu to the menu bar
         return menuBar;
     }
     

@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 public class CalcRectangles
 {
     public static ProgramWindow frame;
-    public static JTextField length, width;
+    public static JTextField lengthField, widthField;
     
     public CalcRectangles()
     {
@@ -21,43 +21,27 @@ public class CalcRectangles
         frame.setLayout(new GridLayout(3, 2));
         frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         frame.setInstructionsMenuBar("Please enter the following information:");
-        frame.add(aLabel());
-        setupMPG1();
-        frame.add(length);
-        frame.add(bLabel());
-        setupMPG2();
-        frame.add(width);
+        frame.add(Components.standardLabel("Length:"));
+        setupLengthField();
+        frame.add(lengthField);
+        frame.add(Components.standardLabel("Width:"));
+        setupWidthField();
+        frame.add(widthField);
         frame.add(new JLabel());
         frame.add(Components.button2("Calculate", new CalculateListener()));
         frame.makeVisible();
     }
     
-    private JLabel aLabel()
+    private void setupLengthField()
     {
-        JLabel aLabel = new JLabel("Length:");
-        aLabel.setForeground(ProjectGoldStarsX.color2);
-        aLabel.setFont(ProjectGoldStarsX.bodyText1);
-        return aLabel;
+        lengthField = new JTextField("0");
+        lengthField.setFont(ProjectGoldStarsX.bodyText2);
     }
     
-    private void setupMPG1()
+    private void setupWidthField()
     {
-        length = new JTextField("0");
-        length.setFont(ProjectGoldStarsX.bodyText2);
-    }
-    
-    private JLabel bLabel()
-    {
-        JLabel bLabel = new JLabel("Width:");
-        bLabel.setForeground(ProjectGoldStarsX.color2);
-        bLabel.setFont(ProjectGoldStarsX.bodyText1);
-        return bLabel;
-    }
-    
-    private void setupMPG2()
-    {
-        width = new JTextField("0");
-        width.setFont(ProjectGoldStarsX.bodyText2);
+        widthField = new JTextField("0");
+        widthField.setFont(ProjectGoldStarsX.bodyText2);
     }
     
     public static class CalculateListener implements ActionListener
@@ -65,8 +49,8 @@ public class CalcRectangles
         public void actionPerformed(ActionEvent e)
         {
             String output;
-            String lengthStr = length.getText();
-            String widthStr = width.getText();
+            String lengthStr = lengthField.getText();
+            String widthStr = widthField.getText();
             double lengthD, widthD;
             try
             {

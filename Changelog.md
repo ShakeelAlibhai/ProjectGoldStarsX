@@ -2,6 +2,10 @@
 ### Changelog
 
 ## Version 2.4.x
+### Version 2.4.1
+* Updated the Commands section of Help.
+* Other minor changes.
+
 ### Version 2.4
 * Added the ability to move the Browser window to the top of the screen.
 * Changed the wallpaper for the Snow theme.

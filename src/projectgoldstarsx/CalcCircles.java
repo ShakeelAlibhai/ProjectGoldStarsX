@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 public class CalcCircles
 {
     public static ProgramWindow frame;
-    public static JTextField radius;
+    public static JTextField radiusField;
     
     public CalcCircles()
     {
@@ -21,26 +21,18 @@ public class CalcCircles
         frame.setLayout(new GridLayout(2, 2));
         frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         frame.setInstructionsMenuBar("Please enter the following information:");
-        frame.add(aLabel());
-        setupMPG1();
-        frame.add(radius);
+        frame.add(Components.standardLabel("Radius:"));
+        setupRadiusField();
+        frame.add(radiusField);
         frame.add(new JLabel());
         frame.add(Components.button2("Calculate", new CalculateListener()));
         frame.makeVisible();
     }
     
-    private JLabel aLabel()
+    private void setupRadiusField()
     {
-        JLabel aLabel = new JLabel("Radius:");
-        aLabel.setForeground(ProjectGoldStarsX.color2);
-        aLabel.setFont(ProjectGoldStarsX.bodyText1);
-        return aLabel;
-    }
-    
-    private void setupMPG1()
-    {
-        radius = new JTextField("0");
-        radius.setFont(ProjectGoldStarsX.bodyText2);
+        radiusField = new JTextField("0");
+        radiusField.setFont(ProjectGoldStarsX.bodyText2);
     }
     
     public static class CalculateListener implements ActionListener
@@ -48,7 +40,7 @@ public class CalcCircles
         public void actionPerformed(ActionEvent e)
         {
             String output;
-            String radiusStr = radius.getText();
+            String radiusStr = radiusField.getText();
             double radiusD;
             try
             {

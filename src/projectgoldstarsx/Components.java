@@ -91,6 +91,14 @@ public class Components
         return questionHeaderLabel;
     }
     
+    public static JLabel standardLabel(String displayText)
+    {
+        JLabel questionHeaderLabel = new JLabel(displayText);
+        questionHeaderLabel.setForeground(ProjectGoldStarsX.color2);
+        questionHeaderLabel.setFont(ProjectGoldStarsX.bodyText1);
+        return questionHeaderLabel;
+    }
+    
     public static JMenuItem standardMenuItem(String displayText, ActionListener actionListener)
     {
         JMenuItem menuItem = new JMenuItem(displayText);

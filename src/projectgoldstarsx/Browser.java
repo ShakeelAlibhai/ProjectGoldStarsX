@@ -21,8 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 public class Browser extends JInternalFrame
 {
-    private final JFXPanel jfxPanel = new JFXPanel();
-    private final JPanel panel = new JPanel(new BorderLayout());
+    private final JFXPanel JFX_PANEL = new JFXPanel();
+    private final JPanel PANEL = new JPanel(new BorderLayout());
     private JTextField urlField = new JTextField();
     private WebEngine engine;
     
@@ -37,8 +37,8 @@ public class Browser extends JInternalFrame
         setupWindow();
         setupURLField();
         Browser.this.setJMenuBar(menuBar());
-        panel.add(jfxPanel, BorderLayout.CENTER);
-        getContentPane().add(panel);
+        PANEL.add(JFX_PANEL, BorderLayout.CENTER);
+        getContentPane().add(PANEL);
         ProjectGoldStarsX.desktop.add(Browser.this);
         setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         setPreferredSize(new Dimension(1100 * ProjectGoldStarsX.multiplier, 600 * ProjectGoldStarsX.multiplier));
@@ -52,22 +52,23 @@ public class Browser extends JInternalFrame
     private void setupURLField()
     {
         urlField.addActionListener(new GoListener());
-        urlField.setFont(ProjectGoldStarsX.bodyText2);
+        urlField.setFont(ProjectGoldStarsX.bodyText2);  //Set the font of the URL field
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(getWindowMenu());
-        menuBar.add(urlField);
-        menuBar.add(Components.standardButton("Go", new GoListener()));
-        menuBar.add(moreMenu());
+        menuBar.setBackground(ProjectGoldStarsX.color1);    //Set the background color of the menu bar
+        menuBar.add(Components.closeButton(new CloseListener()));   //Add a Close button to the menu bar
+        menuBar.add(Components.maximizeButton(new MaximizeListener())); //Add a Maximize button to the menu bar
+        menuBar.add(getWindowMenu());   //Add the Window menu to the menu bar
+        menuBar.add(urlField);  //Add the URL field to the menu bar
+        menuBar.add(Components.standardButton("Go", new GoListener())); //Add a Go button to the menu bar
+        menuBar.add(moreMenu());    //Add the More menu to the menu bar
         return menuBar;
     }
     
+    //Returns the Window menu
     public JMenu getWindowMenu()
     {
         StandardMenu menu = new StandardMenu("Window");
@@ -77,6 +78,7 @@ public class Browser extends JInternalFrame
         return menu.getMenu();
     }
     
+    //Returns the More menu
     private JMenu moreMenu()
     {
         StandardMenu menu = new StandardMenu("More");
@@ -135,7 +137,7 @@ public class Browser extends JInternalFrame
                         }
                     }
                 });
-                jfxPanel.setScene(new Scene(view));
+                JFX_PANEL.setScene(new Scene(view));
             }
         });
     }
