@@ -1,7 +1,8 @@
 package projectgoldstarsx;
+//Generates a story with a length of either 3 or 4 sentences.
 public class Story
 {
-    private int sentences;
+    private final int SENTENCES;    //Stores the number of sentences the story should have
     private String story;
     
     /*
@@ -10,18 +11,25 @@ public class Story
     */
     public Story(int sentences)
     {
+        //If the story is requested to have a random length, then randomly choose either 3 or 4 and store it in SENTENCES
         if(sentences == 0)
         {
             Double d = Math.random();
             int i = (int)(d * 2);
             i += 3;
-            this.sentences = i;
+            SENTENCES = i;
         }
         else
         {
-            this.sentences = sentences;
+            SENTENCES = sentences;
         }
         generateStory();
+    }
+    
+    //Returns the story as a String
+    public String getStory()
+    {
+        return story;
     }
     
     private void generateStory()
@@ -200,7 +208,7 @@ public class Story
             secondPhrase = "there was once a " + subject + ".";
         }
         String firstSentence = opening + secondPhrase;
-        if(sentences == 4)
+        if(SENTENCES == 4)
         {
             String time;
             Double random3 = Math.random();
@@ -944,11 +952,7 @@ public class Story
         story = output;
     }
     
-    public String getStory()
-    {
-        return story;
-    }
-    
+    //Uses a random number generator to return either a 'm' (for male) or a 'f' (for female)
     private char randomGender()
     {
         Double random = Math.random();

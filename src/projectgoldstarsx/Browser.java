@@ -102,7 +102,7 @@ public class Browser extends JInternalFrame
                         {
                             public void run()
                             {
-                                Browser.this.setTitle("Browser - " + newValue);
+                                Browser.this.setTitle("Browser - " + newValue); //Set the title of the Browser window
                             }
                         });
                     }

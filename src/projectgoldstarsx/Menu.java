@@ -230,6 +230,7 @@ public class Menu
         calendarActions.setFont(ProjectGoldStarsX.mediumText3);
         calendarActions.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
         calendarActions.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
+        calendarActions.add(Components.standardMenuItem("View Calendar Events Tomorrow", new ListenersCalendar.ViewCalendarEventsTomorrowListener()));
         calendarActions.add(new JSeparator());
         calendarActions.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
         return calendarActions;

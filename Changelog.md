@@ -2,6 +2,10 @@
 ### Changelog
 
 ## Version 2.4.x
+### Version 2.4.2
+* Added a link to the "View Calendar Events Tomorrow" window in the Menu.
+* Other minor changes.
+
 ### Version 2.4.1
 * Updated the Commands section of Help.
 * Other minor changes.
