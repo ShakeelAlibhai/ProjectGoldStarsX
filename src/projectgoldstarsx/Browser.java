@@ -3,6 +3,9 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.net.URL;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -45,7 +48,7 @@ public class Browser extends JInternalFrame
         setResizable(true);
         setTitle("Browser");
         pack();
-        loadURL("http://google.com");
+        loadURL(ProjectGoldStarsX.homepage);
         setVisible(true);
     }
     
@@ -75,6 +78,7 @@ public class Browser extends JInternalFrame
         menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
         menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
         menu.add(Components.standardMenuItem("Move to Top of Screen", new TopListener()));
+        menu.add(Components.standardMenuItem("Move to Bottom of Screen", new BottomListener()));
         return menu.getMenu();
     }
     
@@ -83,6 +87,7 @@ public class Browser extends JInternalFrame
     {
         StandardMenu menu = new StandardMenu("More");
         menu.add(Components.standardMenuItem("About Browser", new AboutBrowserListener()));
+        menu.add(Components.standardMenuItem("Change Homepage", new ChangeHomepageListener()));
         return menu.getMenu();
     }
     
@@ -211,6 +216,15 @@ public class Browser extends JInternalFrame
         }
     }
     
+    public class BottomListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            Browser.this.setLocation(0, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
+            Browser.this.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
+        }
+    }
+    
     public class GoListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -225,6 +239,38 @@ public class Browser extends JInternalFrame
         public void actionPerformed(ActionEvent e)
         {
             AboutPrograms.aboutBrowser();
+        }
+    }
+    
+    public class ChangeHomepageListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            String tempHomepage = JOptionPane.showInputDialog(null, "Please enter your homepage:", "Change Homepage", JOptionPane.QUESTION_MESSAGE);
+            if(tempHomepage == null)
+            {
+                return;
+            }
+            else
+            {
+                ProjectGoldStarsX.homepage = tempHomepage;
+                //Save the homepage to the user's Project GoldStars X folder.
+                PrintWriter out;
+                try
+                {
+                    File file = new File(ProjectGoldStarsX.BROWSER_FOLDER, "homepage.txt");
+                    out = new PrintWriter(file);
+                    out.append(ProjectGoldStarsX.homepage);
+                    out.close();
+                }
+                catch(FileNotFoundException e2)
+                {
+
+                }
+            }
+            String output = "Homepage saved!";
+            JOptionPane.showMessageDialog(null, output, "Change Homepage", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

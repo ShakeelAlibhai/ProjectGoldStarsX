@@ -36,6 +36,7 @@ public class StandardWindow
         menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
         menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
         menu.add(Components.standardMenuItem("Move to Top of Screen", new TopListener()));
+        menu.add(Components.standardMenuItem("Move to Bottom of Screen", new BottomListener()));
         return menu.getMenu();
     }
     
@@ -138,6 +139,15 @@ public class StandardWindow
     {
         public void actionPerformed(ActionEvent e)
         {
+            frame.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
+        }
+    }
+    
+    public class BottomListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            frame.setLocation(0, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
             frame.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
         }
     }

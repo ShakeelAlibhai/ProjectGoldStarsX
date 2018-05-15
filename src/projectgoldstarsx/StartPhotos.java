@@ -30,8 +30,8 @@ public class StartPhotos
     }
     
     /*
-     * Attempt to import the saved choice of whether Photos Search is case-sensitive from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will turn off case sensitivity for Photos Search and save this to the Project GoldStars X folder.
+     * Attempt to import the saved choice of whether Photos Search is case-sensitive from the Photos folder.
+     * If nothing has been saved, Project GoldStars X will turn off case sensitivity for Photos Search and save this to the Photos folder.
      */
     private static void getPhotosSearchCaseSensitivitySetting()
     {

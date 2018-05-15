@@ -136,20 +136,21 @@ public class Search
             new Calculator();
             return;
         }
-        if(searchTermLowerCase.contains("calendar events today"))
+        if(searchTermLowerCase.contains("events today"))
         {
-            new CalendarViewEventsToday();
+            new AgendaViewEventsToday();
             return;
         }
-        if(searchTermLowerCase.contains("create calendar event") ||
-                searchTermLowerCase.contains("create a calendar event"))
+        if(searchTermLowerCase.contains("create event") ||
+                searchTermLowerCase.contains("create a event") ||
+                searchTermLowerCase.contains("create an event"))
         {
-            new CalendarCreateEvent();
+            new AgendaCreateEvent();
             return;
         }
         if(searchTermLowerCase.contains("calendar"))
         {
-            new CalendarHome();
+            new Agenda();
             return;
         }
         if(searchTermLowerCase.contains("create a note") ||
@@ -262,7 +263,7 @@ public class Search
         }
         if(searchTermLowerCase.contains("calendar settings"))
         {
-            new CalendarSettings();
+            new AgendaSettings();
             return;
         }
         if(searchTermLowerCase.contains("notes settings"))
@@ -338,27 +339,27 @@ public class Search
             new About();
             return;
         }
-        //Search Calendar
-        for(int i = 0; i < ProjectGoldStarsX.calendarEvents.size(); i++)
+        //Search Agenda
+        for(int i = 0; i < ProjectGoldStarsX.events.size(); i++)
         {
-            String temp = ProjectGoldStarsX.calendarEvents.get(i);
+            String temp = ProjectGoldStarsX.events.get(i);
             temp = temp.toLowerCase();
             if(temp.indexOf(lowerCaseSearchTerm) >= 0)
             {
                 String toAdd;
-                String year = ProjectGoldStarsX.calendarEvents.get(i).substring(0, 4);
-                String month = ProjectGoldStarsX.calendarEvents.get(i).substring(4, 6);
-                String date = ProjectGoldStarsX.calendarEvents.get(i).substring(6, 8);
-                String event = ProjectGoldStarsX.calendarEvents.get(i).substring(8);
-                if("Format 1".equals(ProjectGoldStarsX.calendarFormat))
+                String year = ProjectGoldStarsX.events.get(i).substring(0, 4);
+                String month = ProjectGoldStarsX.events.get(i).substring(4, 6);
+                String date = ProjectGoldStarsX.events.get(i).substring(6, 8);
+                String event = ProjectGoldStarsX.events.get(i).substring(8);
+                if("Format 1".equals(ProjectGoldStarsX.dateFormat))
                 {
-                    toAdd = "Result From: Calendar\n"
+                    toAdd = "Result From: Agenda\n"
                             + "Event Date: " + month + "/" + date + "/" + year
                             + "\nEvent: " + event;
                 }
                 else
                 {
-                    toAdd = "Result From: Calendar\n"
+                    toAdd = "Result From: Agenda\n"
                             + "Event Date: " + date + "/" + month + "/" + year
                             + "\nEvent: " + event;
                 }

@@ -24,10 +24,10 @@ public class ClockMenu
         }, 0, 1, TimeUnit.SECONDS);
         clockMenu.add(clockLabel());
         clockMenu.add(new JSeparator());
-        clockMenu.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
-        clockMenu.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
+        clockMenu.add(Components.standardMenuItem("Create an Event", new ListenersAgenda.CreateEventListener()));
+        clockMenu.add(Components.standardMenuItem("View Events Today", new ListenersAgenda.ViewEventsTodayListener()));
         clockMenu.add(new JSeparator());
-        clockMenu.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
+        clockMenu.add(Components.standardMenuItem("Open Agenda", new ListenersProgramsAction.AgendaListener()));
         return clockMenu.getMenu();
     }
     

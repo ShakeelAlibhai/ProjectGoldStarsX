@@ -20,7 +20,7 @@ public class Notes
     }
     
     public static ProgramWindow viewNotesFrame;
-    public static JTextField notesSearchTextField;
+    public static JTextField notesSearchField;
     
     private void notes()
     {
@@ -70,7 +70,7 @@ public class Notes
         menuBar.add(Components.standardButton("Rename Notes", new ListenersNotes.RenameNotesListener()));
         menuBar.add(Components.settingsButton("Notes Settings", new ListenersNotes.NotesSettingsListener()));
         setupSearchField();
-        menuBar.add(notesSearchTextField);
+        menuBar.add(notesSearchField);
         menuBar.add(Components.standardButton("Search", new SearchNotesListener()));
         menuBar.add(moreMenu());
         return menuBar;
@@ -85,18 +85,18 @@ public class Notes
     
     private void setupSearchField()
     {
-        notesSearchTextField = new JTextField();
-        notesSearchTextField.setText("Search Notes");
-        notesSearchTextField.setFont(ProjectGoldStarsX.bodyText2);
+        notesSearchField = new JTextField();
+        notesSearchField.setText("Search Notes");
+        notesSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            notesSearchTextField.setForeground(ProjectGoldStarsX.color2);
+            notesSearchField.setForeground(ProjectGoldStarsX.color2);
         }
         else
         {
-            notesSearchTextField.setForeground(ProjectGoldStarsX.color1);
+            notesSearchField.setForeground(ProjectGoldStarsX.color1);
         }
-        notesSearchTextField.addActionListener(new SearchNotesListener());
+        notesSearchField.addActionListener(new SearchNotesListener());
     }
     
     private class FileListener implements MouseListener
@@ -158,8 +158,8 @@ public class Notes
     {
         public void actionPerformed(ActionEvent e)
         {
-            new NotesSearch(notesSearchTextField.getText());
-            notesSearchTextField.setText("");
+            new NotesSearch(notesSearchField.getText());
+            notesSearchField.setText("");
         }
     }
 }

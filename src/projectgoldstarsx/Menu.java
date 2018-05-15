@@ -36,8 +36,8 @@ public class Menu
         actionsMenu.setFont(ProjectGoldStarsX.mediumText3);
         actionsMenu.add(quickAccessActions());
         actionsMenu.add(new JSeparator());
+        actionsMenu.add(agendaActions());
         actionsMenu.add(calculatorActions());
-        actionsMenu.add(calendarActions());
         actionsMenu.add(notesActions());
         actionsMenu.add(photosActions());
         actionsMenu.add(filesActions());
@@ -49,7 +49,7 @@ public class Menu
     {
         JMenu quickAccessActions = new JMenu("Quick Access Actions");
         quickAccessActions.setFont(ProjectGoldStarsX.mediumText3);
-        quickAccessActions.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
+        quickAccessActions.add(Components.standardMenuItem("Create a Agenda Event", new ListenersAgenda.CreateEventListener()));
         quickAccessActions.add(Components.standardMenuItem("Create a Note", new ListenersNotes.CreateNoteListener()));
         if("Dark".equals(ProjectGoldStarsX.theme))
         {
@@ -224,16 +224,16 @@ public class Menu
         return calculatorActionsOtherCalculators;
     }
     
-    private static JMenu calendarActions()
+    private static JMenu agendaActions()
     {
-        JMenu calendarActions = new JMenu("Calendar Actions");
-        calendarActions.setFont(ProjectGoldStarsX.mediumText3);
-        calendarActions.add(Components.standardMenuItem("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
-        calendarActions.add(Components.standardMenuItem("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
-        calendarActions.add(Components.standardMenuItem("View Calendar Events Tomorrow", new ListenersCalendar.ViewCalendarEventsTomorrowListener()));
-        calendarActions.add(new JSeparator());
-        calendarActions.add(Components.standardMenuItem("Open Calendar", new ListenersProgramsAction.CalendarListener()));
-        return calendarActions;
+        JMenu agendaActions = new JMenu("Agenda Actions");
+        agendaActions.setFont(ProjectGoldStarsX.mediumText3);
+        agendaActions.add(Components.standardMenuItem("Create an Event", new ListenersAgenda.CreateEventListener()));
+        agendaActions.add(Components.standardMenuItem("View Events Today", new ListenersAgenda.ViewEventsTodayListener()));
+        agendaActions.add(Components.standardMenuItem("View Events Tomorrow", new ListenersAgenda.ViewEventsTomorrowListener()));
+        agendaActions.add(new JSeparator());
+        agendaActions.add(Components.standardMenuItem("Open Agenda", new ListenersProgramsAction.AgendaListener()));
+        return agendaActions;
     }
     
     private static JMenu notesActions()
@@ -306,9 +306,9 @@ public class Menu
     {
         JMenu allProgramsMenu = new JMenu("Programs");
         allProgramsMenu.setFont(ProjectGoldStarsX.mediumText3);
+        allProgramsMenu.add(Components.standardMenuItem("Agenda", new ListenersProgramsAction.AgendaListener()));
         allProgramsMenu.add(Components.standardMenuItem("Browser", new ListenersProgramsAction.BrowserListener()));
         allProgramsMenu.add(Components.standardMenuItem("Calculator", new ListenersProgramsAction.CalculatorListener()));
-        allProgramsMenu.add(Components.standardMenuItem("Calendar", new ListenersProgramsAction.CalendarListener()));
         allProgramsMenu.add(Components.standardMenuItem("Commands", new ListenersProgramsAction.CommandsListener()));
         allProgramsMenu.add(Components.standardMenuItem("Education", new ListenersProgramsAction.EducationListener()));
         allProgramsMenu.add(Components.standardMenuItem("Error Log", new ListenersProgramsAction.ErrorLogListener()));

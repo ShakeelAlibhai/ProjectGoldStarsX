@@ -7,32 +7,32 @@ import java.util.Calendar;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
-public class CalendarViewEventsToday
+public class AgendaViewEventsToday
 {
-    public CalendarViewEventsToday()
+    public AgendaViewEventsToday()
     {
-        viewCalendarEventsToday();
+        viewEventsToday();
     }
     
     static String output;
-    public static JInternalFrame calendarFrame;
+    public static JInternalFrame frame;
     
-    private void viewCalendarEventsToday()
+    private void viewEventsToday()
     {
-        calendarFrame = new JInternalFrame("Calendar Events");
-        ProjectGoldStarsX.desktop.add(calendarFrame);
-        calendarFrame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
-        calendarFrame.setJMenuBar(menuBar());
+        frame = new JInternalFrame("Events");
+        ProjectGoldStarsX.desktop.add(frame);
+        frame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
+        frame.setJMenuBar(menuBar());
         Calendar calendar = Calendar.getInstance();
-        //Create an Array List of Strings to store today's calendar events in.
+        //Create an Array List of Strings to store today's events in.
         ArrayList<String> eventsToday = new ArrayList<String>();
         /*
-         * Search the list of saved calendar events for events with today's date.
-         * Store today's calendar events in the "eventsToday" ArrayList.
+         * Search the list of saved events for events with today's date.
+         * Store today's events in the "eventsToday" ArrayList.
          */
-        for(int i = 0; i < ProjectGoldStarsX.calendarEvents.size(); i++)
+        for(int i = 0; i < ProjectGoldStarsX.events.size(); i++)
         {
-            String temp = ProjectGoldStarsX.calendarEvents.get(i);
+            String temp = ProjectGoldStarsX.events.get(i);
             int year, month, date;
             year = Integer.parseInt(temp.substring(0, 4));
             month = Integer.parseInt(temp.substring(4, 6));
@@ -43,22 +43,22 @@ public class CalendarViewEventsToday
                 eventsToday.add(event);
             }
         }
-        //If there are no calendar events today
+        //If there are no events today
         if(eventsToday.isEmpty())
         {
-            eventsToday.add("You don't have any calendar events today!");
+            eventsToday.add("You don't have any events today!");
         }
-        //Display today's calendar events.
-        calendarFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        calendarFrame.setResizable(true);
-        calendarFrame.setLayout(new GridLayout(eventsToday.size(), 1));
+        //Display today's events.
+        frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        frame.setResizable(true);
+        frame.setLayout(new GridLayout(eventsToday.size(), 1));
         for(int i = 0; i < eventsToday.size(); i++)
         {
             JLabel event = new JLabel(eventsToday.get(i));
             event.setFont(ProjectGoldStarsX.bodyText2);
-            calendarFrame.getContentPane().add(event);
+            frame.getContentPane().add(event);
         }
-        calendarFrame.setVisible(true);
+        frame.setVisible(true);
     }
     
     private JMenuBar menuBar()
@@ -73,7 +73,7 @@ public class CalendarViewEventsToday
     {
         public void actionPerformed(ActionEvent e)
         {
-            calendarFrame.dispose();
+            frame.dispose();
         }
     }
 }

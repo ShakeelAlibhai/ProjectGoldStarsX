@@ -71,9 +71,9 @@ public class Notifications
         calendarNotification.setFont(ProjectGoldStarsX.mediumText1);
         Calendar calendar = Calendar.getInstance();
         ArrayList<String> eventsToday = new ArrayList<String>();
-        for(int i = 0; i < ProjectGoldStarsX.calendarEvents.size(); i++)
+        for(int i = 0; i < ProjectGoldStarsX.events.size(); i++)
         {
-            String temp = ProjectGoldStarsX.calendarEvents.get(i);
+            String temp = ProjectGoldStarsX.events.get(i);
             int year, month, date;
             year = Integer.parseInt(temp.substring(0, 4));
             month = Integer.parseInt(temp.substring(4, 6));
@@ -86,17 +86,17 @@ public class Notifications
         }
         if(eventsToday.isEmpty())
         {
-            calendarNotification.setText("No calendar events today.");
+            calendarNotification.setText("No events today.");
         }
         if(!eventsToday.isEmpty())
         {
             if(eventsToday.size() == 1)
             {
-                calendarNotification.setText(eventsToday.size() + " Calendar Event Today");
+                calendarNotification.setText(eventsToday.size() + " Event Today");
             }
             if(eventsToday.size() != 1)
             {
-                calendarNotification.setText(eventsToday.size() + " Calendar Events Today");
+                calendarNotification.setText(eventsToday.size() + " Events Today");
             }
         }
         calendarNotification.setForeground(ProjectGoldStarsX.color2);

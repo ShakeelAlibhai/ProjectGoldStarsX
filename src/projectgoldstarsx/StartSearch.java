@@ -11,8 +11,8 @@ public class StartSearch
     }
     
     /*
-     * Attempt to import the saved choice of whether Search is case-sensitive from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will turn off case sensitivity for Search and save this to the Project GoldStars X folder.
+     * Attempt to import the saved choice of whether Search is case-sensitive from the Search folder.
+     * If nothing has been saved, Project GoldStars X will turn off case sensitivity for Search and save this to the Search folder.
      */
     private static void getSearchCaseSensitivitySetting()
     {

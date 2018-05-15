@@ -1,50 +1,50 @@
 package projectgoldstarsx;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-public class ListenersCalendar
+public class ListenersAgenda
 {
-    public static class CreateCalendarEventListener implements ActionListener
+    public static class CreateEventListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new CalendarCreateEvent();
+            new AgendaCreateEvent();
         }
     }
     
-    public static class ViewCalendarEventsTodayListener implements ActionListener
+    public static class ViewEventsTodayListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new CalendarViewEventsToday();
+            new AgendaViewEventsToday();
         }
     }
     
-    public static class ViewCalendarEventsTomorrowListener implements ActionListener
+    public static class ViewEventsTomorrowListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new CalendarViewEventsTomorrow();
+            new AgendaViewEventsTomorrow();
         }
     }
     
-    public static class CalendarSettingsListener implements ActionListener
+    public static class AgendaSettingsListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new CalendarSettings();
+            new AgendaSettings();
         }
     }
     
-    public static class AboutCalendarListener implements ActionListener
+    public static class AboutAgendaListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            AboutPrograms.aboutCalendar();
+            AboutPrograms.aboutAgenda();
         }
     }
 }

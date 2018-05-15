@@ -11,8 +11,8 @@ public class StartMenuBar
     }
     
     /*
-     * Attempt to import the saved Settings button on the main menu bar choice from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will use turn off this option and save this to the Project GoldStars X folder.
+     * Attempt to import the saved Settings button on the main menu bar choice from the Menu Bar folder folder.
+     * If nothing has been saved, Project GoldStars X will use turn off this option and save this to the Menu Bar folder.
      */
     private static void getSettingsButtonMainMenuBar()
     {

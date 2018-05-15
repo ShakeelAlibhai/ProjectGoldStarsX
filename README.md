@@ -5,6 +5,9 @@ Project GoldStars X is a full-screen Java program with many features.
 It can serve as a useful tool for people, as well as for people who are trying to learn and/or experiment with Java.
 
 ## Features
+### Agenda
+Project GoldStars X includes an agenda, where users can view the date and time, create and search events, and view events today and tomorrow.
+
 ### Calculator
 The Project GoldStars X calculator includes many features:
 * Basic Calculations (Add, Subtract, Multiply, and Divide)
@@ -19,9 +22,6 @@ The Project GoldStars X calculator includes many features:
 * Miles Per Gallon Calculator
 * Pythagorean Triple Finder
 * Conversions
-
-### Calendar
-Project GoldStars X includes a calendar program, where users can view the date and time, create and search calendar events, and view calendar events today and tomorrow.
 
 ### Education
 The Education program in Project GoldStars X is a program that can be used to practice math and reading. Users can:

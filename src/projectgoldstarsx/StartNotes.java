@@ -49,8 +49,8 @@ public class StartNotes
     }
     
     /*
-     * Attempt to import the saved choice of whether Notes Search is case-sensitive from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will turn off case sensitivity for Notes Search and save this to the Project GoldStars X folder.
+     * Attempt to import the saved choice of whether Notes Search is case-sensitive from the Notes folder.
+     * If nothing has been saved, Project GoldStars X will turn off case sensitivity for Notes Search and save this to the Notes folder.
      */
     private static void getNotesSearchCaseSensitivitySetting()
     {

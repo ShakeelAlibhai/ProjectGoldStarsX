@@ -18,6 +18,16 @@ public class Components
         return button;
     }
     
+    public static JButton inverseStandardButton(String displayText, ActionListener actionListener)
+    {
+        JButton button = new JButton(displayText);
+        button.setBackground(ProjectGoldStarsX.color1);
+        button.setForeground(ProjectGoldStarsX.color2);
+        button.setFont(ProjectGoldStarsX.mediumText1);
+        button.addActionListener(actionListener);
+        return button;
+    }
+    
     public static JButton button2(String displayText, ActionListener actionListener)
     {
         JButton button = new JButton(displayText);

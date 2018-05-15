@@ -21,7 +21,7 @@ public class Photos
     }
     
     public static ProgramWindow viewPhotosFrame;
-    public static JTextField photosSearchTextField;
+    public static JTextField photosSearchField;
     
     private void photos()
     {
@@ -67,7 +67,7 @@ public class Photos
         menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
         menuBar.add(Components.settingsButton("Photos Settings", new ListenersPhotos.PhotosSettingsListener()));
         setupSearchField();
-        menuBar.add(photosSearchTextField);
+        menuBar.add(photosSearchField);
         menuBar.add(Components.standardButton("Search", new SearchPhotosListener()));
         menuBar.add(moreMenu());
         return menuBar;
@@ -82,18 +82,18 @@ public class Photos
     
     private void setupSearchField()
     {
-        photosSearchTextField = new JTextField();
-        photosSearchTextField.setText("Search Photos");
-        photosSearchTextField.setFont(ProjectGoldStarsX.bodyText2);
+        photosSearchField = new JTextField();
+        photosSearchField.setText("Search Photos");
+        photosSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            photosSearchTextField.setForeground(ProjectGoldStarsX.color2);
+            photosSearchField.setForeground(ProjectGoldStarsX.color2);
         }
         else
         {
-            photosSearchTextField.setForeground(ProjectGoldStarsX.color1);
+            photosSearchField.setForeground(ProjectGoldStarsX.color1);
         }
-        photosSearchTextField.addActionListener(new SearchPhotosListener());
+        photosSearchField.addActionListener(new SearchPhotosListener());
     }
     
     private class FileListener implements MouseListener
@@ -161,8 +161,8 @@ public class Photos
     {
         public void actionPerformed(ActionEvent e)
         {
-            new PhotosSearch(photosSearchTextField.getText());
-            photosSearchTextField.setText("");
+            new PhotosSearch(photosSearchField.getText());
+            photosSearchField.setText("");
         }
     }
 }

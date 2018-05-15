@@ -1,5 +1,7 @@
 package projectgoldstarsx;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -7,10 +9,14 @@ import java.util.Date;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 public class Start
 {
+    public static JTextField usernameTextField;
+    
     public Start()
     {
         start();
@@ -23,7 +29,8 @@ public class Start
         widthAndHeight();
         setFonts();
         new StartSystem();
-        new StartCalendar();
+        new StartBrowser();
+        new StartAgenda();
         new StartNotes();
         new StartPhotos();
         new StartSearch();
@@ -51,51 +58,40 @@ public class Start
         }
         catch(FileNotFoundException e)
         {
+            applyTheme();
             JFrame frame = new JFrame("Project GoldStars X");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(1100, 575);
             frame.setExtendedState(frame.MAXIMIZED_BOTH);
             frame.setUndecorated(true);
-            frame.getContentPane().setBackground(Color.cyan);
-            JMenuBar menuBar = new JMenuBar();
-            menuBar.setBackground(Color.cyan);
-            JLabel welcomeLabel = new JLabel("Setting up " + ProjectGoldStarsX.NAME + "...");
-            welcomeLabel.setForeground(Color.blue);
-            welcomeLabel.setFont(ProjectGoldStarsX.mediumText1);
-            menuBar.add(welcomeLabel);
-            frame.setJMenuBar(menuBar);
+            frame.setSize(750 * ProjectGoldStarsX.multiplier, 425 * ProjectGoldStarsX.multiplier);
+            frame.getContentPane().setBackground(ProjectGoldStarsX.color2);
+            frame.setLayout(new GridLayout(5, 1));
+            JLabel welcomeLabel = new JLabel("Welcome to Project GoldStars X!", SwingConstants.CENTER);
+            welcomeLabel.setForeground(ProjectGoldStarsX.color1);
+            welcomeLabel.setFont(ProjectGoldStarsX.largeHeader);
+            frame.add(welcomeLabel);
+            JLabel descriptionLabel = new JLabel("Project GoldStars X includes many exciting features. Let's get you set up!", SwingConstants.CENTER);
+            descriptionLabel.setForeground(ProjectGoldStarsX.color1);
+            descriptionLabel.setFont(ProjectGoldStarsX.mediumHeader);
+            frame.add(descriptionLabel);
+            JLabel instructionsLabel = new JLabel("To get started, please enter your username, and then click Continue.");
+            instructionsLabel.setForeground(ProjectGoldStarsX.color1);
+            instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
+            frame.add(instructionsLabel);
+            JPanel usernamePanel = new JPanel();
+            usernamePanel.setBackground(ProjectGoldStarsX.color2);
+            usernamePanel.setLayout(new GridLayout(1, 2));
+            JLabel usernameLabel = new JLabel("Username:");
+            usernameLabel.setForeground(ProjectGoldStarsX.color1);
+            usernameLabel.setFont(ProjectGoldStarsX.bodyText1);
+            usernamePanel.add(usernameLabel);
+            usernameTextField = new JTextField("");
+            usernameTextField.setFont(ProjectGoldStarsX.bodyText1);
+            usernameTextField.addActionListener(new SubmitUsernameListener());
+            usernamePanel.add(usernameTextField);
+            frame.add(usernamePanel);
+            frame.add(Components.inverseStandardButton("Continue", new SubmitUsernameListener()));
             frame.setVisible(true);
-            String output = "Hi, and welcome to Project GoldStars X!\n"
-                    + "Project GoldStars X includes many exciting and useful features.\n"
-                    + "However, before you can use it for the first time, we need to collect some information.\n"
-                    + "During this setup process, some files will be saved in a Project GoldStars X folder in your home folder.\n"
-                    + "Click OK to continue!";
-            JOptionPane.showMessageDialog(null, output, "Welcome to Project GoldStars X!", JOptionPane.INFORMATION_MESSAGE);
-            ProjectGoldStarsX.username = JOptionPane.showInputDialog(null, "USERNAME\n"
-                    + "Please enter your username:", "Setting up Project GoldStars X", JOptionPane.QUESTION_MESSAGE);
-            while("".equals(ProjectGoldStarsX.username))
-            {
-                ProjectGoldStarsX.username = JOptionPane.showInputDialog(null, "ERROR:\n"
-                        + "No Username Entered", "Setting up Project GoldStars X", JOptionPane.QUESTION_MESSAGE);
-                ProjectGoldStarsX.errors.add("Error: No Username Entered");
-            }
-            if(ProjectGoldStarsX.username == null)
-            {
-                System.exit(0);
-            }
-            ProjectGoldStarsX.nickname = ProjectGoldStarsX.username;
-            PrintWriter out;
-            try
-            {
-                File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "username.txt");
-                out = new PrintWriter(file);
-                out.println(ProjectGoldStarsX.username);
-                out.close();
-            }
-            catch(FileNotFoundException e2)
-            {
-                
-            }
             //Update the "oldVersion.txt" file so that it has the current version.
             PrintWriter out2;
             try
@@ -109,8 +105,6 @@ public class Start
             {
 
             }
-            applyTheme();
-            new Window();
         }
     }
     
@@ -151,10 +145,15 @@ public class Start
         {
             ProjectGoldStarsX.MENU_BAR_FOLDER.mkdir();
         }
-        //Make a Calendar folder if it does not exist yet.
-        if(!ProjectGoldStarsX.CALENDAR_FOLDER.exists())
+        //Make a Browser folder if it does not exist yet.
+        if(!ProjectGoldStarsX.BROWSER_FOLDER.exists())
         {
-            ProjectGoldStarsX.CALENDAR_FOLDER.mkdir();
+            ProjectGoldStarsX.BROWSER_FOLDER.mkdir();
+        }
+        //Make a Calendar folder if it does not exist yet.
+        if(!ProjectGoldStarsX.AGENDA_FOLDER.exists())
+        {
+            ProjectGoldStarsX.AGENDA_FOLDER.mkdir();
         }
         //Make a Notes folder if it does not exist yet.
         if(!ProjectGoldStarsX.NOTES_FOLDER.exists())
@@ -370,6 +369,35 @@ public class Start
         if("Yellow".equals(ProjectGoldStarsX.color))
         {
             ProjectGoldStarsX.color1 = Color.yellow;
+        }
+    }
+    
+    public class SubmitUsernameListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            ProjectGoldStarsX.username = usernameTextField.getText();
+            ProjectGoldStarsX.nickname = ProjectGoldStarsX.username;
+            if("".equals(ProjectGoldStarsX.username))
+            {
+                JOptionPane.showMessageDialog(null, "No Username Entered", "Setup", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                PrintWriter out;
+                try
+                {
+                    File file = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "username.txt");
+                    out = new PrintWriter(file);
+                    out.println(ProjectGoldStarsX.username);
+                    out.close();
+                }
+                catch(FileNotFoundException e2)
+                {
+
+                }
+                new Window();
+            }
         }
     }
 }

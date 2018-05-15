@@ -15,7 +15,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 public class Window extends JFrame implements ActionListener, ItemListener
 {
-    private static JTextField searchTextField;
+    private static JTextField searchField;
     
     public Window()
     {
@@ -171,9 +171,9 @@ public class Window extends JFrame implements ActionListener, ItemListener
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
         menuBar.add(Menu.menu());
+        menuBar.add(Components.standardButton("Agenda", new ListenersProgramsAction.AgendaListener()));
         menuBar.add(Components.standardButton("Browser", new ListenersProgramsAction.BrowserListener()));
         menuBar.add(Components.standardButton("Calculator", new ListenersProgramsAction.CalculatorListener()));
-        menuBar.add(Components.standardButton("Calendar", new ListenersProgramsAction.CalendarListener()));
         menuBar.add(Components.standardButton("Files", new ListenersProgramsAction.FilesListener()));
         menuBar.add(Components.standardButton("Notes", new ListenersProgramsAction.NotesListener()));
         menuBar.add(Components.standardButton("Photos", new ListenersProgramsAction.PhotosListener()));
@@ -184,7 +184,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
             menuBar.add(Components.settingsButton("Settings", new ListenersProgramsAction.SettingsListener()));
         }
         setupSearchField();
-        menuBar.add(searchTextField);
+        menuBar.add(searchField);
         menuBar.add(Components.standardButton("Search", new SearchListener()));
         menuBar.add(ClockMenu.clockMenu());
         ProjectGoldStarsX.menuBarHeight = menuBar.getHeight();
@@ -193,18 +193,18 @@ public class Window extends JFrame implements ActionListener, ItemListener
     
     private void setupSearchField()
     {
-        searchTextField = new JTextField();
-        searchTextField.setText("Search Project GoldStars X");
-        searchTextField.setFont(ProjectGoldStarsX.bodyText2);
+        searchField = new JTextField();
+        searchField.setText("Search Project GoldStars X");
+        searchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            searchTextField.setForeground(ProjectGoldStarsX.color2);
+            searchField.setForeground(ProjectGoldStarsX.color2);
         }
         else
         {
-            searchTextField.setForeground(ProjectGoldStarsX.color1);
+            searchField.setForeground(ProjectGoldStarsX.color1);
         }
-        searchTextField.addActionListener(new SearchListener());
+        searchField.addActionListener(new SearchListener());
     }
     
     public static class SearchListener implements ActionListener
@@ -212,8 +212,8 @@ public class Window extends JFrame implements ActionListener, ItemListener
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            new Search(searchTextField.getText());
-            searchTextField.setText("");
+            new Search(searchField.getText());
+            searchField.setText("");
         }
     }
     

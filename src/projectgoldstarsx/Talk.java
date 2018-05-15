@@ -418,20 +418,21 @@ public class Talk
             new Calculator();
             temp = "Anything else?";
         }
-        else if(input.indexOf("calendar events today") >= 0)
+        else if(input.indexOf("events today") >= 0)
         {
-            new CalendarViewEventsToday();
+            new AgendaViewEventsToday();
             temp = "Anything else?";
         }
-        else if(input.indexOf("create calendar event") >= 0 ||
-                input.indexOf("create a calendar event") >= 0)
+        else if(input.indexOf("create event") >= 0 ||
+                input.indexOf("create a event") >= 0 ||
+                input.indexOf("create an event") >= 0)
         {
-            new CalendarCreateEvent();
+            new AgendaCreateEvent();
             temp = "Anything else?";
         }
         else if(input.indexOf("calendar") >= 0)
         {
-            new CalendarHome();
+            new Agenda();
             temp = "Anything else?";
         }
         else if(input.indexOf("create a note") >= 0 ||
@@ -530,7 +531,7 @@ public class Talk
         }
         else if(input.indexOf("calendar settings") >= 0)
         {
-            new CalendarSettings();
+            new AgendaSettings();
             temp = "Anything else?";
         }
         else if(input.indexOf("notes settings") >= 0)

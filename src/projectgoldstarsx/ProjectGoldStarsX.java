@@ -8,8 +8,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String NAME = "Project GoldStars X 2.4 Update 2";
-    public static final String VERSION = "Version 2.4.2";
+    public static final String NAME = "Project GoldStars X 2.5";
+    public static final String VERSION = "Version 2.5";
     public static final File FOLDER = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static Color color1;
     public static Color color2;
@@ -30,7 +30,8 @@ public class ProjectGoldStarsX
     //Folders
     public static final File SYSTEM_FOLDER = new File(FOLDER, "System");
     public static final File MENU_BAR_FOLDER = new File(SYSTEM_FOLDER, "Menu Bar");
-    public static final File CALENDAR_FOLDER = new File(FOLDER, "Calendar");
+    public static final File AGENDA_FOLDER = new File(FOLDER, "Agenda");
+    public static final File BROWSER_FOLDER = new File(FOLDER, "Browser");
     public static final File NOTES_FOLDER = new File(FOLDER, "Notes");
     public static final File PHOTOS_FOLDER = new File(FOLDER, "Photos");
     public static final File SEARCH_FOLDER = new File(FOLDER, "Search");
@@ -53,10 +54,13 @@ public class ProjectGoldStarsX
     public static final int MEDIUM_TEXT_SIZE3 = 12;
     public static final int BODY_TEXT_SIZE1 = 14;
     public static final int BODY_TEXT_SIZE2 = 14;
-        
-    //Calendar Variables
-    public static String calendarFormat;
-    public static ArrayList<String> calendarEvents = new ArrayList<String>();
+    
+    //Agenda Variables
+    public static String dateFormat;
+    public static ArrayList<String> events = new ArrayList<String>();
+    
+    //Browser Variable
+    public static String homepage;
     
     //Notes Variables
     public static ArrayList<String> notes = new ArrayList<String>();

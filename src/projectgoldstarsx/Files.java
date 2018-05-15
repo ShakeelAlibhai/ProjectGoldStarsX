@@ -20,7 +20,7 @@ public class Files
     }
     
     public static ProgramWindow filesFrame;
-    public static JTextField filesSearchTextField;
+    public static JTextField filesSearchField;
     
     private void files()
     {
@@ -75,7 +75,7 @@ public class Files
         menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));   //Add an "Import Notes" button to the menu bar
         menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));    //Add an "Import Photos" button to the menu bar
         setupSearchField();
-        menuBar.add(filesSearchTextField);  //Add a search text field to the menu bar
+        menuBar.add(filesSearchField);  //Add a search text field to the menu bar
         menuBar.add(Components.standardButton("Search", new SearchFilesListener()));    //Add a Search button to the menu bar
         menuBar.add(moreMenu());    //Add the More menu to the menu bar
         return menuBar;
@@ -90,26 +90,26 @@ public class Files
     
     private void setupSearchField()
     {
-        filesSearchTextField = new JTextField();
-        filesSearchTextField.setText("Search Files");
-        filesSearchTextField.setFont(ProjectGoldStarsX.bodyText2);
+        filesSearchField = new JTextField();
+        filesSearchField.setText("Search Files");
+        filesSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            filesSearchTextField.setForeground(ProjectGoldStarsX.color2);
+            filesSearchField.setForeground(ProjectGoldStarsX.color2);
         }
         else
         {
-            filesSearchTextField.setForeground(ProjectGoldStarsX.color1);
+            filesSearchField.setForeground(ProjectGoldStarsX.color1);
         }
-        filesSearchTextField.addActionListener(new SearchFilesListener());
+        filesSearchField.addActionListener(new SearchFilesListener());
     }
     
     public static class SearchFilesListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            FilesSearch sf = new FilesSearch(filesSearchTextField.getText());
-            filesSearchTextField.setText("");
+            FilesSearch sf = new FilesSearch(filesSearchField.getText());
+            filesSearchField.setText("");
         }
     }
     

@@ -14,39 +14,39 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-public class CalendarHome
+public class Agenda
 {
-    public static ProgramWindow calendarFrame;
-    public static JTextField calendarSearchTextField;
+    public static ProgramWindow agendaFrame;
+    public static JTextField agendaSearchField;
     
-    public CalendarHome()
+    public Agenda()
     {
-        calendar();
+        agenda();
     }
     
-    private void calendar()
+    private void agenda()
     {
-        calendarFrame = new ProgramWindow("Calendar");
-        calendarFrame.setJMenuBar(menuBar());
-        calendarFrame.setSize(850 * ProjectGoldStarsX.multiplier, 475 * ProjectGoldStarsX.multiplier);
-        calendarFrame.setLayout(new GridLayout(3, 1));
-        calendarFrame.add(Components.titleLabel("Today is:"));
-        calendarFrame.add(row2());
-        calendarFrame.add(row3());
-        calendarFrame.makeVisible();
+        agendaFrame = new ProgramWindow("Agenda");
+        agendaFrame.setJMenuBar(menuBar());
+        agendaFrame.setSize(850 * ProjectGoldStarsX.multiplier, 475 * ProjectGoldStarsX.multiplier);
+        agendaFrame.setLayout(new GridLayout(3, 1));
+        agendaFrame.add(Components.titleLabel("Today is:"));
+        agendaFrame.add(row2());
+        agendaFrame.add(row3());
+        agendaFrame.makeVisible();
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.color1);
-        menuBar.add(calendarFrame.getCloseButton());
-        menuBar.add(calendarFrame.getMaximizeButton());
-        menuBar.add(calendarFrame.getWindowMenu());
-        menuBar.add(Components.settingsButton("Calendar Settings", new ListenersCalendar.CalendarSettingsListener()));
+        menuBar.add(agendaFrame.getCloseButton());
+        menuBar.add(agendaFrame.getMaximizeButton());
+        menuBar.add(agendaFrame.getWindowMenu());
+        menuBar.add(Components.settingsButton("Agenda Settings", new ListenersAgenda.AgendaSettingsListener()));
         setupSearchField();
-        menuBar.add(calendarSearchTextField);
-        menuBar.add(Components.standardButton("Search", new SearchCalendarListener()));
+        menuBar.add(agendaSearchField);
+        menuBar.add(Components.standardButton("Search", new SearchAgendaListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }
@@ -54,24 +54,24 @@ public class CalendarHome
     private JMenu moreMenu()
     {
         StandardMenu menu = new StandardMenu("More");
-        menu.add(Components.standardMenuItem("About Calendar", new ListenersCalendar.AboutCalendarListener()));
+        menu.add(Components.standardMenuItem("About Agenda", new ListenersAgenda.AboutAgendaListener()));
         return menu.getMenu();
     }
     
     private void setupSearchField()
     {
-        calendarSearchTextField = new JTextField();
-        calendarSearchTextField.setText("Search the Calendar");
-        calendarSearchTextField.setFont(ProjectGoldStarsX.bodyText2);
+        agendaSearchField = new JTextField();
+        agendaSearchField.setText("Search Agenda");
+        agendaSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            calendarSearchTextField.setForeground(ProjectGoldStarsX.color2);
+            agendaSearchField.setForeground(ProjectGoldStarsX.color2);
         }
         else
         {
-            calendarSearchTextField.setForeground(ProjectGoldStarsX.color1);
+            agendaSearchField.setForeground(ProjectGoldStarsX.color1);
         }
-        calendarSearchTextField.addActionListener(new SearchCalendarListener());
+        agendaSearchField.addActionListener(new SearchAgendaListener());
     }
     
     private JPanel row2()
@@ -91,12 +91,12 @@ public class CalendarHome
         dateLabel.setForeground(ProjectGoldStarsX.color2);
         dateLabel.setFont(ProjectGoldStarsX.mediumText1);
         dateLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        Calendar calendar = java.util.Calendar.getInstance();
+        Calendar agenda = java.util.Calendar.getInstance();
         String[] days = new String[]
         {
             "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
         };
-        switch(ProjectGoldStarsX.calendarFormat)
+        switch(ProjectGoldStarsX.dateFormat)
         {
             case "Format 1": default:
             {
@@ -106,8 +106,8 @@ public class CalendarHome
                     @Override
                     public void run()
                     {
-                        String output = days[calendar.get(java.util.Calendar.DAY_OF_WEEK) - 1] + ", ";
-                        output += ((calendar.get(java.util.Calendar.MONTH) + 1) + "/") + (calendar.get(java.util.Calendar.DATE)) + "/" + (calendar.get(java.util.Calendar.YEAR));
+                        String output = days[agenda.get(java.util.Calendar.DAY_OF_WEEK) - 1] + ", ";
+                        output += ((agenda.get(java.util.Calendar.MONTH) + 1) + "/") + (agenda.get(java.util.Calendar.DATE)) + "/" + (agenda.get(java.util.Calendar.YEAR));
                         dateLabel.setText(output);
                     }
                 }, 0, 1, TimeUnit.SECONDS);
@@ -121,8 +121,8 @@ public class CalendarHome
                     @Override
                     public void run()
                     {
-                        String output = days[calendar.get(java.util.Calendar.DAY_OF_WEEK) - 1] + ", ";
-                        output += (calendar.get(java.util.Calendar.DATE)) + "/" + ((calendar.get(java.util.Calendar.MONTH) + 1) + "/") + (calendar.get(java.util.Calendar.YEAR));
+                        String output = days[agenda.get(java.util.Calendar.DAY_OF_WEEK) - 1] + ", ";
+                        output += (agenda.get(java.util.Calendar.DATE)) + "/" + ((agenda.get(java.util.Calendar.MONTH) + 1) + "/") + (agenda.get(java.util.Calendar.YEAR));
                         dateLabel.setText(output);
                     }
                 }, 0, 1, TimeUnit.SECONDS);
@@ -157,18 +157,18 @@ public class CalendarHome
         JPanel row3 = new JPanel();
         row3.setBackground(ProjectGoldStarsX.color1);
         row3.setLayout(new GridLayout(1, 2));
-        row3.add(Components.standardButton("Create a Calendar Event", new ListenersCalendar.CreateCalendarEventListener()));
-        row3.add(Components.standardButton("View Calendar Events Today", new ListenersCalendar.ViewCalendarEventsTodayListener()));
-        row3.add(Components.standardButton("View Calendar Events Tomorrow", new ListenersCalendar.ViewCalendarEventsTomorrowListener()));
+        row3.add(Components.standardButton("Create an Event", new ListenersAgenda.CreateEventListener()));
+        row3.add(Components.standardButton("View Events Today", new ListenersAgenda.ViewEventsTodayListener()));
+        row3.add(Components.standardButton("View Events Tomorrow", new ListenersAgenda.ViewEventsTomorrowListener()));
         return row3;
     }
     
-    public static class SearchCalendarListener implements ActionListener
+    public static class SearchAgendaListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            new CalendarSearch(calendarSearchTextField.getText());
-            calendarSearchTextField.setText("");
+            new AgendaSearch(agendaSearchField.getText());
+            agendaSearchField.setText("");
         }
     }
 }

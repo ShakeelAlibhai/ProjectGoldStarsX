@@ -1,9 +1,9 @@
 package projectgoldstarsx;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-public class CalendarSearch
+public class AgendaSearch
 {
-    public CalendarSearch(String calendarSearchTerm)
+    public AgendaSearch(String calendarSearchTerm)
     {
         searchCalendar(calendarSearchTerm);
     }
@@ -13,18 +13,18 @@ public class CalendarSearch
         String output;
         ArrayList<String> searchResults = new ArrayList<String>();
         String lowerCaseSearchTerm = calendarSearchTerm.toLowerCase();
-        for(int i = 0; i < ProjectGoldStarsX.calendarEvents.size(); i++)
+        for(int i = 0; i < ProjectGoldStarsX.events.size(); i++)
         {
-            String temp = ProjectGoldStarsX.calendarEvents.get(i);
+            String temp = ProjectGoldStarsX.events.get(i);
             temp = temp.toLowerCase();
             if(temp.indexOf(lowerCaseSearchTerm) >= 0)
             {
                 String toAdd;
-                String year = ProjectGoldStarsX.calendarEvents.get(i).substring(0, 4);
-                String month = ProjectGoldStarsX.calendarEvents.get(i).substring(4, 6);
-                String date = ProjectGoldStarsX.calendarEvents.get(i).substring(6, 8);
-                String event = ProjectGoldStarsX.calendarEvents.get(i).substring(8);
-                if("Format 1".equals(ProjectGoldStarsX.calendarFormat))
+                String year = ProjectGoldStarsX.events.get(i).substring(0, 4);
+                String month = ProjectGoldStarsX.events.get(i).substring(4, 6);
+                String date = ProjectGoldStarsX.events.get(i).substring(6, 8);
+                String event = ProjectGoldStarsX.events.get(i).substring(8);
+                if("Format 1".equals(ProjectGoldStarsX.dateFormat))
                 {
                     toAdd = "Event Date: " + month + "/" + date + "/" + year
                             + "\nEvent: " + event;

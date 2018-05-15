@@ -8,22 +8,22 @@ import java.io.PrintWriter;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-public class CalendarCreateEvent
+public class AgendaCreateEvent
 {
-    static ProgramWindow qeFrame;
+    static ProgramWindow frame;
     static JTextField yearField, monthField, dateField, eventField;
     
-    public CalendarCreateEvent()
+    public AgendaCreateEvent()
     {
-        createCalendarEvent();
+        createEvent();
     }
     
-    private void createCalendarEvent()
+    private void createEvent()
     {
-        qeFrame = new ProgramWindow("Create a Calendar Event");
-        qeFrame.setLayout(new GridLayout(5, 2));
-        qeFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        qeFrame.setInstructionsMenuBar("Please enter the following information about the event:");
+        frame = new ProgramWindow("Create an Event");
+        frame.setLayout(new GridLayout(5, 2));
+        frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        frame.setInstructionsMenuBar("Please enter the following information about the event:");
         yearField = new JTextField("");
         yearField.setFont(ProjectGoldStarsX.bodyText2);
         monthField = new JTextField("");
@@ -32,17 +32,17 @@ public class CalendarCreateEvent
         dateField.setFont(ProjectGoldStarsX.bodyText2);
         eventField = new JTextField("");
         eventField.setFont(ProjectGoldStarsX.bodyText2);
-        qeFrame.add(label("Year:"));
-        qeFrame.add(yearField);
-        qeFrame.add(label("Month (ex. January is 01):"));
-        qeFrame.add(monthField);
-        qeFrame.add(label("Date (ex. 01, 02, 03...31):"));
-        qeFrame.add(dateField);
-        qeFrame.add(label("Event:"));
-        qeFrame.add(eventField);
-        qeFrame.add(new JLabel());
-        qeFrame.add(Components.button2("Create", new CreateCalendarEventListener()));
-        qeFrame.makeVisible();
+        frame.add(label("Year:"));
+        frame.add(yearField);
+        frame.add(label("Month (ex. January is 01):"));
+        frame.add(monthField);
+        frame.add(label("Date (ex. 01, 02, 03...31):"));
+        frame.add(dateField);
+        frame.add(label("Event:"));
+        frame.add(eventField);
+        frame.add(new JLabel());
+        frame.add(Components.button2("Create", new CreateCalendarEventListener()));
+        frame.makeVisible();
     }
     
     private JLabel label(String text)
@@ -77,14 +77,14 @@ public class CalendarCreateEvent
                 if(temp < 1000 || temp > 9999)
                 {
                     ProjectGoldStarsX.errors.add("Error: Calendar");
-                    JOptionPane.showMessageDialog(null, "ERROR", "Create a Calendar Event", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }
             catch(Exception e2)
             {
                 ProjectGoldStarsX.errors.add("Error: Calendar");
-                JOptionPane.showMessageDialog(null, "ERROR", "Create a Calendar Event", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             //Get the month of the calendar event.
@@ -105,14 +105,14 @@ public class CalendarCreateEvent
                 if(temp < 1 || temp > 12)
                 {
                     ProjectGoldStarsX.errors.add("Error: Calendar");
-                    JOptionPane.showMessageDialog(null, "ERROR", "Create a Calendar Event", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }
             catch(Exception e2)
             {
                 ProjectGoldStarsX.errors.add("Error: Calendar");
-                JOptionPane.showMessageDialog(null, "ERROR", "Create a Calendar Event", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             //Get the date of the calendar event.
@@ -133,14 +133,14 @@ public class CalendarCreateEvent
                 if(temp < 1 || temp > 31)
                 {
                     ProjectGoldStarsX.errors.add("Error: Calendar");
-                    JOptionPane.showMessageDialog(null, "ERROR", "Create a Calendar Event", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }
             catch(Exception e2)
             {
                 ProjectGoldStarsX.errors.add("Error: Calendar");
-                JOptionPane.showMessageDialog(null, "ERROR", "Create a Calendar Event", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             //Get the event.
@@ -151,21 +151,21 @@ public class CalendarCreateEvent
             }
             dateAndEvent += event;
             //Add the calendar event String (which includes the date of the event as well as the event itself) to the ArrayList of calendar events.
-            ProjectGoldStarsX.calendarEvents.add(dateAndEvent);
+            ProjectGoldStarsX.events.add(dateAndEvent);
             //Save the calendar event (including the date of the event) to the user's Gold Stars folder.
             PrintWriter out;
             try
                 {
-                    File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarEvent" + (ProjectGoldStarsX.calendarEvents.size() - 1) + ".txt");
+                    File file = new File(ProjectGoldStarsX.AGENDA_FOLDER, "event" + (ProjectGoldStarsX.events.size() - 1) + ".txt");
                     out = new PrintWriter(file);
-                    out.println(ProjectGoldStarsX.calendarEvents.get(ProjectGoldStarsX.calendarEvents.size() - 1));
+                    out.println(ProjectGoldStarsX.events.get(ProjectGoldStarsX.events.size() - 1));
                     out.close();
                 }
                 catch(FileNotFoundException e2)
                 {
 
                 }
-            JOptionPane.showMessageDialog(null, "Event Saved", "Create a Calendar Event", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Event Saved", "Create an Event", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

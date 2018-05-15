@@ -3,21 +3,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class ListenersProgramsAction
 {
+    public static class AgendaListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new Agenda();
+        }
+    }
+    
     public static class BrowserListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
             new Browser();
-        }
-    }
-    
-    public static class CalendarListener implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            new CalendarHome();
         }
     }
     

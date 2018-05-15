@@ -17,9 +17,9 @@ public class AboutPrograms
         aboutProgramsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         aboutProgramsFrame.setLayout(new GridLayout(4, 4));
         aboutProgramsFrame.setInstructionsMenuBar("Please choose a program to view information about:");
+        aboutProgramsFrame.add(Components.actionLabel("Agenda", new AboutAgenda()));
         aboutProgramsFrame.add(Components.actionLabel("Browser", new AboutBrowser()));
         aboutProgramsFrame.add(Components.actionLabel("Calculator", new AboutCalculator()));
-        aboutProgramsFrame.add(Components.actionLabel("Calendar", new AboutCalendar()));
         aboutProgramsFrame.add(Components.actionLabel("Commands", new AboutCommands()));
         aboutProgramsFrame.add(Components.actionLabel("Education", new AboutEducation()));
         aboutProgramsFrame.add(Components.actionLabel("Error Log", new AboutErrorLog()));
@@ -31,6 +31,38 @@ public class AboutPrograms
         aboutProgramsFrame.add(Components.actionLabel("Stories", new AboutStories()));
         aboutProgramsFrame.add(Components.actionLabel("Talk", new AboutTalk()));
         aboutProgramsFrame.makeVisible();
+    }
+    
+    public static class AboutAgenda implements MouseListener
+    {
+        public void mousePressed(MouseEvent e)
+        {
+            aboutAgenda();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
     }
     
     public static class AboutBrowser implements MouseListener
@@ -70,38 +102,6 @@ public class AboutPrograms
         public void mousePressed(MouseEvent e)
         {
             aboutCalculator();
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e)
-        {
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e)
-        {
-            
-        }
-    }
-    
-    public static class AboutCalendar implements MouseListener
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            aboutCalendar();
         }
 
         @Override
@@ -449,6 +449,23 @@ public class AboutPrograms
         }
     }
     
+    public static void aboutAgenda()
+    {
+        InformationWindow currentSettingsFrame = new InformationWindow("About Agenda");
+        currentSettingsFrame.setLayout(new GridLayout(1, 1));
+        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        String output = "This program can display the current date in two formats. It also displays the time.\n"
+                + "The format in which the date is displayed can be changed in Agenda Settings.\n"
+                + "You can also create events.\n"
+                + "You can search the Agenda for your saved events, as well as view the events that you have\n"
+                + "today and tomorrow.\n"
+                + "Note: Not all of today's events may show in \"View Today's Events;\" similarly,\n"
+                + "not all of tomorrow's events may show in \"View Tomorrow's Events.\"\n"
+                + "You may need to adjust the size of the window to view more events.";
+        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
+        currentSettingsFrame.makeVisible();
+    }
+    
     public static void aboutBrowser()
     {
         InformationWindow currentSettingsFrame = new InformationWindow("About Browser");
@@ -477,23 +494,6 @@ public class AboutPrograms
                 + "--Miles Per Gallon Calculator\n"
                 + "--Pythagorean Triple Finder\n"
                 + "--Conversions";
-        currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
-        currentSettingsFrame.makeVisible();
-    }
-    
-    public static void aboutCalendar()
-    {
-        InformationWindow currentSettingsFrame = new InformationWindow("About Calendar");
-        currentSettingsFrame.setLayout(new GridLayout(1, 1));
-        currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "This program can display the current date in two formats. It also displays the time.\n"
-                + "The format in which the date is displayed can be changed in Calendar Settings.\n"
-                + "You can also create calendar events.\n"
-                + "You can search the Calendar for your saved events, as well as view the events that you have\n"
-                + "today and tomorrow.\n"
-                + "Note: Not all of today's calendar events may show in \"View Today's Events;\" similarly,\n"
-                + "not all of tomorrow's calendar events may show in \"View Tomorrow's Events.\"\n"
-                + "You may need to adjust the size of the window to view more events.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }
@@ -598,7 +598,7 @@ public class AboutPrograms
                 + "saved calendar events, notes, photos, and the Error Log.\n"
                 + "If a program or action is found for your search term, then a window or dialog box will be opened\n"
                 + "that corresponds to that program or action.\n"
-                + "If no program or action is found, then saved calendar events, notes, photos, and the Error Log\n"
+                + "If no program or action is found, then saved events, notes, photos, and the Error Log\n"
                 + "will be searched.\n"
                 + "You can adjust the case sensitivity of Search in Search Settings.\n"
                 + "Note 1: Not all programs and actions are necessarily accessible by Search.\n"

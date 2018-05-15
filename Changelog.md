@@ -1,6 +1,15 @@
 # Project GoldStars X
 ### Changelog
 
+## Version 2.5
+* Added the ability to change the Browser homepage.
+* Added the ability to many windows to move the window to the bottom of the screen.
+* Changed the order of programs on the main menu bar.
+* Changed the way that events and the date format are saved to the host file system; this information saved from previous versions of Project GoldStars X may not carry over to this version.
+* Renamed Calendar to Agenda; calendar events are now referred to as events; Calendar Settings is now Agenda Settings. (Note: These changes may not be reflected in all parts of Project GoldStars X.)
+* Updated the setup experience.
+* Other minor changes.
+
 ## Version 2.4.x
 ### Version 2.4.2
 * Added a link to the "View Calendar Events Tomorrow" window in the Menu.

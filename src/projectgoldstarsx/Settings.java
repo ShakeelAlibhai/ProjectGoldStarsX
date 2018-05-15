@@ -28,7 +28,7 @@ public class Settings
         settingsFrame.add(Components.actionLabel("Set Location", new ListenersSettings.SetLocationListener()));
         settingsFrame.add(new JLabel());
         settingsFrame.add(Components.headerLabel("App Settings:"));
-        settingsFrame.add(Components.actionLabel("Calendar Settings", new ListenersSettings.CalendarSettingsListener()));
+        settingsFrame.add(Components.actionLabel("Agenda Settings", new ListenersSettings.AgendaSettingsListener()));
         settingsFrame.add(Components.actionLabel("Notes Settings", new ListenersSettings.NotesSettingsListener()));
         settingsFrame.add(Components.actionLabel("Photos Settings", new ListenersSettings.PhotosSettingsListener()));
         settingsFrame.add(new JLabel());

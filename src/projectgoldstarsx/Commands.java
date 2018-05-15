@@ -208,18 +208,19 @@ public class Commands
                 {
                     new Calculator();
                 }
-                else if(input.indexOf("calendar events today") >= 0)
+                else if(input.indexOf("events today") >= 0)
                 {
-                    new CalendarViewEventsToday();
+                    new AgendaViewEventsToday();
                 }
-                else if(input.indexOf("create calendar event") >= 0 ||
-                        input.indexOf("create a calendar event") >= 0)
+                else if(input.indexOf("create event") >= 0 ||
+                        input.indexOf("create a event") >= 0 ||
+                        input.indexOf("create an event") >= 0)
                 {
-                    new CalendarCreateEvent();
+                    new AgendaCreateEvent();
                 }
                 else if(input.indexOf("calendar") >= 0)
                 {
-                    new CalendarHome();
+                    new Agenda();
                 }
                 else if(input.indexOf("create a note") >= 0 ||
                         input.indexOf("create note") >= 0 ||
@@ -315,7 +316,7 @@ public class Commands
                 }
                 else if(input.indexOf("calendar settings") >= 0)
                 {
-                    new CalendarSettings();
+                    new AgendaSettings();
                 }
                 else if(input.indexOf("notes settings") >= 0)
                 {

@@ -8,28 +8,28 @@ import java.io.PrintWriter;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-public class CalendarSettings
+public class AgendaSettings
 {
-    public static ProgramWindow settingsFrame;
+    public static ProgramWindow frame;
     
-    public CalendarSettings()
+    public AgendaSettings()
     {
-        calendarSettings();
+        agendaSettings();
     }
     
-    private void calendarSettings()
+    private void agendaSettings()
     {
-        settingsFrame = new ProgramWindow("Calendar Settings");
-        settingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        settingsFrame.setLayout(new GridLayout(3, 2));
-        settingsFrame.setInstructionsMenuBar("Which format would you like the calendar to be displayed in?");
-        settingsFrame.add(Components.headerLabel("Format 1:"));
-        settingsFrame.add(Components.headerLabel("Format 2:"));
-        settingsFrame.add(date1());
-        settingsFrame.add(date2());
-        settingsFrame.add(Components.standardButton("Choose This Format", new CalendarFormat1Listener()));
-        settingsFrame.add(Components.standardButton("Choose This Format", new CalendarFormat2Listener()));
-        settingsFrame.makeVisible();
+        frame = new ProgramWindow("Agenda Settings");
+        frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        frame.setLayout(new GridLayout(3, 2));
+        frame.setInstructionsMenuBar("Which format would you like the date to be displayed in?");
+        frame.add(Components.headerLabel("Format 1:"));
+        frame.add(Components.headerLabel("Format 2:"));
+        frame.add(date1());
+        frame.add(date2());
+        frame.add(Components.standardButton("Choose This Format", new AgendaFormat1Listener()));
+        frame.add(Components.standardButton("Choose This Format", new AgendaFormat2Listener()));
+        frame.makeVisible();
     }
     
     private JLabel date1()
@@ -48,18 +48,18 @@ public class CalendarSettings
         return date2;
     }
     
-    public static class CalendarFormat1Listener implements ActionListener
+    public static class AgendaFormat1Listener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.calendarFormat = "Format 1";
-            //Save the calendar format to the user's Project GoldStars X folder.
+            ProjectGoldStarsX.dateFormat = "Format 1";
+            //Save the agenda format to the user's Project GoldStars X folder.
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarFormat.txt");
+                File file = new File(ProjectGoldStarsX.AGENDA_FOLDER, "dateFormat.txt");
                 out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.calendarFormat);
+                out.append(ProjectGoldStarsX.dateFormat);
                 out.close();
             }
             catch(FileNotFoundException e2)
@@ -70,18 +70,18 @@ public class CalendarSettings
         }
     }
     
-    public static class CalendarFormat2Listener implements ActionListener
+    public static class AgendaFormat2Listener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.calendarFormat = "Format 2";
-            //Save the calendar format to the user's Project GoldStars X folder.
+            ProjectGoldStarsX.dateFormat = "Format 2";
+            //Save the agenda format to the Agenda folder.
             PrintWriter out;
             try
             {
-                File file = new File(ProjectGoldStarsX.CALENDAR_FOLDER, "calendarFormat.txt");
+                File file = new File(ProjectGoldStarsX.AGENDA_FOLDER, "dateFormat.txt");
                 out = new PrintWriter(file);
-                out.append(ProjectGoldStarsX.calendarFormat);
+                out.append(ProjectGoldStarsX.dateFormat);
                 out.close();
             }
             catch(FileNotFoundException e2)

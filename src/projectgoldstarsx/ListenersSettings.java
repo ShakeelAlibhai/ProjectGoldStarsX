@@ -163,11 +163,11 @@ public class ListenersSettings
         }
     }
     
-    public static class CalendarSettingsListener implements MouseListener
+    public static class AgendaSettingsListener implements MouseListener
     {
         public void mousePressed(MouseEvent e)
         {
-            new CalendarSettings();
+            new AgendaSettings();
         }
 
         @Override

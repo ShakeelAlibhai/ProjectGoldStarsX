@@ -16,8 +16,8 @@ public class StartSystem
     }
     
     /*
-     * Attempt to import the saved language choice from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will use American English and save this to the Project GoldStars X folder.
+     * Attempt to import the saved language choice from the System folder.
+     * If nothing has been saved, Project GoldStars X will use American English and save this to the System folder.
      * American English is designated as "1" in Project GoldStars X.
      */
     private static void getLanguage()
@@ -48,8 +48,8 @@ public class StartSystem
     }
     
     /*
-     * Attempt to import the saved location choice from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will use the "Other/I don't want to say" choice and save this to the Project GoldStars X folder.
+     * Attempt to import the saved location choice from the System folder.
+     * If nothing has been saved, Project GoldStars X will use the "Other/I don't want to say" choice and save this to the System folder.
      */
     private static void getLocation()
     {
@@ -79,8 +79,8 @@ public class StartSystem
     }
     
     /*
-     * Attempt to import the saved theme choice from the Project GoldStars X folder.
-     * If nothing has been saved, Project GoldStars X will use the "Project GoldStars X" theme and save this to the Project GoldStars X folder.
+     * Attempt to import the saved theme choice from the System folder.
+     * If nothing has been saved, Project GoldStars X will use the "Project GoldStars X" theme and save this to the System folder.
      */
     private static void getTheme()
     {
@@ -120,7 +120,7 @@ public class StartSystem
         }
     }
     
-    //Attempt to import the saved username of the user from the Project GoldStars X folder.
+    //Attempt to import the saved username of the user from the System folder.
     private static void getUsername()
     {
         File usernameTemp = new File(ProjectGoldStarsX.SYSTEM_FOLDER, "username.txt");
@@ -137,7 +137,7 @@ public class StartSystem
     }
     
     /*
-     * Attempt to import the saved nickname of the user from the Project GoldStars X folder.
+     * Attempt to import the saved nickname of the user from the System folder.
      * If nothing has been saved, the user's username will be used as the "nickname."
      */
     private static void getNickname()
