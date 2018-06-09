@@ -29,7 +29,7 @@ public class CurrentSettings
         textArea1.setEditable(false);
         textArea1.setFont(ProjectGoldStarsX.bodyText1);
         currentSettingsFrame.add(textArea1);
-        output = "Calendar Format: " + ProjectGoldStarsX.dateFormat + "\n";
+        output = "Date Format: " + ProjectGoldStarsX.dateFormat + "\n";
         output += "Notes Search Case Sensitive: " + (ProjectGoldStarsX.notesSearchCaseSensitive ? "On" : "Off") + "\n";
         output += "Photos Search Case Sensitive: " + (ProjectGoldStarsX.photosSearchCaseSensitive ? "On" : "Off") + "\n";
         output += "Talk Nickname: " + ProjectGoldStarsX.nickname + "\n";

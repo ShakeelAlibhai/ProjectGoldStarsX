@@ -1,7 +1,11 @@
 # Project GoldStars X
 ### Changelog
 
-## Version 2.5
+## Version 2.5.x
+### Version 2.5.1
+* Updated Current Settings.
+
+### Version 2.5
 * Added the ability to change the Browser homepage.
 * Added the ability to many windows to move the window to the bottom of the screen.
 * Changed the order of programs on the main menu bar.
