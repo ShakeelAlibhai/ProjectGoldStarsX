@@ -93,7 +93,6 @@ public class AgendaCreateEvent
             {
                 return;
             }
-            dateAndEvent += month;
             /*
              * Attempt to convert the user-inputted month from a String to an int.
              * Check to make sure that the int is between 1 and 12.
@@ -115,13 +114,17 @@ public class AgendaCreateEvent
                 JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            if(temp < 10 && month.length() < 2)
+            {
+                month = "0" + month;
+            }
+            dateAndEvent += month;
             //Get the date of the calendar event.
             String day = dateField.getText();
             if(day == null)
             {
                 return;
             }
-            dateAndEvent += day;
             /*
              * Attempt to convert the user-inputted day from a String to an int.
              * Check to make sure that the int is between 1 and 31.
@@ -143,6 +146,11 @@ public class AgendaCreateEvent
                 JOptionPane.showMessageDialog(null, "ERROR", "Create an Event", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            if(temp < 10 && day.length() < 2)
+            {
+                day = "0" + day;
+            }
+            dateAndEvent += day;
             //Get the event.
             String event = eventField.getText();
             if(event == null)

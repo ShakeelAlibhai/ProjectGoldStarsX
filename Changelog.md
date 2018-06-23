@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.5.x
+### Version 2.5.2
+* Fixed a bug that would occur when creating an event if, for months and day numbers less than 10, a "0" was not at the beginning of the month or day number.
+
 ### Version 2.5.1
 * Updated Current Settings.
 
