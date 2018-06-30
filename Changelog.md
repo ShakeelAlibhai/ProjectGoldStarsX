@@ -2,6 +2,10 @@
 ### Changelog
 
 ## Version 2.5.x
+### Version 2.5.3
+* In the "Create an Event" window, pressing Enter in the Event field has the same effect as clicking the Create button. (This saves the event or displays an Error dialog box.)
+* Updated the Current Settings window to support word wrapping. (This change may not be seen for all dimensions of the Current Settings window.)
+
 ### Version 2.5.2
 * Fixed a bug that would occur when creating an event if, for months and day numbers less than 10, a "0" was not at the beginning of the month or day number.
 

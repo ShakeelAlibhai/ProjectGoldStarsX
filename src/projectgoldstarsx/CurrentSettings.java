@@ -28,6 +28,8 @@ public class CurrentSettings
         JTextArea textArea1 = new JTextArea(output);
         textArea1.setEditable(false);
         textArea1.setFont(ProjectGoldStarsX.bodyText1);
+        textArea1.setLineWrap(true);
+        textArea1.setWrapStyleWord(true);
         currentSettingsFrame.add(textArea1);
         output = "Date Format: " + ProjectGoldStarsX.dateFormat + "\n";
         output += "Notes Search Case Sensitive: " + (ProjectGoldStarsX.notesSearchCaseSensitive ? "On" : "Off") + "\n";
@@ -38,6 +40,8 @@ public class CurrentSettings
         JTextArea textArea2 = new JTextArea(output);
         textArea2.setEditable(false);
         textArea2.setFont(ProjectGoldStarsX.bodyText1);
+        textArea2.setLineWrap(true);
+        textArea2.setWrapStyleWord(true);
         currentSettingsFrame.add(textArea2);
         currentSettingsFrame.add(textArea2);
         currentSettingsFrame.makeVisible();

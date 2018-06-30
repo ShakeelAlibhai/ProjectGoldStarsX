@@ -32,6 +32,7 @@ public class AgendaCreateEvent
         dateField.setFont(ProjectGoldStarsX.bodyText2);
         eventField = new JTextField("");
         eventField.setFont(ProjectGoldStarsX.bodyText2);
+        eventField.addActionListener(new CreateCalendarEventListener());
         frame.add(label("Year:"));
         frame.add(yearField);
         frame.add(label("Month (ex. January is 01):"));
