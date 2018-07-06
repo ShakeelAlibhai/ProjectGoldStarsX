@@ -471,7 +471,8 @@ public class AboutPrograms
         InformationWindow currentSettingsFrame = new InformationWindow("About Browser");
         currentSettingsFrame.setLayout(new GridLayout(1, 1));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "Browser is a web browser!";
+        String output = "Browser is a web browser!\n"
+                + "You can change the homepage of the Browser by going to Browser > More > Change Homepage.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }
