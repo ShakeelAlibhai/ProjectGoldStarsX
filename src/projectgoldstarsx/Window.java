@@ -196,6 +196,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         searchField = new JTextField();
         searchField.setText("Search Project GoldStars X");
         searchField.setFont(ProjectGoldStarsX.bodyText2);
+        searchField.setBackground(ProjectGoldStarsX.textBackgroundColor);
         if(ProjectGoldStarsX.standardColors)
         {
             searchField.setForeground(ProjectGoldStarsX.color2);

@@ -210,10 +210,12 @@ public class Start
     
     public static void applyTheme()
     {
+        ProjectGoldStarsX.textBackgroundColor = Color.white;
         if("Dark".equals(ProjectGoldStarsX.theme))
         {
             ProjectGoldStarsX.color1 = Color.black;
             ProjectGoldStarsX.color2 = Color.lightGray;
+            ProjectGoldStarsX.textBackgroundColor = new Color(224, 224, 224);
             ProjectGoldStarsX.standardColors = false;
         }
         if("Desert".equals(ProjectGoldStarsX.theme))

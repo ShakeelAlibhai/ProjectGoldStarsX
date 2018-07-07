@@ -2,6 +2,9 @@
 ### Changelog
 
 ## Version 2.5.x
+### Version 2.5.5
+* When the Dark theme is enabled, the search bar on the main menu bar is now very light gray instead of white.
+
 ### Version 2.5.4
 * Updated the "About Browser" window.
 
