@@ -50,7 +50,7 @@ public class Notes
             {
                 viewNotesFrame.setLayout(new GridLayout(((ProjectGoldStarsX.noteNames.size() - 1) / 3) + 1, 3));
                 fileLabels[i].setFont(ProjectGoldStarsX.mediumText1);
-                fileLabels[i].setForeground(ProjectGoldStarsX.color2);
+                fileLabels[i].setForeground(ProjectGoldStarsX.secondaryColor);
                 viewNotesFrame.add(fileLabels[i]);
             }
         }
@@ -60,7 +60,7 @@ public class Notes
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(viewNotesFrame.getCloseButton());
         menuBar.add(viewNotesFrame.getMaximizeButton());
         menuBar.add(viewNotesFrame.getWindowMenu());
@@ -90,11 +90,11 @@ public class Notes
         notesSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            notesSearchField.setForeground(ProjectGoldStarsX.color2);
+            notesSearchField.setForeground(ProjectGoldStarsX.secondaryColor);
         }
         else
         {
-            notesSearchField.setForeground(ProjectGoldStarsX.color1);
+            notesSearchField.setForeground(ProjectGoldStarsX.mainColor);
         }
         notesSearchField.addActionListener(new SearchNotesListener());
     }

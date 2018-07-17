@@ -11,8 +11,8 @@ public class Components
     public static JButton standardButton(String displayText, ActionListener actionListener)
     {
         JButton button = new JButton(displayText);
-        button.setBackground(ProjectGoldStarsX.color2);
-        button.setForeground(ProjectGoldStarsX.color1);
+        button.setBackground(ProjectGoldStarsX.secondaryColor);
+        button.setForeground(ProjectGoldStarsX.mainColor);
         button.setFont(ProjectGoldStarsX.mediumText1);
         button.addActionListener(actionListener);
         return button;
@@ -21,8 +21,8 @@ public class Components
     public static JButton inverseStandardButton(String displayText, ActionListener actionListener)
     {
         JButton button = new JButton(displayText);
-        button.setBackground(ProjectGoldStarsX.color1);
-        button.setForeground(ProjectGoldStarsX.color2);
+        button.setBackground(ProjectGoldStarsX.mainColor);
+        button.setForeground(ProjectGoldStarsX.secondaryColor);
         button.setFont(ProjectGoldStarsX.mediumText1);
         button.addActionListener(actionListener);
         return button;
@@ -31,8 +31,8 @@ public class Components
     public static JButton button2(String displayText, ActionListener actionListener)
     {
         JButton button = new JButton(displayText);
-        button.setBackground(ProjectGoldStarsX.color2);
-        button.setForeground(ProjectGoldStarsX.color1);
+        button.setBackground(ProjectGoldStarsX.secondaryColor);
+        button.setForeground(ProjectGoldStarsX.mainColor);
         button.setFont(ProjectGoldStarsX.mediumText2);
         button.addActionListener(actionListener);
         return button;
@@ -71,7 +71,7 @@ public class Components
     public static JLabel titleLabel(String displayText)
     {
         JLabel titleLabel = new JLabel(displayText, SwingConstants.CENTER);
-        titleLabel.setForeground(ProjectGoldStarsX.color2);
+        titleLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         titleLabel.setFont(ProjectGoldStarsX.largeHeader);
         return titleLabel;
     }
@@ -79,7 +79,7 @@ public class Components
     public static JLabel headerLabel(String displayText)
     {
         JLabel titleLabel = new JLabel(displayText, SwingConstants.CENTER);
-        titleLabel.setForeground(ProjectGoldStarsX.color2);
+        titleLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         titleLabel.setFont(ProjectGoldStarsX.mediumHeader);
         return titleLabel;
     }
@@ -87,7 +87,7 @@ public class Components
     public static JLabel actionLabel(String actionName, MouseListener mouseListener)
     {
         JLabel action = new JLabel(actionName, SwingConstants.CENTER);
-        action.setForeground(ProjectGoldStarsX.color2);
+        action.setForeground(ProjectGoldStarsX.secondaryColor);
         action.setFont(ProjectGoldStarsX.mediumText2);
         action.addMouseListener(mouseListener);
         return action;
@@ -96,7 +96,7 @@ public class Components
     public static JLabel questionHeaderLabel(String displayText)
     {
         JLabel questionHeaderLabel = new JLabel(displayText, SwingConstants.CENTER);
-        questionHeaderLabel.setForeground(ProjectGoldStarsX.color2);
+        questionHeaderLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         questionHeaderLabel.setFont(ProjectGoldStarsX.mediumText1);
         return questionHeaderLabel;
     }
@@ -104,7 +104,7 @@ public class Components
     public static JLabel standardLabel(String displayText)
     {
         JLabel questionHeaderLabel = new JLabel(displayText);
-        questionHeaderLabel.setForeground(ProjectGoldStarsX.color2);
+        questionHeaderLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         questionHeaderLabel.setFont(ProjectGoldStarsX.bodyText1);
         return questionHeaderLabel;
     }

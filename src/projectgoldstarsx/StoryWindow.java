@@ -43,7 +43,7 @@ public class StoryWindow
             ProjectGoldStarsX.desktop.getDesktopManager().maximizeFrame(storyWindow);
         }
         storyWindow.setLayout(new GridLayout(1, 2));
-        storyWindow.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        storyWindow.getContentPane().setBackground(ProjectGoldStarsX.mainColor);
         storyWindow.setJMenuBar(menuBar());
         storyWindow.setLocation(xCoordinate, yCoordinate);
         storyWindow.setResizable(true);
@@ -55,7 +55,7 @@ public class StoryWindow
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(moreMenu());
@@ -72,7 +72,7 @@ public class StoryWindow
     private JPanel col2()
     {
         JPanel col2 = new JPanel();
-        col2.setBackground(ProjectGoldStarsX.color1);
+        col2.setBackground(ProjectGoldStarsX.mainColor);
         col2.setLayout(new GridLayout(2, 1));
         col2.add(story());
         col2.add(newStory());
@@ -84,6 +84,7 @@ public class StoryWindow
         JTextArea storyArea = new JTextArea();
         storyArea.setEditable(false);
         storyArea.setFont(ProjectGoldStarsX.bodyText1);
+        storyArea.setBackground(ProjectGoldStarsX.textBackgroundColor);
         Story s = new Story(storyType);
         storyArea.setText(s.getStory());
         return storyArea;

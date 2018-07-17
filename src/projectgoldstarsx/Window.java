@@ -31,7 +31,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         frame.setLayout(new BorderLayout());
         frame.setUndecorated(true);
         frame.setIconImage(getImage());
-        frame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        frame.getContentPane().setBackground(ProjectGoldStarsX.mainColor);
         frame.setJMenuBar(menuBar());
         ProjectGoldStarsX.desktop = new JDesktopPane();
         background();
@@ -48,7 +48,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
     
     private void background()
     {
-        ProjectGoldStarsX.desktop.setBackground(ProjectGoldStarsX.color1);
+        ProjectGoldStarsX.desktop.setBackground(ProjectGoldStarsX.mainColor);
         if(ProjectGoldStarsX.theme.equals("Fire"))
         {
             //1280x800 wallpaper
@@ -169,7 +169,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(Menu.menu());
         menuBar.add(Components.standardButton("Agenda", new ListenersProgramsAction.AgendaListener()));
         menuBar.add(Components.standardButton("Browser", new ListenersProgramsAction.BrowserListener()));
@@ -199,11 +199,11 @@ public class Window extends JFrame implements ActionListener, ItemListener
         searchField.setBackground(ProjectGoldStarsX.textBackgroundColor);
         if(ProjectGoldStarsX.standardColors)
         {
-            searchField.setForeground(ProjectGoldStarsX.color2);
+            searchField.setForeground(ProjectGoldStarsX.secondaryColor);
         }
         else
         {
-            searchField.setForeground(ProjectGoldStarsX.color1);
+            searchField.setForeground(ProjectGoldStarsX.mainColor);
         }
         searchField.addActionListener(new SearchListener());
     }

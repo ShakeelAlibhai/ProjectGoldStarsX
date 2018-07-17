@@ -1,7 +1,5 @@
 package projectgoldstarsx;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 public class Settings
@@ -41,19 +39,11 @@ public class Settings
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(settingsFrame.getCloseButton());
         menuBar.add(settingsFrame.getMaximizeButton());
         menuBar.add(settingsFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Current Settings", new CurrentSettingsListener()));
+        menuBar.add(Components.standardButton("Current Settings", new ListenersSettings.CurrentSettingsListener()));
         return menuBar;
-    }
-    
-    public static class CurrentSettingsListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            new CurrentSettings();
-        }
     }
 }

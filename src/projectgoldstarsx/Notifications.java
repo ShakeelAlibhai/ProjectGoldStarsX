@@ -29,7 +29,7 @@ public class Notifications
         Dimension screenResolution = t.getScreenSize();
         notificationsFrame.setSize(300 * ProjectGoldStarsX.multiplier, screenResolution.height);
         notificationsFrame.setLayout(new GridLayout(5, 1));
-        notificationsFrame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        notificationsFrame.getContentPane().setBackground(ProjectGoldStarsX.mainColor);
         notificationsFrame.setUndecorated(true);
         URL url = getClass().getResource("/images/ProjectGoldStarsXIcon.png");
         Image im = Toolkit.getDefaultToolkit().getImage(url);
@@ -46,8 +46,8 @@ public class Notifications
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
-        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.color2);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
+        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.secondaryColor);
         menuBar.setBorder(rightBorder);
         menuBar.add(Components.closeButton(new CloseListener()));
         return menuBar;
@@ -56,17 +56,17 @@ public class Notifications
     private JLabel title()
     {
         JLabel title = new JLabel("Notifications", SwingConstants.CENTER);
-        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.color2);
+        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.secondaryColor);
         title.setBorder(rightBorder);
         title.setFont(ProjectGoldStarsX.largeHeader);
-        title.setForeground(ProjectGoldStarsX.color2);
+        title.setForeground(ProjectGoldStarsX.secondaryColor);
         return title;
     }
     
     private JLabel calendarNotification()
     {
         JLabel calendarNotification = new JLabel();
-        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.color2);
+        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.secondaryColor);
         calendarNotification.setBorder(rightBorder);
         calendarNotification.setFont(ProjectGoldStarsX.mediumText1);
         Calendar calendar = Calendar.getInstance();
@@ -99,14 +99,14 @@ public class Notifications
                 calendarNotification.setText(eventsToday.size() + " Events Today");
             }
         }
-        calendarNotification.setForeground(ProjectGoldStarsX.color2);
+        calendarNotification.setForeground(ProjectGoldStarsX.secondaryColor);
         return calendarNotification;
     }
     
     private JLabel notesNotification()
     {
         JLabel notesNotification = new JLabel();
-        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.color2);
+        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.secondaryColor);
         notesNotification.setBorder(rightBorder);
         notesNotification.setFont(ProjectGoldStarsX.mediumText1);
         if(ProjectGoldStarsX.notes.size() == 1)
@@ -117,14 +117,14 @@ public class Notifications
         {
             notesNotification.setText(ProjectGoldStarsX.notes.size() + " Notes Saved");
         }
-        notesNotification.setForeground(ProjectGoldStarsX.color2);
+        notesNotification.setForeground(ProjectGoldStarsX.secondaryColor);
         return notesNotification;
     }
     
     private JLabel photosNotification()
     {
         JLabel photosNotification = new JLabel();
-        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.color2);
+        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.secondaryColor);
         photosNotification.setBorder(rightBorder);
         photosNotification.setFont(ProjectGoldStarsX.mediumText1);
         if(ProjectGoldStarsX.photoNames.size() == 1)
@@ -135,14 +135,14 @@ public class Notifications
         {
             photosNotification.setText(ProjectGoldStarsX.photoNames.size() + " Photos Saved");
         }
-        photosNotification.setForeground(ProjectGoldStarsX.color2);
+        photosNotification.setForeground(ProjectGoldStarsX.secondaryColor);
         return photosNotification;
     }
     
     private JLabel errorsNotification()
     {
         JLabel errorsNotification = new JLabel();
-        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.color2);
+        MatteBorder rightBorder = new MatteBorder(0, 0, 0, 1, ProjectGoldStarsX.secondaryColor);
         errorsNotification.setBorder(rightBorder);
         errorsNotification.setFont(ProjectGoldStarsX.mediumText1);
         if(ProjectGoldStarsX.errors.size() == 1)
@@ -153,7 +153,7 @@ public class Notifications
         {
             errorsNotification.setText(ProjectGoldStarsX.errors.size() + " Errors Reported");
         }
-        errorsNotification.setForeground(ProjectGoldStarsX.color2);
+        errorsNotification.setForeground(ProjectGoldStarsX.secondaryColor);
         return errorsNotification;
     }
     

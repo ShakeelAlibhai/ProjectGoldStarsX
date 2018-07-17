@@ -50,7 +50,7 @@ public class AgendaCreateEvent
     {
         JLabel label = new JLabel(text);
         label.setFont(ProjectGoldStarsX.bodyText1);
-        label.setForeground(ProjectGoldStarsX.color2);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
         return label;
     }
     

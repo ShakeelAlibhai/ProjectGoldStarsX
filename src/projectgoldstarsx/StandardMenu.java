@@ -51,8 +51,8 @@ public class StandardMenu
     
     private void setupMenu()
     {
-        menu.setBackground(ProjectGoldStarsX.color1);
-        menu.setForeground(ProjectGoldStarsX.color2);
+        menu.setBackground(ProjectGoldStarsX.mainColor);
+        menu.setForeground(ProjectGoldStarsX.secondaryColor);
         menu.setFont(ProjectGoldStarsX.mediumText1);
     }
 }

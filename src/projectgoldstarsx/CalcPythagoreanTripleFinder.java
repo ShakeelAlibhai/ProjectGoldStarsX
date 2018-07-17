@@ -35,7 +35,7 @@ public class CalcPythagoreanTripleFinder
     private JLabel aLabel()
     {
         JLabel aLabel = new JLabel("First Number:");
-        aLabel.setForeground(ProjectGoldStarsX.color2);
+        aLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         aLabel.setFont(ProjectGoldStarsX.bodyText1);
         return aLabel;
     }
@@ -49,7 +49,7 @@ public class CalcPythagoreanTripleFinder
     private JLabel bLabel()
     {
         JLabel bLabel = new JLabel("Second Number:");
-        bLabel.setForeground(ProjectGoldStarsX.color2);
+        bLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         bLabel.setFont(ProjectGoldStarsX.bodyText1);
         return bLabel;
     }

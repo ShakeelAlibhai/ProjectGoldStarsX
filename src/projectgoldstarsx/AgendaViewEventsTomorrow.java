@@ -65,7 +65,7 @@ public class AgendaViewEventsTomorrow
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(Components.closeButton(new CloseListener()));
         return menuBar;
     }

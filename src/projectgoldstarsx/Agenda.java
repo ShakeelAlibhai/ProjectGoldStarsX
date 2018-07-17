@@ -39,7 +39,7 @@ public class Agenda
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(agendaFrame.getCloseButton());
         menuBar.add(agendaFrame.getMaximizeButton());
         menuBar.add(agendaFrame.getWindowMenu());
@@ -65,11 +65,11 @@ public class Agenda
         agendaSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            agendaSearchField.setForeground(ProjectGoldStarsX.color2);
+            agendaSearchField.setForeground(ProjectGoldStarsX.secondaryColor);
         }
         else
         {
-            agendaSearchField.setForeground(ProjectGoldStarsX.color1);
+            agendaSearchField.setForeground(ProjectGoldStarsX.mainColor);
         }
         agendaSearchField.addActionListener(new SearchAgendaListener());
     }
@@ -77,7 +77,7 @@ public class Agenda
     private JPanel row2()
     {
         JPanel row2 = new JPanel();
-        row2.setBackground(ProjectGoldStarsX.color1);
+        row2.setBackground(ProjectGoldStarsX.mainColor);
         row2.setLayout(new GridLayout(1, 2));
         row2.add(date());
         row2.add(time());
@@ -87,8 +87,8 @@ public class Agenda
     private JLabel date()
     {
         JLabel dateLabel = new JLabel();
-        dateLabel.setBackground(ProjectGoldStarsX.color1);
-        dateLabel.setForeground(ProjectGoldStarsX.color2);
+        dateLabel.setBackground(ProjectGoldStarsX.mainColor);
+        dateLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         dateLabel.setFont(ProjectGoldStarsX.mediumText1);
         dateLabel.setHorizontalAlignment(SwingConstants.CENTER);
         Calendar agenda = java.util.Calendar.getInstance();
@@ -135,8 +135,8 @@ public class Agenda
     private JLabel time()
     {
         JLabel timePanel = new JLabel();
-        timePanel.setBackground(ProjectGoldStarsX.color1);
-        timePanel.setForeground(ProjectGoldStarsX.color2);
+        timePanel.setBackground(ProjectGoldStarsX.mainColor);
+        timePanel.setForeground(ProjectGoldStarsX.secondaryColor);
         timePanel.setFont(ProjectGoldStarsX.mediumText1);
         timePanel.setHorizontalAlignment(SwingConstants.CENTER);
         ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
@@ -155,7 +155,7 @@ public class Agenda
     private JPanel row3()
     {
         JPanel row3 = new JPanel();
-        row3.setBackground(ProjectGoldStarsX.color1);
+        row3.setBackground(ProjectGoldStarsX.mainColor);
         row3.setLayout(new GridLayout(1, 2));
         row3.add(Components.standardButton("Create an Event", new ListenersAgenda.CreateEventListener()));
         row3.add(Components.standardButton("View Events Today", new ListenersAgenda.ViewEventsTodayListener()));

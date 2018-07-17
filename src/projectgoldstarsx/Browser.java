@@ -56,12 +56,20 @@ public class Browser extends JInternalFrame
     {
         urlField.addActionListener(new GoListener());
         urlField.setFont(ProjectGoldStarsX.bodyText2);  //Set the font of the URL field
+        if(ProjectGoldStarsX.standardColors)
+        {
+            urlField.setForeground(ProjectGoldStarsX.secondaryColor);
+        }
+        else
+        {
+            urlField.setForeground(ProjectGoldStarsX.mainColor);
+        }
     }
     
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);    //Set the background color of the menu bar
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);    //Set the background color of the menu bar
         menuBar.add(Components.closeButton(new CloseListener()));   //Add a Close button to the menu bar
         menuBar.add(Components.maximizeButton(new MaximizeListener())); //Add a Maximize button to the menu bar
         menuBar.add(getWindowMenu());   //Add the Window menu to the menu bar

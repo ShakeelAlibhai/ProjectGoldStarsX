@@ -1,24 +1,33 @@
-# Project GoldStars X
-### Changelog
+# Project GoldStars X Changelog
+
+## Version 2.6.x
+### Version 2.6
+* Added a "View Current Settings" menu item to the "Quick Access Actions" section of the main menu.
+* The color of the text in the Browser URL field is now based on the theme.
+* The color of the text in the Current Settings window text areas is now based on the theme.
+* Updated Help.
+* When the Dark theme is enabled, the story text background in Stories is now very light gray instead of white.
+* Windows using the "InformationWindow" object now support word wrapping. (This includes the "About Program" windows for each program, the Disclaimer window, and more.) Note: This change may not be seen for all dimensions of windows.
+* Other minor changes.
 
 ## Version 2.5.x
-### Version 2.5.5
+### Version 2.5.5 (July 7, 2018)
 * When the Dark theme is enabled, the search bar on the main menu bar is now very light gray instead of white.
 
-### Version 2.5.4
+### Version 2.5.4 (July 6, 2018)
 * Updated the "About Browser" window.
 
-### Version 2.5.3
+### Version 2.5.3 (June 30, 2018)
 * In the "Create an Event" window, pressing Enter in the Event field has the same effect as clicking the Create button. (This saves the event or displays an Error dialog box.)
 * Updated the Current Settings window to support word wrapping. (This change may not be seen for all dimensions of the Current Settings window.)
 
-### Version 2.5.2
+### Version 2.5.2 (June 22, 2018)
 * Fixed a bug that would occur when creating an event if, for months and day numbers less than 10, a "0" was not at the beginning of the month or day number.
 
-### Version 2.5.1
+### Version 2.5.1 (June 9, 2018)
 * Updated Current Settings.
 
-### Version 2.5
+### Version 2.5 (May 15, 2018)
 * Added the ability to change the Browser homepage.
 * Added the ability to many windows to move the window to the bottom of the screen.
 * Changed the order of programs on the main menu bar.
@@ -28,15 +37,15 @@
 * Other minor changes.
 
 ## Version 2.4.x
-### Version 2.4.2
+### Version 2.4.2 (May 6, 2018)
 * Added a link to the "View Calendar Events Tomorrow" window in the Menu.
 * Other minor changes.
 
-### Version 2.4.1
+### Version 2.4.1 (May 4, 2018)
 * Updated the Commands section of Help.
 * Other minor changes.
 
-### Version 2.4
+### Version 2.4 (May 1, 2018)
 * Added the ability to move the Browser window to the top of the screen.
 * Changed the wallpaper for the Snow theme.
 * Fixed a bug in the Browser where the URL bar would disappear in an old window when a new window was opened.
@@ -44,13 +53,13 @@
 * Updated Talk.
 
 ## Version 2.3.x
-### Version 2.3.2
+### Version 2.3.2 (April 16, 2018)
 * Updated Talk.
 
-### Version 2.3.1
+### Version 2.3.1 (March 24, 2018)
 * Updated the instructions in the Quadratic Equation Solver.
 
-### Version 2.3
+### Version 2.3 (February 3, 2018)
 * Added a button to view the next day's calendar events in the Calendar.
 * Changed the wallpaper for the Mountain theme.
 * Replaced the "Log Base 10" and "Natural Log" windows with a new "Logarithms" window.
@@ -59,19 +68,19 @@
 * Other minor changes.
 
 ## Version 2.2.x
-### Version 2.2.3
+### Version 2.2.3 (January 19, 2018)
 * Updated About Programs.
 * Updated the Disclaimer.
 * Other minor changes.
 
-### Version 2.2.2
+### Version 2.2.2 (January 15, 2018)
 * Updated Talk.
 * Other minor changes.
 
-### Version 2.2.1
+### Version 2.2.1 (January 8, 2018)
 * Updated Stories.
 
-### Version 2.2
+### Version 2.2 (December 12, 2017)
 * Added the ability to many windows to move the window to the top of the screen.
 * Replaced the "Square Root" and "Cube Root" windows with a new "Square & Cube Roots" window.
 * Updated Stories.
@@ -79,27 +88,27 @@
 * Other minor changes.
 
 ## Version 2.1.x
-### Version 2.1.6
+### Version 2.1.6 (November 14, 2017)
 * Updated Stories.
 
-### Version 2.1.5
+### Version 2.1.5 (October 26, 2017)
 * Updated Talk.
 
-### Version 2.1.4
+### Version 2.1.4 (October 13, 2017)
 * Added a "Clear Chat History" button to the "Talk" window.
 * Slightly adjusted the default size of the "Notes Settings," "Photos Settings," "Search Settings," and "Error Log Settings" windows.
 * Other minor changes.
 
-### Version 2.1.3
+### Version 2.1.3 (October 5, 2017)
 * Added a "Refresh" button to the "Current Settings" window.
 
-### Version 2.1.2
+### Version 2.1.2 (September 16, 2017)
 * Updated the "About Calculator" and "About Calendar" windows.
 
-### Version 2.1.1
+### Version 2.1.1 (September 4, 2017)
 * Updated error reporting.
 
-### Version 2.1
+### Version 2.1 (August 26, 2017)
 * Added the ability to find the area of a triangle.
 * Added the ability to move the Browser window to the left or right side of the screen.
 * Added the ability to move the Create a Note window to the left or right side of the screen.
@@ -110,15 +119,15 @@
 * Other minor changes.
 
 ## Version 2.0.x
-### Version 2.0.2
+### Version 2.0.2 (August 15, 2017)
 * Updated Commands.
 * Updated Search.
 * Updated Talk.
 
-### Version 2.0.1
+### Version 2.0.1 (August 14, 2017)
 * Added the ability to resize the "Create a Note" window.
 
-### Version 2.0
+### Version 2.0 (August 7, 2017)
 * Added a "Geometry" section to the Calculator.
 * Added a "More Information" section in About.
 * Added the ability to add more than 10 numbers.
@@ -148,7 +157,7 @@
 * Other minor changes.
 
 ## Version 1.5.x
-### Version 1.5
+### Version 1.5 (June 6, 2017)
 * Added a Silver theme.
 * Reorganized the Menu.
 * Switched the Yellow and White buttons on the menu bar in Light.
@@ -157,10 +166,10 @@
 * Other minor changes.
 
 ## Version 1.4.x
-### Version 1.4.1
+### Version 1.4.1 (May 29, 2017)
 * Added the color turquoise as an option in Light.
 
-### Version 1.4
+### Version 1.4 (May 28, 2017)
 * Added a Desert theme.
 * Added turquoise as a background color option.
 * Made more programs/actions accessible by searching in the search box.
@@ -172,7 +181,7 @@
 * Other minor changes.
 
 ## Version 1.3.x
-### Version 1.3
+### Version 1.3 (April 3, 2017)
 * Added the ability to resize the Browser window.
 * Added the colors gray, light gray, and pink as options in Light.
 * Made more programs/actions accessible by searching in the search box.
@@ -184,14 +193,14 @@
 * Other minor changes.
 
 ## Version 1.2.x
-### Version 1.2.2
+### Version 1.2.2 (February 4, 2017)
 * Improved the stability of Story windows.
 * Minor changes in the Change Theme window, Solid Color dialog box, and Change Username dialog box.
 
-### Version 1.2.1
+### Version 1.2.1 (February 3, 2017)
 * Added the option to search for some programs and actions from the search box. (Note: not all programs and actions are supported yet.)
 
-### Version 1.2
+### Version 1.2 (January 27, 2017)
 * Added a Settings button in Notifications.
 * Added a Troubleshoot Problems button in System Information.
 * Added the option to add/remove the Settings button from the main menu bar.
@@ -206,11 +215,11 @@
 * Other minor changes.
 
 ## Version 1.1.x
-### Version 1.1.1
+### Version 1.1.1 (December 26, 2016)
 * Added the color light red as an option in Light.
 * Updated Talk.
 
-### Version 1.1
+### Version 1.1 (December 24, 2016)
 * Added a Clock Menu (accessable by clicking the time in the main menu bar).
 * Added the colors dark green and orange as options in Light.
 * Added wallpaper for the Fire theme.
@@ -227,18 +236,18 @@
 * Other minor changes.
 
 ## Version 1.0.x
-### Version 1.0.3
+### Version 1.0.3 (November 16, 2016)
 * Updated the "Math" section of Education.
 
-### Version 1.0.2
+### Version 1.0.2 (November 13, 2016)
 * Removed the Snow theme 4096x2304 wallpaper.
 * Updated the Disclaimer.
 * Another minor change in the code in the Window class.
 
-### Version 1.0.1
+### Version 1.0.1 (November 7, 2016)
 * Updated Talk.
 * Updated Commands.
 * Fixed a bug in the Start class.
 
-### Version 1.0
+### Version 1.0 (November 5, 2016)
 * This is Version 1.0 of Project GoldStars X!

@@ -29,11 +29,11 @@ public class Talk
         talkInput.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            talkInput.setForeground(ProjectGoldStarsX.color2);
+            talkInput.setForeground(ProjectGoldStarsX.secondaryColor);
         }
         else
         {
-            talkInput.setForeground(ProjectGoldStarsX.color1);
+            talkInput.setForeground(ProjectGoldStarsX.mainColor);
         }
         setupFrame();
         if(messages.isEmpty())
@@ -66,11 +66,11 @@ public class Talk
                 messagesLabels[i].setBackground(Color.white);
                 if(ProjectGoldStarsX.standardColors)
                 {
-                    messagesLabels[i].setForeground(ProjectGoldStarsX.color2);
+                    messagesLabels[i].setForeground(ProjectGoldStarsX.secondaryColor);
                 }
                 else
                 {
-                    messagesLabels[i].setForeground(ProjectGoldStarsX.color1);
+                    messagesLabels[i].setForeground(ProjectGoldStarsX.mainColor);
                 }
             }
         }
@@ -101,7 +101,7 @@ public class Talk
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(Components.settingsButton("Talk Settings", new TalkSettingsListener()));

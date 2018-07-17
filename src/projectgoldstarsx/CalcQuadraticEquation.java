@@ -23,13 +23,13 @@ public class CalcQuadraticEquation implements ActionListener
         qeFrame.setInstructionsMenuBar("Please enter the quadratic equation in the form ax^2 + bx + c = 0.");
         JLabel aLabel = new JLabel("a:");
         aLabel.setFont(ProjectGoldStarsX.bodyText1);
-        aLabel.setForeground(ProjectGoldStarsX.color2);
+        aLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         JLabel bLabel = new JLabel("b:");
         bLabel.setFont(ProjectGoldStarsX.bodyText1);
-        bLabel.setForeground(ProjectGoldStarsX.color2);
+        bLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         JLabel cLabel = new JLabel("c:");
         cLabel.setFont(ProjectGoldStarsX.bodyText1);
-        cLabel.setForeground(ProjectGoldStarsX.color2);
+        cLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         af = new JTextField("0");
         af.setFont(ProjectGoldStarsX.bodyText2);
         bf = new JTextField("0");

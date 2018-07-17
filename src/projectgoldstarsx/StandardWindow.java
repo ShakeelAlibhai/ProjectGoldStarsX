@@ -78,7 +78,7 @@ public class StandardWindow
     private JMenuBar standardMenuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(getCloseButton());
         menuBar.add(getMaximizeButton());
         menuBar.add(getWindowMenu());
@@ -95,7 +95,7 @@ public class StandardWindow
     private JLabel instructionsLabel(String instructions)
     {
         JLabel instructionsLabel = new JLabel(instructions);
-        instructionsLabel.setForeground(ProjectGoldStarsX.color2);
+        instructionsLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         instructionsLabel.setFont(ProjectGoldStarsX.mediumText2);
         return instructionsLabel;
     }

@@ -19,6 +19,7 @@ public class CurrentSettings
         currentSettingsFrame.setLayout(new GridLayout(1, 2));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         currentSettingsFrame.setJMenuBar(menuBar());
+        //Create a String named output and make it contain the information in the first column of the window
         String output;
         output = "Language: " + language() + "\n";
         output += "Theme: " + ProjectGoldStarsX.theme + "\n";
@@ -31,6 +32,7 @@ public class CurrentSettings
         textArea1.setLineWrap(true);
         textArea1.setWrapStyleWord(true);
         currentSettingsFrame.add(textArea1);
+        //Update output to make it contain the information in the second column of the window
         output = "Date Format: " + ProjectGoldStarsX.dateFormat + "\n";
         output += "Notes Search Case Sensitive: " + (ProjectGoldStarsX.notesSearchCaseSensitive ? "On" : "Off") + "\n";
         output += "Photos Search Case Sensitive: " + (ProjectGoldStarsX.photosSearchCaseSensitive ? "On" : "Off") + "\n";
@@ -42,6 +44,16 @@ public class CurrentSettings
         textArea2.setFont(ProjectGoldStarsX.bodyText1);
         textArea2.setLineWrap(true);
         textArea2.setWrapStyleWord(true);
+        if(ProjectGoldStarsX.standardColors)
+        {
+            textArea1.setForeground(ProjectGoldStarsX.secondaryColor);
+            textArea2.setForeground(ProjectGoldStarsX.secondaryColor);
+        }
+        else
+        {
+            textArea1.setForeground(ProjectGoldStarsX.mainColor);
+            textArea2.setForeground(ProjectGoldStarsX.mainColor);
+        }
         currentSettingsFrame.add(textArea2);
         currentSettingsFrame.add(textArea2);
         currentSettingsFrame.makeVisible();
@@ -50,7 +62,7 @@ public class CurrentSettings
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(currentSettingsFrame.getCloseButton());
         menuBar.add(currentSettingsFrame.getMaximizeButton());
         menuBar.add(currentSettingsFrame.getWindowMenu());

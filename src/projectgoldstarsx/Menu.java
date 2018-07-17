@@ -59,6 +59,7 @@ public class Menu
         {
             quickAccessActions.add(Components.standardMenuItem("Switch to Dark Theme", new ListenersThemes.DarkThemeListener()));
         }
+        quickAccessActions.add(Components.standardMenuItem("View Current Settings", new ListenersSettings.CurrentSettingsListener()));
         return quickAccessActions;
     }
     

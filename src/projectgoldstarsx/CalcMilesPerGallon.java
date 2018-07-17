@@ -38,7 +38,7 @@ public class CalcMilesPerGallon
     private JLabel aLabel()
     {
         JLabel aLabel = new JLabel("Beginning Odometer Reading:");
-        aLabel.setForeground(ProjectGoldStarsX.color2);
+        aLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         aLabel.setFont(ProjectGoldStarsX.bodyText1);
         return aLabel;
     }
@@ -52,7 +52,7 @@ public class CalcMilesPerGallon
     private JLabel bLabel()
     {
         JLabel bLabel = new JLabel("Ending Odometer Reading");
-        bLabel.setForeground(ProjectGoldStarsX.color2);
+        bLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         bLabel.setFont(ProjectGoldStarsX.bodyText1);
         return bLabel;
     }
@@ -66,7 +66,7 @@ public class CalcMilesPerGallon
     private JLabel cLabel()
     {
         JLabel cLabel = new JLabel("Gallons of Gas Used:");
-        cLabel.setForeground(ProjectGoldStarsX.color2);
+        cLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         cLabel.setFont(ProjectGoldStarsX.bodyText1);
         return cLabel;
     }

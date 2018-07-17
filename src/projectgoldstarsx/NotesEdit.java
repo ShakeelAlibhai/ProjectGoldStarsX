@@ -47,10 +47,10 @@ public class NotesEdit
                 createNoteFrame = new JFrame("Edit Notes");
                 createNoteFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
                 JMenuBar menuBar = new JMenuBar();
-                menuBar.setBackground(ProjectGoldStarsX.color1);
+                menuBar.setBackground(ProjectGoldStarsX.mainColor);
                 JButton saveButton = new JButton("Save");
-                saveButton.setBackground(ProjectGoldStarsX.color2);
-                saveButton.setForeground(ProjectGoldStarsX.color1);
+                saveButton.setBackground(ProjectGoldStarsX.secondaryColor);
+                saveButton.setForeground(ProjectGoldStarsX.mainColor);
                 saveButton.setFont(new java.awt.Font(null, Font.BOLD, 16));
                 saveButton.addActionListener(new EditNoteListener());
                 menuBar.add(saveButton);

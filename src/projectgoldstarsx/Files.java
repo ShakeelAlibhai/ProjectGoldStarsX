@@ -57,7 +57,7 @@ public class Files
             {
                 filesFrame.setLayout(new GridLayout(((ProjectGoldStarsX.noteNames.size() + ProjectGoldStarsX.photoNames.size() - 1) / 3) + 1, 3));
                 fileLabels[i].setFont(ProjectGoldStarsX.mediumText1);
-                fileLabels[i].setForeground(ProjectGoldStarsX.color2);
+                fileLabels[i].setForeground(ProjectGoldStarsX.secondaryColor);
                 filesFrame.add(fileLabels[i]);
             }
         }
@@ -67,7 +67,7 @@ public class Files
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);    //Set the background color of the menu bar
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);    //Set the background color of the menu bar
         menuBar.add(filesFrame.getCloseButton());   //Add a Close button to the menu bar
         menuBar.add(filesFrame.getMaximizeButton());    //Add a Maximize button to the menu bar
         menuBar.add(filesFrame.getWindowMenu());    //Add the Window menu to the menu bar
@@ -95,11 +95,11 @@ public class Files
         filesSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            filesSearchField.setForeground(ProjectGoldStarsX.color2);
+            filesSearchField.setForeground(ProjectGoldStarsX.secondaryColor);
         }
         else
         {
-            filesSearchField.setForeground(ProjectGoldStarsX.color1);
+            filesSearchField.setForeground(ProjectGoldStarsX.mainColor);
         }
         filesSearchField.addActionListener(new SearchFilesListener());
     }

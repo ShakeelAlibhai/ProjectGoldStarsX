@@ -35,7 +35,7 @@ public class AgendaSettings
     private JLabel date1()
     {
         JLabel date1 = new JLabel("[Day of the Week], mm/dd/yyyy", SwingConstants.CENTER);
-        date1.setForeground(ProjectGoldStarsX.color2);
+        date1.setForeground(ProjectGoldStarsX.secondaryColor);
         date1.setFont(ProjectGoldStarsX.mediumText1);
         return date1;
     }
@@ -43,7 +43,7 @@ public class AgendaSettings
     private JLabel date2()
     {
         JLabel date2 = new JLabel("[Day of the Week], dd/mm/yyyy", SwingConstants.CENTER);
-        date2.setForeground(ProjectGoldStarsX.color2);
+        date2.setForeground(ProjectGoldStarsX.secondaryColor);
         date2.setFont(ProjectGoldStarsX.mediumText1);
         return date2;
     }

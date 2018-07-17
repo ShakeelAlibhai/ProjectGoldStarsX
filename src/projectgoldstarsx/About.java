@@ -30,7 +30,7 @@ public class About
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);    //Set the background color of the menu bar
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);    //Set the background color of the menu bar
         menuBar.add(aboutFrame.getCloseButton());   //Add a Close button to the menu bar
         menuBar.add(aboutFrame.getMaximizeButton());    //Add a Maximize button to the menu bar
         menuBar.add(aboutFrame.getWindowMenu());    //Add the Window menu to the menu bar
@@ -42,7 +42,7 @@ public class About
     private JPanel row2()
     {
         JPanel row2 = new JPanel();
-        row2.setBackground(ProjectGoldStarsX.color1);
+        row2.setBackground(ProjectGoldStarsX.mainColor);
         row2.setLayout(new GridLayout(1, 2));
         row2.add(username());
         row2.add(version());
@@ -53,7 +53,7 @@ public class About
     private JPanel row3()
     {
         JPanel row3 = new JPanel();
-        row3.setBackground(ProjectGoldStarsX.color1);
+        row3.setBackground(ProjectGoldStarsX.mainColor);
         row3.setLayout(new GridLayout(1, 2));
         row3.add(Components.standardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
         row3.add(Components.standardButton("More Information", new MoreInformationListener()));
@@ -64,7 +64,7 @@ public class About
     private JLabel version()
     {
         JLabel versionLabel = new JLabel(ProjectGoldStarsX.VERSION, SwingConstants.CENTER);
-        versionLabel.setForeground(ProjectGoldStarsX.color2);
+        versionLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         versionLabel.setFont(ProjectGoldStarsX.mediumText1);
         return versionLabel;
     }
@@ -73,7 +73,7 @@ public class About
     private JLabel username()
     {
         JLabel userLabel = new JLabel("User: " + ProjectGoldStarsX.username, SwingConstants.CENTER);
-        userLabel.setForeground(ProjectGoldStarsX.color2);
+        userLabel.setForeground(ProjectGoldStarsX.secondaryColor);
         userLabel.setFont(ProjectGoldStarsX.mediumText1);
         return userLabel;
     }

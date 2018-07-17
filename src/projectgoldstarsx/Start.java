@@ -64,25 +64,25 @@ public class Start
             frame.setExtendedState(frame.MAXIMIZED_BOTH);
             frame.setUndecorated(true);
             frame.setSize(750 * ProjectGoldStarsX.multiplier, 425 * ProjectGoldStarsX.multiplier);
-            frame.getContentPane().setBackground(ProjectGoldStarsX.color2);
+            frame.getContentPane().setBackground(ProjectGoldStarsX.secondaryColor);
             frame.setLayout(new GridLayout(5, 1));
             JLabel welcomeLabel = new JLabel("Welcome to Project GoldStars X!", SwingConstants.CENTER);
-            welcomeLabel.setForeground(ProjectGoldStarsX.color1);
+            welcomeLabel.setForeground(ProjectGoldStarsX.mainColor);
             welcomeLabel.setFont(ProjectGoldStarsX.largeHeader);
             frame.add(welcomeLabel);
             JLabel descriptionLabel = new JLabel("Project GoldStars X includes many exciting features. Let's get you set up!", SwingConstants.CENTER);
-            descriptionLabel.setForeground(ProjectGoldStarsX.color1);
+            descriptionLabel.setForeground(ProjectGoldStarsX.mainColor);
             descriptionLabel.setFont(ProjectGoldStarsX.mediumHeader);
             frame.add(descriptionLabel);
             JLabel instructionsLabel = new JLabel("To get started, please enter your username, and then click Continue.");
-            instructionsLabel.setForeground(ProjectGoldStarsX.color1);
+            instructionsLabel.setForeground(ProjectGoldStarsX.mainColor);
             instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);
             frame.add(instructionsLabel);
             JPanel usernamePanel = new JPanel();
-            usernamePanel.setBackground(ProjectGoldStarsX.color2);
+            usernamePanel.setBackground(ProjectGoldStarsX.secondaryColor);
             usernamePanel.setLayout(new GridLayout(1, 2));
             JLabel usernameLabel = new JLabel("Username:");
-            usernameLabel.setForeground(ProjectGoldStarsX.color1);
+            usernameLabel.setForeground(ProjectGoldStarsX.mainColor);
             usernameLabel.setFont(ProjectGoldStarsX.bodyText1);
             usernamePanel.add(usernameLabel);
             usernameTextField = new JTextField("");
@@ -213,75 +213,75 @@ public class Start
         ProjectGoldStarsX.textBackgroundColor = Color.white;
         if("Dark".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.black;
-            ProjectGoldStarsX.color2 = Color.lightGray;
+            ProjectGoldStarsX.mainColor = Color.black;
+            ProjectGoldStarsX.secondaryColor = Color.lightGray;
             ProjectGoldStarsX.textBackgroundColor = new Color(224, 224, 224);
             ProjectGoldStarsX.standardColors = false;
         }
         if("Desert".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = new Color(255, 228, 181);
-            ProjectGoldStarsX.color2 = new Color(255, 69, 0);
+            ProjectGoldStarsX.mainColor = new Color(255, 228, 181);
+            ProjectGoldStarsX.secondaryColor = new Color(255, 69, 0);
             ProjectGoldStarsX.standardColors = true;
         }
         if("Fire".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.red;
-            ProjectGoldStarsX.color2 = Color.yellow;
+            ProjectGoldStarsX.mainColor = Color.red;
+            ProjectGoldStarsX.secondaryColor = Color.yellow;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Forest".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = new Color(0x00, 0x80, 0x00);
-            ProjectGoldStarsX.color2 = new Color(222, 184, 135);
+            ProjectGoldStarsX.mainColor = new Color(0x00, 0x80, 0x00);
+            ProjectGoldStarsX.secondaryColor = new Color(222, 184, 135);
             ProjectGoldStarsX.standardColors = false;
         }
         if("Grass".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.green;
-            ProjectGoldStarsX.color2 = new Color(0x00, 0x80, 0x00);
+            ProjectGoldStarsX.mainColor = Color.green;
+            ProjectGoldStarsX.secondaryColor = new Color(0x00, 0x80, 0x00);
             ProjectGoldStarsX.standardColors = true;
         }
         if("Mountain".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.darkGray;
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.mainColor = Color.darkGray;
+            ProjectGoldStarsX.secondaryColor = Color.white;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Night".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.black;
-            ProjectGoldStarsX.color2 = Color.lightGray;
+            ProjectGoldStarsX.mainColor = Color.black;
+            ProjectGoldStarsX.secondaryColor = Color.lightGray;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Silver".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.lightGray;
-            ProjectGoldStarsX.color2 = Color.darkGray;
+            ProjectGoldStarsX.mainColor = Color.lightGray;
+            ProjectGoldStarsX.secondaryColor = Color.darkGray;
             ProjectGoldStarsX.standardColors = true;
         }
         if("Sky".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.white;
-            ProjectGoldStarsX.color2 = Color.blue;
+            ProjectGoldStarsX.mainColor = Color.white;
+            ProjectGoldStarsX.secondaryColor = Color.blue;
             ProjectGoldStarsX.standardColors = true;
         }
         if("Snow".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.white;
-            ProjectGoldStarsX.color2 = Color.gray;
+            ProjectGoldStarsX.mainColor = Color.white;
+            ProjectGoldStarsX.secondaryColor = Color.gray;
             ProjectGoldStarsX.standardColors = true;
         }
         if("Water".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = new Color(64, 224, 208);
-            ProjectGoldStarsX.color2 = Color.blue;
+            ProjectGoldStarsX.mainColor = new Color(64, 224, 208);
+            ProjectGoldStarsX.secondaryColor = Color.blue;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Project GoldStars X".equals(ProjectGoldStarsX.theme))
         {
-            ProjectGoldStarsX.color1 = Color.cyan;
-            ProjectGoldStarsX.color2 = Color.blue;
+            ProjectGoldStarsX.mainColor = Color.cyan;
+            ProjectGoldStarsX.secondaryColor = Color.blue;
             ProjectGoldStarsX.standardColors = true;
         }
         if("Solid Color".equals(ProjectGoldStarsX.theme))
@@ -292,85 +292,85 @@ public class Start
     
     private static void applyColor()
     {
-        ProjectGoldStarsX.color2 = Color.black;
+        ProjectGoldStarsX.secondaryColor = Color.black;
         ProjectGoldStarsX.standardColors = true;
         if("Black".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.black;
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.mainColor = Color.black;
+            ProjectGoldStarsX.secondaryColor = Color.white;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Blue".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.blue;
+            ProjectGoldStarsX.mainColor = Color.blue;
         }
         if("Cyan".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.cyan;
+            ProjectGoldStarsX.mainColor = Color.cyan;
         }
         if("Dark Blue".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = new Color(0x00, 0x00, 0xC0);
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.mainColor = new Color(0x00, 0x00, 0xC0);
+            ProjectGoldStarsX.secondaryColor = Color.white;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Dark Gray".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.darkGray;
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.mainColor = Color.darkGray;
+            ProjectGoldStarsX.secondaryColor = Color.white;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Dark Green".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = new Color(0x00, 0xC0, 0x00);
+            ProjectGoldStarsX.mainColor = new Color(0x00, 0xC0, 0x00);
         }
         if("Green".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.green;
+            ProjectGoldStarsX.mainColor = Color.green;
         }
         if("Light Red".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = new Color(0xFF, 0x40, 0x40);
+            ProjectGoldStarsX.mainColor = new Color(0xFF, 0x40, 0x40);
         }
         if("Magenta".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.magenta;
+            ProjectGoldStarsX.mainColor = Color.magenta;
         }
         if("Orange".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.orange;
+            ProjectGoldStarsX.mainColor = Color.orange;
         }
         if("Pink".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.pink;
+            ProjectGoldStarsX.mainColor = Color.pink;
         }
         if("Red".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.red;
+            ProjectGoldStarsX.mainColor = Color.red;
         }
         if("Turquoise".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = new Color(64, 224, 208);
+            ProjectGoldStarsX.mainColor = new Color(64, 224, 208);
         }
         if("Very Dark Green".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = new Color(0x00, 0x80, 0x00);
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.mainColor = new Color(0x00, 0x80, 0x00);
+            ProjectGoldStarsX.secondaryColor = Color.white;
             ProjectGoldStarsX.standardColors = false;
         }
         if("Very Dark Blue".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = new Color(0x00, 0x00, 0x80);
-            ProjectGoldStarsX.color2 = Color.white;
+            ProjectGoldStarsX.mainColor = new Color(0x00, 0x00, 0x80);
+            ProjectGoldStarsX.secondaryColor = Color.white;
             ProjectGoldStarsX.standardColors = false;
         }
         if("White".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.white;
+            ProjectGoldStarsX.mainColor = Color.white;
         }
         if("Yellow".equals(ProjectGoldStarsX.color))
         {
-            ProjectGoldStarsX.color1 = Color.yellow;
+            ProjectGoldStarsX.mainColor = Color.yellow;
         }
     }
     

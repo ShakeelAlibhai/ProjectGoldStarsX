@@ -43,7 +43,7 @@ public class Calculator
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(calculatorFrame.getCloseButton());
         menuBar.add(calculatorFrame.getMaximizeButton());
         menuBar.add(calculatorFrame.getWindowMenu());

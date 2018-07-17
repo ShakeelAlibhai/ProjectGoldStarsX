@@ -9,7 +9,7 @@ public class ProgramWindow extends StandardWindow
     public ProgramWindow(String title)
     {
         super(title);
-        frame.getContentPane().setBackground(ProjectGoldStarsX.color1);
+        frame.getContentPane().setBackground(ProjectGoldStarsX.mainColor);
     }
     
     public void add(JButton button)

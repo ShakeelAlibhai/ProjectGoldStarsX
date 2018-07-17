@@ -35,7 +35,7 @@ public class Education
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(educationFrame.getCloseButton());
         menuBar.add(educationFrame.getMaximizeButton());
         menuBar.add(educationFrame.getWindowMenu());

@@ -50,7 +50,7 @@ public class Photos
             {
                 viewPhotosFrame.setLayout(new GridLayout(((ProjectGoldStarsX.photoNames.size() - 1) / 3) + 1, 3));
                 fileLabels[i].setFont(ProjectGoldStarsX.mediumText1);
-                fileLabels[i].setForeground(ProjectGoldStarsX.color2);
+                fileLabels[i].setForeground(ProjectGoldStarsX.secondaryColor);
                 viewPhotosFrame.add(fileLabels[i]);
             }
         }
@@ -60,7 +60,7 @@ public class Photos
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(ProjectGoldStarsX.color1);
+        menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(viewPhotosFrame.getCloseButton());
         menuBar.add(viewPhotosFrame.getMaximizeButton());
         menuBar.add(viewPhotosFrame.getWindowMenu());
@@ -87,11 +87,11 @@ public class Photos
         photosSearchField.setFont(ProjectGoldStarsX.bodyText2);
         if(ProjectGoldStarsX.standardColors)
         {
-            photosSearchField.setForeground(ProjectGoldStarsX.color2);
+            photosSearchField.setForeground(ProjectGoldStarsX.secondaryColor);
         }
         else
         {
-            photosSearchField.setForeground(ProjectGoldStarsX.color1);
+            photosSearchField.setForeground(ProjectGoldStarsX.mainColor);
         }
         photosSearchField.addActionListener(new SearchPhotosListener());
     }

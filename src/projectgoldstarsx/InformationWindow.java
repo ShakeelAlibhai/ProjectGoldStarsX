@@ -14,6 +14,8 @@ public class InformationWindow extends StandardWindow
         JTextArea textArea = new JTextArea(s);
         textArea.setEditable(false);
         textArea.setFont(f);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
         frame.add(textArea);
     }
 }
