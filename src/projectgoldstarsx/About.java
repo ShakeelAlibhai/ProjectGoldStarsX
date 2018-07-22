@@ -27,6 +27,7 @@ public class About
         aboutFrame.makeVisible();
     }
     
+    //Returns the JMenuBar that will be added to the ProgramWindow
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
@@ -60,7 +61,7 @@ public class About
         return row3;
     }
     
-    //Returns a JLabel containing the version of Project GoldStars X
+    //Returns a JLabel containing the version of Project GoldStars X; this JLabel is then added to the JPanel row2
     private JLabel version()
     {
         JLabel versionLabel = new JLabel(ProjectGoldStarsX.VERSION, SwingConstants.CENTER);
@@ -69,7 +70,7 @@ public class About
         return versionLabel;
     }
     
-    //Returns a JLabel containing the user's username
+    //Returns a JLabel containing the user's username; this JLabel is thena dded to the JPanel row2
     private JLabel username()
     {
         JLabel userLabel = new JLabel("User: " + ProjectGoldStarsX.username, SwingConstants.CENTER);

@@ -33,25 +33,17 @@ public class AgendaCreateEvent
         eventField = new JTextField("");
         eventField.setFont(ProjectGoldStarsX.bodyText2);
         eventField.addActionListener(new CreateCalendarEventListener());
-        frame.add(label("Year:"));
+        frame.add(Components.standardLabel("Year:"));
         frame.add(yearField);
-        frame.add(label("Month (ex. January is 01):"));
+        frame.add(Components.standardLabel("Month (ex. January is 01):"));
         frame.add(monthField);
-        frame.add(label("Date (ex. 01, 02, 03...31):"));
+        frame.add(Components.standardLabel("Date (ex. 01, 02, 03...31):"));
         frame.add(dateField);
-        frame.add(label("Event:"));
+        frame.add(Components.standardLabel("Event:"));
         frame.add(eventField);
         frame.add(new JLabel());
         frame.add(Components.button2("Create", new CreateCalendarEventListener()));
         frame.makeVisible();
-    }
-    
-    private JLabel label(String text)
-    {
-        JLabel label = new JLabel(text);
-        label.setFont(ProjectGoldStarsX.bodyText1);
-        label.setForeground(ProjectGoldStarsX.secondaryColor);
-        return label;
     }
     
     private class CreateCalendarEventListener implements ActionListener

@@ -27,7 +27,7 @@ public class Browser extends JInternalFrame
     private final JFXPanel JFX_PANEL = new JFXPanel();
     private final JPanel PANEL = new JPanel(new BorderLayout());
     private JTextField urlField = new JTextField();
-    private WebEngine engine;
+    private WebEngine browserEngine;
     
     public Browser()
     {
@@ -55,7 +55,8 @@ public class Browser extends JInternalFrame
     private void setupURLField()
     {
         urlField.addActionListener(new GoListener());
-        urlField.setFont(ProjectGoldStarsX.bodyText2);  //Set the font of the URL field
+        urlField.setFont(ProjectGoldStarsX.bodyText2);
+        urlField.setBackground(ProjectGoldStarsX.textBackgroundColor);
         if(ProjectGoldStarsX.standardColors)
         {
             urlField.setForeground(ProjectGoldStarsX.secondaryColor);
@@ -106,8 +107,8 @@ public class Browser extends JInternalFrame
             public void run()
             {
                 WebView view = new WebView();
-                engine = view.getEngine();
-                engine.titleProperty().addListener(new ChangeListener<String>()
+                browserEngine = view.getEngine();
+                browserEngine.titleProperty().addListener(new ChangeListener<String>()
                 {
                     public void changed(ObservableValue<? extends String> observableValue, String oldValue, final String newValue)
                     {
@@ -120,7 +121,7 @@ public class Browser extends JInternalFrame
                         });
                     }
                 });
-                engine.locationProperty().addListener(new ChangeListener<String>()
+                browserEngine.locationProperty().addListener(new ChangeListener<String>()
                 {
                     public void changed(ObservableValue<? extends String> observableValue, String oldValue, final String newValue)
                     {
@@ -133,11 +134,11 @@ public class Browser extends JInternalFrame
                         });
                     }
                 });
-                engine.getLoadWorker().exceptionProperty().addListener(new ChangeListener<Throwable>()
+                browserEngine.getLoadWorker().exceptionProperty().addListener(new ChangeListener<Throwable>()
                 {
                     public void changed(ObservableValue<? extends Throwable> observableValue, Throwable old, final Throwable value)
                     {
-                        if(engine.getLoadWorker().getState() == FAILED)
+                        if(browserEngine.getLoadWorker().getState() == FAILED)
                         {
                             SwingUtilities.invokeLater(new Runnable()
                             {
@@ -166,7 +167,7 @@ public class Browser extends JInternalFrame
                 {
                     temp = toURL("http://" + url);
                 }
-                engine.load(temp);
+                browserEngine.load(temp);
             }
         });
     }

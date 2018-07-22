@@ -37,6 +37,7 @@ public class Help
         helpFrame.makeVisible();
     }
     
+    //Returns the JMenuBar that will be added to the ProgramWindow
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();

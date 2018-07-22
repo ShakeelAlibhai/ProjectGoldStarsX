@@ -36,6 +36,7 @@ public class Agenda
         agendaFrame.makeVisible();
     }
     
+    //Returns the JMenuBar that will be added to the ProgramWindow
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
@@ -74,6 +75,7 @@ public class Agenda
         agendaSearchField.addActionListener(new SearchAgendaListener());
     }
     
+    //Returns a JPanel containing the date and time
     private JPanel row2()
     {
         JPanel row2 = new JPanel();
@@ -84,6 +86,7 @@ public class Agenda
         return row2;
     }
     
+    //Returns a JLabel containing the date; this JLabel is then added to the JPanel row2
     private JLabel date()
     {
         JLabel dateLabel = new JLabel();
@@ -132,6 +135,7 @@ public class Agenda
         return dateLabel;
     }
     
+    //Returns a JLabel containing the time; this JLabel is then added to the JPanel row2
     private JLabel time()
     {
         JLabel timePanel = new JLabel();
@@ -152,6 +156,7 @@ public class Agenda
         return timePanel;
     }
     
+    //Returns a JPanel with three buttons
     private JPanel row3()
     {
         JPanel row3 = new JPanel();

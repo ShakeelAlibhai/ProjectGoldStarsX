@@ -59,6 +59,7 @@ public class CurrentSettings
         currentSettingsFrame.makeVisible();
     }
     
+    //Returns the JMenuBar that will be added to the ProgramWindow
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
@@ -70,6 +71,7 @@ public class CurrentSettings
         return menuBar;
     }
     
+    //Returns the current language as a String
     private String language()
     {
         if("1".equals(ProjectGoldStarsX.language))

@@ -70,43 +70,43 @@ public class Components
     
     public static JLabel titleLabel(String displayText)
     {
-        JLabel titleLabel = new JLabel(displayText, SwingConstants.CENTER);
-        titleLabel.setForeground(ProjectGoldStarsX.secondaryColor);
-        titleLabel.setFont(ProjectGoldStarsX.largeHeader);
-        return titleLabel;
+        JLabel label = new JLabel(displayText, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.largeHeader);
+        return label;
     }
     
     public static JLabel headerLabel(String displayText)
     {
-        JLabel titleLabel = new JLabel(displayText, SwingConstants.CENTER);
-        titleLabel.setForeground(ProjectGoldStarsX.secondaryColor);
-        titleLabel.setFont(ProjectGoldStarsX.mediumHeader);
-        return titleLabel;
+        JLabel label = new JLabel(displayText, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.mediumHeader);
+        return label;
     }
     
     public static JLabel actionLabel(String actionName, MouseListener mouseListener)
     {
-        JLabel action = new JLabel(actionName, SwingConstants.CENTER);
-        action.setForeground(ProjectGoldStarsX.secondaryColor);
-        action.setFont(ProjectGoldStarsX.mediumText2);
-        action.addMouseListener(mouseListener);
-        return action;
+        JLabel label = new JLabel(actionName, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.mediumText2);
+        label.addMouseListener(mouseListener);
+        return label;
     }
     
     public static JLabel questionHeaderLabel(String displayText)
     {
-        JLabel questionHeaderLabel = new JLabel(displayText, SwingConstants.CENTER);
-        questionHeaderLabel.setForeground(ProjectGoldStarsX.secondaryColor);
-        questionHeaderLabel.setFont(ProjectGoldStarsX.mediumText1);
-        return questionHeaderLabel;
+        JLabel label = new JLabel(displayText, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.mediumText1);
+        return label;
     }
     
     public static JLabel standardLabel(String displayText)
     {
-        JLabel questionHeaderLabel = new JLabel(displayText);
-        questionHeaderLabel.setForeground(ProjectGoldStarsX.secondaryColor);
-        questionHeaderLabel.setFont(ProjectGoldStarsX.bodyText1);
-        return questionHeaderLabel;
+        JLabel label = new JLabel(displayText);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.bodyText1);
+        return label;
     }
     
     public static JMenuItem standardMenuItem(String displayText, ActionListener actionListener)

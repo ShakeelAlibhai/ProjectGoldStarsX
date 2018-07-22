@@ -1,7 +1,11 @@
 # Project GoldStars X Changelog
 
 ## Version 2.6.x
-### Version 2.6
+### Version 2.6.1 (July 21, 2018)
+* When the Dark theme is enabled, the Browser URL field is now very light gray instead of white.
+* Other minor changes.
+
+### Version 2.6 (July 16, 2018)
 * Added a "View Current Settings" menu item to the "Quick Access Actions" section of the main menu.
 * The color of the text in the Browser URL field is now based on the theme.
 * The color of the text in the Current Settings window text areas is now based on the theme.
