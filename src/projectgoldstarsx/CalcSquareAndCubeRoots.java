@@ -40,6 +40,7 @@ public class CalcSquareAndCubeRoots implements ActionListener
     {
         numberField = new JTextField("0");
         numberField.setFont(ProjectGoldStarsX.bodyText2);
+        numberField.addActionListener(new ComputeListener());
     }
     
     private void setupSquareRootField()

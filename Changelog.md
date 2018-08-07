@@ -1,6 +1,9 @@
 # Project GoldStars X Changelog
 
 ## Version 2.6.x
+### Version 2.6.2 (August 7, 2018)
+* In the "Logarithms" and "Square & Cube Roots" windows, pressing Enter in the Number field has the same effect as clicking the Compute button.
+
 ### Version 2.6.1 (July 21, 2018)
 * When the Dark theme is enabled, the Browser URL field is now very light gray instead of white.
 * Other minor changes.
