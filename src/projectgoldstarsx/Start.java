@@ -56,6 +56,7 @@ public class Start
             applyTheme();
             new Window();
         }
+        //If the "oldVersion.txt" file was not found
         catch(FileNotFoundException e)
         {
             applyTheme();
@@ -179,10 +180,12 @@ public class Start
     
     private void widthAndHeight()
     {
+        //Get the screen resolution
         Toolkit t = Toolkit.getDefaultToolkit();
         Dimension screenResolution = t.getScreenSize();
         ProjectGoldStarsX.width = screenResolution.width;
         ProjectGoldStarsX.height = screenResolution.height;
+        //Set the value of the multiplier based on the screen resolution
         if(ProjectGoldStarsX.width >= 3840 && ProjectGoldStarsX.height >= 2160)
         {
             ProjectGoldStarsX.multiplier = 3;
@@ -196,7 +199,8 @@ public class Start
             ProjectGoldStarsX.multiplier = 1;
         }
     }
-
+    
+    //Sets up the font variables
     private void setFonts()
     {
         ProjectGoldStarsX.largeHeader = new java.awt.Font("Open Sans Extrabold", Font.PLAIN, ProjectGoldStarsX.LARGE_HEADER_SIZE * ProjectGoldStarsX.multiplier);
@@ -290,6 +294,7 @@ public class Start
         }
     }
     
+    //Sets the main color if the "Solid Color" theme is selected
     private static void applyColor()
     {
         ProjectGoldStarsX.secondaryColor = Color.black;

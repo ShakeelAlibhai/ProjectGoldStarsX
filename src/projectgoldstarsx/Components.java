@@ -8,23 +8,18 @@ import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
 public class Components
 {
-    public static JButton standardButton(String displayText, ActionListener actionListener)
+    //Deprecated in Version 2.6.3 -- use StandardButton class instead
+    public static StandardButton standardButton(String displayText, ActionListener actionListener)
     {
-        JButton button = new JButton(displayText);
-        button.setBackground(ProjectGoldStarsX.secondaryColor);
-        button.setForeground(ProjectGoldStarsX.mainColor);
-        button.setFont(ProjectGoldStarsX.mediumText1);
-        button.addActionListener(actionListener);
+        StandardButton button = new StandardButton(displayText, actionListener);
         return button;
     }
     
     public static JButton inverseStandardButton(String displayText, ActionListener actionListener)
     {
-        JButton button = new JButton(displayText);
+        StandardButton button = new StandardButton(displayText, actionListener);
         button.setBackground(ProjectGoldStarsX.mainColor);
         button.setForeground(ProjectGoldStarsX.secondaryColor);
-        button.setFont(ProjectGoldStarsX.mediumText1);
-        button.addActionListener(actionListener);
         return button;
     }
     
@@ -40,31 +35,25 @@ public class Components
     
     public static JButton closeButton(ActionListener actionListener)
     {
-        JButton button = new JButton("Close");
+        StandardButton button = new StandardButton("Close", actionListener);
         button.setBackground(Color.red);
         button.setForeground(Color.white);
-        button.setFont(ProjectGoldStarsX.mediumText1);
-        button.addActionListener(actionListener);
         return button;
     }
     
     public static JButton maximizeButton(ActionListener actionListener)
     {
-        JButton button = new JButton("Maximize");
+        StandardButton button = new StandardButton("Maximize", actionListener);
         button.setBackground(new Color(0x00, 0xC0, 0x00));
         button.setForeground(Color.white);
-        button.setFont(ProjectGoldStarsX.mediumText1);
-        button.addActionListener(actionListener);
         return button;
     }
     
     public static JButton settingsButton(String displayText, ActionListener actionListener)
     {
-        JButton button = new JButton(displayText);
+        StandardButton button = new StandardButton(displayText, actionListener);
         button.setBackground(Color.lightGray);
         button.setForeground(Color.darkGray);
-        button.setFont(ProjectGoldStarsX.mediumText1);
-        button.addActionListener(actionListener);
         return button;
     }
     

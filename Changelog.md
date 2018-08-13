@@ -1,6 +1,10 @@
 # Project GoldStars X Changelog
 
 ## Version 2.6.x
+### Version 2.6.3 (August 13, 2018)
+* Updated Talk.
+* Other minor changes.
+
 ### Version 2.6.2 (August 7, 2018)
 * In the "Logarithms" and "Square & Cube Roots" windows, pressing Enter in the Number field has the same effect as clicking the Compute button.
 

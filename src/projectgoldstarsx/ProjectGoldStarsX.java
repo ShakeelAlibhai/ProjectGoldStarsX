@@ -8,8 +8,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String NAME = "Project GoldStars X 2.6 Update 2";
-    public static final String VERSION = "Version 2.6.2";
+    public static final String NAME = "Project GoldStars X 2.6 Update 3";
+    public static final String VERSION = "Version 2.6.3";
     public static final File FOLDER = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static boolean settingsButtonMainMenuBar;
     public static Date startDate;
@@ -18,7 +18,7 @@ public class ProjectGoldStarsX
     public static int menuBarHeight;
     public static int multiplier;
     public static JDesktopPane desktop;
-    public static String color;
+    
     public static String language;
     public static String oldVersion;
     public static String theme;
@@ -29,6 +29,7 @@ public class ProjectGoldStarsX
     public static Color secondaryColor;
     public static Color textBackgroundColor;
     public static boolean standardColors;
+    public static String color; //This is the main color if the "Solid Color" theme is selected
     
     //Folders
     public static final File SYSTEM_FOLDER = new File(FOLDER, "System");

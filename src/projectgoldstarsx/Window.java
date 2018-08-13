@@ -170,7 +170,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
     {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.mainColor);
-        menuBar.add(Menu.menu());
+        menuBar.add(new Menu());
         menuBar.add(Components.standardButton("Agenda", new ListenersProgramsAction.AgendaListener()));
         menuBar.add(Components.standardButton("Browser", new ListenersProgramsAction.BrowserListener()));
         menuBar.add(Components.standardButton("Calculator", new ListenersProgramsAction.CalculatorListener()));

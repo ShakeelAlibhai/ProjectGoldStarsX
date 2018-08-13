@@ -14,7 +14,6 @@ public class StandardWindow
     public StandardWindow(String title)
     {
         frame = new JInternalFrame(title);
-        frame = new JInternalFrame(title);
         ProjectGoldStarsX.desktop.add(frame);
         frame.setFrameIcon(ProjectGoldStarsXIconMini.getIcon());
         frame.setResizable(true);

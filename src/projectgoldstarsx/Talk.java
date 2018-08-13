@@ -98,6 +98,7 @@ public class Talk
         talkFrame.setJMenuBar(menuBar());
     }
     
+    //Returns the JMenuBar that will be added to the Talk window
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
@@ -183,6 +184,19 @@ public class Talk
         else if(input.indexOf("weather") >= 0)
         {
             temp = "Hmm . . . I'm not sure what the weather will be like.";
+        }
+        else if(input.indexOf("what are you doing") >= 0 ||
+                input.indexOf("what r u doing") >= 0 ||
+                input.indexOf("what're you doing") >= 0 ||
+                input.indexOf("what're u doing") >= 0 ||
+                input.indexOf("what you doing") >= 0 ||
+                input.indexOf("what u doing") >= 0)
+        {
+            temp = "I'm talking to you! (I think...)";
+        }
+        else if(input.indexOf("what can you do") >= 0)
+        {
+            temp = "I can try to have a conversation with you, and maybe even help you with basic productivity tasks!";
         }
         else if((input.indexOf("date") >= 0 ||
                 input.indexOf("time") >= 0) &&
@@ -662,6 +676,21 @@ public class Talk
                 input.indexOf("I") >= 0)
         {
             temp = "That's a good question.";
+        }
+        else if(input.indexOf("you") >= 0 &&
+                input.indexOf("bathroom") >= 0)
+        {
+            temp = "I'm a computer program; I don't have to use the bathroom!";
+        }
+        else if(input.indexOf("you") >= 0 &&
+                input.indexOf("restroom") >= 0)
+        {
+            temp = "I'm a computer program; I don't have to use the restroom!";
+        }
+        else if(input.indexOf("you") >= 0 &&
+                input.indexOf("washroom") >= 0)
+        {
+            temp = "I'm a computer program; I don't have to use the washroom!";
         }
         else if(input.indexOf("good") >= 0 &&
                 ProjectGoldStarsX.howAreYouTyped == false)
