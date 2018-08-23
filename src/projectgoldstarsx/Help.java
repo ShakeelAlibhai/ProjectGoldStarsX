@@ -1,5 +1,6 @@
 package projectgoldstarsx;
 import java.awt.GridLayout;
+import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 public class Help
 {
@@ -14,8 +15,12 @@ public class Help
     {
         helpFrame = new ProgramWindow("Help");
         helpFrame.setSize(1300 * ProjectGoldStarsX.multiplier, 725 * ProjectGoldStarsX.multiplier);
-        helpFrame.setLayout(new GridLayout(3, 4));
+        helpFrame.setLayout(new GridLayout(4, 4));
         helpFrame.setJMenuBar(menuBar());
+        helpFrame.add(Components.headerLabel("Agenda:"));
+        helpFrame.add(Components.actionLabel("Create an Event", new ListenersHelpMouse.AgendaCreateEventListener()));
+        helpFrame.add(Components.actionLabel("View Events", new ListenersHelpMouse.AgendaViewEventsListener()));
+        helpFrame.add(new JLabel());
         if("1".equals(ProjectGoldStarsX.language))
         {
             helpFrame.add(Components.headerLabel("Customize Project GoldStars X:"));

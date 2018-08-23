@@ -106,8 +106,7 @@ public class AboutPrograms
         InformationWindow currentSettingsFrame = new InformationWindow("About the Error Log");
         currentSettingsFrame.setLayout(new GridLayout(1, 1));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "The Error Log is a list of some or all of the errors Project GoldStars X\n"
-                + "may have encountered since it was last started.";
+        String output = "The Error Log is a list of some or all of the errors Project GoldStars X may have encountered since it was last started.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }
@@ -154,8 +153,7 @@ public class AboutPrograms
         String output = "This program can save notes.\n"
                 + "You can create, import, edit, rename, search, and view notes.\n"
                 + "In Notes Settings, you can adjust whether the Notes Search is case sensitive or not.\n"
-                + "Note: The entirety of a saved note might not show in the viewing window.\n"
-                + "You may need to adjust the size of the window to view more of the note.";
+                + "Note: The entirety of a saved note might not show in the viewing window. You may need to adjust the size of the window to view more of the note.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }
@@ -177,12 +175,9 @@ public class AboutPrograms
         InformationWindow currentSettingsFrame = new InformationWindow("About Search");
         currentSettingsFrame.setLayout(new GridLayout(1, 1));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "You can enter a search term into the search box to search for programs and actions,\n"
-                + "saved calendar events, notes, photos, and the Error Log.\n"
-                + "If a program or action is found for your search term, then a window or dialog box will be opened\n"
-                + "that corresponds to that program or action.\n"
-                + "If no program or action is found, then saved events, notes, photos, and the Error Log\n"
-                + "will be searched.\n"
+        String output = "You can enter a search term into the search box to search for programs and actions, saved calendar events, notes, photos, and the Error Log.\n"
+                + "If a program or action is found for your search term, then a window or dialog box will be opened that corresponds to that program or action.\n"
+                + "If no program or action is found, then saved events, notes, photos, and the Error Log will be searched.\n"
                 + "You can adjust the case sensitivity of Search in Search Settings.\n"
                 + "Note 1: Not all programs and actions are necessarily accessible by Search.\n"
                 + "Note 2: Search case sensitivity does not affect Search when searching for programs and/or actions.";
@@ -213,16 +208,14 @@ public class AboutPrograms
             {
                 output = "Have a conversation with the computer by typing messages to it!\n"
                         + "You can use this for fun, or get a task done quickly!\n"
-                        + "For example, you can talk to Talk about your favorite flavor of ice cream,\n"
-                        + "or you can ask it to change your username for you!";
+                        + "For example, you can talk to Talk about your favorite flavor of ice cream, or you can ask it to change your username for you!";
                 break;
             }
             case "2":
             {
                 output = "You can have a conversation with the computer by typing messages to it!\n"
                         + "This can be used for fun, or get a task done quickly!\n"
-                        + "For example, you can talk to Talk about your favourite flavour of ice cream,\n"
-                        + "or you can ask it to change your username for you!";
+                        + "For example, you can talk to Talk about your favourite flavour of ice cream, or you can ask it to change your username for you!";
                 break;
             }
         }

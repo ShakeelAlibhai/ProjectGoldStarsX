@@ -8,17 +8,16 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String NAME = "Project GoldStars X 2.6 Update 3";
-    public static final String VERSION = "Version 2.6.3";
+    public static final String NAME = "Project GoldStars X 2.7";
+    public static final String VERSION = "Version 2.7";
     public static final File FOLDER = new File(System.getProperty("user.home"), "Project GoldStars X");
-    public static boolean settingsButtonMainMenuBar;
+    public static boolean settingsButtonMainMenuBar;    //Tracks whether the Settings button is set to appear on the main menu bar or not
     public static Date startDate;
-    public static int height;
-    public static int width;
+    public static int height;   //Height of the screen (in pixels)
+    public static int width;    //Width of the screen (in pixels)
     public static int menuBarHeight;
-    public static int multiplier;
+    public static int multiplier;   //If there is a (relatively) high screen resolution, this will contain the amount to multiply some UI elements by
     public static JDesktopPane desktop;
-    
     public static String language;
     public static String oldVersion;
     public static String theme;
@@ -80,6 +79,7 @@ public class ProjectGoldStarsX
     public static int subtractionMax = 10;
     public static int multiplicationMax = 10;
     public static int divisionMax = 10;
+    public static int squareRootsMax = 10;
     
     //Talk Variables
     public static boolean homework = false;

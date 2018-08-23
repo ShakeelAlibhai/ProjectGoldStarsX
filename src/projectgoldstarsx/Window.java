@@ -171,21 +171,21 @@ public class Window extends JFrame implements ActionListener, ItemListener
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(new Menu());
-        menuBar.add(Components.standardButton("Agenda", new ListenersProgramsAction.AgendaListener()));
-        menuBar.add(Components.standardButton("Browser", new ListenersProgramsAction.BrowserListener()));
-        menuBar.add(Components.standardButton("Calculator", new ListenersProgramsAction.CalculatorListener()));
-        menuBar.add(Components.standardButton("Files", new ListenersProgramsAction.FilesListener()));
-        menuBar.add(Components.standardButton("Notes", new ListenersProgramsAction.NotesListener()));
-        menuBar.add(Components.standardButton("Photos", new ListenersProgramsAction.PhotosListener()));
-        menuBar.add(Components.standardButton("Stories", new ListenersProgramsAction.StoriesListener()));
-        menuBar.add(Components.standardButton("Talk", new ListenersProgramsAction.TalkListener()));
+        menuBar.add(new StandardButton("Agenda", new ListenersProgramsAction.AgendaListener()));
+        menuBar.add(new StandardButton("Browser", new ListenersProgramsAction.BrowserListener()));
+        menuBar.add(new StandardButton("Calculator", new ListenersProgramsAction.CalculatorListener()));
+        menuBar.add(new StandardButton("Files", new ListenersProgramsAction.FilesListener()));
+        menuBar.add(new StandardButton("Notes", new ListenersProgramsAction.NotesListener()));
+        menuBar.add(new StandardButton("Photos", new ListenersProgramsAction.PhotosListener()));
+        menuBar.add(new StandardButton("Stories", new ListenersProgramsAction.StoriesListener()));
+        menuBar.add(new StandardButton("Talk", new ListenersProgramsAction.TalkListener()));
         if(ProjectGoldStarsX.settingsButtonMainMenuBar)
         {
             menuBar.add(Components.settingsButton("Settings", new ListenersProgramsAction.SettingsListener()));
         }
         setupSearchField();
         menuBar.add(searchField);
-        menuBar.add(Components.standardButton("Search", new SearchListener()));
+        menuBar.add(new StandardButton("Search", new SearchListener()));
         menuBar.add(ClockMenu.clockMenu());
         ProjectGoldStarsX.menuBarHeight = menuBar.getHeight();
         return menuBar;

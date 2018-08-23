@@ -1,5 +1,14 @@
 # Project GoldStars X Changelog
 
+## Version 2.7.x
+### Version 2.7 (August 22, 2018)
+* Added help windows for the Agenda (accessible from the Agenda window or the Help window).
+* Added the option to practice square roots in Education.
+* Updated Help.
+* Updated the interface of Exponents.
+* When the Dark theme is enabled, the text areas in the Current Settings window is now very light gray instead of white.
+* Other minor changes.
+
 ## Version 2.6.x
 ### Version 2.6.3 (August 13, 2018)
 * Updated Talk.

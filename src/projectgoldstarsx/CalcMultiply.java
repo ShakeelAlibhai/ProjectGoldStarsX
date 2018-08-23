@@ -104,7 +104,7 @@ public class CalcMultiply implements ActionListener
         menuBar.add(multiplicationFrame.getCloseButton());
         menuBar.add(multiplicationFrame.getMaximizeButton());
         menuBar.add(multiplicationFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Multiply More Than 10 Numbers", new MultiplyMoreThan10NumbersListener()));
+        menuBar.add(new StandardButton("Multiply More Than 10 Numbers", new MultiplyMoreThan10NumbersListener()));
         return menuBar;
     }
     

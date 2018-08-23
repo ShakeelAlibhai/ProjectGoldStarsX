@@ -13,12 +13,12 @@ public class Menu extends StandardMenu
         this.add(new ActionsMenu());
         this.add(new ProgramsMenu());
         this.add(new JSeparator());
-        this.add(Components.standardMenuItem("About", new ListenersProgramsAction.AboutListener()));
-        this.add(Components.standardMenuItem("Help", new ListenersProgramsAction.HelpListener()));
-        this.add(Components.standardMenuItem("Notifications", new ListenersProgramsAction.NotificationsListener()));
-        this.add(Components.standardMenuItem("Settings", new ListenersProgramsAction.SettingsListener()));
+        this.add(new StandardMenuItem("About", new ListenersProgramsAction.AboutListener()));
+        this.add(new StandardMenuItem("Help", new ListenersProgramsAction.HelpListener()));
+        this.add(new StandardMenuItem("Notifications", new ListenersProgramsAction.NotificationsListener()));
+        this.add(new StandardMenuItem("Settings", new ListenersProgramsAction.SettingsListener()));
         this.add(new JSeparator());
-        this.add(Components.standardMenuItem("Exit Project GoldStars X", new ExitListener()));
+        this.add(new StandardMenuItem("Exit Project GoldStars X", new ExitListener()));
     }
     
     private JLabel menuWelcome()

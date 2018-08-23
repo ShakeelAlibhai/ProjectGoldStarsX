@@ -12,6 +12,24 @@ public class ListenersHelpAction
         }
     }
     
+    public static class AgendaCreateEventListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new HelpAgendaCreateEvent();
+        }
+    }
+    
+    public static class AgendaViewEventsListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new HelpAgendaViewEvents();
+        }
+    }
+    
     public static class TalkIntroListener implements ActionListener
     {
         @Override

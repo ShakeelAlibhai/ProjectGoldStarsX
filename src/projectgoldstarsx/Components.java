@@ -98,11 +98,10 @@ public class Components
         return label;
     }
     
+    //Deprecated in Version 2.7 -- use StandardMenuItem class instead
     public static JMenuItem standardMenuItem(String displayText, ActionListener actionListener)
     {
-        JMenuItem menuItem = new JMenuItem(displayText);
-        menuItem.setFont(ProjectGoldStarsX.mediumText3);
-        menuItem.addActionListener(actionListener);
+        StandardMenuItem menuItem = new StandardMenuItem(displayText, actionListener);
         return menuItem;
     }
 }

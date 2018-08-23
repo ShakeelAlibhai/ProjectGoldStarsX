@@ -135,6 +135,39 @@ public class ListenersEducationMouse
         }
     }
     
+    public static class PracticeSquareRootsListener implements MouseListener
+    {
+        @Override
+        public void mousePressed(MouseEvent e)
+        {
+            new EduSquareRoot();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
+    }
+    
     public static class Reading3SentencesListener implements MouseListener
     {
         @Override

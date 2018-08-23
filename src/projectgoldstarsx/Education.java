@@ -18,14 +18,16 @@ public class Education
     {
         educationFrame = new ProgramWindow("Education");
         educationFrame.setSize(900 * ProjectGoldStarsX.multiplier, 475 * ProjectGoldStarsX.multiplier);
-        educationFrame.setLayout(new GridLayout(3, 3));
+        educationFrame.setLayout(new GridLayout(3, 4));
         educationFrame.setJMenuBar(menuBar());
         educationFrame.add(Components.headerLabel("Math:"));
         educationFrame.add(Components.actionLabel("Practice Addition", new ListenersEducationMouse.PracticeAdditionListener()));
         educationFrame.add(Components.actionLabel("Practice Subtraction", new ListenersEducationMouse.PracticeSubtractionListener()));
-        educationFrame.add(new JLabel());
         educationFrame.add(Components.actionLabel("Practice Multiplication", new ListenersEducationMouse.PracticeMultiplicationListener()));
+        educationFrame.add(new JLabel());
         educationFrame.add(Components.actionLabel("Practice Division", new ListenersEducationMouse.PracticeDivisionListener()));
+        educationFrame.add(Components.actionLabel("Practice Square Roots", new ListenersEducationMouse.PracticeSquareRootsListener()));
+        educationFrame.add(new JLabel());
         educationFrame.add(Components.headerLabel("Reading:"));
         educationFrame.add(Components.actionLabel("3-Sentence Story", new ListenersEducationMouse.Reading3SentencesListener()));
         educationFrame.add(Components.actionLabel("4-Sentence Story", new ListenersEducationMouse.Reading4SentencesListener()));

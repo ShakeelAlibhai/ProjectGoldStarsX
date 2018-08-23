@@ -12,7 +12,7 @@ public class HelpErrorLog
         InformationWindow helpWindow = new InformationWindow("The Error Log");
         helpWindow.setLayout(new GridLayout(1, 1));
         helpWindow.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "The Error Log is a list of some or all of the errors that Project GoldStars X may have encountered\n"
+        String output = "The Error Log is a list of some or all of the errors that Project GoldStars X may have encountered "
                 + "since the last time you started Project GoldStars X.";
         helpWindow.addText(ProjectGoldStarsX.bodyText1, output);
         helpWindow.makeVisible();

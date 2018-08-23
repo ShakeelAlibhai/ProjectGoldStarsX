@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class AgendaCreateEvent
 {
-    static ProgramWindow frame;
+    static ProgramWindow agendaFrame;
     static JTextField yearField, monthField, dateField, eventField;
     
     public AgendaCreateEvent()
@@ -20,10 +20,10 @@ public class AgendaCreateEvent
     
     private void createEvent()
     {
-        frame = new ProgramWindow("Create an Event");
-        frame.setLayout(new GridLayout(5, 2));
-        frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        frame.setInstructionsMenuBar("Please enter the following information about the event:");
+        agendaFrame = new ProgramWindow("Create an Event");
+        agendaFrame.setLayout(new GridLayout(5, 2));
+        agendaFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
+        agendaFrame.setInstructionsMenuBar("Please enter the following information about the event:");
         yearField = new JTextField("");
         yearField.setFont(ProjectGoldStarsX.bodyText2);
         monthField = new JTextField("");
@@ -33,17 +33,17 @@ public class AgendaCreateEvent
         eventField = new JTextField("");
         eventField.setFont(ProjectGoldStarsX.bodyText2);
         eventField.addActionListener(new CreateCalendarEventListener());
-        frame.add(Components.standardLabel("Year:"));
-        frame.add(yearField);
-        frame.add(Components.standardLabel("Month (ex. January is 01):"));
-        frame.add(monthField);
-        frame.add(Components.standardLabel("Date (ex. 01, 02, 03...31):"));
-        frame.add(dateField);
-        frame.add(Components.standardLabel("Event:"));
-        frame.add(eventField);
-        frame.add(new JLabel());
-        frame.add(Components.button2("Create", new CreateCalendarEventListener()));
-        frame.makeVisible();
+        agendaFrame.add(Components.standardLabel("Year:"));
+        agendaFrame.add(yearField);
+        agendaFrame.add(Components.standardLabel("Month (ex. January is 01):"));
+        agendaFrame.add(monthField);
+        agendaFrame.add(Components.standardLabel("Date (ex. 01, 02, 03...31):"));
+        agendaFrame.add(dateField);
+        agendaFrame.add(Components.standardLabel("Event:"));
+        agendaFrame.add(eventField);
+        agendaFrame.add(new JLabel());
+        agendaFrame.add(Components.button2("Create", new CreateCalendarEventListener()));
+        agendaFrame.makeVisible();
     }
     
     private class CreateCalendarEventListener implements ActionListener

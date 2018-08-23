@@ -75,7 +75,7 @@ public class Browser extends JInternalFrame
         menuBar.add(Components.maximizeButton(new MaximizeListener())); //Add a Maximize button to the menu bar
         menuBar.add(getWindowMenu());   //Add the Window menu to the menu bar
         menuBar.add(urlField);  //Add the URL field to the menu bar
-        menuBar.add(Components.standardButton("Go", new GoListener())); //Add a Go button to the menu bar
+        menuBar.add(new StandardButton("Go", new GoListener())); //Add a Go button to the menu bar
         menuBar.add(moreMenu());    //Add the More menu to the menu bar
         return menuBar;
     }

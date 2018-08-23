@@ -27,6 +27,7 @@ public class CurrentSettings
         output += "Location: " + ProjectGoldStarsX.location + "\n";
         output += "Settings Button on the Main Menu Bar: " + settingsButtonMainMenuBar();
         JTextArea textArea1 = new JTextArea(output);
+        textArea1.setBackground(ProjectGoldStarsX.textBackgroundColor);
         textArea1.setEditable(false);
         textArea1.setFont(ProjectGoldStarsX.bodyText1);
         textArea1.setLineWrap(true);
@@ -40,6 +41,7 @@ public class CurrentSettings
         output += "Search Case Sensitive: " + (ProjectGoldStarsX.searchCaseSensitive ? "On" : "Off") + "\n";
         output += "Error Log Search Case Sensitive: " + (ProjectGoldStarsX.errorLogSearchCaseSensitive ? "On" : "Off");
         JTextArea textArea2 = new JTextArea(output);
+        textArea2.setBackground(ProjectGoldStarsX.textBackgroundColor);
         textArea2.setEditable(false);
         textArea2.setFont(ProjectGoldStarsX.bodyText1);
         textArea2.setLineWrap(true);
@@ -84,6 +86,7 @@ public class CurrentSettings
         }
     }
     
+    //Returns "On" if the Settings button is set to appear on the main menu bar and "Off" otherwise
     private String settingsButtonMainMenuBar()
     {
         if("1".equals(ProjectGoldStarsX.settingsButtonMainMenuBar))
@@ -96,6 +99,7 @@ public class CurrentSettings
         }
     }
     
+    //Closes the current Current Settings window and launches a new CurrentSettings object, effectively refreshing the Current Settings window
     public static class RefreshListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)

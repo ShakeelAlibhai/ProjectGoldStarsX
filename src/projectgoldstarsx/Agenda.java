@@ -47,7 +47,7 @@ public class Agenda
         menuBar.add(Components.settingsButton("Agenda Settings", new ListenersAgenda.AgendaSettingsListener()));
         setupSearchField();
         menuBar.add(agendaSearchField);
-        menuBar.add(Components.standardButton("Search", new SearchAgendaListener()));
+        menuBar.add(new StandardButton("Search", new SearchAgendaListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }
@@ -56,7 +56,17 @@ public class Agenda
     {
         StandardMenu menu = new StandardMenu("More");
         menu.add(Components.standardMenuItem("About Agenda", new ListenersAgenda.AboutAgendaListener()));
+        menu.add(helpMenu());
         return menu.getMenu();
+    }
+    
+    private JMenu helpMenu()
+    {
+        JMenu menu = new JMenu("Agenda Help");
+        menu.setFont(ProjectGoldStarsX.mediumText3);
+        menu.add(Components.standardMenuItem("Create an Event", new ListenersHelpAction.AgendaCreateEventListener()));
+        menu.add(Components.standardMenuItem("View Events", new ListenersHelpAction.AgendaViewEventsListener()));
+        return menu;
     }
     
     private void setupSearchField()
@@ -162,9 +172,9 @@ public class Agenda
         JPanel row3 = new JPanel();
         row3.setBackground(ProjectGoldStarsX.mainColor);
         row3.setLayout(new GridLayout(1, 2));
-        row3.add(Components.standardButton("Create an Event", new ListenersAgenda.CreateEventListener()));
-        row3.add(Components.standardButton("View Events Today", new ListenersAgenda.ViewEventsTodayListener()));
-        row3.add(Components.standardButton("View Events Tomorrow", new ListenersAgenda.ViewEventsTomorrowListener()));
+        row3.add(new StandardButton("Create an Event", new ListenersAgenda.CreateEventListener()));
+        row3.add(new StandardButton("View Events Today", new ListenersAgenda.ViewEventsTodayListener()));
+        row3.add(new StandardButton("View Events Tomorrow", new ListenersAgenda.ViewEventsTomorrowListener()));
         return row3;
     }
     

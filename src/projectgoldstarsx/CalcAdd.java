@@ -104,7 +104,7 @@ public class CalcAdd implements ActionListener
         menuBar.add(additionFrame.getCloseButton());
         menuBar.add(additionFrame.getMaximizeButton());
         menuBar.add(additionFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Add More Than 10 Numbers", new AddMoreThan10NumbersListener()));
+        menuBar.add(new StandardButton("Add More Than 10 Numbers", new AddMoreThan10NumbersListener()));
         return menuBar;
     }
     

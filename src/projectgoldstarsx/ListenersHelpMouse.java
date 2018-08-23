@@ -3,6 +3,70 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 public class ListenersHelpMouse
 {
+    public static class AgendaCreateEventListener implements MouseListener
+    {
+        public void mousePressed(MouseEvent e)
+        {
+            new HelpAgendaCreateEvent();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
+    }
+    
+    public static class AgendaViewEventsListener implements MouseListener
+    {
+        public void mousePressed(MouseEvent e)
+        {
+            new HelpAgendaViewEvents();
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+            
+        }
+    }
+    
     public static class LanguageListener implements MouseListener
     {
         public void mousePressed(MouseEvent e)

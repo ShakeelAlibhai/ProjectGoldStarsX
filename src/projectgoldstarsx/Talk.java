@@ -106,7 +106,7 @@ public class Talk
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(Components.settingsButton("Talk Settings", new TalkSettingsListener()));
-        menuBar.add(Components.standardButton("Clear Chat History", new ClearChatHistoryListener()));
+        menuBar.add(new StandardButton("Clear Chat History", new ClearChatHistoryListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }
@@ -132,7 +132,7 @@ public class Talk
     private void processInput(String input)
     {
         input = input.toLowerCase();    //Convert the user's input to lower case
-        if("".equals(input))
+        if("".equals(input))    //If the user's input is blank
         {
             temp = "Why don't you say something?";
         }

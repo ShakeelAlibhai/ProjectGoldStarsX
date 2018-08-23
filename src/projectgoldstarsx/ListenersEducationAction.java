@@ -39,6 +39,15 @@ public class ListenersEducationAction
         }
     }
     
+    public static class PracticeSquareRootsListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new EduSquareRoot();
+        }
+    }
+    
     public static class Reading3SentencesListener implements ActionListener
     {
         @Override
