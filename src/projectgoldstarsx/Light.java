@@ -38,19 +38,19 @@ public class Light
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(Components.closeButton(new CloseListener()));
-        menuBar.add(Components.standardButton("Blue", new ListenersLight.BlueListener()));
-        menuBar.add(Components.standardButton("Cyan", new ListenersLight.CyanListener()));
-        menuBar.add(Components.standardButton("Dark Green", new ListenersLight.DarkGreenListener()));
-        menuBar.add(Components.standardButton("Gray", new ListenersLight.GrayListener()));
-        menuBar.add(Components.standardButton("Green", new ListenersLight.GreenListener()));
-        menuBar.add(Components.standardButton("Light Gray", new ListenersLight.LightGrayListener()));
-        menuBar.add(Components.standardButton("Light Red", new ListenersLight.LightRedListener()));
-        menuBar.add(Components.standardButton("Orange", new ListenersLight.OrangeListener()));
-        menuBar.add(Components.standardButton("Pink", new ListenersLight.PinkListener()));
-        menuBar.add(Components.standardButton("Red", new ListenersLight.RedListener()));
-        menuBar.add(Components.standardButton("Turquoise", new ListenersLight.TurquoiseListener()));
-        menuBar.add(Components.standardButton("White", new ListenersLight.WhiteListener()));
-        menuBar.add(Components.standardButton("Yellow", new ListenersLight.YellowListener()));
+        menuBar.add(new StandardButton("Blue", new ListenersLight.BlueListener()));
+        menuBar.add(new StandardButton("Cyan", new ListenersLight.CyanListener()));
+        menuBar.add(new StandardButton("Dark Green", new ListenersLight.DarkGreenListener()));
+        menuBar.add(new StandardButton("Gray", new ListenersLight.GrayListener()));
+        menuBar.add(new StandardButton("Green", new ListenersLight.GreenListener()));
+        menuBar.add(new StandardButton("Light Gray", new ListenersLight.LightGrayListener()));
+        menuBar.add(new StandardButton("Light Red", new ListenersLight.LightRedListener()));
+        menuBar.add(new StandardButton("Orange", new ListenersLight.OrangeListener()));
+        menuBar.add(new StandardButton("Pink", new ListenersLight.PinkListener()));
+        menuBar.add(new StandardButton("Red", new ListenersLight.RedListener()));
+        menuBar.add(new StandardButton("Turquoise", new ListenersLight.TurquoiseListener()));
+        menuBar.add(new StandardButton("White", new ListenersLight.WhiteListener()));
+        menuBar.add(new StandardButton("Yellow", new ListenersLight.YellowListener()));
         return menuBar;
     }
     

@@ -1,8 +1,5 @@
 # Project GoldStars X
-
-## Statement
-Project GoldStars X is a full-screen Java program with many features.
-It can serve as a useful tool for people, as well as for people who are trying to learn and/or experiment with Java.
+Project GoldStars X is a full-screen Java program designed to appear as a virtual operating system. It includes many features, such as a calculator, a notes application, a personal assistant, and more! It can serve as a useful productivity tool, as well as a a project to help people trying to learn and/or experiment with Java.
 
 ## Features
 ### Agenda
@@ -25,14 +22,14 @@ The Project GoldStars X calculator includes many features:
 
 ### Education
 The Education program in Project GoldStars X is a program that can be used to practice math and reading. Users can:
-* Practice addition, subtraction, multiplication, and division.
+* Practice addition, subtraction, multiplication, division, and square roots.
 * Practice reading by reading automatically-generated 3- or 4-sentence stories.
 
 ### Notes
-The Notes program in Project GoldStars X features the ability to create notes, edit notes, rename notes, import notes, view notes, and search notes.
+The Notes program in Project GoldStars X features the ability to create, edit, rename, import, view, and search notes.
 
 ### Photos
-In the Photos program in Project GoldStars X, users can import photos, view photos, and search photos.
+In the Photos program in Project GoldStars X, users can import, view, and search photos.
 
 ### Other Programs
 * Browser, a web browser.

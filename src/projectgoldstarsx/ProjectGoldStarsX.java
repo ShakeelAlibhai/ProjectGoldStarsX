@@ -8,8 +8,8 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String NAME = "Project GoldStars X 2.7";
-    public static final String VERSION = "Version 2.7";
+    public static final String NAME = "Project GoldStars X 2.7 Update 1";
+    public static final String VERSION = "Version 2.7.1";
     public static final File FOLDER = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static boolean settingsButtonMainMenuBar;    //Tracks whether the Settings button is set to appear on the main menu bar or not
     public static Date startDate;

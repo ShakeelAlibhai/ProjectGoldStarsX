@@ -1,6 +1,10 @@
 # Project GoldStars X Changelog
 
 ## Version 2.7.x
+### Version 2.7.1 (August 24, 2018)
+* In the "Circles" window, pressing Enter in the Number field has the same effect as clicking the Calculate button.
+* Other minor changes.
+
 ### Version 2.7 (August 22, 2018)
 * Added help windows for the Agenda (accessible from the Agenda window or the Help window).
 * Added the option to practice square roots in Education.

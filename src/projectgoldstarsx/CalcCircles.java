@@ -33,6 +33,7 @@ public class CalcCircles
     {
         radiusField = new JTextField("0");
         radiusField.setFont(ProjectGoldStarsX.bodyText2);
+        radiusField.addActionListener(new CalculateListener());
     }
     
     public static class CalculateListener implements ActionListener

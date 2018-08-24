@@ -50,7 +50,7 @@ public class Help
         menuBar.add(helpFrame.getCloseButton());
         menuBar.add(helpFrame.getMaximizeButton());
         menuBar.add(helpFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Troubleshoot Problems", new ListenersHelpAction.TroubleshootProblemsListener()));
+        menuBar.add(new StandardButton("Troubleshoot Problems", new ListenersHelpAction.TroubleshootProblemsListener()));
         return menuBar;
     }
 }

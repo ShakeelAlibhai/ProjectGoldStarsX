@@ -10,8 +10,7 @@ public class CalcAverage
     private void calcAverage()
     {
         String output, temp;
-        int int1;
-        double int2;
+        int numberOfNums;
         double total = 0.0;
         //Ask the user to enter the number of numbers to find the average of.
         //The number of numbers to find the average of is stored as a String.
@@ -25,7 +24,7 @@ public class CalcAverage
         //If the conversion fails, display an error message and exit the method.
         try
         {
-            int1 = Integer.parseInt(output);
+            numberOfNums = Integer.parseInt(output);
         }
         catch(Exception error)
         {
@@ -33,14 +32,14 @@ public class CalcAverage
             return;
         }
         //If the number of numbers to find the average of is less than or equal to 0, display an error message and exit the method.
-        if(int1 <= 0)
+        if(numberOfNums <= 0)
         {
             output = "ERROR:\n"
                     + "The number of numbers to find the average of is less than or equal to 0.";
             JOptionPane.showMessageDialog(null, output, "Average Calculator", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        for(int i = 0; i < int1; i++)
+        for(int i = 0; i < numberOfNums; i++)
         {
             //Ask the user to enter Number #i.
             //Number #i is stored as a String.
@@ -52,19 +51,20 @@ public class CalcAverage
             }
             //Attempt to convert Number #i from a String to a Double.
             //If the conversion fails, display an error message and exit the method.
+            double tempInt;
             try
             {
-                int2 = Double.parseDouble(output);
+                tempInt = Double.parseDouble(output);
             }
             catch(Exception error)
             {
                 JOptionPane.showMessageDialog(null, "ERROR", "Average Calculator", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            total += int2;
+            total += tempInt;
         }
-        total = total / int1;
-        output = "The average of the numbers is: " + total;
+        double average = total / numberOfNums;
+        output = "The average of the numbers is: " + average;
         JOptionPane.showMessageDialog(null, output, "Average Calculator", JOptionPane.INFORMATION_MESSAGE);
     }
 }

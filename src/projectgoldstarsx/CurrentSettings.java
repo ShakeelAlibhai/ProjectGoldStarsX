@@ -69,7 +69,7 @@ public class CurrentSettings
         menuBar.add(currentSettingsFrame.getCloseButton());
         menuBar.add(currentSettingsFrame.getMaximizeButton());
         menuBar.add(currentSettingsFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Refresh", new RefreshListener()));
+        menuBar.add(new StandardButton("Refresh", new RefreshListener()));
         return menuBar;
     }
     
