@@ -221,6 +221,13 @@ public class Talk
         {
             temp = "I'm fine, thanks for asking.";
         }
+        else if(input.indexOf("where are you") >= 0 ||
+                input.indexOf("where r u") >= 0 ||
+                input.indexOf("where you at") >= 0 ||
+                input.indexOf("where u at") >= 0)
+        {
+            temp = "I'm in your computer!";
+        }
         else if(input.indexOf("question") >= 0 &&
                 input.indexOf("?") <= 0 &&
                 input.indexOf(":") <= 0)

@@ -72,12 +72,12 @@ public class Files
         menuBar.add(filesFrame.getCloseButton());   //Add a Close button to the menu bar
         menuBar.add(filesFrame.getMaximizeButton());    //Add a Maximize button to the menu bar
         menuBar.add(filesFrame.getWindowMenu());    //Add the Window menu to the menu bar
-        menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));   //Add a "Create a Note" button to the menu bar
-        menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));   //Add an "Import Notes" button to the menu bar
-        menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));    //Add an "Import Photos" button to the menu bar
+        menuBar.add(new StandardButton("Create a Note", new ListenersNotes.CreateNoteListener()));   //Add a "Create a Note" button to the menu bar
+        menuBar.add(new StandardButton("Import Notes", new ListenersNotes.ImportNotesListener()));   //Add an "Import Notes" button to the menu bar
+        menuBar.add(new StandardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));    //Add an "Import Photos" button to the menu bar
         setupSearchField();
         menuBar.add(filesSearchField);  //Add a search text field to the menu bar
-        menuBar.add(Components.standardButton("Search", new SearchFilesListener()));    //Add a Search button to the menu bar
+        menuBar.add(new StandardButton("Search", new SearchFilesListener()));    //Add a Search button to the menu bar
         menuBar.add(moreMenu());    //Add the More menu to the menu bar
         return menuBar;
     }

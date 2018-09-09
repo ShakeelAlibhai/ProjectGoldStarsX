@@ -15,14 +15,14 @@ public class SetLocation
         locationFrame.setSize(800 * ProjectGoldStarsX.multiplier, 450 * ProjectGoldStarsX.multiplier);
         locationFrame.setLayout(new GridLayout(8, 1));
         locationFrame.setInstructionsMenuBar("Which of the following best describes your location?");
-        locationFrame.add(Components.standardButton("North America", new ListenersLocations.NorthAmericaListener()));
-        locationFrame.add(Components.standardButton("South America", new ListenersLocations.SouthAmericaListener()));
-        locationFrame.add(Components.standardButton("Europe", new ListenersLocations.EuropeListener()));
-        locationFrame.add(Components.standardButton("Africa", new ListenersLocations.AfricaListener()));
-        locationFrame.add(Components.standardButton("The Middle East", new ListenersLocations.TheMiddleEastListener()));
-        locationFrame.add(Components.standardButton("Asia", new ListenersLocations.AsiaListener()));
-        locationFrame.add(Components.standardButton("Oceania", new ListenersLocations.OceaniaListener()));
-        locationFrame.add(Components.standardButton("Other/I don't want to say", new ListenersLocations.OtherListener()));
+        locationFrame.add(new StandardButton("North America", new ListenersLocations.NorthAmericaListener()));
+        locationFrame.add(new StandardButton("South America", new ListenersLocations.SouthAmericaListener()));
+        locationFrame.add(new StandardButton("Europe", new ListenersLocations.EuropeListener()));
+        locationFrame.add(new StandardButton("Africa", new ListenersLocations.AfricaListener()));
+        locationFrame.add(new StandardButton("The Middle East", new ListenersLocations.TheMiddleEastListener()));
+        locationFrame.add(new StandardButton("Asia", new ListenersLocations.AsiaListener()));
+        locationFrame.add(new StandardButton("Oceania", new ListenersLocations.OceaniaListener()));
+        locationFrame.add(new StandardButton("Other/I don't want to say", new ListenersLocations.OtherListener()));
         locationFrame.makeVisible();
     }
 }

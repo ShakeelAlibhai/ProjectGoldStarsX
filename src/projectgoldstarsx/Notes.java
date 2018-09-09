@@ -65,14 +65,14 @@ public class Notes
         menuBar.add(viewNotesFrame.getCloseButton());
         menuBar.add(viewNotesFrame.getMaximizeButton());
         menuBar.add(viewNotesFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Create a Note", new ListenersNotes.CreateNoteListener()));
-        menuBar.add(Components.standardButton("Edit Notes", new ListenersNotes.EditNotesListener()));
-        menuBar.add(Components.standardButton("Import Notes", new ListenersNotes.ImportNotesListener()));
-        menuBar.add(Components.standardButton("Rename Notes", new ListenersNotes.RenameNotesListener()));
+        menuBar.add(new StandardButton("Create a Note", new ListenersNotes.CreateNoteListener()));
+        menuBar.add(new StandardButton("Edit Notes", new ListenersNotes.EditNotesListener()));
+        menuBar.add(new StandardButton("Import Notes", new ListenersNotes.ImportNotesListener()));
+        menuBar.add(new StandardButton("Rename Notes", new ListenersNotes.RenameNotesListener()));
         menuBar.add(Components.settingsButton("Notes Settings", new ListenersNotes.NotesSettingsListener()));
         setupSearchField();
         menuBar.add(notesSearchField);
-        menuBar.add(Components.standardButton("Search", new SearchNotesListener()));
+        menuBar.add(new StandardButton("Search", new SearchNotesListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }

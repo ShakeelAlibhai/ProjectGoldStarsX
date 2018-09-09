@@ -92,7 +92,7 @@ public class StoryWindow
     
     private JButton newStory()
     {
-        return Components.standardButton("New Story", new NewStoryListener());
+        return new StandardButton("New Story", new NewStoryListener());
     }
     
     public static class NewStoryListener implements ActionListener

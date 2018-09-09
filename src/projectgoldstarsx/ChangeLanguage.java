@@ -22,8 +22,8 @@ public class ChangeLanguage
         settingsFrame.setLayout(new GridLayout(3, 1));
         settingsFrame.setStandardMenuBar();
         settingsFrame.add(Components.headerLabel("Please choose a language:"));
-        settingsFrame.add(Components.standardButton("American English", new AmericanEnglishListener()));
-        settingsFrame.add(Components.standardButton("British English", new BritishEnglishListener()));
+        settingsFrame.add(new StandardButton("American English", new AmericanEnglishListener()));
+        settingsFrame.add(new StandardButton("British English", new BritishEnglishListener()));
         settingsFrame.makeVisible();
     }
     

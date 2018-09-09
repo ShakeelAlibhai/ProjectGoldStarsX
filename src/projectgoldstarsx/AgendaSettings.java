@@ -27,8 +27,8 @@ public class AgendaSettings
         frame.add(Components.headerLabel("Format 2:"));
         frame.add(date1());
         frame.add(date2());
-        frame.add(Components.standardButton("Choose This Format", new AgendaFormat1Listener()));
-        frame.add(Components.standardButton("Choose This Format", new AgendaFormat2Listener()));
+        frame.add(new StandardButton("Choose This Format", new AgendaFormat1Listener()));
+        frame.add(new StandardButton("Choose This Format", new AgendaFormat2Listener()));
         frame.makeVisible();
     }
     

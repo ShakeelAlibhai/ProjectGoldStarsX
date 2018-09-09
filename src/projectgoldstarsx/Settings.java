@@ -43,7 +43,7 @@ public class Settings
         menuBar.add(settingsFrame.getCloseButton());
         menuBar.add(settingsFrame.getMaximizeButton());
         menuBar.add(settingsFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Current Settings", new ListenersSettings.CurrentSettingsListener()));
+        menuBar.add(new StandardButton("Current Settings", new ListenersSettings.CurrentSettingsListener()));
         return menuBar;
     }
 }

@@ -94,7 +94,7 @@ public class Commands
         menuBar.setBackground(ProjectGoldStarsX.mainColor);
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(Components.standardButton("Clear Command History", new ClearCommandHistoryListener()));
+        menuBar.add(new StandardButton("Clear Command History", new ClearCommandHistoryListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }

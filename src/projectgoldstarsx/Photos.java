@@ -65,11 +65,11 @@ public class Photos
         menuBar.add(viewPhotosFrame.getCloseButton());
         menuBar.add(viewPhotosFrame.getMaximizeButton());
         menuBar.add(viewPhotosFrame.getWindowMenu());
-        menuBar.add(Components.standardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
+        menuBar.add(new StandardButton("Import Photos", new ListenersPhotos.ImportPhotosListener()));
         menuBar.add(Components.settingsButton("Photos Settings", new ListenersPhotos.PhotosSettingsListener()));
         setupSearchField();
         menuBar.add(photosSearchField);
-        menuBar.add(Components.standardButton("Search", new SearchPhotosListener()));
+        menuBar.add(new StandardButton("Search", new SearchPhotosListener()));
         menuBar.add(moreMenu());
         return menuBar;
     }

@@ -32,8 +32,8 @@ public class PhotosSettings
     {
         JPanel caseSensitivityChoices = new JPanel();
         caseSensitivityChoices.setLayout(new GridLayout(1, 2));
-        caseSensitivityChoices.add(Components.standardButton("Yes", new CaseSensitivityYesListener()));
-        caseSensitivityChoices.add(Components.standardButton("No", new CaseSensitivityNoListener()));
+        caseSensitivityChoices.add(new StandardButton("Yes", new CaseSensitivityYesListener()));
+        caseSensitivityChoices.add(new StandardButton("No", new CaseSensitivityNoListener()));
         return caseSensitivityChoices;
     }
     

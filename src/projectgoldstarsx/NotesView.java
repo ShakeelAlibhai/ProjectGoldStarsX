@@ -45,7 +45,7 @@ public class NotesView extends JInternalFrame
         JMenuBar menuBar = new JMenuBar();
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
-        menuBar.add(Components.standardButton("Save Edits as New Note", new CreateNoteListener()));
+        menuBar.add(new StandardButton("Save Edits as New Note", new CreateNoteListener()));
         return menuBar;
     }
     

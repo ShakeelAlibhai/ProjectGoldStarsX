@@ -49,7 +49,7 @@ public class NotesCreate extends JInternalFrame
         menuBar.add(Components.closeButton(new CloseListener()));
         menuBar.add(Components.maximizeButton(new MaximizeListener()));
         menuBar.add(getWindowMenu());
-        menuBar.add(Components.standardButton("Save", new CreateNoteListener()));
+        menuBar.add(new StandardButton("Save", new CreateNoteListener()));
         return menuBar;
     }
     

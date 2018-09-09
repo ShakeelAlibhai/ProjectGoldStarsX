@@ -32,8 +32,8 @@ public class MenuBarSettings
     {
         JPanel settingsButtonMainMenuBarChoices = new JPanel();
         settingsButtonMainMenuBarChoices.setLayout(new GridLayout(1, 2));
-        settingsButtonMainMenuBarChoices.add(Components.standardButton("Yes", new SettingsButtonMainMenuBarYesListener()));
-        settingsButtonMainMenuBarChoices.add(Components.standardButton("No", new SettingsButtonMainMenuBarNoListener()));
+        settingsButtonMainMenuBarChoices.add(new StandardButton("Yes", new SettingsButtonMainMenuBarYesListener()));
+        settingsButtonMainMenuBarChoices.add(new StandardButton("No", new SettingsButtonMainMenuBarNoListener()));
         return settingsButtonMainMenuBarChoices;
     }
     

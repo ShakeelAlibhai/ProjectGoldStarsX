@@ -35,7 +35,7 @@ public class About
         menuBar.add(aboutFrame.getCloseButton());   //Add a Close button to the menu bar
         menuBar.add(aboutFrame.getMaximizeButton());    //Add a Maximize button to the menu bar
         menuBar.add(aboutFrame.getWindowMenu());    //Add the Window menu to the menu bar
-        menuBar.add(Components.standardButton("About Programs", new ListenersAbout.AboutProgramsListener()));   //Add an About Programs button to the menu bar
+        menuBar.add(new StandardButton("About Programs", new ListenersAbout.AboutProgramsListener()));   //Add an About Programs button to the menu bar
         return menuBar;
     }
     
@@ -56,8 +56,8 @@ public class About
         JPanel row3 = new JPanel();
         row3.setBackground(ProjectGoldStarsX.mainColor);
         row3.setLayout(new GridLayout(1, 2));
-        row3.add(Components.standardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
-        row3.add(Components.standardButton("More Information", new MoreInformationListener()));
+        row3.add(new StandardButton("Disclaimer", new ListenersAbout.DisclaimerListener()));
+        row3.add(new StandardButton("More Information", new MoreInformationListener()));
         return row3;
     }
     

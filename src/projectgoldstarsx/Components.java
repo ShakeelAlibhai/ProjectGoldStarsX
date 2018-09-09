@@ -8,13 +8,6 @@ import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
 public class Components
 {
-    //Deprecated in Version 2.6.3 -- use StandardButton class instead
-    public static StandardButton standardButton(String displayText, ActionListener actionListener)
-    {
-        StandardButton button = new StandardButton(displayText, actionListener);
-        return button;
-    }
-    
     public static JButton inverseStandardButton(String displayText, ActionListener actionListener)
     {
         StandardButton button = new StandardButton(displayText, actionListener);
