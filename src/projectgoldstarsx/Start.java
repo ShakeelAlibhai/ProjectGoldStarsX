@@ -67,14 +67,8 @@ public class Start
             frame.setSize(750 * ProjectGoldStarsX.multiplier, 425 * ProjectGoldStarsX.multiplier);
             frame.getContentPane().setBackground(ProjectGoldStarsX.secondaryColor);
             frame.setLayout(new GridLayout(5, 1));
-            JLabel welcomeLabel = new JLabel("Welcome to Project GoldStars X!", SwingConstants.CENTER);
-            welcomeLabel.setForeground(ProjectGoldStarsX.mainColor);
-            welcomeLabel.setFont(ProjectGoldStarsX.largeHeader);
-            frame.add(welcomeLabel);
-            JLabel descriptionLabel = new JLabel("Project GoldStars X includes many exciting features. Let's get you set up!", SwingConstants.CENTER);
-            descriptionLabel.setForeground(ProjectGoldStarsX.mainColor);
-            descriptionLabel.setFont(ProjectGoldStarsX.mediumHeader);
-            frame.add(descriptionLabel);
+            frame.add(Components.reverseTitleLabel("Welcome to Project GoldStars X!"));
+            frame.add(Components.reverseHeaderLabel("Project GoldStars X includes many exciting features. Let's get you set up!"));
             JLabel instructionsLabel = new JLabel("To get started, please enter your username, and then click Continue.");
             instructionsLabel.setForeground(ProjectGoldStarsX.mainColor);
             instructionsLabel.setFont(ProjectGoldStarsX.mediumText1);

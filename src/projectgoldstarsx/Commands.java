@@ -22,7 +22,7 @@ public class Commands
     {
         commandsField = new JTextField("");
         commandsField.setFont(ProjectGoldStarsX.bodyText2);
-        commandsField.setBackground(Color.lightGray);
+        commandsField.setBackground(new Color(224, 224, 224));
         commandsField.setForeground(Color.black);
         setupFrame();
         if(messages.isEmpty())

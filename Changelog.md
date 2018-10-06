@@ -1,6 +1,10 @@
 # Project GoldStars X Changelog
 
 ## Version 2.7.x
+### Version 2.7.3 (October 6, 2018)
+* Slightly modified the color of the text input field in the Commands window.
+* Other minor changes.
+
 ### Version 2.7.2 (September 9, 2018)
 * Updated Talk.
 * Other minor changes.

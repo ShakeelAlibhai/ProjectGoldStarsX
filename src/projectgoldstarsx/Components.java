@@ -58,10 +58,26 @@ public class Components
         return label;
     }
     
+    public static JLabel reverseTitleLabel(String displayText)
+    {
+        JLabel label = new JLabel(displayText, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.mainColor);
+        label.setFont(ProjectGoldStarsX.largeHeader);
+        return label;
+    }
+    
     public static JLabel headerLabel(String displayText)
     {
         JLabel label = new JLabel(displayText, SwingConstants.CENTER);
         label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.mediumHeader);
+        return label;
+    }
+    
+    public static JLabel reverseHeaderLabel(String displayText)
+    {
+        JLabel label = new JLabel(displayText, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.mainColor);
         label.setFont(ProjectGoldStarsX.mediumHeader);
         return label;
     }
