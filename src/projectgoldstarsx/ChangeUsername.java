@@ -1,10 +1,18 @@
 package projectgoldstarsx;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 public class ChangeUsername
 {
+    static ProgramWindow settingsFrame;
+    static JTextField newUsernameField;
+    
     public ChangeUsername()
     {
         changeUsername();
@@ -12,22 +20,39 @@ public class ChangeUsername
     
     private void changeUsername()
     {
-        String output;
-        String oldUsername = ProjectGoldStarsX.username;
-        try
+        settingsFrame = new ProgramWindow("Change Username");
+        settingsFrame.setLayout(new GridLayout(2, 2));
+        settingsFrame.setSize(725 * ProjectGoldStarsX.multiplier, 375 * ProjectGoldStarsX.multiplier);
+        settingsFrame.setInstructionsMenuBar("Please enter your new username and then click Save:");
+        newUsernameField = new JTextField("");
+        newUsernameField.setFont(ProjectGoldStarsX.bodyText2);
+        newUsernameField.addActionListener(new SaveUsernameListener());
+        settingsFrame.add(Components.standardLabel("New Username:"));
+        settingsFrame.add(newUsernameField);
+        settingsFrame.add(new JLabel());
+        settingsFrame.add(Components.button2("Save", new SaveUsernameListener()));
+        settingsFrame.makeVisible();
+    }
+    
+    private class SaveUsernameListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
         {
-            ProjectGoldStarsX.username = JOptionPane.showInputDialog(null, "Your current username is: " + ProjectGoldStarsX.username + "\n"
-                    + "Please enter your new username:", "Change Username", JOptionPane.QUESTION_MESSAGE);
-            if(ProjectGoldStarsX.username == null)
+            String output;
+            String oldUsername = ProjectGoldStarsX.username;
+            //Get the new username.
+            String newUsername = newUsernameField.getText();
+            if(newUsername == null)
             {
-                ProjectGoldStarsX.username = oldUsername;
                 return;
             }
-            while("".equals(ProjectGoldStarsX.username))
+            if(newUsername.equals(""))
             {
-                ProjectGoldStarsX.username = JOptionPane.showInputDialog(null, "ERROR:\n"
-                        + "No Username Entered", "Settings", JOptionPane.QUESTION_MESSAGE);
+                output = "No username entered!";
+                JOptionPane.showMessageDialog(null, output, "Change Username", JOptionPane.INFORMATION_MESSAGE);
+                return;
             }
+            ProjectGoldStarsX.username = newUsername;
             output = "Congratulations! You have successfully changed your username from " + oldUsername + " to " + ProjectGoldStarsX.username + ".";
             JOptionPane.showMessageDialog(null, output, "Change Username", JOptionPane.INFORMATION_MESSAGE);
             //Save the username to the user's Project GoldStars X folder.
@@ -39,15 +64,10 @@ public class ChangeUsername
                 out.append(ProjectGoldStarsX.username);
                 out.close();
             }
-            catch(FileNotFoundException e)
+            catch(FileNotFoundException e2)
             {
 
             }
-        }
-        catch(Exception error)
-        {
-            ProjectGoldStarsX.username = oldUsername;
-            return;
         }
     }
 }

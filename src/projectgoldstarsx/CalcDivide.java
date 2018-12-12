@@ -117,11 +117,18 @@ public class CalcDivide implements ActionListener
                 try
                 {
                     nums[i] = Double.parseDouble(arrayOfStrings[i]);
+                    if((i > 0) && (nums[i] == 0))
+                    {
+                        ProjectGoldStarsX.errors.add("Error: Divide by Zero");
+                        JOptionPane.showMessageDialog(null, "ERROR: Divide by Zero", "Calculator", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
                 }
                 catch(Exception e2)
                 {
                     ProjectGoldStarsX.errors.add("Error: Calculator");
                     JOptionPane.showMessageDialog(null, "ERROR", "Calculator", JOptionPane.ERROR_MESSAGE);
+                    return;
                 }
             }
             double sum = nums[0];

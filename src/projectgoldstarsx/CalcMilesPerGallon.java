@@ -115,6 +115,8 @@ public class CalcMilesPerGallon
             }
             if(input1 > input2)
             {
+                ProjectGoldStarsX.errors.add("Error: Miles Per Gallon Calculator -\n"
+                        + "Beginning Odometer Reading Larger than Ending Odometer Reading");
                 output = "ERROR:\n"
                         + "The beginning odometer reading is larger than the ending odometer reading.";
                 JOptionPane.showMessageDialog(null, output, "Miles Per Gallon Calculator", JOptionPane.ERROR_MESSAGE);

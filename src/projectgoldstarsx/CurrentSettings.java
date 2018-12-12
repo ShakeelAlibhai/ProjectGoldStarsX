@@ -34,7 +34,7 @@ public class CurrentSettings
         textArea1.setWrapStyleWord(true);
         currentSettingsFrame.add(textArea1);
         //Update output to make it contain the information in the second column of the window
-        output = "Date Format: " + ProjectGoldStarsX.dateFormat + "\n";
+        output = "Date Format: " + agendaSetting() + "\n";
         output += "Notes Search Case Sensitive: " + (ProjectGoldStarsX.notesSearchCaseSensitive ? "On" : "Off") + "\n";
         output += "Photos Search Case Sensitive: " + (ProjectGoldStarsX.photosSearchCaseSensitive ? "On" : "Off") + "\n";
         output += "Talk Nickname: " + ProjectGoldStarsX.nickname + "\n";
@@ -96,6 +96,18 @@ public class CurrentSettings
         else
         {
             return "Off";
+        }
+    }
+    
+    private String agendaSetting()
+    {
+        if("Format 1".equals(ProjectGoldStarsX.dateFormat))
+        {
+            return "Format 1 (mm/dd/yyyy)";
+        }
+        else
+        {
+            return "Format 2 (dd/mm/yyyy)";
         }
     }
     

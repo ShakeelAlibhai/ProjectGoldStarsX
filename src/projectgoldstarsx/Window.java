@@ -46,9 +46,11 @@ public class Window extends JFrame implements ActionListener, ItemListener
         return im;
     }
     
+    //Set the background color and, if using a theme that supports it, the wallpaper of the JDesktopPane
     private void background()
     {
         ProjectGoldStarsX.desktop.setBackground(ProjectGoldStarsX.mainColor);
+        //Apply the Fire theme wallpaper
         if(ProjectGoldStarsX.theme.equals("Fire"))
         {
             //1280x800 wallpaper
@@ -92,26 +94,32 @@ public class Window extends JFrame implements ActionListener, ItemListener
                 applyWallpaper(getClass().getResource("/wallpaper/Fire_5120x2880.PNG"));
             }
         }
+        //Apply the Forest theme wallpaper
         if(ProjectGoldStarsX.theme.equals("Forest"))
         {
             applyWallpaper(getClass().getResource("/wallpaper/Forest.jpg"));
         }
+        //Apply the Mountain theme wallpaper
         if(ProjectGoldStarsX.theme.equals("Mountain"))
         {
             applyWallpaper(getClass().getResource("/wallpaper/Mountain.jpg"));
         }
+        //Apply the Grass theme wallpaper
         if(ProjectGoldStarsX.theme.equals("Grass"))
         {
             applyWallpaper(getClass().getResource("/wallpaper/Grass.jpg"));
         }
+        //Apply the Snow theme wallpaper
         if(ProjectGoldStarsX.theme.equals("Snow"))
         {
             applyWallpaper(getClass().getResource("/wallpaper/Snow.jpg"));
         }
+        //Apply the Water theme wallpaper
         if(ProjectGoldStarsX.theme.equals("Water"))
         {
             applyWallpaper(getClass().getResource("/wallpaper/Water.jpg"));
         }
+        //Apply the default wallpaper
         if(ProjectGoldStarsX.theme.equals("Project GoldStars X"))
         {
             //1280x800 wallpaper

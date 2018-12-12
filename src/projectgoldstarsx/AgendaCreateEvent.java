@@ -24,26 +24,50 @@ public class AgendaCreateEvent
         agendaFrame.setLayout(new GridLayout(5, 2));
         agendaFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         agendaFrame.setInstructionsMenuBar("Please enter the following information about the event:");
-        yearField = new JTextField("");
-        yearField.setFont(ProjectGoldStarsX.bodyText2);
-        monthField = new JTextField("");
-        monthField.setFont(ProjectGoldStarsX.bodyText2);
-        dateField = new JTextField("");
-        dateField.setFont(ProjectGoldStarsX.bodyText2);
-        eventField = new JTextField("");
-        eventField.setFont(ProjectGoldStarsX.bodyText2);
-        eventField.addActionListener(new CreateCalendarEventListener());
         agendaFrame.add(Components.standardLabel("Year:"));
+        setupYearField();
         agendaFrame.add(yearField);
         agendaFrame.add(Components.standardLabel("Month (ex. January is 01):"));
+        setupMonthField();
         agendaFrame.add(monthField);
         agendaFrame.add(Components.standardLabel("Date (ex. 01, 02, 03...31):"));
+        setupDateField();
         agendaFrame.add(dateField);
         agendaFrame.add(Components.standardLabel("Event:"));
+        setupEventField();
         agendaFrame.add(eventField);
         agendaFrame.add(new JLabel());
         agendaFrame.add(Components.button2("Create", new CreateCalendarEventListener()));
         agendaFrame.makeVisible();
+    }
+    
+    private void setupYearField()
+    {
+        yearField = new JTextField("");
+        yearField.setBackground(ProjectGoldStarsX.textBackgroundColor);
+        yearField.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
+    private void setupMonthField()
+    {
+        monthField = new JTextField("");
+        monthField.setBackground(ProjectGoldStarsX.textBackgroundColor);
+        monthField.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
+    private void setupDateField()
+    {
+        dateField = new JTextField("");
+        dateField.setBackground(ProjectGoldStarsX.textBackgroundColor);
+        dateField.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
+    private void setupEventField()
+    {
+        eventField = new JTextField("");
+        eventField.setBackground(ProjectGoldStarsX.textBackgroundColor);
+        eventField.setFont(ProjectGoldStarsX.bodyText2);
+        eventField.addActionListener(new CreateCalendarEventListener());
     }
     
     private class CreateCalendarEventListener implements ActionListener
@@ -156,16 +180,16 @@ public class AgendaCreateEvent
             //Save the calendar event (including the date of the event) to the user's Gold Stars folder.
             PrintWriter out;
             try
-                {
-                    File file = new File(ProjectGoldStarsX.AGENDA_FOLDER, "event" + (ProjectGoldStarsX.events.size() - 1) + ".txt");
-                    out = new PrintWriter(file);
-                    out.println(ProjectGoldStarsX.events.get(ProjectGoldStarsX.events.size() - 1));
-                    out.close();
-                }
-                catch(FileNotFoundException e2)
-                {
+            {
+                File file = new File(ProjectGoldStarsX.AGENDA_FOLDER, "event" + (ProjectGoldStarsX.events.size() - 1) + ".txt");
+                out = new PrintWriter(file);
+                out.println(ProjectGoldStarsX.events.get(ProjectGoldStarsX.events.size() - 1));
+                out.close();
+            }
+            catch(FileNotFoundException e2)
+            {
 
-                }
+            }
             JOptionPane.showMessageDialog(null, "Event Saved", "Create an Event", JOptionPane.INFORMATION_MESSAGE);
         }
     }

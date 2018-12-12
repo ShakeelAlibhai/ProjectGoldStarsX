@@ -1,5 +1,13 @@
 # Project GoldStars X Changelog
 
+## Version 2.8.x
+### Version 2.8 (December 12, 2018)
+* The "Current Settings" window now gives a slightly more detailed representation of which date format is currently set.
+* Updated error reporting.
+* Updated the interface of "Change Username."
+* When the Dark theme is enabled, the text fields in the window to create a new agenda event are now very light gray instead of white.
+* Other minor changes.
+
 ## Version 2.7.x
 ### Version 2.7.3 (October 6, 2018)
 * Slightly modified the color of the text input field in the Commands window.

@@ -39,10 +39,8 @@ public class AboutPrograms
         String output = "This program can display the current date in two formats. It also displays the time.\n"
                 + "The format in which the date is displayed can be changed in Agenda Settings.\n"
                 + "You can also create events.\n"
-                + "You can search the Agenda for your saved events, as well as view the events that you have\n"
-                + "today and tomorrow.\n"
-                + "Note: Not all of today's events may show in \"View Today's Events;\" similarly,\n"
-                + "not all of tomorrow's events may show in \"View Tomorrow's Events.\"\n"
+                + "You can search the Agenda for your saved events, as well as view the events that you have today and tomorrow.\n"
+                + "Note: Not all of today's events may show in \"View Today's Events;\" similarly, not all of tomorrow's events may show in \"View Tomorrow's Events.\"\n"
                 + "You may need to adjust the size of the window to view more events.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
