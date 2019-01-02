@@ -1,5 +1,6 @@
 package projectgoldstarsx;
-//Generates a story with a length of either 3 or 4 sentences.
+
+//Generates a story with a length of either 3 or 4 sentences
 public class Story
 {
     private final int SENTENCES;    //Stores the number of sentences the story should have
@@ -7,7 +8,7 @@ public class Story
     
     /*
     Constructor
-    Parameter: int "sentences," which is 0 for a story with a random length, 3 for a 3-sentence story, or 4 for a 4-sentence story.
+    Parameter: int "sentences," which is 0 for a story with a random length, 3 for a 3-sentence story, or 4 for a 4-sentence story
     */
     public Story(int sentences)
     {
@@ -15,8 +16,8 @@ public class Story
         if(sentences == 0)
         {
             Double d = Math.random();
-            int i = (int)(d * 2);
-            i += 3;
+            int i = (int)(d * 2);   //Get a randon number i that is either 0 or 1
+            i += 3; //i is now either 3 or 4
             SENTENCES = i;
         }
         else
@@ -718,7 +719,7 @@ public class Story
                 }
                 case "The Middle East":
                 {
-                    int r4 = (int)(random4 * 18);
+                    int r4 = (int)(random4 * 22);
                     if(r4 == 0)
                     {
                         place = "Canada";
@@ -802,6 +803,26 @@ public class Story
                     else if(r4 == 16)
                     {
                         place = "Kerbala";
+                        land = true;
+                    }
+                    else if(r4 == 17)
+                    {
+                        place = "Baghdad";
+                        land = true;
+                    }
+                    else if(r4 == 18)
+                    {
+                        place = "Tehran";
+                        land = true;
+                    }
+                    else if(r4 == 19)
+                    {
+                        place = "Russia";
+                        land = true;
+                    }
+                    else if(r4 == 20)
+                    {
+                        place = "Moscow";
                         land = true;
                     }
                     else

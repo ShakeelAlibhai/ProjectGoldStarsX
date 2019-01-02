@@ -1,6 +1,9 @@
 # Project GoldStars X Changelog
 
 ## Version 2.8.x
+### Version 2.8.1 (January 2, 2019)
+* Updated Stories.
+
 ### Version 2.8 (December 12, 2018)
 * The "Current Settings" window now gives a slightly more detailed representation of which date format is currently set.
 * Updated error reporting.
