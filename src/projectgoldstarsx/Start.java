@@ -27,7 +27,7 @@ public class Start
     
     private void start()
     {
-        ProjectGoldStarsX.startDate = new Date();
+        ProjectGoldStarsX.startDate = new Date();   //Save the current date and time
         createFolders();
         widthAndHeight();
         setFonts();
@@ -59,7 +59,7 @@ public class Start
             applyTheme();
             new Window();
         }
-        //If the "oldVersion.txt" file was not found
+        //If the "oldVersion.txt" file was not found, launch the setup process
         catch(FileNotFoundException e)
         {
             applyTheme();

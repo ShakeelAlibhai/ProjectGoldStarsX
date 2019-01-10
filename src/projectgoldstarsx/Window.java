@@ -222,7 +222,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         public void actionPerformed(ActionEvent e)
         {
             new Search(searchField.getText());
-            searchField.setText("");
+            searchField.setText("");    //Clear the text in the search text field
         }
     }
     

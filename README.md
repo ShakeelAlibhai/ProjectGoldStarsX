@@ -37,8 +37,8 @@ In the Photos program in Project GoldStars X, users can import, view, and search
 * Error Log and Error Log Search, a way to view and search errors that Project GoldStars X may have encountered since it was last started.
 * Files, which displays Project GoldStars X notes and photos.
 * Light, which can be used as a flashlight that can display different colors.
-* Stories, an automatic story generator
-* Talk, a personal assistant.
+* Stories, an automatic story generator.
+* Talk, a chatbot/personal assistant.
 
 ### Other Features
 * The ability to search Project GoldStars X by using a search bar in the main menu bar.

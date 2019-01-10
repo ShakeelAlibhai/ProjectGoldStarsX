@@ -58,6 +58,8 @@ public class NotesCreate extends JInternalFrame
         StandardMenu menu = new StandardMenu("Window");
         menu.add(Components.standardMenuItem("Move to Left Side of Screen", new LeftListener()));
         menu.add(Components.standardMenuItem("Move to Right Side of Screen", new RightListener()));
+        menu.add(Components.standardMenuItem("Move to Top of Screen", new TopListener()));
+        menu.add(Components.standardMenuItem("Move to Bottom of Screen", new BottomListener()));
         return menu.getMenu();
     }
     
@@ -151,6 +153,23 @@ public class NotesCreate extends JInternalFrame
         {
             NotesCreate.this.setLocation(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.menuBarHeight);
             NotesCreate.this.setSize(ProjectGoldStarsX.width / 2, ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight);
+        }
+    }
+    
+    public class TopListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            NotesCreate.this.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
+        }
+    }
+    
+    public class BottomListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            NotesCreate.this.setLocation(0, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
+            NotesCreate.this.setSize(ProjectGoldStarsX.width, (ProjectGoldStarsX.height - ProjectGoldStarsX.menuBarHeight) / 2);
         }
     }
 }
