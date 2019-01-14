@@ -1,6 +1,9 @@
 # Project GoldStars X Changelog
 
 ## Version 2.8.x
+### Version 2.8.3 (January 14, 2018)
+* Updated Help.
+
 ### Version 2.8.2 (January 9, 2019)
 * Added the ability to move the "Create a Note" window to the top or the bottom of the screen.
 * Other minor changes.
