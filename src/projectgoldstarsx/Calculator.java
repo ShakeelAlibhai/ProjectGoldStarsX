@@ -12,6 +12,7 @@ public class Calculator
     
     public static ProgramWindow calculatorFrame;
     
+    //Initialize and set up the Calculator window
     private void calculator()
     {
         calculatorFrame = new ProgramWindow("Calculator");

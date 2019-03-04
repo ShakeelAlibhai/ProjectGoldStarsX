@@ -64,7 +64,8 @@ public class AboutPrograms
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
         String output = "Calculator includes many features:\n"
                 + "--Basic Calculations (Add, Subtract, Multiply, and Divide)\n"
-                + "--Square Roots, Cube Roots, and Exponents\n"
+                + "--Square and Cube Roots\n"
+                + "--Exponents\n"
                 + "--Log Base 10 and Natural Log\n"
                 + "--Quadratic Equation Solver\n"
                 + "--Area and Circumference of a Circle\n"
@@ -94,7 +95,9 @@ public class AboutPrograms
         InformationWindow currentSettingsFrame = new InformationWindow("About Education");
         currentSettingsFrame.setLayout(new GridLayout(1, 1));
         currentSettingsFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        String output = "You can practice math and reading in Education!";
+        String output = "Education has two main parts: practicing math and practicing reading.\n\n"
+                + "In the \"Practice Math\" section, you (or someone else, such as a student) can practice addition, subtraction, multiplication, division, and square roots.\n\n"
+                + "The \"Practice Reading\" section, meanwhile, features the options to practice randomly-generated three- and four-sentence stories that are generated using the same technology as the Stories program.";
         currentSettingsFrame.addText(ProjectGoldStarsX.bodyText1, output);
         currentSettingsFrame.makeVisible();
     }

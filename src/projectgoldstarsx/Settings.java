@@ -11,6 +11,7 @@ public class Settings
     
     public static ProgramWindow settingsFrame;
     
+    //Initialize and set up the Settings window
     private void settings()
     {
         settingsFrame = new ProgramWindow("Settings");

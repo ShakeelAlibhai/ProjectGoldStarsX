@@ -12,10 +12,11 @@ public class About
     
     public About()
     {
-        about();
+        setupAboutWindow();
     }
     
-    private void about()
+    //Initialize and set up the About window
+    private void setupAboutWindow()
     {
         aboutFrame = new ProgramWindow("About");
         aboutFrame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
@@ -27,7 +28,7 @@ public class About
         aboutFrame.makeVisible();
     }
     
-    //Returns the JMenuBar that will be added to the ProgramWindow
+    //Returns the JMenuBar that will be added to the Help window
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();

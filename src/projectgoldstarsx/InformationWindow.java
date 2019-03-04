@@ -12,6 +12,7 @@ public class InformationWindow extends StandardWindow
     public void addText(Font f, String s)
     {
         JTextArea textArea = new JTextArea(s);
+        textArea.setBackground(ProjectGoldStarsX.textBackgroundColor);
         textArea.setEditable(false);
         textArea.setFont(f);
         textArea.setLineWrap(true);

@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 public class CalcCircles
 {
     public static ProgramWindow frame;
-    public static JTextField radiusField;
+    public static JTextField radiusField, areaField, circumferenceField;
     
     public CalcCircles()
     {
@@ -18,14 +18,21 @@ public class CalcCircles
     private void calcCircles()
     {
         frame = new ProgramWindow("Circles");
-        frame.setLayout(new GridLayout(2, 2));
-        frame.setSize(750 * ProjectGoldStarsX.multiplier, 400 * ProjectGoldStarsX.multiplier);
-        frame.setInstructionsMenuBar("Please enter the following information:");
+        frame.setLayout(new GridLayout(3, 3));
+        frame.setSize(990 * ProjectGoldStarsX.multiplier, 525 * ProjectGoldStarsX.multiplier);
+        frame.setInstructionsMenuBar("Please enter the radius of the circle, and then press Calculate to find its area and circumference:");
         frame.add(Components.standardLabel("Radius:"));
         setupRadiusField();
         frame.add(radiusField);
-        frame.add(new JLabel());
         frame.add(Components.button2("Calculate", new CalculateListener()));
+        frame.add(Components.standardLabel("Area:"));
+        setupAreaField();
+        frame.add(areaField);
+        frame.add(new JLabel());
+        frame.add(Components.standardLabel("Circumference:"));
+        setupCircumferenceField();
+        frame.add(circumferenceField);
+        frame.add(Components.disclaimerLabel("Note: Values may not be exact."));
         frame.makeVisible();
     }
     
@@ -34,6 +41,20 @@ public class CalcCircles
         radiusField = new JTextField("0");
         radiusField.setFont(ProjectGoldStarsX.bodyText2);
         radiusField.addActionListener(new CalculateListener());
+    }
+    
+    private void setupAreaField()
+    {
+        areaField = new JTextField("0");
+        areaField.setEditable(false);
+        areaField.setFont(ProjectGoldStarsX.bodyText2);
+    }
+    
+    private void setupCircumferenceField()
+    {
+        circumferenceField = new JTextField("0");
+        circumferenceField.setEditable(false);
+        circumferenceField.setFont(ProjectGoldStarsX.bodyText2);
     }
     
     public static class CalculateListener implements ActionListener
@@ -67,9 +88,8 @@ public class CalcCircles
             //Calculate the circumference.
             double circumference = 2 * Math.PI * radiusD;
             //Display the area and circumference.
-            output = "Area of the Circle: " + area + "\n"
-                    + "Circumference of the Circle: " + circumference;
-            JOptionPane.showMessageDialog(null, output, "Circles", JOptionPane.INFORMATION_MESSAGE);
+            areaField.setText("" + area);
+            circumferenceField.setText("" + circumference);
         }
     }
 }

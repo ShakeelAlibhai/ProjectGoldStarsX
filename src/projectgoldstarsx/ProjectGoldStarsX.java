@@ -8,11 +8,11 @@ import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 public class ProjectGoldStarsX
 {
-    public static final String NAME = "Project GoldStars X 2.8 Update 3";
-    public static final String VERSION = "Version 2.8.3";
+    public static final String NAME = "Project GoldStars X 2.9";
+    public static final String VERSION = "Version 2.9";
     public static final File FOLDER = new File(System.getProperty("user.home"), "Project GoldStars X");
     public static boolean settingsButtonMainMenuBar;    //Tracks whether the Settings button is set to appear on the main menu bar or not
-    public static Date startDate;
+    public static Date startDate;   //Stores the date and time that Project GoldStars X was last started (initialized in the Start class)
     public static int height;   //Height of the screen (in pixels)
     public static int width;    //Width of the screen (in pixels)
     public static int menuBarHeight;
@@ -27,7 +27,7 @@ public class ProjectGoldStarsX
     public static Color mainColor;
     public static Color secondaryColor;
     public static Color textBackgroundColor;
-    public static boolean standardColors;
+    public static boolean standardColors;   //If true, "secondaryColor" is used as the text color on certain white backgrounds (such as a search bar). Otherwise, "mainColor" is used.
     public static String color; //This is the main color if the "Solid Color" theme is selected
     
     //Folders

@@ -1,5 +1,13 @@
 # Project GoldStars X Changelog
 
+## Version 2.9.x
+### Version 2.9
+* Updated About Programs.
+* Updated the "Circles" window of the Calculator.
+* Updated the "Logarithms" window of the Calculator.
+* When the Dark theme is enabled, windows using the "InformationWindow" object now have a very light gray background instead of a white background. (This includes the "About Program" windows for each program, the Disclaimer window, and more.)
+* Other minor changes.
+
 ## Version 2.8.x
 ### Version 2.8.3 (January 14, 2018)
 * Updated Help.

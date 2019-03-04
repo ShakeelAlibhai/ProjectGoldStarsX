@@ -21,7 +21,7 @@ public class ActionsMenu extends SubMenu
     {
         JMenu quickAccessActions = new JMenu("Quick Access Actions");
         quickAccessActions.setFont(ProjectGoldStarsX.mediumText3);
-        quickAccessActions.add(new StandardMenuItem("Create a Agenda Event", new ListenersAgenda.CreateEventListener()));
+        quickAccessActions.add(new StandardMenuItem("Create an Agenda Event", new ListenersAgenda.CreateEventListener()));
         quickAccessActions.add(new StandardMenuItem("Create a Note", new ListenersNotes.CreateNoteListener()));
         if("Dark".equals(ProjectGoldStarsX.theme))
         {

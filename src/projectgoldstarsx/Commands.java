@@ -87,7 +87,7 @@ public class Commands
         commandsFrame.setJMenuBar(menuBar());
     }
     
-    //Returns the JMenuBar that will be added to the ProgramWindow
+    //Returns the JMenuBar that will be added to the Commands window
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();

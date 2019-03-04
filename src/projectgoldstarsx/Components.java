@@ -107,6 +107,14 @@ public class Components
         return label;
     }
     
+    public static JLabel disclaimerLabel(String displayText)
+    {
+        JLabel label = new JLabel(displayText, SwingConstants.CENTER);
+        label.setForeground(ProjectGoldStarsX.secondaryColor);
+        label.setFont(ProjectGoldStarsX.mediumText3);
+        return label;
+    }
+    
     //Deprecated in Version 2.7 -- use StandardMenuItem class instead
     public static JMenuItem standardMenuItem(String displayText, ActionListener actionListener)
     {

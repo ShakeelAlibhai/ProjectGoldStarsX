@@ -8,7 +8,8 @@ Project GoldStars X includes an agenda, where users can view the date and time, 
 ### Calculator
 The Project GoldStars X calculator includes many features:
 * Basic Calculations (Add, Subtract, Multiply, and Divide)
-* Square Roots, Cube Roots, and Exponents
+* Square and Cube Roots
+* Exponents
 * Log Base 10 and Natural Log
 * Quadratic Equation Solver
 * Area and Circumference of a Circle

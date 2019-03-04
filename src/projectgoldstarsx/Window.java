@@ -19,10 +19,11 @@ public class Window extends JFrame implements ActionListener, ItemListener
     
     public Window()
     {
-        buildWindow();
+        setupWindow();
     }
     
-    private void buildWindow()
+    //Create and set up the main Project GoldStars X window
+    private void setupWindow()
     {
         JFrame frame = new JFrame("Project GoldStars X");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -174,6 +175,7 @@ public class Window extends JFrame implements ActionListener, ItemListener
         ProjectGoldStarsX.desktop.add(wallpaper);
     }
     
+    //Returns the JMenuBar that will be added to the main Project GoldStars X window
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();

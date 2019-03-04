@@ -14,6 +14,7 @@ public class Education
         education();
     }
     
+    //Initialize and set up the Education window
     private void education()
     {
         educationFrame = new ProgramWindow("Education");
@@ -34,6 +35,7 @@ public class Education
         educationFrame.makeVisible();
     }
     
+    //Returns the JMenuBar that will be added to the Education window
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();

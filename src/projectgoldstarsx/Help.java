@@ -11,6 +11,7 @@ public class Help
         help();
     }
     
+    //Initialize and set up the Help window
     private void help()
     {
         helpFrame = new ProgramWindow("Help");
@@ -42,7 +43,7 @@ public class Help
         helpFrame.makeVisible();
     }
     
-    //Returns the JMenuBar that will be added to the ProgramWindow
+    //Returns the JMenuBar that will be added to the Help window
     private JMenuBar menuBar()
     {
         JMenuBar menuBar = new JMenuBar();
